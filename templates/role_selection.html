@@ -1,0 +1,207 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Signup</h1>
+<br>
+    <form method="post" action="{{ url_for('signup') }}">
+        <label for="fullname">Full Name:</label>
+        <input type="text" name="fullname" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br>
+
+        <label for="nin">National Identification Number:</label>
+        <input type="text" name="nin" required><br>
+
+        <button type="submit">Signup</button>
+    </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="../static/css/differemt.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<title>Landbank | Registeration</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 170vh;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        position: relative;
+        width: 100%;
+        height: 150vh;
+        overflow: hidden;
+    }
+    .background {
+        background-image: url('https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+    }
+    .white-background {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: white;
+    }
+    .card {
+        position: absolute;
+      top: -20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        width: 100vh;
+        max-width: 400px;
+        height: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 1; /* Ensure the card is above the white background */
+    }
+    .form-control {
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 40px; /* Adjust as needed */
+}
+
+.password-wrapper i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+}
+.signup-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn-signup {
+    background-color: #510000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* transition: background-color 0.3s ease; */
+}
+
+.btn-signup:hover {
+    background-color: #3a0000;
+}
+
+    @media only screen and (max-width: 600px) {
+        .container{
+            width: 100%;
+        }
+        .card{
+            width: 80%;
+        }
+    }
+</style>
+</head>
+<body>
+    {% include "nav.html" %}
+
+<div class="container">
+    <div class="background"></div>
+    <div class="white-background">
+        <div class="card">
+            <h2 style="text-align: center; font-size: 20px;">Select Your Role</h2>
+            <form method="post" action="{{ url_for('select_role', user_id=user.id) }}">
+                <div class="form-group">
+                    <label for="role" class="form-label">Choose your role:</label>
+                    <select name="role" class="form-select" required>
+                        <option value="realtor">Realtor</option>
+                        <option value="property_owner">Property Owner</option>
+                        <option value="developer">Developer</option>
+                    </select>
+                </div>
+                
+                <button style="background-color: #510000;" type="submit" class="btn btn-signup">Next</button>
+            </form>            
+        </div>
+    </div>
+</div>
+<script>
+    // Toggle mobile menu
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function (e) {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
+</body>
+</html>

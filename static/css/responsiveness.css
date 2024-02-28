@@ -1,0 +1,265 @@
+@media only screen and (max-width: 640px) {
+    .banner {
+      max-width: 100%;
+    }
+  
+    h1.text-2xl {
+      font-size: 2rem;
+    }
+    .text {
+        font-size: 14px;
+        line-height: 1.4;
+      }
+  }
+  @media only screen and (min-width: 641px) and (max-width: 1023px) {
+    .text {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  }
+  
+  /* Adjustments for larger screens */
+  @media only screen and (min-width: 1024px) {
+    .text {
+      font-size: 20px;
+      line-height: 1.7;
+    }
+  }
+  @media only screen and (min-width: 641px) and (max-width: 767px) {
+  
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    h1.text-2xl {
+      font-size: 3rem;
+    }
+  }
+
+
+/* Styles for screens smaller than 600px (typical smartphones) */
+
+
+@media only screen and (max-width: 600px) {
+    /* Your mobile styles go here */
+    body {
+        overflow-x: hidden; /* or overflow: auto; */
+    }
+    
+    .hero h1{
+        font-size: 35px;
+        width: 90%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding-left: 4rem;
+        }
+        .hero p{
+            width:20rem;
+            height: 10rem;
+            margin-left: 0rem;
+            margin-bottom: 8%;
+        }
+         .listing .rows{
+            display: flex;
+            flex-direction: column;
+        }
+        .listing .space{
+            width: 100%;
+        }
+        .aboutImage{
+            visibility: hidden;
+        }
+        .about {
+            width: 100%;
+            padding: 10px 20px; /* Adjusted padding for smaller screens */
+            background: #FEFEFE;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically on small screens */
+            align-items: center;
+            padding-bottom: 0px;
+        }
+        
+        .about-container {
+            justify-content:center ;
+            align-items: center;
+           
+            gap: 30px; /* Adjusted gap for smaller screens */
+        }
+        
+        .about .highlighted-text {
+            width: 30%; /* Full width on small screens */
+            color: #0A0A0A;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 32px;
+            word-wrap: break-word;
+            margin-bottom: 3%;
+            text-align: center;
+        }
+        
+        .about .premier-text1 {
+            text-align: center;
+            margin-left: -10%;
+            font-size: 18px;
+            width: 50%; /* Full width on small screens */
+            height: auto; /* Adjusted height for smaller screens */
+        }
+        .about .premier-text1 > .span1{
+            font-size: 40px;
+        }
+        .about .premier-text1 > .span2{
+            font-size: 40px;
+        }
+        .about .premier-text1 > .span3{
+            font-size: 40px;
+        }
+      
+     .premier-text2 {
+            font-size: 25px;
+            max-width: 60%;
+            height: 10rem;
+            text-align: center;
+            margin-left: -5rem;
+            
+            
+        }
+        
+        .mission-vision-box {
+            width: 50%;
+           
+        }
+        .mission-text-small{
+            width: 250px;
+            height: auto;
+        }
+        .mission-help {
+            width: 100%; /* Set the width to 100% for screens 600px or less */
+            max-width: none; /* Reset max-width for smaller screens */
+        }
+
+
+
+
+
+
+
+        .choose-container {
+            padding: 30px 20px; /* Adjusted padding for smaller screens */
+            background: #510000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .choose{
+            margin-top: -150%;
+        }
+        
+        .choose-head {
+            height: auto; /* Adjusted height for smaller screens */
+            gap: 12px;
+        }
+        
+        .choose-head-text {
+            width: 100%; /* Full width on small screens */
+            text-align: center;
+            color:whitesmoke;
+            font-size: 24px;
+            font-family: Cabinet Grotesk;
+            font-weight: 700;
+            line-height: 32px;
+            word-wrap: break-word;
+        }
+        
+        .choose-head-text-small {
+            max-width: 45%; /* Full width on small screens */
+            text-align: center;
+            color: #FEFEFE;
+            font-size: 10px; /* Adjusted font size for smaller screens */
+            font-family: Cabinet Grotesk;
+            font-weight: 700;
+            line-height: 10px; /* Adjusted line height for smaller screens */
+            letter-spacing: 0.15px;
+            word-wrap: break-word;
+        }
+        
+        .oneline {
+            max-width: 100%; /* Full width on small screens */
+            text-align: center;
+            color: #FEFEFE;
+            font-size: 16px;
+            font-family: Cabinet Grotesk;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0.16px;
+            word-wrap: break-word;
+            margin-bottom: 50%;
+        }
+        
+        .choose-contain {
+           display: flex;
+           flex-direction: column;
+           margin-top: 80%;
+        }
+        
+        .choose-card {
+            padding: 20px;
+            background: white;
+            border-radius: 10px; /* Adjusted border-radius for smaller screens */
+            overflow: hidden;
+            gap: 15px; /* Adjusted gap for smaller screens */
+        }
+        
+        .choose-image {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .choose-content {
+            align-self: stretch;
+            gap: 10px; /* Adjusted gap for smaller screens */
+        }
+        
+        .choose-content-head {
+            width: 100%; /* Full width on small screens */
+            text-align: center;
+            color: #510000;
+            font-size: 18px; /* Adjusted font size for smaller screens */
+            font-family: Cabinet Grotesk;
+            font-weight: 700;
+            line-height: 24px; /* Adjusted line height for smaller screens */
+            letter-spacing: 0.24px;
+            word-wrap: break-word;
+        }
+        
+        .choose-content-head-small {
+            width: 100%; /* Full width on small screens */
+            text-align: center;
+            color: #0A0A0A;
+            font-size: 12px; /* Adjusted font size for smaller screens */
+            font-family: Cabinet Grotesk;
+            font-weight: 400;
+            line-height: 18px; /* Adjusted line height for smaller screens */
+            letter-spacing: 0.14px;
+            word-wrap: break-word;
+        }
+        
+        
+    }
+ /* Styles for screens between 600px and 900px (typical tablets) */
+ @media only screen and (min-width: 601px) and (max-width: 900px) {
+    /* Your tablet styles go here */
+ 
+    .hero p{
+        width:20rem;
+        height: 10rem;
+        margin-left: 2%;
+        margin-bottom: 8%;
+    }
+
+}
+ 
+ /* Styles for screens larger than 900px (typical desktops) */
+ @media only screen and (min-width: 901px) {
+    /* Your desktop styles go here */
+ }
+ 

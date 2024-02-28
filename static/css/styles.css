@@ -1,0 +1,582 @@
+
+.banner h1 , p{
+    color: #F5F5F5;
+}
+.banner strong{
+    color: #F5F5F5;
+}
+span{
+    color: #AA0000;
+}
+.banner{
+    text-align: center;
+    justify-content:center ;
+}
+.banner .text{
+    width: 150%;
+    text-align: center;
+}
+
+.listing img{
+    width: 100%;
+    height: 20rem;
+}
+.listing{
+    width: 100%;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.row .column{
+    padding: 5%;
+}
+.column .i{
+   padding:10%;
+   
+    
+    margin-left: 130%;
+}
+.row .columns{
+    padding: 5%;
+}
+.column h1{
+    font-size: 20px;
+}
+ /* Added style to make h1 and p inline */
+ .rows {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .columnxy {
+            flex: 1;
+            padding:4% ;
+         
+         
+          
+        }
+.bed{
+    width: 100%; /* Set a fixed width for each column */
+            height: 50px; /* Set a fixed height for each column */
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            overflow: hidden;
+            color: black;
+}
+.toilet{
+    width: 100%; /* Set a fixed width for each column */
+            height: 50px; /* Set a fixed height for each column */
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            overflow: hidden;
+            color: black;
+}
+.space{
+    width: 140%; /* Set a fixed width for each column */
+            height: 50px; /* Set a fixed height for each column */
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            overflow: hidden;
+            color: black;
+}
+.pack{
+    width: 100%; /* Set a fixed width for each column */
+            height: 50px; /* Set a fixed height for each column */
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            overflow: hidden;
+            color: black;
+}
+
+/* @media (max-width: 767px) {
+        .hero h1, .span {
+            font-size: 2rem; /* Adjust the font size as needed */
+            /* width: 100%;
+            margin-top: -20%;
+        } */
+ .hero h1 {
+            margin-left: -15%;
+            align-items:center;
+            justify-content: center;
+          
+        } 
+        .hero strong{
+            margin-left: 15%;
+            margin-top: 3%;
+        }
+        /* .hero p{
+            font-size: 16px;
+            line-height: 1.5;
+            width: 60rem;
+            margin-left: -40%;
+          
+        }  */
+        /* .hero p{
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            text-align: center;
+            width: 60rem;
+            height: 10rem;
+
+        } */
+
+       .mission-vision-box .misson-help{
+            justify-content: flex-start; align-items: flex-start; gap: 55px; display: inline-flex
+        }
+.premier-text1 .span1{
+    color: #0A0A0A; font-size: 48px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 45px; word-wrap: break-word
+}
+.premier-text1 .span2{
+    color: #510000; font-size: 48px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 45px; word-wrap: break-word
+}
+.premier-text1 .span3{
+    color: #0A0A0A; font-size: 48px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 45px; word-wrap: break-word
+}
+        .hero {
+            height: 40rem;
+        }
+
+        .rows {
+            flex-direction: row;
+        }
+
+        .columnxy {
+            width: 100%;
+            margin-bottom: 2%; /* Add some space between columns on mobile */
+        }
+
+        .column h1 {
+            font-size: 16px; /* Adjust the font size as needed */
+        }
+        .about{
+            width: 100%; height: 100%; padding-top: 60px; padding-left: 83px; background: #FEFEFE; justify-content: flex-end; align-items: center; gap: 121px; display: inline-flex;
+            padding-bottom: 5%;
+        }
+
+        .about-container {
+            align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 60px; display: inline-flex
+        }
+
+        .about-heading {
+            width: 133px;
+            color: #0A0A0A;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+            word-wrap: break-word;
+        }
+
+        .about-description {
+            flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: flex
+        }
+
+        .highlighted-text {
+            width: 133px; color: #0A0A0A; font-size: 24px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 32px; word-wrap: break-word
+        }
+
+        .premier-text {
+            flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex
+        }
+        .premier-text1{
+            width: 499px; height: 101px
+        }
+        .premier-text2{
+            width: 662px; color: #0A0A0A; font-size: 16px; font-family: Cabinet Grotesk; font-weight: 400; line-height: 23px; letter-spacing: 0.16px; word-wrap: break-word
+        }
+
+        .mission-vision-box {
+            width: 653px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 40px; display: flex
+        }
+
+        .mission-vision-heading {
+            padding-top: 11px; padding-left: 13px; background: #FEFEFE; border-radius: 10px; justify-content: flex-end; align-items: center; display: flex
+        }
+
+        .mission-vision-description {
+            align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex
+        }
+
+        .about-images {
+            display: flex;
+            gap: 19px;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 638px; /* Adjusted max-width for better alignment */
+        }
+
+        .responsive-image {
+            width: 319px; height: 540px; position: relative; background: linear-gradient(0deg, black 0%, black 100%); border-top-left-radius: 200px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px
+        }
+        .mission-text-head{
+            width: 190px; color: #510000; font-size: 32px; font-family: Cabinet Grotesk; font-weight: 500; line-height: 16px; word-wrap: break-word
+        }
+        .mission-text-small{
+            width: 650px; height: 109px; color: #0A0A0A; font-size: 16px; font-family: Cabinet Grotesk; font-weight: 400; line-height: 30px; word-wrap: break-word
+        }
+        .choose-container{
+            width: 100%; height: 100%; padding-top: 67px; padding-bottom: 56px; padding-left: 100px; padding-right: 101px; background: #510000; flex-direction: column; justify-content: flex-end; align-items: center; gap: 79px; display: inline-flex
+        }
+        .choose-head{
+            align-self: stretch; height: 132px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex
+        }
+        .choose-head-container{
+            flex-direction: column; justify-content: flex-start; align-items: center; gap: 4px; display: flex
+        }
+        .choose-head-text{
+            width: 191px; color: #FEFEFE; font-size: 24px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 32px; word-wrap: break-word
+        }
+        .choose-head-text-small{
+            width: 884px; color: #FEFEFE; font-size: 48px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 60px; letter-spacing: 0.48px; word-wrap: break-word
+        }
+        .oneline{
+            width: 843px; text-align: center; color: #FEFEFE; font-size: 16px; font-family: Cabinet Grotesk; font-weight: 400; line-height: 24px; letter-spacing: 0.16px; word-wrap: break-word
+        }
+        .choose-contain{
+            justify-content: flex-start; align-items: flex-start; gap: 29px; display: inline-flex
+        }
+        .choose-card{
+            padding-top: 34px; padding-bottom: 67px; padding-left: 14px; padding-right: 15px; background: white; border-top-left-radius: 100px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; gap: 28px; display: inline-flex
+        }
+        .choose-image{
+            width: 80px; height: 80px
+        }
+        .choose-content{
+            align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex
+        }
+        .choose-content-head{
+            width: 259px; color: #510000; font-size: 24px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 30px; letter-spacing: 0.24px; word-wrap: break-word
+        }
+        .choose-content-head-small{
+            width: 259px; text-align: center; color: #0A0A0A; font-size: 14px; font-family: Cabinet Grotesk; font-weight: 400; line-height: 22px; letter-spacing: 0.14px; word-wrap: break-word
+        }
+        .wrapper {
+  margin: 0 auto;
+  width: 800px;
+  font-family: 'Helvetica';
+  font-size: 14px;
+ 
+  padding: 20px;
+  padding-bottom: -5%;
+}
+.step-progress {
+  position: relative;
+  padding-left: 45px;
+  list-style: none;
+}
+.step-progress::before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 24px;
+  width: 10px;
+  height: 100%;
+  border-left: 2px solid #ccc;
+}
+.step-progress-item {
+  position: relative;
+  counter-increment: list;
+  padding-top: 10px;
+  padding-right : 75%;
+ 
+}
+.step-p{
+    color: #0A0A0A;
+    width: 600px;
+    padding-left: 10%;
+    text-align: start;
+    padding: 10%;
+}
+strong{
+    
+color: #510000;
+ font-size: 36px;
+ font-family: Cabinet Grotesk;
+ font-weight: 500;
+ line-height: 16px;
+ word-wrap: break-word;
+ width: 500px;
+ text-align: left;
+ padding-left: 10%;
+ 
+}
+.step-progress-item:not(:last-child) {
+  padding-bottom: 50px;
+}
+.step-progress-item::before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  left: -21px;
+  height: 100%;
+  width: 10px;
+}
+.step-progress-item::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: -38px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.step-progress-item.is-done::before {
+  border-left: 2px solid #00417b;
+}
+.step-progress-item.is-done::after {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4IiB2aWV3Qm94PSIxMjAgNDUgMzIgMzIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgaWQ9ImNoZWNrLTMyIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjAuMDAwMDAwLCA0NS4wMDAwMDApIj48ZyBpZD0iY2hlY2stMzItY3JvcCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNy4wMDAwMDAsIDkuMDAwMDAwKSIgZmlsbD0iIzAwNWFhMCI+PHBvbHlnb24gaWQ9IlBhZ2UtMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOS40MDc1NjcsIDcuMjI5MDk2KSByb3RhdGUoLTM2MC4wMDAwMDApIHRyYW5zbGF0ZSgtOS40MDc1NjcsIC03LjIyOTA5NikgIiBwb2ludHM9IjE3LjI4MDQ4NjIgMC42MDgyMTc2MzcgNi44NjcxNTU2OCAxMS4wMjE1NDgyIDEuNTU1OTE0MzIgNS43MTAzMDY3OCAwLjEyNzAzNDA4NyA3LjEwOTg1MzY4IDYuODY3MTU1NjggMTMuODQ5OTc1MyAxOC42ODgwOTk4IDIuMDI5MDMxMiI+PC9wb2x5Z29uPjwvZz48L2c+PC9zdmc+);
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  border: 2px solid #00417b;
+}
+
+.step-progress-item.current::before {
+  border-left: 2px solid #00417b;
+}
+.step-progress-item.current::after {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzIgMzIiIGlkPSJpY29uLWdlYXItMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+PGcgZmlsbD0iIzAwNDE3YiIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTYuMDAyIDE4LjE4YTIuMTMzIDIuMTMzIDAgMCAxLTIuMTMxLTIuMTMyYzAtMS4xNzUuOTU2LTIuMTMgMi4xMzEtMi4xMyAxLjE3NSAwIDIuMTMxLjk1NSAyLjEzMSAyLjEzYTIuMTMzIDIuMTMzIDAgMCAxLTIuMTMxIDIuMTMxbTAtNi4yNjJhNC4xMzUgNC4xMzUgMCAwIDAtNC4xMzEgNC4xMzEgNC4xMzUgNC4xMzUgMCAwIDAgNC4xMzEgNC4xMzEgNC4xMzUgNC4xMzUgMCAwIDAgNC4xMzEtNC4xMyA0LjEzNSA0LjEzNSAwIDAgMC00LjEzMS00LjEzMiI+PC9wYXRoPjxwYXRoIGQ9Ik0yMy43ODcgMTguNDU2YTEwLjI2MiAxMC4yNjIgMCAwIDEtMS43NjUgMi45ODVsLS40NTUuNTM3IDEuNDk0IDIuNTgtMy4xMTkgMS44MjQtMS41MDMtMi41OTctLjcxNS4xNTlhNy41NzUgNy41NzUgMCAwIDEtMS43MjIuMTk5IDcuMTE2IDcuMTE2IDAgMCAxLTEuNjk2LS4xOTNsLS43My0uMTgzLTEuNTE1IDIuNjE1LTMuMTE4LTEuODIzIDEuNTEtMi42MS0uNS0uNTRjLS44NjctLjk0LTEuNDEtMS44NTYtMS43MTMtMi44ODRsLS4yMS0uNzE4SDV2LTMuNTkxaDIuOTczbC4yNDQtLjY1YTEwLjI2MiAxMC4yNjIgMCAwIDEgMS43NjUtMi45ODRsLjQ1NC0uNTM4LTEuNDkzLTIuNTggMy4xMTgtMS44MjMgMS41MDUgMi41OTguNzE1LS4xNmE3LjQ3NyA3LjQ3NyAwIDAgMSAxLjcyMS0uMmMuNjAzIDAgMS4xOS4wNjggMS42OTYuMTk1bC43MzEuMTgzIDEuNTEzLTIuNjE2IDMuMTIgMS44MjMtMS41MSAyLjYwOS41LjU0Yy44NjUuOTQgMS40MSAxLjg1NyAxLjcxMiAyLjg4NWwuMjExLjcxOGgzLjAzdjMuNTlIMjQuMDNsLS4yNDQuNjV6bTUuMjE3IDEuMzV2LTcuNTloLTMuNTY3YTguOTM1IDguOTM1IDAgMCAwLTEuNDI4LTIuMzk3bDEuNzgxLTMuMDc2TDE5LjIxOCAyLjlsLTEuNzg1IDMuMDg1YTkuNTQ4IDkuNTQ4IDAgMCAwLTIuODU5LjAwNGwtMS43ODgtMy4wOS02LjU3MiAzLjg0NCAxLjc5NyAzLjEwNGExMi4zNyAxMi4zNyAwIDAgMC0xLjQgMi4zNjlIM3Y3LjU5aDMuNTY2YTguOTQ2IDguOTQ2IDAgMCAwIDEuNDI4IDIuMzk4bC0xLjc4IDMuMDc3IDYuNTcxIDMuODQyIDEuNzg2LTMuMDg0YTkuNDc3IDkuNDc3IDAgMCAwIDIuODU4LS4wMDVsMS43ODggMy4wODkgNi41NzItMy44NDItMS43OTctMy4xMDVjLjU1Ni0uNzQgMS4wMy0xLjU0MiAxLjQtMi4zN2gzLjYxMXoiPjwvcGF0aD48L2c+PC9zdmc+);
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  top: 0;
+  left: -38px;
+  font-size: 14px;
+  text-align: center;
+  color: #00417b;
+  border: 2px solid #00417b;
+  background-color: white;
+}
+.step-progress strong {
+  display: block;
+}
+.sign-btn{
+   
+    width: 40%; height: 100%; padding-top: 12px; padding-bottom: 12px; padding-left: 50px; padding-right: 56px; background: #510000; border-radius: 40px; border: 1px white solid; justify-content: center; align-items: left; display: inline-flex
+}
+.testimonail{
+    margin-top: 3%;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    gap: 8;
+    width: 100%;
+    
+}
+.test-text{
+   text-align: center;
+color: #0A0A0A;
+ font-size: 24px;
+ font-family: Cabinet Grotesk;
+ font-weight: 700;
+ line-height: 32px;
+ word-wrap: break-word
+}
+.test-text-small{
+   text-align: center; 
+color: #0A0A0A;
+ font-size: 48px;
+ font-family: Cabinet Grotesk;
+ font-weight: 700;
+ line-height: 60px;
+ letter-spacing: 0.48px;
+ word-wrap: break-word
+}
+.test-text-smaller{
+    text-align: center;
+color: #0A0A0A;
+ font-size: 20px;
+ font-family: Cabinet Grotesk;
+ font-weight: 400;
+ line-height: 24px;
+ letter-spacing: 0.16px;
+ word-wrap: break-word;
+}
+/* .text-tail-text{
+color: black;
+ font-size: 16px;
+ font-family: Cabinet Grotesk;
+ font-weight: 400;
+ line-height: 24px;
+ letter-spacing: 0.16px;
+ word-wrap: break-word;
+
+} */
+.text-img{
+    width: 350%; height: 100%; position: relative; background: linear-gradient(0deg, #510000 0%, #510000 100%); border-top-left-radius: 5px; border-top-right-radius: 200px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px
+}
+.name-ceo{
+    text-align: right;
+}
+.test-text-tail{
+    margin-top: 35%;
+}
+.container {
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 23px;
+            display: inline-flex;
+            margin-bottom: 8%;
+           
+        }
+
+        /* Section Styles */
+        .section {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 8px;
+            display: flex;
+        }
+
+        /* Headings Styles */
+        .heading1 {
+            width: 450px;
+            color: #0A0A0A;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+            word-wrap: break-word;
+        }
+
+        .heading2 {
+            width: 650px;
+            color: #0A0A0A;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 60px;
+            letter-spacing: 0.48px;
+            word-wrap: break-word;
+        }
+
+        /* Description Styles */
+        .description {
+            width: 522px;
+            color: #0A0A0A;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0.16px;
+            word-wrap: break-word;
+        }
+        .collapse-content p {
+            color: black;
+        }
+        .join{
+            width: 250%;
+            display: flex;
+            justify-content:flex-start;
+            align-items: flex-start;
+            margin-left: -30%;
+        }
+
+     .contactus{
+       
+color: #FEFEFE;
+ font-size: 24px;
+ font-family: Cabinet Grotesk;
+ font-weight: 700;
+ line-height: 32px;
+ word-wrap: break-word
+     }
+     .body{
+        background-color: #510000;
+     }
+       .service-head{
+        width: 100%; height: 100%; padding-top: 122px; padding-bottom: 103px; padding-left: 237px; padding-right: 237px; background: #FFFBFC; flex-direction: column; justify-content: flex-end; align-items: center; gap: 103px; display: inline-flex
+       }
+       .service-title{
+        align-self: stretch; height: 132px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex
+       }
+       .service-caption-container{
+        height: 96px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 4px; display: flex
+       }
+       .service-caption-head{
+        width: 191px; color: #0A0A0A; font-size: 24px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 32px; word-wrap: break-word
+       }
+       .service-caption-small{
+        width: 732px; color: #0A0A0A; font-size: 48px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 60px; letter-spacing: 0.48px; word-wrap: break-word
+       }
+       .service-oneline{
+        width: 957px; text-align: center; color: black; font-size: 16px; font-family: Cabinet Grotesk; font-weight: 400; line-height: 24px; letter-spacing: 0.16px; word-wrap: break-word
+       }
+       .service-row{
+        align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 40px; display: inline-flex
+       }
+       .service-column{
+        width: 288px; height: 303px; padding-top: 94px; padding-bottom: 93px; padding-left: 13px; padding-right: 13px; background: #FEFEFE; box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.05); border-radius: 20px; overflow: hidden; border: 1px rgba(81, 0, 0, 0.02) solid; flex-direction: column; justify-content: center; align-items: center; display: inline-flex
+       }
+       .service-card{
+        flex-direction: column; justify-content: flex-start; align-items: center; gap: 14px; display: inline-flex
+       }
+       .service-card-content{
+        flex-direction: column; justify-content: flex-start; align-items: center; gap: 13px; display: flex
+       }
+       .service-card-head{
+        width: 227px; color: #0A0A0A; font-size: 24px; font-family: Cabinet Grotesk; font-weight: 500; line-height: 30px; letter-spacing: 0.24px; word-wrap: break-word
+       }
+       .service-card-body{
+        width: 262px; color: #0A0A0A; font-size: 14px; font-family: Cabinet Grotesk; font-weight: 400; line-height: 24px; letter-spacing: 0.14px; word-wrap: break-word
+       }
+.wrapper-head-text{
+    width: 100%; color: #0A0A0A; font-size: 24px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 32px; word-wrap: break-word
+}
+.wrapper-small-text{
+    width: 100%; color: #0A0A0A; font-size: 35px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 60px; letter-spacing: 0.48px; word-wrap: break-word
+}
+.test-img{
+    width: 100%; height: 100%; position: relative; background: linear-gradient(0deg, #510000 0%, #510000 100%); border-top-left-radius: 5px; border-top-right-radius: 200px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px
+}
+.body-image{
+    margin-top:70%; width: 100%; height: 70%; border-top-left-radius: 5px; border-top-right-radius: 200px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px
+}
+.contact-title{
+    width: 100%; color: #FEFEFE; font-size: 48px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 60px; letter-spacing: 0.48px; word-wrap: break-word
+}
+.call-on{
+    justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex
+}
+.call-on-icon-container{
+    width: 20px; height: 20px; position: relative
+}
+.call-on-icon{
+    width: 15.62px; height: 15.62px; left: 2.50px; top: 1.88px; position: absolute; background: #FEFEFE
+}
+.call-number{
+    color: #FEFEFE; font-size: 14px; font-family: Cabinet Grotesk; font-weight: 500; line-height: 21px; word-wrap: break-word
+}
+.form{
+    width: 100%; height: 100%; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex
+}
+
+input[type="email"]{
+    width: 393px; height: 40px; padding-top: 12px; padding-bottom: 13px; padding-left: 27px; padding-right: 246px; background: #FBFEFF; box-shadow: 0px 2px 2px rgba(204, 204, 206, 0.05); border-radius: 5px; overflow: hidden; border: 1px rgba(6.22, 6.48, 6.59, 0.50) solid; justify-content: flex-start; align-items: center; display: inline-flex
+}
+input[type="text"]{
+    width: 393px; height: 74px; padding-top: 12px; padding-bottom: 47px; padding-left: 27px; padding-right: 246px; background: #FBFEFF; box-shadow: 0px 2px 2px rgba(204, 204, 206, 0.05); border-radius: 5px; overflow: hidden; border: 1px rgba(6.22, 6.48, 6.59, 0.50) solid; justify-content: flex-start; align-items: center; display: inline-flex
+}
+
+input[type= "submit"]{
+    padding-top: 12px; padding-bottom: 12px; padding-left: 118px; padding-right: 119px; background: #FEFEFE; border-radius: 40px; border: 1px white solid; justify-content: center; align-items: center; display: inline-flex    color: #510000; font-size: 16px; 
+    font-family: Cabinet Grotesk; font-weight: 400; line-height: 16px; word-wrap: break-word
+}
