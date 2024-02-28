@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.property-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.property-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.property-card h2 {
+    margin-top: 10px;
+}
+
+.property-card p {
+    margin: 8px 0;
+}
+
+/* Add more styling as needed */
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Real Estate Platform</h1>
+    <p>Explore properties, connect with realtors, and find your dream home!</p>
+<br>
+<h1>Property Listings</h1>
+
+    {% for property in properties %}
+        <div class="property-card">
+            <img src="{{ url_for('static', filename='uploads/' + property.main_image_filename) }}" alt="{{ property.title }}">
+            <h2>{{ property.title }}</h2>
+            <p>{{ property.location }}</p>
+            <p>{{ property.description }}</p>
+            <p>Price: ${{ property.price }}</p>
+            <p>Rooms: {{ property.num_rooms }}</p>
+            <p>Baths: {{ property.num_baths }}</p>
+            <p>Toilets: {{ property.num_toilets }}</p>
+            <p>Property Type: {{ property.property_type }}</p>
+
+            <p>Uploaded by: {{ property.user.fullname if property.user else 'Unknown User' }}</p>
+
+        <p>NIN: {{ property.user.nin }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>

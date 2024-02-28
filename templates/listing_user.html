@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landbank | Listing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="../static/css/differemt.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+ <style>
+.heros h1{
+color: whitesmoke;
+text-align: start;
+font-family: Cabinet Grotesk;
+font-size: 56px;
+font-weight: 400;
+line-height: 69px;
+letter-spacing: 0em;
+text-align: left;
+color:#110229;
+
+}
+.heros p{
+font-family: Cabinet Grotesk;
+font-size: 22px;
+font-weight: 400;
+line-height: 36px;
+letter-spacing: 0em;
+text-align: left;
+color: #585981;
+
+
+}
+.navtab{
+font-family: Cabinet Grotesk;
+font-size: 14px;
+font-weight: 400;
+line-height: 36px;
+letter-spacing: 0.2em;
+text-align: left;
+
+}
+.tab-content{
+    margin-top: 2%;
+    
+}
+.tabs{
+    width: 150%;
+}
+.tab{
+    background-color: transparent;
+    font-family: Cabinet Grotesk;
+font-size: 14px;
+font-weight: 400;
+line-height: 36px;
+letter-spacing: 0.2em;
+text-align: left;
+}
+.columns{
+    padding: 2%;
+    justify-content: space-between;
+   
+
+}
+label{
+    text-align: start;
+    padding-right: 40%;
+}
+.form-control{
+    width: 150%;
+}
+.listing{
+  font-family: Cabinet Grotesk;
+font-size: 24px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: 0em;
+}
+.listings{
+font-family: Cabinet Grotesk;
+font-size: 24px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: 0em;
+text-align: left;
+align-items: center;
+justify-content:center;
+display: flex;
+justify-items: center;
+align-content: center;
+
+
+
+}
+
+.see{
+    float: right;
+  
+}
+.desp{
+    font-family: Cabinet Grotesk;
+font-size: 14px;
+font-weight: 400;
+line-height: 17px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.rowty{
+    display: flex;
+    flex-direction: row;
+}
+.com{
+    padding-left: 20%;
+}
+.com .column{
+    padding-left: 50%;
+
+}
+.price{
+    font-family: Cabinet Grotesk;
+font-size: 20px;
+font-weight: 700;
+line-height: 25px;
+letter-spacing: 0em;
+text-align: left;
+color: #510000;
+
+
+}
+.icons{
+    margin-right: 1rem;
+}
+span{
+    
+    font-family: Cabinet Grotesk;
+font-size: 15px;
+font-weight: 400;
+line-height: 12px;
+letter-spacing: 0em;
+text-align: left;
+color: black;
+}
+.more{
+font-family: Cabinet Grotesk;
+font-size: 10px;
+font-weight: 400;
+line-height: 12px;
+letter-spacing: 0em;
+text-align: left;
+color:#02AADF;
+float: right;
+
+
+}
+@media only screen and (max-width: 600px) {
+   .tab-content{
+    width: 65%;
+   }
+ 
+}
+
+ </style>
+</head>
+<body>
+    {% include "dash_nav.html" %}
+
+    <!--
+  Heads up! 👋
+
+  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
+-->
+
+<section
+class="heros relative bg-[url(/static/image/listbg.png)] bg-cover bg-center bg-no-repeat"
+>
+<div
+  class="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
+></div>
+
+<div
+  class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
+>
+  <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+    <h1 class="text-3xl font-extrabold sm:text-5xl">
+      Easy way to find a perfect property
+
+    </h1>
+
+    <p class="mt-4 max-w-lg sm:text-xl/relaxed">
+        We provide a complete service for the sale,
+        purchase or rental of real estate.
+    </p>
+    <div role="tablist" class="tabs tabs-lifted">
+        <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Rent" />
+        <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+          <div class="row">
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Location</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                        <input type="text" placeholder="Select city" class="input input-bordered w-full max-w-xs sm:w-full" />
+                    </div>
+                </label>
+            </div>
+            <hr class="sm:hidden">
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Property Type</span>
+                    </div>
+                    <select class="select select-bordered w-full max-w-xs sm:w-full">
+                        <option disabled selected>Who shot first?</option>
+                        <option>Han Solo</option>
+                        <option>Greedo</option>
+                    </select>
+                </label>
+            </div>
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Price Range</span>
+                    </div>
+                    <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs sm:w-full" />
+                </label>
+            </div>
+        </div>
+        
+        </div> 
+      
+        <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Buy" checked />
+        <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+          <div class="row">
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Location</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                        <input type="text" placeholder="Select city" class="input input-bordered w-full max-w-xs sm:w-full" />
+                    </div>
+                </label>
+            </div>
+            <hr class="sm:hidden">
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Property Type</span>
+                    </div>
+                    <select class="select select-bordered w-full max-w-xs sm:w-full">
+                        <option disabled selected>Who shot first?</option>
+                        <option>Han Solo</option>
+                        <option>Greedo</option>
+                    </select>
+                </label>
+            </div>
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Price Range</span>
+                    </div>
+                    <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs sm:w-full" />
+                </label>
+            </div>
+        </div>
+        
+        </div>    
+        <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Sell" />
+        <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+          <div class="row">
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Location</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                        <input type="text" placeholder="Select city" class="input input-bordered w-full max-w-xs sm:w-full" />
+                    </div>
+                </label>
+            </div>
+            <hr class="sm:hidden">
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Property Type</span>
+                    </div>
+                    <select class="select select-bordered w-full max-w-xs sm:w-full">
+                        <option disabled selected>Who shot first?</option>
+                        <option>Han Solo</option>
+                        <option>Greedo</option>
+                    </select>
+                </label>
+            </div>
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Price Range</span>
+                    </div>
+                    <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs sm:w-full" />
+                </label>
+            </div>
+        </div>
+        
+        </div>      
+      </div>
+     
+
+  </div>
+</div>
+</section>
+
+<!-- <section class="bg-gray-100 flex items-center justify-center h-screen">
+
+   
+    
+  
+</section> -->
+
+
+<p style="color: black;" class="listing mt-4 text-gray-300 t-5xl font-extrabold">
+    FEATURE LISTINGS
+</p>
+
+<section class="listings">
+    <div class="mx-auto max-w-lg text-center">
+
+  
+    
+      </div>
+    
+      <div class="container">
+        <div class="row">
+            <div class="column">
+                <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                y 
+                
+                    <div class="flex items-center mb-4">
+                        <div class="icons flex items-center">
+                          <i class='bx bx-bath text-gray-500'></i>
+                          <span class="ml-2">2</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                          <span class="ml-2">3</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bxs-parking text-gray-500'></i>
+                          <span class="ml-2">1</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-square text-gray-500'></i>
+                          <span class="ml-2">1000sqft</span>
+                        </div>
+                      </div>
+                  
+                    <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                
+                    <!-- <div class="flex items-center mb-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                      <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                    </div> -->
+                    <div class="rowty">
+                        <div class="column">
+                            <div class="flex items-center text-gray-700 mb-4">
+                                <span class="price font-bold">NGN 250,000</span>
+                              </div>
+                        </div>
+                        <div class="column com">
+                            <div class="row">
+                                <div class="column">
+                                    <i class='bx bx-like' ></i>
+                                </div>
+                                <div class="column">
+                                    <i class='bx bx-cart-add' ></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                      
+                        <i class='bx bxs-map-pin'></i>                   
+                           <span> 123 Main Street, City</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                        <i class='bx bx-time-five' ></i>
+                
+                      <span> January 15, 2023</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                    
+                        <i class='bx bx-user' ></i>
+                    
+                      <span> John Doe</span>
+                    </div>
+                
+                    <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                  </div>
+            </div>
+            <div class="column">
+                <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                
+                    <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                    <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                
+                    <div class="flex items-center mb-4">
+                        <div class="icons flex items-center">
+                          <i class='bx bx-bath text-gray-500'></i>
+                          <span class="ml-2">2</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                          <span class="ml-2">3</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bxs-parking text-gray-500'></i>
+                          <span class="ml-2">1</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-square text-gray-500'></i>
+                          <span class="ml-2">1000sqft</span>
+                        </div>
+                      </div>
+                  
+                    <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                
+                    <!-- <div class="flex items-center mb-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                      <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                    </div> -->
+                    <div class="rowty">
+                        <div class="column">
+                            <div class="flex items-center text-gray-700 mb-4">
+                                <span class="price font-bold">NGN 250,000</span>
+                              </div>
+                        </div>
+                        <div class="column com">
+                            <div class="row">
+                                <div class="column">
+                                    <i class='bx bx-like' ></i>
+                                </div>
+                                <div class="column">
+                                    <i class='bx bx-cart-add' ></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                      
+                        <i class='bx bxs-map-pin'></i>                   
+                           <span> 123 Main Street, City</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                        <i class='bx bx-time-five' ></i>
+                
+                      <span> January 15, 2023</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                    
+                        <i class='bx bx-user' ></i>
+                    
+                      <span> John Doe</span>
+                    </div>
+                
+                    <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                  </div>
+            </div>
+            <div class="column">
+                <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                
+                    <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                    <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                
+                    <div class="flex items-center mb-4">
+                        <div class="icons flex items-center">
+                          <i class='bx bx-bath text-gray-500'></i>
+                          <span class="ml-2">2</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                          <span class="ml-2">3</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bxs-parking text-gray-500'></i>
+                          <span class="ml-2">1</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-square text-gray-500'></i>
+                          <span class="ml-2">1000sqft</span>
+                        </div>
+                      </div>
+                  
+                    <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                
+                    <!-- <div class="flex items-center mb-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                      <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                    </div> -->
+                    <div class="rowty">
+                        <div class="column">
+                            <div class="flex items-center text-gray-700 mb-4">
+                                <span class="price font-bold">NGN 250,000</span>
+                              </div>
+                        </div>
+                        <div class="column com">
+                            <div class="row">
+                                <div class="column">
+                                    <i class='bx bx-like' ></i>
+                                </div>
+                                <div class="column">
+                                    <i class='bx bx-cart-add' ></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                      
+                        <i class='bx bxs-map-pin'></i>                   
+                           <span> 123 Main Street, City</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                        <i class='bx bx-time-five' ></i>
+                
+                      <span> January 15, 2023</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                    
+                        <i class='bx bx-user' ></i>
+                    
+                      <span> John Doe</span>
+                    </div>
+                
+                    <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                  </div>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                
+                    <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                    <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                
+                    <div class="flex items-center mb-4">
+                        <div class="icons flex items-center">
+                          <i class='bx bx-bath text-gray-500'></i>
+                          <span class="ml-2">2</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                          <span class="ml-2">3</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bxs-parking text-gray-500'></i>
+                          <span class="ml-2">1</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-square text-gray-500'></i>
+                          <span class="ml-2">1000sqft</span>
+                        </div>
+                      </div>
+                  
+                    <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                
+                    <!-- <div class="flex items-center mb-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                      <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                    </div> -->
+                    <div class="rowty">
+                        <div class="column">
+                            <div class="flex items-center text-gray-700 mb-4">
+                                <span class="price font-bold">NGN 250,000</span>
+                              </div>
+                        </div>
+                        <div class="column com">
+                            <div class="row">
+                                <div class="column">
+                                    <i class='bx bx-like' ></i>
+                                </div>
+                                <div class="column">
+                                    <i class='bx bx-cart-add' ></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                      
+                        <i class='bx bxs-map-pin'></i>                   
+                           <span> 123 Main Street, City</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                        <i class='bx bx-time-five' ></i>
+                
+                      <span> January 15, 2023</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                    
+                        <i class='bx bx-user' ></i>
+                    
+                      <span> John Doe</span>
+                    </div>
+                
+                    <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                  </div>
+            </div>
+            <div class="column">
+                <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                
+                    <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                    <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                
+                    <div class="flex items-center mb-4">
+                        <div class="icons flex items-center">
+                          <i class='bx bx-bath text-gray-500'></i>
+                          <span class="ml-2">2</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                          <span class="ml-2">3</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bxs-parking text-gray-500'></i>
+                          <span class="ml-2">1</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-square text-gray-500'></i>
+                          <span class="ml-2">1000sqft</span>
+                        </div>
+                      </div>
+                  
+                    <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                
+                    <!-- <div class="flex items-center mb-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                      <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                    </div> -->
+                    <div class="rowty">
+                        <div class="column">
+                            <div class="flex items-center text-gray-700 mb-4">
+                                <span class="price font-bold">NGN 250,000</span>
+                              </div>
+                        </div>
+                        <div class="column com">
+                            <div class="row">
+                                <div class="column">
+                                    <i class='bx bx-like' ></i>
+                                </div>
+                                <div class="column">
+                                    <i class='bx bx-cart-add' ></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                      
+                        <i class='bx bxs-map-pin'></i>                   
+                           <span> 123 Main Street, City</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                        <i class='bx bx-time-five' ></i>
+                
+                      <span> January 15, 2023</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                    
+                        <i class='bx bx-user' ></i>
+                    
+                      <span> John Doe</span>
+                    </div>
+                
+                    <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                  </div>
+            </div>
+            <div class="column">
+                <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                
+                    <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                    <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                
+                    <div class="flex items-center mb-4">
+                        <div class="icons flex items-center">
+                          <i class='bx bx-bath text-gray-500'></i>
+                          <span class="ml-2">2</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                          <span class="ml-2">3</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bxs-parking text-gray-500'></i>
+                          <span class="ml-2">1</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-square text-gray-500'></i>
+                          <span class="ml-2">1000sqft</span>
+                        </div>
+                      </div>
+                  
+                    <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                
+                    <!-- <div class="flex items-center mb-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                      <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                    </div> -->
+                    <div class="rowty">
+                        <div class="column">
+                            <div class="flex items-center text-gray-700 mb-4">
+                                <span class="price font-bold">NGN 250,000</span>
+                              </div>
+                        </div>
+                        <div class="column com">
+                            <div class="row">
+                                <div class="column">
+                                    <i class='bx bx-like' ></i>
+                                </div>
+                                <div class="column">
+                                    <i class='bx bx-cart-add' ></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                      
+                        <i class='bx bxs-map-pin'></i>                   
+                           <span> 123 Main Street, City</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                        <i class='bx bx-time-five' ></i>
+                
+                      <span> January 15, 2023</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                    
+                        <i class='bx bx-user' ></i>
+                    
+                      <span> John Doe</span>
+                    </div>
+                
+                    <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                  </div>
+            </div>
+            
+        </div>
+
+      </div>
+  </section>
+
+        <p style="color: black;" class="listing mt-4 text-gray-300 t-5xl font-extrabold">
+            DISCOUNT LISTINGS
+            </p>
+
+  
+        
+
+
+            <section class="listings">
+                <div class="mx-auto max-w-lg text-center">
+            
+              
+                
+                  </div>
+                  <div class="container">
+                    <div class="row">
+                        <div class="column">
+                            <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                                <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                            
+                                <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                                <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                            
+                                <div class="flex items-center mb-4">
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-bath text-gray-500'></i>
+                                      <span class="ml-2">2</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                                      <span class="ml-2">3</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bxs-parking text-gray-500'></i>
+                                      <span class="ml-2">1</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-square text-gray-500'></i>
+                                      <span class="ml-2">1000sqft</span>
+                                    </div>
+                                  </div>
+                              
+                                <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                            
+                                <!-- <div class="flex items-center mb-4">
+                                  <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                                  <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                                </div> -->
+                                <div class="rowty">
+                                    <div class="column">
+                                        <div class="flex items-center text-gray-700 mb-4">
+                                            <span class="price font-bold">NGN 250,000</span>
+                                          </div>
+                                    </div>
+                                    <div class="column com">
+                                        <div class="row">
+                                            <div class="column">
+                                                <i class='bx bx-like' ></i>
+                                            </div>
+                                            <div class="column">
+                                                <i class='bx bx-cart-add' ></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                  
+                                    <i class='bx bxs-map-pin'></i>                   
+                                       <span> 123 Main Street, City</span>
+                                </div>
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                    <i class='bx bx-time-five' ></i>
+                            
+                                  <span> January 15, 2023</span>
+                                </div>
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                
+                                    <i class='bx bx-user' ></i>
+                                
+                                  <span> John Doe</span>
+                                </div>
+                            
+                                <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                              </div>
+                        </div>
+                        <div class="column">
+                            <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                                <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                            
+                                <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                                <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                            
+                                <div class="flex items-center mb-4">
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-bath text-gray-500'></i>
+                                      <span class="ml-2">2</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                                      <span class="ml-2">3</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bxs-parking text-gray-500'></i>
+                                      <span class="ml-2">1</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-square text-gray-500'></i>
+                                      <span class="ml-2">1000sqft</span>
+                                    </div>
+                                  </div>
+                              
+                                <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                            
+                                <!-- <div class="flex items-center mb-4">
+                                  <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                                  <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                                </div> -->
+                                <div class="rowty">
+                                    <div class="column">
+                                        <div class="flex items-center text-gray-700 mb-4">
+                                            <span class="price font-bold">NGN 250,000</span>
+                                          </div>
+                                    </div>
+                                    <div class="column com">
+                                        <div class="row">
+                                            <div class="column">
+                                                <i class='bx bx-like' ></i>
+                                            </div>
+                                            <div class="column">
+                                                <i class='bx bx-cart-add' ></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                  
+                                    <i class='bx bxs-map-pin'></i>                   
+                                       <span> 123 Main Street, City</span>
+                                </div>
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                    <i class='bx bx-time-five' ></i>
+                            
+                                  <span> January 15, 2023</span>
+                                </div>
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                
+                                    <i class='bx bx-user' ></i>
+                                
+                                  <span> John Doe</span>
+                                </div>
+                            
+                                <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                              </div>
+                        </div>
+                        <div class="column">
+                            <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                                <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                            
+                                <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                                <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                            
+                                <div class="flex items-center mb-4">
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-bath text-gray-500'></i>
+                                      <span class="ml-2">2</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                                      <span class="ml-2">3</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bxs-parking text-gray-500'></i>
+                                      <span class="ml-2">1</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-square text-gray-500'></i>
+                                      <span class="ml-2">1000sqft</span>
+                                    </div>
+                                  </div>
+                              
+                                <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                            
+                                <!-- <div class="flex items-center mb-4">
+                                  <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                                  <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                                </div> -->
+                                <div class="rowty">
+                                    <div class="column">
+                                        <div class="flex items-center text-gray-700 mb-4">
+                                            <span class="price font-bold">NGN 250,000</span>
+                                          </div>
+                                    </div>
+                                    <div class="column com">
+                                        <div class="row">
+                                            <div class="column">
+                                                <i class='bx bx-like' ></i>
+                                            </div>
+                                            <div class="column">
+                                                <i class='bx bx-cart-add' ></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                  
+                                    <i class='bx bxs-map-pin'></i>                   
+                                       <span> 123 Main Street, City</span>
+                                </div>
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                    <i class='bx bx-time-five' ></i>
+                            
+                                  <span> January 15, 2023</span>
+                                </div>
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                
+                                    <i class='bx bx-user' ></i>
+                                
+                                  <span> John Doe</span>
+                                </div>
+                            
+                                <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                              </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                                <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                            
+                                <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                                <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                            
+                                <div class="flex items-center mb-4">
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-bath text-gray-500'></i>
+                                      <span class="ml-2">2</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                                      <span class="ml-2">3</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bxs-parking text-gray-500'></i>
+                                      <span class="ml-2">1</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-square text-gray-500'></i>
+                                      <span class="ml-2">1000sqft</span>
+                                    </div>
+                                  </div>
+                              
+                                <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                            
+                                <!-- <div class="flex items-center mb-4">
+                                  <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                                  <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                                </div> -->
+                                <div class="rowty">
+                                    <div class="column">
+                                        <div class="flex items-center text-gray-700 mb-4">
+                                            <span class="price font-bold">NGN 250,000</span>
+                                          </div>
+                                    </div>
+                                    <div class="column com">
+                                        <div class="row">
+                                            <div class="column">
+                                                <i class='bx bx-like' ></i>
+                                            </div>
+                                            <div class="column">
+                                                <i class='bx bx-cart-add' ></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                  
+                                    <i class='bx bxs-map-pin'></i>                   
+                                       <span> 123 Main Street, City</span>
+                                </div>
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                    <i class='bx bx-time-five' ></i>
+                            
+                                  <span> January 15, 2023</span>
+                                </div>
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                
+                                    <i class='bx bx-user' ></i>
+                                
+                                  <span> John Doe</span>
+                                </div>
+                            
+                                <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                              </div>
+                        </div>
+                        <div class="column">
+                            <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                                <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                            
+                                <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                                <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                            
+                                <div class="flex items-center mb-4">
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-bath text-gray-500'></i>
+                                      <span class="ml-2">2</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                                      <span class="ml-2">3</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bxs-parking text-gray-500'></i>
+                                      <span class="ml-2">1</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-square text-gray-500'></i>
+                                      <span class="ml-2">1000sqft</span>
+                                    </div>
+                                  </div>
+                              
+                                <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                            
+                                <!-- <div class="flex items-center mb-4">
+                                  <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                                  <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                                </div> -->
+                                <div class="rowty">
+                                    <div class="column">
+                                        <div class="flex items-center text-gray-700 mb-4">
+                                            <span class="price font-bold">NGN 250,000</span>
+                                          </div>
+                                    </div>
+                                    <div class="column com">
+                                        <div class="row">
+                                            <div class="column">
+                                                <i class='bx bx-like' ></i>
+                                            </div>
+                                            <div class="column">
+                                                <i class='bx bx-cart-add' ></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                  
+                                    <i class='bx bxs-map-pin'></i>                   
+                                       <span> 123 Main Street, City</span>
+                                </div>
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                    <i class='bx bx-time-five' ></i>
+                            
+                                  <span> January 15, 2023</span>
+                                </div>
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                
+                                    <i class='bx bx-user' ></i>
+                                
+                                  <span> John Doe</span>
+                                </div>
+                            
+                                <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                              </div>
+                        </div>
+                        <div class="column">
+                            <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                                <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                            
+                                <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                                <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                            
+                                <div class="flex items-center mb-4">
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-bath text-gray-500'></i>
+                                      <span class="ml-2">2</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                                      <span class="ml-2">3</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bxs-parking text-gray-500'></i>
+                                      <span class="ml-2">1</span>
+                                    </div>
+                                    <div class="icons flex items-center">
+                                      <i class='bx bx-square text-gray-500'></i>
+                                      <span class="ml-2">1000sqft</span>
+                                    </div>
+                                  </div>
+                              
+                                <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                            
+                                <!-- <div class="flex items-center mb-4">
+                                  <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                                  <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                                </div> -->
+                                <div class="rowty">
+                                    <div class="column">
+                                        <div class="flex items-center text-gray-700 mb-4">
+                                            <span class="price font-bold">NGN 250,000</span>
+                                          </div>
+                                    </div>
+                                    <div class="column com">
+                                        <div class="row">
+                                            <div class="column">
+                                                <i class='bx bx-like' ></i>
+                                            </div>
+                                            <div class="column">
+                                                <i class='bx bx-cart-add' ></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                  
+                                    <i class='bx bxs-map-pin'></i>                   
+                                       <span> 123 Main Street, City</span>
+                                </div>
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                    <i class='bx bx-time-five' ></i>
+                            
+                                  <span> January 15, 2023</span>
+                                </div>
+                            
+                                <div class="flex items-center text-gray-700 mb-4">
+                                
+                                    <i class='bx bx-user' ></i>
+                                
+                                  <span> John Doe</span>
+                                </div>
+                            
+                                <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                              </div>
+                        </div>
+                        
+                    </div>
+            
+                  </div>
+              </section>
+
+  <p style="color: black;" class="listing mt-4 text-gray-300 t-5xl font-extrabold">
+    LANDBANK LISTINGS
+</p>
+<section class="listings">
+    <div class="mx-auto max-w-lg text-center">
+
+  
+    
+      </div>
+      <div class="container">
+        <div class="row">
+            <div class="column">
+                <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                
+                    <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                    <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                
+                    <div class="flex items-center mb-4">
+                        <div class="icons flex items-center">
+                          <i class='bx bx-bath text-gray-500'></i>
+                          <span class="ml-2">2</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                          <span class="ml-2">3</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bxs-parking text-gray-500'></i>
+                          <span class="ml-2">1</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-square text-gray-500'></i>
+                          <span class="ml-2">1000sqft</span>
+                        </div>
+                      </div>
+                  
+                    <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                
+                    <!-- <div class="flex items-center mb-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                      <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                    </div> -->
+                    <div class="rowty">
+                        <div class="column">
+                            <div class="flex items-center text-gray-700 mb-4">
+                                <span class="price font-bold">NGN 250,000</span>
+                              </div>
+                        </div>
+                        <div class="column com">
+                            <div class="row">
+                                <div class="column">
+                                    <i class='bx bx-like' ></i>
+                                </div>
+                                <div class="column">
+                                    <i class='bx bx-cart-add' ></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                      
+                        <i class='bx bxs-map-pin'></i>                   
+                           <span> 123 Main Street, City</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                        <i class='bx bx-time-five' ></i>
+                
+                      <span> January 15, 2023</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                    
+                        <i class='bx bx-user' ></i>
+                    
+                      <span> John Doe</span>
+                    </div>
+                
+                    <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                  </div>
+            </div>
+            <div class="column">
+                <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                
+                    <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                    <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                
+                    <div class="flex items-center mb-4">
+                        <div class="icons flex items-center">
+                          <i class='bx bx-bath text-gray-500'></i>
+                          <span class="ml-2">2</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                          <span class="ml-2">3</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bxs-parking text-gray-500'></i>
+                          <span class="ml-2">1</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-square text-gray-500'></i>
+                          <span class="ml-2">1000sqft</span>
+                        </div>
+                      </div>
+                  
+                    <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                
+                    <!-- <div class="flex items-center mb-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                      <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                    </div> -->
+                    <div class="rowty">
+                        <div class="column">
+                            <div class="flex items-center text-gray-700 mb-4">
+                                <span class="price font-bold">NGN 250,000</span>
+                              </div>
+                        </div>
+                        <div class="column com">
+                            <div class="row">
+                                <div class="column">
+                                    <i class='bx bx-like' ></i>
+                                </div>
+                                <div class="column">
+                                    <i class='bx bx-cart-add' ></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                      
+                        <i class='bx bxs-map-pin'></i>                   
+                           <span> 123 Main Street, City</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                        <i class='bx bx-time-five' ></i>
+                
+                      <span> January 15, 2023</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                    
+                        <i class='bx bx-user' ></i>
+                    
+                      <span> John Doe</span>
+                    </div>
+                
+                    <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                  </div>
+            </div>
+            <div class="column">
+                <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                
+                    <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                    <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                
+                    <div class="flex items-center mb-4">
+                        <div class="icons flex items-center">
+                          <i class='bx bx-bath text-gray-500'></i>
+                          <span class="ml-2">2</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                          <span class="ml-2">3</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bxs-parking text-gray-500'></i>
+                          <span class="ml-2">1</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-square text-gray-500'></i>
+                          <span class="ml-2">1000sqft</span>
+                        </div>
+                      </div>
+                  
+                    <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                
+                    <!-- <div class="flex items-center mb-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                      <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                    </div> -->
+                    <div class="rowty">
+                        <div class="column">
+                            <div class="flex items-center text-gray-700 mb-4">
+                                <span class="price font-bold">NGN 250,000</span>
+                              </div>
+                        </div>
+                        <div class="column com">
+                            <div class="row">
+                                <div class="column">
+                                    <i class='bx bx-like' ></i>
+                                </div>
+                                <div class="column">
+                                    <i class='bx bx-cart-add' ></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                      
+                        <i class='bx bxs-map-pin'></i>                   
+                           <span> 123 Main Street, City</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                        <i class='bx bx-time-five' ></i>
+                
+                      <span> January 15, 2023</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                    
+                        <i class='bx bx-user' ></i>
+                    
+                      <span> John Doe</span>
+                    </div>
+                
+                    <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                  </div>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                
+                    <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                    <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                
+                    <div class="flex items-center mb-4">
+                        <div class="icons flex items-center">
+                          <i class='bx bx-bath text-gray-500'></i>
+                          <span class="ml-2">2</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                          <span class="ml-2">3</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bxs-parking text-gray-500'></i>
+                          <span class="ml-2">1</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-square text-gray-500'></i>
+                          <span class="ml-2">1000sqft</span>
+                        </div>
+                      </div>
+                  
+                    <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                
+                    <!-- <div class="flex items-center mb-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                      <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                    </div> -->
+                    <div class="rowty">
+                        <div class="column">
+                            <div class="flex items-center text-gray-700 mb-4">
+                                <span class="price font-bold">NGN 250,000</span>
+                              </div>
+                        </div>
+                        <div class="column com">
+                            <div class="row">
+                                <div class="column">
+                                    <i class='bx bx-like' ></i>
+                                </div>
+                                <div class="column">
+                                    <i class='bx bx-cart-add' ></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                      
+                        <i class='bx bxs-map-pin'></i>                   
+                           <span> 123 Main Street, City</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                        <i class='bx bx-time-five' ></i>
+                
+                      <span> January 15, 2023</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                    
+                        <i class='bx bx-user' ></i>
+                    
+                      <span> John Doe</span>
+                    </div>
+                
+                    <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                  </div>
+            </div>
+            <div class="column">
+                <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                
+                    <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                    <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                
+                    <div class="flex items-center mb-4">
+                        <div class="icons flex items-center">
+                          <i class='bx bx-bath text-gray-500'></i>
+                          <span class="ml-2">2</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                          <span class="ml-2">3</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bxs-parking text-gray-500'></i>
+                          <span class="ml-2">1</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-square text-gray-500'></i>
+                          <span class="ml-2">1000sqft</span>
+                        </div>
+                      </div>
+                  
+                    <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                
+                    <!-- <div class="flex items-center mb-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                      <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                    </div> -->
+                    <div class="rowty">
+                        <div class="column">
+                            <div class="flex items-center text-gray-700 mb-4">
+                                <span class="price font-bold">NGN 250,000</span>
+                              </div>
+                        </div>
+                        <div class="column com">
+                            <div class="row">
+                                <div class="column">
+                                    <i class='bx bx-like' ></i>
+                                </div>
+                                <div class="column">
+                                    <i class='bx bx-cart-add' ></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                      
+                        <i class='bx bxs-map-pin'></i>                   
+                           <span> 123 Main Street, City</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                        <i class='bx bx-time-five' ></i>
+                
+                      <span> January 15, 2023</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                    
+                        <i class='bx bx-user' ></i>
+                    
+                      <span> John Doe</span>
+                    </div>
+                
+                    <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                  </div>
+            </div>
+            <div class="column">
+                <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                
+                    <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
+                    <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
+                
+                    <div class="flex items-center mb-4">
+                        <div class="icons flex items-center">
+                          <i class='bx bx-bath text-gray-500'></i>
+                          <span class="ml-2">2</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
+                          <span class="ml-2">3</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bxs-parking text-gray-500'></i>
+                          <span class="ml-2">1</span>
+                        </div>
+                        <div class="icons flex items-center">
+                          <i class='bx bx-square text-gray-500'></i>
+                          <span class="ml-2">1000sqft</span>
+                        </div>
+                      </div>
+                  
+                    <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
+                
+                    <!-- <div class="flex items-center mb-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
+                      <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
+                    </div> -->
+                    <div class="rowty">
+                        <div class="column">
+                            <div class="flex items-center text-gray-700 mb-4">
+                                <span class="price font-bold">NGN 250,000</span>
+                              </div>
+                        </div>
+                        <div class="column com">
+                            <div class="row">
+                                <div class="column">
+                                    <i class='bx bx-like' ></i>
+                                </div>
+                                <div class="column">
+                                    <i class='bx bx-cart-add' ></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                      
+                        <i class='bx bxs-map-pin'></i>                   
+                           <span> 123 Main Street, City</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                        <i class='bx bx-time-five' ></i>
+                
+                      <span> January 15, 2023</span>
+                    </div>
+                
+                    <div class="flex items-center text-gray-700 mb-4">
+                    
+                        <i class='bx bx-user' ></i>
+                    
+                      <span> John Doe</span>
+                    </div>
+                
+                    <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                  </div>
+            </div>
+            
+        </div>
+
+      </div>
+  </section>
+
+    <script>
+        // Toggle mobile menu
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

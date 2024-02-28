@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+</head>
+<body>
+
+<h1>Admin Dashboard</h1>
+
+{% if pending_properties %}
+  <h2>Pending Properties for Approval</h2>
+  <ul>
+    {% for property in pending_properties %}
+      <li>{{ property.title }} - {{ property.location }} - <a href="{{ url_for('approve_property', property_id=property.id) }}">Approve</a> | <a href="{{ url_for('reject_property', property_id=property.id) }}">Reject</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No pending properties for approval.</p>
+{% endif %}
+
+<a href="{{ url_for('index') }}">Go back to homepage</a>
+
+</body>
+</html>

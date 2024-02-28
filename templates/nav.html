@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    {% if current_user.is_authenticated %}
+    <nav class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="flex items-center">
+                        <!-- You can replace the text with your logo or image -->
+                        <span class="text-xl font-semibold">Logo</span>
+                    </a>
+                </div>
+    
+                <!-- Hamburger Menu for Mobile -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                        </svg>
+                    </button>
+                </div>
+    
+                <!-- Navigation Links (Hidden on Mobile) -->
+                <div class="hidden md:flex items-center justify-center space-x-4">
+                    <a href="/" class="text-gray-700 hover:text-gray-900">Home</a>
+                    <a href="/about" class="text-gray-700 hover:text-gray-900">About Us</a>
+                    <a href="/services" class="text-gray-700 hover:text-gray-900">Services</a>
+                    <a href="/listinguser" class="text-gray-700 hover:text-gray-900">Listings</a>
+                    <a href="/contact" class="text-gray-700 hover:text-gray-900">Contact Us</a>
+                </div>
+    
+                <!-- Auth Buttons (Hidden on Mobile) -->
+                <div class="hidden md:flex items-center space-x-2">
+                    <button id="navbtn" style="background-color: whitesmoke; color: #AA0000; border:#AA0000 1px solid" class="bg-blue-500 text-center hover:bg-white px-8 md:px-16 py-2 rounded-md text-center">Dashboard</button>
+                    <button id="navbtn" style="background-color:#AA0000; text-align: center;" class="text-white hover:bg-white px-8 md:px-16 py-2 rounded-md">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="md:hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <!-- Navigation Links -->
+            <a href="/" class="text-gray-700 hover:text-gray-900 block py-2 px-4">Home</a>
+            <a href="/about" class="text-gray-700 hover:text-gray-900 block py-2 px-4">About</a>
+            <a href="/services" class="text-gray-700 hover:text-gray-900 block py-2 px-4">Services</a>
+            <a href="/listinguser" class="text-gray-700 hover:text-gray-900">Listings</a>
+
+            <a href="/contact" class="text-gray-700 hover:text-gray-900 block py-2 px-4">Contact</a>
+            
+            <!-- Auth Buttons -->
+            <button  style="background-color: whitesmoke; color: #AA0000; border:#AA0000 1px solid" class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md w-full mt-4">Dashboard</button>
+            <button style="background-color:#AA0000;" class="text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-md w-full mt-2">Logout</button>
+        </div>
+    </div>
+    {%else%}
+    <nav class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="flex items-center">
+                        <!-- You can replace the text with your logo or image -->
+                        <span class="text-xl font-semibold">Logos</span>
+                    </a>
+                </div>
+    
+                <!-- Hamburger Menu for Mobile -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                        </svg>
+                    </button>
+                </div>
+    
+                <!-- Navigation Links (Hidden on Mobile) -->
+                <div class="hidden md:flex items-center justify-center space-x-4">
+                    <a href="/" class="text-gray-700 hover:text-gray-900">Home</a>
+                    <a href="/about" class="text-gray-700 hover:text-gray-900">About Us</a>
+                    <a href="/about" class="text-gray-700 hover:text-gray-900">Services</a>
+                    <a href="/listing" class="text-gray-700 hover:text-gray-900">Listings</a>
+                    <a href="/contact" class="text-gray-700 hover:text-gray-900">Contact Us</a>
+                </div>
+    
+                <!-- Auth Buttons (Hidden on Mobile) -->
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="/login">
+                        <button  style="background-color: whitesmoke; color: #AA0000; border:#AA0000 1px solid" class="bg-blue-500 text-center hover:bg-white px-8 md:px-16 py-2 rounded-md text-center">Login</button>
+
+                    </a>
+                    <a href="/signup">
+                        <button  style="background-color:#AA0000; text-align: center;" class="text-white hover:bg-white px-8 md:px-16 py-2 rounded-md">Register</button>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="md:hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <!-- Navigation Links -->
+            <a href="/" class="text-gray-700 hover:text-gray-900 block py-2 px-4">Home</a>
+            <a href="/about" class="text-gray-700 hover:text-gray-900 block py-2 px-4">About</a>
+            <a href="/services" class="text-gray-700 hover:text-gray-900 block py-2 px-4">Services</a>
+            <a href="/listing" class="text-gray-700 hover:text-gray-900">Listings</a>
+
+            <a href="/contact" class="text-gray-700 hover:text-gray-900 block py-2 px-4">Contact</a>
+            
+            <!-- Auth Buttons -->
+            <a href="/login">
+                <button  style="background-color: whitesmoke; color: #AA0000; border:#AA0000 1px solid" class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md w-full mt-4">Login</button>
+
+            </a>
+            <a href="/signup">
+                <button  style="background-color:#AA0000;" class="text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-md w-full mt-2">Register</button>
+
+            </a>
+        </div>
+    </div>
+    {%endif %}
+
+    <script>
+        // Get reference to the button element
+        const redirectButton = document.getElementById('navbtn');
+    
+        // Add a click event listener to the button
+        redirectButton.addEventListener('click', function() {
+          // Redirect the user to another page
+          window.location.href = '/login';
+        });
+      </script>
+      <script>
+        // Get reference to the button element
+        const redirectButtons = document.getElementById('register');
+    
+        // Add a click event listener to the button
+        redirectButtons.addEventListener('click', function() {
+          // Redirect the user to another page
+          window.location.href = '/signup';
+        });
+      </script>
+</body>
+</html>

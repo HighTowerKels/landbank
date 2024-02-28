@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Property</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    color: #333;
+}
+
+input, select, textarea, button {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Create Property</h2>
+        <form method="post" enctype="multipart/form-data" action="{{ url_for('create_property') }}">
+            <label for="title">Title:</label>
+            <input type="text" name="title" required>
+
+            <label for="location">Location:</label>
+            <input type="text" name="location" required>
+
+            <label for="price">Price:</label>
+            <input type="number" name="price" required>
+
+            <label for="service_type">Service Type:</label>
+            <input type="text" name="service_type" required>
+
+            <label for="description">Description:</label>
+            <textarea name="description" rows="4" required></textarea>
+
+            <label for="num_rooms">Number of Rooms:</label>
+            <input type="number" name="num_rooms" required>
+
+            <label for="num_baths">Number of Baths:</label>
+            <input type="number" name="num_baths" required>
+
+            <label for="num_toilets">Number of Toilets:</label>
+            <input type="number" name="num_toilets" required>
+
+            <label for="property_type">Property Type:</label>
+            <select name="property_type" required>
+                <option value="Sale">Sale</option>
+                <option value="Rent">Rent</option>
+                <option value="Short Let">Short Let</option>
+                <option value="Developing">Developing</option>
+            </select>
+
+            <label for="main_image">Main Image:</label>
+            <input type="file" name="main_image" accept="image/*" required>
+
+            <label for="main_image_one">Image One:</label>
+            <input type="file" name="main_image_one" accept="image/*">
+
+            <label for="main_image_two">Image Two:</label>
+            <input type="file" name="main_image_two" accept="image/*">
+
+            <label for="main_image_three">Image Three:</label>
+            <input type="file" name="main_image_three" accept="image/*">
+
+            <label for="main_image_four">Image Four:</label>
+            <input type="file" name="main_image_four" accept="image/*">
+
+            <label for="main_image_five">Image Five:</label>
+            <input type="file" name="main_image_five" accept="image/*">
+
+            <button type="submit">Create Property</button>
+        </form>
+    </div>
+</body>
+</html>

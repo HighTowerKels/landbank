@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landbank | Listing</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/different.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    /* Your existing styles */
+
+    .sidebar {
+          width: 256px;
+          height: 950px;
+          top: 74px;
+          padding: 24px;
+          border: 1px solid #ccc;
+          gap: 24px;
+        }
+        .navbar{
+          position:static;
+        }
+        #sidebar-toggle {
+            display: none;
+        }
+        .row , .rows{
+            display: flex;
+            flex-direction: row;
+        }
+        .container {
+      display: flex; /* Use flexbox for the container */
+    }
+        .content {
+      flex: 1; /* Make the content take up remaining space */
+      padding: 20px;
+    }
+    .row .columnsy{
+        display: flex;
+        align-content: space-around;
+        justify-content: space-between;
+        margin-right: 10px; /* Adjust the value as needed */
+        margin-left: 3px; /* Adjust the value as needed */
+        padding-left: 5px; /* Optional padding for the card content */
+    
+    }
+   
+.card{
+    width: 120%;
+height: Hug (94px);
+padding: 10px;
+border-radius: 16px;
+border: 1px;
+gap: 16px;
+background-color: #f3f4f6;
+
+}
+.columns h3{
+    font-family: Noto Sans;
+font-size: 18px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+color: #A59795;
+text-align: justify;
+
+
+
+}
+.card-body{
+    width: 120%;
+}
+.columnsy .btn{
+    margin-top: 25%;
+    width: 185px;
+height: 40px;
+padding: 12px, 44px, 12px, 45px;
+border-radius: 40px;
+border: 1px;
+gap: 10px;
+background-color: #510000;
+color: whitesmoke
+;
+
+}
+
+
+
+    /* Mobile styles */
+    @media only screen and (max-width: 640px) {
+      .container {
+        flex-direction: column; /* Stack items on top of each other on mobile */
+      }
+
+      .sidebar.visible {
+        left: 0; /* Show the sidebar when 'visible' class is present */
+      }
+
+      .content {
+        flex: 1; /* Make content take up full width on mobile */
+        transition: margin-left 0.3s ease; /* Add transition effect for smooth animation */
+      }
+
+      .content.overlay {
+        margin-left: 200px; /* Adjust the margin to match sidebar width */
+      }
+      .container {
+      display: flex; /* Use flexbox for the container */
+    }
+
+    .sidebar {
+      width: 100%; /* Adjust the width of the sidebar as needed */
+      background-color: #510000;
+      padding: 20px;
+      position: fixed; /* Fix the sidebar position */
+      top: 8%;
+      left: -200px; /* Hide the sidebar off-screen initially */
+      height: 100vh; /* Set sidebar height to full viewport height */
+      z-index: 1000; /* Set a high z-index to ensure it overlays other elements */
+      transition: left 0.3s ease; /* Add transition effect for smooth animation */
+    }
+
+    .content {
+      flex: 1; /* Make the content take up remaining space */
+      padding: 20px;
+    }
+
+    /* Hamburger menu styles */
+    #sidebar-toggle {
+      display: block;
+      cursor: pointer;
+      font-size: 24px;
+    }
+    .container {
+      display: flex; /* Use flexbox for the container */
+    }
+
+    .sidebar {
+      width: 200px; /* Adjust the width of the sidebar as needed */
+      background-color: #f3f4f6;
+      padding: 20px;
+    }
+    .wider-sidebar {
+  width: 100%; /* Adjust the width as needed */
+  /* Add any other styles for the wider sidebar */
+}
+
+
+    .content {
+      flex: 1; /* Make the content take up remaining space */
+      padding: 20px;
+    }
+.row{
+    display: flex;
+    flex-direction: column;
+}
+.rows{
+    display: flex;
+    flex-direction: row;
+}
+.row .columnsy{
+        display: flex;
+        align-content: space-around;
+        justify-content: space-between;
+        margin-right: 10px; /* Adjust the value as needed */
+        margin-left: 3px; /* Adjust the value as needed */
+        padding-left: 5px; /* Optional padding for the card content */
+        padding-bottom: 5px;
+    
+    }
+    .columnsy > .btn{
+    margin-top: 10%;
+    width: 300px;
+height: 40px;
+padding: 12px, 44px, 12px, 45px;
+border-radius: 40px;
+border: 1px;
+gap: 10px;
+background-color: #510000;
+color: whitesmoke
+;
+
+}
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar bg-base-100">
+    <div class="flex-1">
+      <span id="sidebar-toggle">&#9776;</span>
+      <a class="btn btn-ghost text-xl">Landbank</a>
+    </div>
+    <div class="flex-none">
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+          <div class="indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span class="badge badge-sm indicator-item">8</span>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+          <div class="w-10 rounded-full">
+            <img alt="Tailwind CSS Navbar component"
+              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+        <ul>
+            <li>
+              <a
+                href=""
+                class="flex items-center gap-2 border-s-[3px] border-blue-500 bg-blue-50 px-4 py-3 text-blue-700"
+              >
+              <i class="fa fa-home"></i>
+                <span class="text-sm font-medium"> Dashboard </span>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                href=""
+                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+              >
+              <i class="fa fa-user"></i>
+                <span class="text-sm font-medium"> Verification </span>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                href=""
+                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+              >
+              <i class="fa fa-file"></i>
+          
+                <span class="text-sm font-medium"> Listings </span>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                href=""
+                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+              >
+              <i class="fa fa-briefcase"></i>
+          
+                <span class="text-sm font-medium"> Biddings </span>
+              </a>
+            </li>
+          
+           
+          </ul>
+          <hr>
+          <br>
+          <ul>
+            <li>
+              <h3 style="font-family: Inter;
+              font-size: 10px;
+              font-weight: 500;
+              line-height: 12px;
+              letter-spacing: 0.4000000059604645px;
+              text-align: left;
+              ">SETTINGS</h3>
+            </li>
+          
+            <li>
+              <a
+                href=""
+                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+              >
+              <i class="fa fa-cog"></i>
+          
+                <span class="text-sm font-medium"> Setting </span>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                href=""
+                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+              >
+              <i class="fa fa-info-circle"></i>
+          
+                <span class="text-sm font-medium"> help </span>
+              </a>
+            </li>
+          
+        
+          </ul>
+    
+          <br>
+          <br><br>
+          <hr>
+    
+          <ul>
+          
+          
+            <li>
+              <a
+                href=""
+                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+              >
+              <i class="fa fa-sign-out"></i>
+          
+                <span style="font-family: Inter;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 20px;
+                letter-spacing: -0.02em;
+                text-align: left;
+                color: #D55F54;" class="text-sm font-medium"> Logout Account  </span>
+              </a>
+            </li>
+          
+         
+          
+        
+          </ul>
+    </div>
+
+    <div class="content">
+        <section class="mx-auto max-w-screen-xl">
+          <div class="row">
+            <div class="columnsy">
+                <div class="card">
+                    <div class="card-body items-center text-center">
+                      <div class="rows">
+                          <div class="columns mr-4">
+                              <img class="card-title text-left item-left" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACvElEQVR4nO2ZPYgTQRTH36GIWoilwkG8zEQhjYXaKMd1YmFxCFdoY+GZ91ZOxEIsLO4s/LjmCj+qa8XCQi2vO1TQ9xLBJgqCHDbxAwttRPHgIpNs9mazu2LikbxIfrAk2WXh98+bnZmdARgyZMgfKU5VtxiSeUP8wZLU//YwKDUT8CRowSDf7CRALAzxr7GgfAg0YFBqDamgfLij+0gWGoGQ3+4uvdwO/caG/26n9+VOL2+1yNWwMndhUIM4Csj7DfLPbptmV80ZpWaQb7hnGzYqSHj/8Vbz7PFxfUOD9Jo8Vo60KjPQQTKdh0EGoSITs8ubLcq1Tkf7Xh/G78HSghiUK/2WtJ32YKlBiN91M9r3tQezbUFy52RX4xzKZ1BOzndtD2JKcqx5kZdAOcZ3bQ9iA7ncKBfJPCjH+q6JipDcD8+dAuUY3zURBOVNWK4iKMeQvI5c/SCjF59vMyirluSHG0tAMaPtrn4Q97bX/M0VUE6+JAdjrn4Qg3I2LNUiKMeQTMdc/SAW5U5zgOEZUI4luR1zjQUheea+F4jHQTkG5WnMdT1IfcQSf7PEa7kLr3aCauojFvlrzLUVpBCU8+HgsgLK2TvNYwnXKEipfCLsBR6CckzAkwnXaG5PcjW8OAvKMShzCVdvTv+4OXVXtAyagUV5lHCNgqC8d5/78MUeUI4hWUm4rleE11yv5XoEUIw9zztSXWPvwMRPQDkF4vFU1/i7L98C5RjkmVTXWBDkM6Aci7yY6hprWgEfAOVY4kqqaxQCZdVtFYBmph5sssTfU129ZlUF5VjkYqar12PdA+UUkE9mukZzLeJLoBwT7nemukZNK+CjoByLvJTp2griVu1AOZbkU6arIf7iLrp1VFCMDcoT0TpvGm5Zvscr5/+6lTCXGsStCYUPUaNsag/kj277QPt625D/jt/n94yiC7n6RQAAAABJRU5ErkJggg==">
+  
+                          </div>
+                          <div class="columns mr-4">
+                              <h3>Total Listings</h3>
+                              <h2 style="font-size:20px ;
+                              font-weight: bold;">543</h2>
+                          </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+            </div>
+            <div class="columnsy ">
+              <div class="card">
+                  <div class="card-body items-center text-center">
+                    <div class="rows">
+                        <div class="columns mr-4">
+                            <img  class="card-title text-left item-left" width="50" height="50" src="https://img.icons8.com/ios-filled/50/000000/in-progress.png" alt="in-progress"/>
+                        </div>
+                        <div class="columns mr-4">
+                            <h3>In-Progress</h3>
+                            <h2 style="font-size:20px ;
+                            font-weight: bold;">543</h2>
+                        </div>
+                    </div>
+                    
+                  </div>
+                </div>
+            </div>
+            <div class="columnsy">
+                <div class="card">
+                    <div class="card-body items-center text-center">
+                      <div class="rows">
+                          <div class="columns mr-4">
+                              <img class="card-title text-left item-left" width="50" height="50" src="https://img.icons8.com/ios-filled/50/search-in-list.png" alt="search-in-list"/>
+                          </div>
+                          <div class="columns mr-4">
+                              <h3>Verified Listings</h3>
+                              <h2 style="font-size:20px ;
+                              font-weight: bold;">543</h2>
+                          </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+            </div>
+          
+            <div class=" columnsy">
+                <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Create Listing</button>
+            </div>
+          </div>
+
+          <article class="rounded-xl border-2 border-gray-100 bg-white mt-8">
+            <div class="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
+              <a href="#" class="block shrink-0">
+                <img
+                  alt="Speaker"
+                  src="../static/image/house.jpeg"
+                  class="h-14 w-14 rounded-lg object-cover"
+                />
+              </a>
+          
+              <div>
+                <h3 class="font-medium sm:text-lg">
+                  <a href="#" class="hover:underline">Terraced duplex for Sale </a>
+                </h3>
+          
+                <p class="line-clamp-2 text-sm text-gray-700">
+                    4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.
+                </p>
+                <h3 style="font-family: Cabinet Grotesk;
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 25px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #510000;" class="mt-4">NGN 400,000,000</h3>
+          
+                <div class="mt-2 sm:flex sm:items-center sm:gap-2">
+                  <div class="flex items-center gap-1 text-gray-500">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
+                      />
+                    </svg>
+          
+                    <p class="text-xs">created <span>10:00am</span></p>
+                  </div>
+          
+                  <span class="hidden sm:block" aria-hidden="true">&middot;</span>
+          
+                  <p class="hidden sm:block sm:text-xs sm:text-gray-500">
+                    Posted by
+                    <a href="#" class="font-medium underline hover:text-gray-700"> John </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="flex justify-end">
+              <strong
+                class="-mb-[2px] -me-[2px] inline-flex items-center gap-1 rounded-ee-xl rounded-ss-xl bg-red-600 px-3 py-1.5 text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                  />
+                </svg>
+          
+                <span class="text-[10px] font-medium sm:text-xs">Pending Approval</span>
+              </strong>
+            </div>
+          </article>
+          <article class="rounded-xl border-2 border-gray-100 bg-white mt-8">
+            <div class="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
+              <a href="#" class="block shrink-0">
+                <img
+                  alt="Speaker"
+                  src="../static/image/house.jpeg"
+                  class="h-14 w-14 rounded-lg object-cover"
+                />
+              </a>
+          
+              <div>
+                <h3 class="font-medium sm:text-lg">
+                  <a href="#" class="hover:underline">Terraced duplex for Sale </a>
+                </h3>
+          
+                <p class="line-clamp-2 text-sm text-gray-700">
+                    4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.
+                </p>
+                <h3 style="font-family: Cabinet Grotesk;
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 25px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #510000;" class="mt-4">NGN 400,000,000</h3>
+          
+                <div class="mt-2 sm:flex sm:items-center sm:gap-2">
+                  <div class="flex items-center gap-1 text-gray-500">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
+                      />
+                    </svg>
+          
+                    <p class="text-xs">created <span>10:00am</span></p>
+                  </div>
+          
+                  <span class="hidden sm:block" aria-hidden="true">&middot;</span>
+          
+                  <p class="hidden sm:block sm:text-xs sm:text-gray-500">
+                    Posted by
+                    <a href="#" class="font-medium underline hover:text-gray-700"> John </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="flex justify-end">
+              <strong
+                class="-mb-[2px] -me-[2px] inline-flex items-center gap-1 rounded-ee-xl rounded-ss-xl bg-green-600 px-3 py-1.5 text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                  />
+                </svg>
+          
+                <span class="text-[10px] font-medium sm:text-xs"> Approved</span>
+              </strong>
+            </div>
+          </article>
+
+          <article class="rounded-xl border-2 border-gray-100 bg-white mt-8">
+            <div class="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
+              <a href="#" class="block shrink-0">
+                <img
+                  alt="Speaker"
+                  src="../static/image/house.jpeg"
+                  class="h-14 w-14 rounded-lg object-cover"
+                />
+              </a>
+          
+              <div>
+                <h3 class="font-medium sm:text-lg">
+                  <a href="#" class="hover:underline">Terraced duplex for Sale </a>
+                </h3>
+          
+                <p class="line-clamp-2 text-sm text-gray-700">
+                    4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.
+                </p>
+                <h3 style="font-family: Cabinet Grotesk;
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 25px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #510000;" class="mt-4">NGN 400,000,000</h3>
+          
+                <div class="mt-2 sm:flex sm:items-center sm:gap-2">
+                  <div class="flex items-center gap-1 text-gray-500">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
+                      />
+                    </svg>
+          
+                    <p class="text-xs">created <span>10:00am</span></p>
+                  </div>
+          
+                  <span class="hidden sm:block" aria-hidden="true">&middot;</span>
+          
+                  <p class="hidden sm:block sm:text-xs sm:text-gray-500">
+                    Posted by
+                    <a href="#" class="font-medium underline hover:text-gray-700"> John </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="flex justify-end">
+              <strong
+                class="-mb-[2px] -me-[2px] inline-flex items-center gap-1 rounded-ee-xl rounded-ss-xl bg-red-600 px-3 py-1.5 text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                  />
+                </svg>
+          
+                <span class="text-[10px] font-medium sm:text-xs">Declined</span>
+              </strong>
+            </div>
+          </article>
+        </section>
+        
+      </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sidebarToggle = document.getElementById('sidebar-toggle');
+      const sidebar = document.querySelector('.sidebar');
+      const content = document.querySelector('.content');
+  
+      sidebarToggle.addEventListener('click', function () {
+        sidebar.classList.toggle('visible');
+        content.classList.toggle('overlay');
+  
+        // Check if sidebar is visible
+        if (sidebar.classList.contains('visible')) {
+          // If sidebar is visible, hide the content
+          content.style.display = 'none';
+          // Add a class to the sidebar for wider width
+          sidebar.classList.add('wider-sidebar');
+        } else {
+          // If sidebar is not visible, show the content
+          content.style.display = 'block';
+          // Remove the class for wider width
+          sidebar.classList.remove('wider-sidebar');
+        }
+      });
+    });
+  </script>
+  
+  
+
+</html>
