@@ -342,8 +342,9 @@ class="heros relative bg-[url(/static/image/listbg.png)] bg-cover bg-center bg-n
       </div>
     
       <div class="container">
+        {% for property in approved_properties %}
+
         <div class="row">
-          {% for property in approved_properties %}
 
             <div class="column">
                 <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
@@ -421,10 +422,11 @@ class="heros relative bg-[url(/static/image/listbg.png)] bg-cover bg-center bg-n
                     <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
                   </div>
             </div>
-            {% endfor %}
+           
      
 
       </div>
+      {% endfor %}
   </section>
 
         <p style="color: black;" class="listing mt-4 text-gray-300 t-5xl font-extrabold">
