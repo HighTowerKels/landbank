@@ -612,7 +612,10 @@ def listing():
 
 @app.route('/listinguser')
 def listinguser():
-    return render_template('listing_user.html')
+    properties = Property.query.all()
+    approved_properties = Property.query.filter_by(approved=True).all()
+    pending_properties = Property.query.filter_by(approved=False).all()
+    return render_template('listing_user.html', properties=properties, approved_properties=approved_properties, pending_properties=pending_properties)
 
 
 # @app.route('/property/details/<int:property_id>',  methods=['GET', 'POST'])
@@ -655,15 +658,31 @@ def property_details(property_id):
 @login_required
 def dashboard():
     user_notifications = current_user.notifications
-    return render_template('dashboard.html', notifications=user_notifications)
+    properties = Property.query.all()
+    approved_properties = Property.query.filter_by(approved=True).all()
+    pending_properties = Property.query.filter_by(approved=False).all()
+    return render_template('dashboard.html', notifications=user_notifications, properties=properties, approved_properties=approved_properties, pending_properties=pending_properties)
 
 @app.route('/creatinglisting')
 def createlisting():
     return render_template('createlisting.html')
 
 
+@app.route('/cardpayment')
+def cardpayment():
+    return render_template('card.html')
 
+@app.route('/bankpayment')
+def bankpayment():
+    return render_template('bank.html')
 
+@app.route('/transferpayment')
+def transferpayment():
+    return render_template('transfer.html')
+
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
 
 @app.route('/logout')
 def logout():
