@@ -355,33 +355,38 @@ text-align: left;
 <button class="one btn btn" tabindex="-1" role="button" aria-disabled="true">Buy Now</button>
             </article>
             <br>
-           
-            
-            <button class="tablink" onclick="openCity('London', this, '#510000')" id="defaultOpen">Description</button>
-            <button class="tablink" onclick="openCity('Paris', this, '#510000')">Additional Information</button>
-            <button class="tablink" onclick="openCity('Tokyo', this, '#510000')">Review</button>
-            <div id="London" class="tabcontent">
-              <!-- <h1>Property Details</h1>
-              <p>4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja. Newly Built and furnished, come with a BQ</p>
-              <h4>4 Bathrooms en suite</h4>
-              <h4>Spacious BQ and gateman house</h4>
-              <h4>6 toilets including guest toilet for sitting rooms</h4>
-              <h4>12 car parking space</h4>
-              <h4>Asking Price: <span style="color: #510000;">NGN400,000,000 ( Slightly Negotiable)</span> </h4>
-              <h4>Ownership Type: Personal</h4> -->
-<h4>{{property.description}}</h4>
-              <h3 style="color: #510000; font-weight: bolder; padding-top: 5px;">Posted By</h3>
-              
-              <h4>{{property.user.firstname}}</h4>
+        </div>  
+        </div>
 
-              <h4>RC Registeration: RC41234567</h4>
-              <h4>Registered:  3 Months ago</h4>
-              <h4>Reviews: 100</h4>
-              <span id="contactDetails">Contact Details: 
-                <span class="hide">080622********</span>
-                <span class="hidden-content">08062234130</span>
-              </span>
-              <button style="background-color: #510000; color: #FFFFFF; width: 80px;" onclick="revealContent()">Show</button>
+  <!-- tabs navigation start here  -->
+          <div class="max-w-full mb-10 ">
+            <button class="tablink w-1/3 text-sm" onclick="openCity('London', this, '#510000')" id="defaultOpen">Description</button>
+            <button class="tablink w-1/3 text-sm" onclick="openCity('Paris', this, '#510000')"><span class="hidden md:inline">Additional</span> Information</button>
+            <button class="tablink w-1/3 text-sm" onclick="openCity('Tokyo', this, '#510000')">Review</button>
+          </div>
+          <!-- <h1>Property Details</h1>
+            <p>4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja. Newly Built and furnished, come with a BQ</p>
+            <h4>4 Bathrooms en suite</h4>
+            <h4>Spacious BQ and gateman house</h4>
+            <h4>6 toilets including guest toilet for sitting rooms</h4>
+            <h4>12 car parking space</h4>
+            <h4>Asking Price: <span style="color: #510000;">NGN400,000,000 ( Slightly Negotiable)</span> </h4>
+            <h4>Ownership Type: Personal</h4> -->
+
+            <div id="London" class="tabcontent mx-auto w-fit">
+            <h4>{{property.description}}</h4>
+            <h3 style="color: #510000; font-weight: bolder; padding-top: 5px;">Posted By</h3>
+            
+            <h4>{{property.user.firstname}}</h4>
+
+            <h4>RC Registeration: RC41234567</h4>
+            <h4>Registered:  3 Months ago</h4>
+            <h4>Reviews: 100</h4>
+            <span id="contactDetails">Contact Details: 
+              <span class="hide">080622********</span>
+              <span class="hidden-content">08062234130</span>
+            </span>
+            <button style="background-color: #510000; color: #FFFFFF; width: 80px;" onclick="revealContent()">Show</button>
             <h4 style="color: #510000;">View all properties by this agent</h4>
             <br>
             <br>
@@ -391,39 +396,40 @@ text-align: left;
             </form>
             <!-- <button >Add to cart</button> -->
             <button class="one btn btn" tabindex="-1" role="button" aria-disabled="true">Buy Now</button>
-              <script>
-                function revealContent() {
-                  var hiddenContent = document.querySelector('.hidden-content');
-                  var hideContent = document.querySelector('.hide');
-                  
-                  if (hiddenContent.style.display === 'none') {
-                    hiddenContent.style.display = 'inline';
-                    hideContent.style.display = 'none';
-                  } else {
-                    hiddenContent.style.display = 'none';
-                    hideContent.style.display = 'inline';
-                  }
-                }
-              </script>
-            
-            <div id="Paris" class="tabcontent">
-              <h1>Paris</h1>
+          </div>
+          <div id="Paris" class="tabcontent  mx-auto w-fit">
+            <h1>Paris</h1>
               <p>Paris is the capital of France.</p>
             </div>
             
-            <div id="Tokyo" class="tabcontent">
+            <div id="Tokyo" class="tabcontent  mx-auto w-fit">
               <h1>Tokyo</h1>
               <p>Tokyo is the capital of Japan.</p>
             </div>
             
-            <div id="Oslo" class="tabcontent">
+            <div id="Oslo" class="tabcontent  mx-auto w-fit">
               <h1>Oslo</h1>
               <p>Oslo is the capital of Norway.</p>
             </div>
           </div>
-      </div>
-    </div>
+          <!--  tabs navigation ends here  -->            
   </section>
+
+  <!-- Scripts -->
+  <script>
+    function revealContent() {
+      var hiddenContent = document.querySelector('.hidden-content');
+      var hideContent = document.querySelector('.hide');
+      
+      if (hiddenContent.style.display === 'none') {
+        hiddenContent.style.display = 'inline';
+        hideContent.style.display = 'none';
+      } else {
+        hiddenContent.style.display = 'none';
+        hideContent.style.display = 'inline';
+      }
+    }
+  </script>
 <script>
     let slideIndex = 1;
 showSlides(slideIndex);
