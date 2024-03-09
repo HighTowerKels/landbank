@@ -226,10 +226,10 @@ text-align: left;
         <div class="relative h-64 overflow-hidden sm:h-80 lg:h-full">
         
           <img
-            alt="Party"
-            src="../static/image/house.jpeg"
-            class="absolute inset-0 h-82 w-full object-cover"
-          />
+        alt="Party"
+        src="{{ url_for('static', filename='image/map.png') }}"
+        class="absolute inset-0 h-full w-full object-cover"
+    />
 
         </div>
   
@@ -341,20 +341,23 @@ text-align: left;
               </div>
               <p></p>
               <h2></h2>
-            <h2 class="text-xl font-bold mb-2 mb-11">{{property.title}}</h2>
-              <p class=" desp text-gray-600 mb-4">{{property.description}}</p>
+            <h2 class="text-2xl font-bold mb-2 mb-11">{{property.title}}</h2>
+              <p class=" desp text-gray-600 mb-4 text-4xl">{{property.description}}</p>
               <div class="flex items-center text-gray-700 mb-4">
-                <span class="price font-bold">NGN {{property.price}}</span>
+                <span class="price font-bold text-3xl">NGN {{property.price}}</span>
               </div>
           
               
               <br>
-              <form action="{{ url_for('property_details', property_id=property.id) }}" method="post">
-                <button type="submit" name="add_to_cart" class="one btn btn">Add to Cart</button>
-            </form>
-<button class="one btn btn" tabindex="-1" role="button" aria-disabled="true">Buy Now</button>
-            </article>
-            <br>
+              <div style="display: flex; flex-direction: row;" class="row">
+                <form action="{{ url_for('property_details', property_id=property.id) }}" method="post">
+                  <button style="background-color: #510000; color: whitesmoke;" type="submit" name="add_to_cart" class="one btn btn">Add to Cart</button>
+              </form>
+  <button style="background-color: #510000; color: whitesmoke;" class="one btn btn" tabindex="-1" role="button" aria-disabled="true">Buy Now</button>
+              </article>
+              </div>
+             
+           
         </div>  
         </div>
 
@@ -390,12 +393,15 @@ text-align: left;
             <h4 style="color: #510000;">View all properties by this agent</h4>
             <br>
             <br>
-            <form action="{{ url_for('add_to_cart') }}" method="post">
-              <input type="hidden" name="property_id" value="{{ property.id }}">
-              <button class="two btn"  type="submit">Add to Cart</button>
-            </form>
-            <!-- <button >Add to cart</button> -->
-            <button class="one btn btn" tabindex="-1" role="button" aria-disabled="true">Buy Now</button>
+            <div style="display: flex; flex-direction: row; padding: 10%;" class="row">
+              <form action="{{ url_for('add_to_cart') }}" method="post">
+                <input type="hidden" name="property_id" value="{{ property.id }}">
+                <button style="background-color: #510000; color: whitesmoke;" class="two btn"  type="submit">Add to Cart</button>
+              </form>
+              <!-- <button >Add to cart</button> -->
+              <button style="background-color: #510000; color: whitesmoke;" class="one btn btn" tabindex="-1" role="button" aria-disabled="true">Buy Now</button>
+            </div>
+            
           </div>
           <div id="Paris" class="tabcontent  mx-auto w-fit">
             <h1>Paris</h1>
