@@ -23,7 +23,31 @@
     padding: 10px;
     box-sizing: border-box;
 }
+.bannerp{
+  margin-top:5%;
+  margin-bottom:5%
+}
+ 
+.detais{
+  font-size: 20px;
+}
 
+#spin:after {
+  content:"";
+  animation: spin 40s linear infinite;
+}
+@keyframes spin {
+  0%  { content: "ipsum"; }
+  10% { content: "dolor"; }
+  20% { content: "sit"; }
+  30% { content: "amet"; }
+  40% { content: "consectetur"; }
+  50% { content: "adipisicing"; }
+  60% { content: "elit"; }
+  70% { content: "Hic"; }
+  80% { content: "atque"; }
+  90% { content: "fuga"; }
+}
 /* Adjust column width and spacing for smaller screens */
 @media (max-width: 768px) {
     .column {
@@ -50,19 +74,19 @@
       <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
         <div class="mx-auto max-w-xl text-center">
           <h1 class="text-3xl font-extrabold sm:text-5xl">
-            Your Trusted Partner in Real Estate             <span class="text-3xl font-extrabold sm:text-5xl text-red-700 "> Acquisition </span>
+            Your Trusted Partner in Real Estate             <span class="text-3xl font-extrabold sm:text-5xl text-red-700 " id="spin"> </span>
 
           </h1>
-          <p style="text-align: start; font-size: 10px; line-height: 12px;" class="mt-4 sm:text-xl">
+          <p  style="-webkit-line-clamp: 2;" class="bannerp clamp-2-lines text-xl font-bold bottom-4">
             At Landbankng ltd, we understand that real estate transactions require precision, security, and transparency.
-            That's why we've designed a comprehensive platform tailored to meet the unique needs of buyers, sellers, and agents in the real estate industry.
-          </p>
-          
+            <!-- That's why we've designed a comprehensive platform tailored to meet the unique needs of buyers, sellers, and agents in the real estate industry. -->
+        </p>
+        
     
           <div class="mt-8 flex flex-wrap justify-center gap-4">
             <a
               class="block w-full rounded bg-red-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-red-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
-              href="/get-started"
+              href="/signup"
             >
               Get Started
             </a>
@@ -88,7 +112,7 @@
         <span class="listings text-4xl leading-[45px] ">Let us help you find your perfect home</span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full text-[20px]">
         {% for property in approved_properties %}
           <div class="block rounded-lg p-4 bg-white w-full shadow-sm shadow-indigo-100">
             <a href="{{ url_for('property_details', property_id=property.id)}}" >
@@ -113,36 +137,36 @@
                     </div>
                   </dl> -->
 
-                  <div class="grid gap-3">
-                    <h3>{{property.name}}</h3>
-                    <p class="text-base text-gray-500">{{property.description}}</p>
+                  <div class="grid gap-3 text-[20px]">
+                    <h3 class="detais text-[30px]">{{property.name}}</h3>
+                    <p class="text-sm text-gray-500 text-[20px]">{{property.description}}</p>
                   </div>
 
                   <span class="text-[#510000] text-[20px] font-bold ">NGN {{property.price}}</span>
 
-                  <div class="grid gap-2 text-base">
+                  <div class="grid gap-2 text-[20px]">
                     <div class="flex gap-1">
-                      icon
+                      <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/marker.png" alt="marker"/>
                       <span>Maitama, {{property.address}}</span>
                     </div>
                     <div class="flex gap-1">
-                      icon
+                      <img width="24" height="24" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-hour-date-and-time-tanah-basah-basic-outline-tanah-basah.png" alt="external-hour-date-and-time-tanah-basah-basic-outline-tanah-basah"/>
                       <span>6 Hours ago</span>
                     </div>
                     <div class="flex gap-1">
-                      icon
+                      <img width="24" height="24" src="https://img.icons8.com/material-rounded/24/user.png" alt="user"/>
                       <span>@cadland_prop</span>
                     </div>
                   </div>
 
-                  <div class="flex gap-[10px] text-base font-normal">
+                  <div class="flex gap-[10px] text-[15px] font-normal">
                     <span class="border border-[#EBEBEB] p-[10px]">{{property.num_rooms}} bed</span>
                     <span class="border border-[#EBEBEB] p-[10px]">{{property.num_toilets}} toilets</span>
                     <span class="border border-[#EBEBEB] p-[10px]"> 780,000sq. ft.</span>    <!--{{property.area}} -->
                     <span class="border border-[#EBEBEB] p-[10px]">12 parking space</span>  <!--{{property.num_rooms}} -->
                   </div>
                   
-                  <span class="text-right text-[#02AADF] text-[10px]">Click to see more details icon </span>
+                  <span class="text-right text-[#02AADF] text-[15px]">Click to see more details icon </span>
               
                   <!-- <div class="mt-6 flex items-center gap-8 text-xs">
                     <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
