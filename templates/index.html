@@ -37,16 +37,16 @@
   animation: spin 40s linear infinite;
 }
 @keyframes spin {
-  0%  { content: "ipsum"; }
-  10% { content: "dolor"; }
-  20% { content: "sit"; }
-  30% { content: "amet"; }
-  40% { content: "consectetur"; }
-  50% { content: "adipisicing"; }
-  60% { content: "elit"; }
-  70% { content: "Hic"; }
-  80% { content: "atque"; }
-  90% { content: "fuga"; }
+  0%  { content: "ipsum" }
+  10% { content: "dolor" }
+  20% { content: "sit" }
+  30% { content: "amet" }
+  40% { content: "consectetur"}
+  50% { content: "adipisicing" }
+  60% { content: "elit" }
+  70% { content: "Hic" }
+  80% { content: "atque" }
+  90% { content: "fuga" }
 }
 /* Adjust column width and spacing for smaller screens */
 @media (max-width: 768px) {
@@ -313,7 +313,7 @@
         <p class="mt-3">Trust Landbankng ltd for your real estate transactions. Experience the future of secure and transparent escrow services</p>
       </div>
 
-      <div class="flex flex-wrap gap-[26px] justify-center w-full">
+      <div class="flex flex-col lg:flex-row gap-[26px]  w-full">
         <div class="bg-white grid gap-10 justify-center rounded-tl-[100px] p-6" >
           <div class="flex justify-center">
             <img style="width: 80px; height: 80px" src="https://via.placeholder.com/80x80" />
@@ -595,16 +595,21 @@
         </p>
       </div>
 
-      <div class="faq divide-y divide-gray-100 rounded-xl border border-gray-100 bg-white">
+      <div class="faq divide-y divide-gray-100 w-[95%] rounded-xl border border-gray-100 bg-white">
         <!-- FAQ Content -->
         <div class="py-4 w-full">
-          <h3 class="faq-question text-xl font-bold animate-accordion-up mb-2 cursor-pointer text-black px-4">Question 1?</h3>
-          <p class="faq-answer text-gray-700 px-4 animate-accordion-down">Answer to question 1.</p>
+          <h3 class="faq-question text-xl font-bold animate-accordion-up mb-2 cursor-pointer text-black px-4">What is Landbnk?</h3>
+          <p class="faq-answer text-gray-700 px-4 animate-accordion-down">How do i join the community? Lorem ipsum dolor sit amet consectetur. Vel sit sed lacinia et. Hendrerit et odio aenean fermentum faucibus faucibus.</p>
         </div>
 
         <div class="py-4 w-full">
-          <h3 class="faq-question text-xl font-bold mb-2 cursor-pointer text-black px-4">Question 2?</h3>
+          <h3 class="faq-question text-xl font-bold mb-2 cursor-pointer text-black px-4">How do i join the community?</h3>
           <p class="faq-answer text-gray-700 px-4">Answer to question 2.</p>
+        </div>
+
+        <div class="py-4 w-full">
+          <h3 class="faq-question text-xl font-bold mb-2 cursor-pointer text-black px-4">How do i join the community?</h3>
+          <p class="faq-answer text-gray-700 px-4">Answer to question 3.</p>
         </div>
         <!-- Add more FAQ items as needed -->
 

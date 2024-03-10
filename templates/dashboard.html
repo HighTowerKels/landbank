@@ -452,7 +452,7 @@ margin-left: -10%;
                           </div>
                           <div class="columns  mr">
                               <h3>Revenue</h3>
-                              <h2 style="font-size:16px ;
+                              <h2 style="font-size:14px ;
                               font-weight: bold; ">NGN 1.250.031000</h2>
                           </div>
                       </div>
@@ -643,7 +643,7 @@ margin-left: -10%;
   <div class="column">
     <div style="position: relative;">
       <input style="text-align: right;" placeholder="sq ft" type="text" id="inputField" name="inputField">
-      <label for="inputField" style="position: absolute; top: 15%; left: 0;">Min</label>
+      <label for="inputField" style="position: absolute; padding: 4px; top: 15%; left: 0;">Min</label>
    
     </div>
     
@@ -651,7 +651,7 @@ margin-left: -10%;
   <div class="column">
     <div style="position: absolute;">
       <input style="text-align: right;" placeholder="sq ft" type="text" id="inputField" name="inputField">
-      <label for="inputField" style="position: absolute; top: 15%; left: 0;">Max</label>
+      <label for="inputField" style="position: absolute; padding: 4px; top: 15%; left: 0;">Max</label>
    
     </div>
     
@@ -848,7 +848,7 @@ margin-left: -10%;
           </div> 
 
           <div class="w-full">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2  gap-6 w-full">
               {% for property in approved_properties %}
                 <div class="block rounded-lg p-4 bg-white w-full shadow-sm shadow-indigo-100">
                   <a href="{{ url_for('property_details', property_id=property.id)}}" >
@@ -880,7 +880,7 @@ margin-left: -10%;
       
                         <span class="text-[#510000] text-[20px] font-bold ">NGN {{property.price}}</span>
       
-                        <div class="grid gap-2 text-[10px]">
+                        <div class="grid gap-2 text-base">
                           <div class="flex gap-1">
                             icon
                             <span>Maitama, {{property.address}}</span>
@@ -895,7 +895,7 @@ margin-left: -10%;
                           </div>
                         </div>
       
-                        <div class="flex gap-[10px] text-[10px] font-normal">
+                        <div class="flex gap-[10px] text-base font-normal">
                           <span class="border border-[#EBEBEB] p-[10px]">{{property.num_rooms}} bed</span>
                           <span class="border border-[#EBEBEB] p-[10px]">{{property.num_toilets}} toilets</span>
                           <span class="border border-[#EBEBEB] p-[10px]"> 780,000sq. ft.</span>    <!--{{property.area}} -->

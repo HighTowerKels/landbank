@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landbank | Listing</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/css/different.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {% include "nav.html" %}
+
+    <!-- nav -->
+    <!-- <div class="navbar bg-base-100">
+        <div class="flex-1">
+          <span id="sidebar-toggle">&#9776;</span>
+          <a class="btn btn-ghost text-xl">Landbank</a>
+        </div>
+        <div class="flex-none">
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+              <div class="indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span class="badge badge-sm indicator-item">8</span>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+              <div class="w-10 rounded-full">
+                <img alt="Tailwind CSS Navbar component"
+                  src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    <!-- main content -->
+    <div class="grid md:grid-cols-2 px-[75px] max-w-full">
+      <!-- left-hand-side card -->
+      <div class="border-r-2 border-[#D9D9D9] py-16 pl-16 pr-10">
+        <div class="p- 12 pr-4 flex flex-col max-w-full gap-9">
+          <div class="grid gap-2 w-full">
+            <h3>Payment</h3>
+            <input type="text" class="border-b-2 border-none outline-none" />
+          </div>
+
+          <!-- choose payment method -->
+          <div class="grid gap-4">
+            <h3>Pay with</h3>
+            <div class="flex gap-5">
+              <div class="flex justify-center items-center gap-1">
+                <input
+                  type="radio"
+                  name="payment method"
+                  id="cardMethod"
+                  class="checked:bg-[#510000]"
+                /><label for="cardMethod">Card</label>
+              </div>
+              <div class="flex justify-center items-center gap-1">
+                <input
+                  type="radio"
+                  name="payment method"
+                  id="bankMethod"
+                  class="checked:bg-[#510000]"
+                /><label for="bankMethod">Bank</label>
+              </div>
+              <div class="flex justify-center items-center gap-1">
+                <input
+                  type="radio"
+                  name="payment method"
+                  class="checked:bg-[#510000]"
+                  id="transferMethod"
+                /><label for="transferMethod">Transfer</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- to display if card is checked -->
+          <div class="flex flex-col gap-4 max-w-full">
+            <h3>Card Number</h3>
+            <input
+              type="text"
+              class="rounded-md"
+              placeholder="1234 5678 9101 1121"
+            />
+            <div class="flex gap-[18px] w-full">
+              <div class="flex flex-col w-1/2 gap-4">
+                <span>Expiration Date</span>
+                <input type="text" class="p-3 rounded-md" placeholder="MM/YY" />
+              </div>
+              <div class="flex flex-col w-1/2 gap-4">
+                <span>CVV</span>
+                <input type="text" class="p-3 rounded-md" placeholder="123" />
+              </div>
+            </div>
+
+            <div class="flex gap-4 items-center">
+              <input type="checkbox" name="" id="saveCardDetails" />
+              <label for="saveCardDetails">save card details</label>
+            </div>
+          </div>
+
+          <!-- to display if bank is checked -->
+          <div class="w-full">
+            <select
+              name="bankName"
+              id=""
+              class="w-full py-3 px-4 rounded-md border border-[#acacac]"
+            >
+              <option value="">First Bank</option>
+              <option value="">GT Bank</option>
+              <option value="">Polaris Bank</option>
+              <option value="">Jaiz Bank</option>
+            </select>
+          </div>
+
+          <!-- to display if transfer is checked -->
+          <div>
+            <div class="grid justify-center gap-9">
+              <span>Transfer USD49.80 to:</span>
+              <div class="grid gap-1">
+                <span>Polaris bank</span><span>0123456781</span>
+              </div>
+              <span
+                >Expires in
+                <span class="text-[#FF3D3D] mx-2">10:00</span>minutes</span
+              >
+            </div>
+          </div>
+
+          <!-- button to pay -->
+          <div class="flex flex-col w-full gap-[10px]">
+            <button
+              class="rounded-[40px] py-5 text-[#F3F3F3] text-center bg-[#510000]"
+            >
+              Pay NGN 2000,000
+            </button>
+            <p class="text-sm font-normal text-[#ACACAC]">
+              Your personal data will be used to process your order, support
+              your experience throughout this website, and for other purposes
+              described in our privacy policy.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- right-hand-side card -->
+      <div class="bg-[#f9fafa] py-16 pr-16">
+        <div class="p-10 pr-4 flex flex-col max-w-full gap-9">
+          <div class="border-b-2 pb-6">
+            <span class="">Summary</span>
+          </div>
+
+          <div class="flex gap-4 w-full">
+            <div>
+              <img
+                src="./../static/image/pic.png"
+                width="134px"
+                height="92px"
+                alt=""
+              />
+            </div>
+            <div class="flex flex-col gap-1 w-full">
+              <div class="flex justify-between">
+                <span>Land Verification</span>
+                <span>NGN 200,000</span>
+              </div>
+              <div class="flex justify-between">
+                <span>4bedroom terraced duplex with a room bq....</span>
+                <span class="text-[#acacac]">Qty: 1</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-[10px] border-t-2 pt-6">
+            <input
+              type="text"
+              class="border-[1.5px] rounded-md py-[14px] text-white border-[#acacac]"
+              placeholder="Gift or discount code"
+            />
+            <button
+              class="bg-[#ACACAC] py-[13px] px-[23px] rounded-md border-[1.5px] border-[#ACACAC] text-[#F3F3F3] text-sm"
+            >
+              Apply
+            </button>
+          </div>
+
+          <div class="border-t-2 pt-6 flex flex-col gap-4">
+            <div class="flex justify-between w-full">
+              <span class="text-sm text-[#0A0D13]">Subtotal</span>
+              <span>NGN200,000</span>
+            </div>
+            <div class="flex justify-between w-full">
+              <span class="text-sm text-[#0A0D13]">VAT</span>
+              <span>NGN2,000</span>
+            </div>
+          </div>
+
+          <div class="border-t-2 pt-6 flex flex-col gap-4">
+            <div class="flex justify-between items-center w-full">
+              <div class="grid">
+                <span class="text-sm text-[#0A0D13]">Total</span>
+                <span class="text-sm text-[#acacac]">Including taxes</span>
+              </div>
+
+              <span>NGN 202,000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- script -->
+    <script>
+      // Toggle mobile menu
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script>
+      const xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+
+      new Chart("myChart", {
+        type: "line",
+        data: {
+          labels: xValues,
+          datasets: [
+            {
+              data: [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
+              borderColor: "red",
+              fill: false,
+            },
+            {
+              data: [
+                1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000,
+              ],
+              borderColor: "green",
+              fill: false,
+            },
+            {
+              data: [300, 700, 2000, 5000, 6000, 4000, 2000, 1000, 200, 100],
+              borderColor: "blue",
+              fill: false,
+            },
+          ],
+        },
+        options: {
+          legend: { display: false },
+        },
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sidebarToggle = document.getElementById("sidebar-toggle");
+        const sidebar = document.querySelector(".sidebar");
+        const content = document.querySelector(".content");
+
+        sidebarToggle.addEventListener("click", function () {
+          sidebar.classList.toggle("visible");
+          content.classList.toggle("overlay");
+
+          // Check if sidebar is visible
+          if (sidebar.classList.contains("visible")) {
+            // If sidebar is visible, hide the content
+            content.style.display = "none";
+            // Add a class to the sidebar for wider width
+            sidebar.classList.add("wider-sidebar");
+          } else {
+            // If sidebar is not visible, show the content
+            content.style.display = "block";
+            // Remove the class for wider width
+            sidebar.classList.remove("wider-sidebar");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
