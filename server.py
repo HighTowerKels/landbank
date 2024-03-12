@@ -1,4 +1,4 @@
-from flask import Flask, flash, render_template, request, redirect, url_for, jsonify, abort, Response
+from flask import Flask, flash, render_template, request, redirect, url_for, jsonify, abort, Response, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
 from flask_login import UserMixin, LoginManager, login_required, login_user, logout_user, current_user
@@ -36,6 +36,9 @@ app.config['MAIL_USERNAME'] = 'info@intexcoin.com'
 app.config['MAIL_SERVER'] = 'server148.web-hosting.com'
 app.config['UPLOAD_FOLDER'] = os.path.join('static', 'uploads')
 app.add_url_rule('/uploads/<filename>', 'uploads', build_only=True)
+UPLOAD_FOLDER = 'uploads'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'pdf', 'doc', 'docx'}
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Initialize Flask-Login
 login_manager = LoginManager(app)
@@ -116,9 +119,8 @@ class Developer(db.Model, UserMixin):
 # Property Model
 class Property(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(255), nullable=False)
     location = db.Column(db.String(255), nullable=False)
-    price = db.Column(db.Float, nullable=False)
+    price = db.Column(db.String, nullable=False)
     date_posted = db.Column(db.DateTime, default=datetime.utcnow)
     service_type = db.Column(db.String(255), nullable=False)  # Serviced, Newly Built, Developing, Furnished
     description = db.Column(db.Text, nullable=False)
@@ -126,29 +128,21 @@ class Property(db.Model, UserMixin):
     num_baths = db.Column(db.Integer, nullable=False)
     num_toilets = db.Column(db.Integer, nullable=False)
     property_type = db.Column(db.String(20), nullable=False)  # Sale, Rent, Short Let, Developing
-    main_image = db.Column(db.LargeBinary)
-    main_image_filename = db.Column(db.String(100))
-    main_image_one = db.Column(db.LargeBinary)
-    main_image_one_filename = db.Column(db.String(100))
-    main_image_two = db.Column(db.LargeBinary)
-    main_image_two_filename = db.Column(db.String(100))
-    main_image_three = db.Column(db.LargeBinary)
-    main_image_three_filename = db.Column(db.String(100))
-    main_image_four = db.Column(db.LargeBinary)
-    main_image_four_filename = db.Column(db.String(100))
-    main_image_five = db.Column(db.LargeBinary)
-    main_image_five_filename = db.Column(db.String(100))
     likes = db.Column(db.Integer, default=0)
     shares = db.Column(db.Integer, default=0)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = relationship('User', backref='properties')
     approved = db.Column(db.Boolean, default=False)  # Define the 'approved' field
-
+    image_filenames = db.Column(db.String)  # Store as comma-separated string
+    document_filenames = db.Column(db.String) 
+    square_feet = db.Column(db.String(200))
+    percent = db.Column(db.String(200))
+    price_type = db.Column(db.String(200))
     def save(self):
         db.session.add(self)
         db.session.commit()
+
 def allowed_file(filename):
-    ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 class Notification(db.Model):
@@ -177,82 +171,65 @@ class CartItem(db.Model):
 
 
 
-
-
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 @app.route('/create_property', methods=['GET', 'POST'])
 @login_required
 def create_property():
     if request.method == 'POST':
-        title = request.form['title']
+        # Extract form data
+        price_type = request.form['price_type']
+        square_feet = request.form['square_feet']
+        percent = request.form['percent']
         location = request.form['location']
-        price = float(request.form['price'])  # Assuming the price is a float
+        price = request.form['price']
         service_type = request.form['service_type']
         description = request.form['description']
         num_rooms = int(request.form['num_rooms'])
         num_baths = int(request.form['num_baths'])
         num_toilets = int(request.form['num_toilets'])
         property_type = request.form['property_type']
-
-         # Ensure the UPLOAD_FOLDER exists
-        upload_folder = os.path.join(app.static_folder, 'uploads')
+       
+        # Ensure the UPLOAD_FOLDER exists
+        upload_folder = os.path.join(app.root_path, app.config['UPLOAD_FOLDER'])
         os.makedirs(upload_folder, exist_ok=True)
         print("UPLOAD_FOLDER:", upload_folder)  # Debugging line
-        # Upload Main Image
-        main_image = request.files['main_image']
-        if main_image and allowed_file(main_image.filename):
-            filename = secure_filename(main_image.filename)
-            print("Saving to:", os.path.join(app.config['UPLOAD_FOLDER'], filename))  # Debugging line
-            main_image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            main_image_filename = filename
-        else:
-            main_image_filename = None
-
-        # Upload Image One
-        main_image_one = request.files['main_image_one']
-        if main_image_one and allowed_file(main_image_one.filename):
-            filename = secure_filename(main_image_one.filename)
-            main_image_one.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            main_image_one_filename = filename
-        else:
-            main_image_one_filename = None
-
-        # Upload Image Two
-        main_image_two = request.files['main_image_two']
-        if main_image_two and allowed_file(main_image_two.filename):
-            filename = secure_filename(main_image_two.filename)
-            main_image_two.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            main_image_two_filename = filename
-        else:
-            main_image_two_filename = None
-            
-        main_image_three = request.files['main_image_three']
-        if main_image_three and allowed_file(main_image_three.filename):
-            filename = secure_filename(main_image_three.filename)
-            main_image_three.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            main_image_three_filename = filename
-        else:
-            main_image_three_filename = None
-            
-        main_image_four = request.files['main_image_four']
-        if main_image_four and allowed_file(main_image_four.filename):
-            filename = secure_filename(main_image_four.filename)
-            main_image_four.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            main_image_four_filename = filename
-        else:
-            main_image_four_filename = None
-
-        main_image_five = request.files['main_image_five']
-        if main_image_five and allowed_file(main_image_five.filename):
-            filename = secure_filename(main_image_three.filename)
-            main_image_five.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            main_image_five_filename = filename
-        else:
-            main_image_five_filename = None
         
+        # Upload Main Image
+        image_files = request.files.getlist('fileUpload[]')
+        document_files = request.files.getlist('documentUpload[]')
+
+        # Initialize lists to store uploaded filenames
+        uploaded_image_filenames = []
+        uploaded_document_filenames = []
+
+        # Save uploaded files and generate comma-separated filenames
+        for file in image_files:
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(upload_folder, filename))
+                uploaded_image_filenames.append(filename)
+                print("Uploaded Image:", filename)
+
+        for file in document_files:
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(upload_folder, filename))
+                uploaded_document_filenames.append(filename)
+                print("Uploaded Document:", filename)
+
+        # Convert lists to comma-separated strings
+        image_filenames = ','.join(uploaded_image_filenames)
+        document_filenames = ','.join(uploaded_document_filenames)
+
+        # Create new Property object
         new_property = Property(
-            title=title,
             location=location,
+            price_type=price_type,
+            percent=percent,
+            square_feet=square_feet,
             price=price,
             service_type=service_type,
             description=description,
@@ -260,25 +237,20 @@ def create_property():
             num_baths=num_baths,
             num_toilets=num_toilets,
             property_type=property_type,
-            main_image_filename = main_image_filename,
-            main_image_one_filename = main_image_one_filename,
-            main_image_two_filename = main_image_two_filename,
-            main_image_three_filename = main_image_three_filename,
-            main_image_four_filename = main_image_four_filename,
-            main_image_five_filename = main_image_five_filename,
-             approved=False,
+            approved=False,
+            image_filenames=image_filenames,
+            document_filenames=document_filenames,
             user=current_user 
-          
         )
-        print("Current User:", current_user)
-        print("Property User:", new_property.user)
 
+        # Add and commit to the database
         db.session.add(new_property)
         db.session.commit()
         flash('Property has been created')
-        return redirect(url_for('index'))
+        return redirect(url_for('dashboard'))
 
-    return render_template('create_property.html')
+    return render_template('creatinglisting.html')
+
 
 @app.route('/admin/dashboard')
 @login_required
@@ -445,9 +417,15 @@ def add_to_cart():
 @app.route('/cart')
 @login_required
 def cart():
+    
     # Query the cart items for the current user
     cart_items = CartItem.query.filter_by(user_id=current_user.id).all()
-    return render_template('cart.html', cart_items=cart_items)
+    image_files = []
+    for item in cart_items:
+        # Assuming each cart item has a property with image_filenames attribute
+        image_files.append(item.property.image_filenames.split(',')[0])  # Add the first image filename for each cart item
+    
+    return render_template('cart.html', cart_items=cart_items, image_files=image_files)
 
 @app.route('/remove_from_cart/<int:item_id>', methods=['POST'])
 @login_required
@@ -535,8 +513,9 @@ def realtor_signup(user_id):
     realtor = Realtor(user=user, facebook_link=facebook_link, instagram_link=instagram_link,
                       realtor_description=realtor_description)
     realtor.save()
+    
 
-    return redirect(url_for('index'))
+    return redirect(url_for('parking'))
 
 @app.route('/property_owner_signup/<int:user_id>', methods=['POST'])
 def property_owner_signup(user_id):
@@ -550,7 +529,7 @@ def property_owner_signup(user_id):
                                    property_owner_description=property_owner_description)
     property_owner.save()
 
-    return redirect(url_for('index'))
+    return redirect(url_for('parking'))
 
 @app.route('/developer_signup/<int:user_id>', methods=['POST'])
 def developer_signup(user_id):
@@ -569,8 +548,9 @@ def developer_signup(user_id):
                           facebook_link=facebook_link, instagram_link=instagram_link,
                           developer_description=developer_description)
     developer.save()
+    
 
-    return redirect(url_for('index'))
+    return redirect(url_for('parking'))
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -593,6 +573,10 @@ def login():
             flash('Login failed. Please check your email and password.', 'danger')
 
     return render_template('login.html')
+
+@app.route('/parking')
+def parking():
+    return render_template('parking.html')
 
 
 @app.route('/nav')
@@ -626,16 +610,15 @@ def listinguser():
 @app.route('/property/details/<int:property_id>', methods=['GET', 'POST'])
 def property_details(property_id):
     property = Property.query.get(property_id)
-    approved_properties = Property.query.filter_by(approved=True).all()
-    pending_properties = Property.query.filter_by(approved=False).all()
-
     if not property:
         flash('Property not found', 'error')
-        return redirect(url_for('index'))  # Redirect to the home page or any other appropriate page
+        return redirect(url_for('index'))
+
+    # Assuming you have a property_images attribute in your Property model
+    property_images = property.image_filenames.split(',') if property.image_filenames else []
 
     if request.method == 'POST':
         if 'add_to_cart' in request.form:
-            # Add the property to the user's cart
             cart_item = CartItem(property_id=property_id, user_id=current_user.id)
             db.session.add(cart_item)
             try:
@@ -645,23 +628,45 @@ def property_details(property_id):
                 db.session.rollback()
                 flash('An error occurred while adding the property to your cart. Please try again.', 'error')
                 app.logger.error(f"Error adding property to cart: {e}")
-            return redirect(url_for('property_details', property_id=property_id))  # Redirect back to the same property details page after adding to cart
+            return redirect(url_for('property_details', property_id=property_id))
 
-    # Render the property details template and pass the property object to it
-    return render_template('property_details.html', property=property, approved_properties=approved_properties, pending_properties=pending_properties)
+    return render_template('property_details.html', property=property,image_files=property_images)
+
+def jinja2_enumerate(iterable):
+    return enumerate(iterable)
+
+# Add the filter to Jinja2 environment
+app.jinja_env.filters['enumerate'] = jinja2_enumerate
 
 
 @app.route('/dashboard')
 @login_required
 def dashboard():
     user_notifications = current_user.notifications
-    return render_template('dashboard.html', notifications=user_notifications)
+    properties = Property.query.all()
+    approved_properties = Property.query.filter_by(approved=True).all()
+    pending_properties = Property.query.filter_by(approved=False).all()
+    return render_template('dashboard.html', notifications=user_notifications , properties=properties, approved_properties=approved_properties, pending_properties=pending_properties)
 
 @app.route('/creatinglisting')
 def createlisting():
     return render_template('createlisting.html')
 
+@app.route('/cardpayment')
+def cardpayment():
+    return render_template('card.html')
 
+@app.route('/bankpayment/')
+def bankpayment():
+    return render_template('bank.html')
+
+@app.route('/transferpayment')
+def transferpayment():
+    return render_template('bank.html')
+
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
 
 
 
@@ -678,4 +683,4 @@ def database():
     return "Hello done!!!"
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=8000, debug=True)
+    app.run(host='127.0.0.1', port=5000, debug=True)

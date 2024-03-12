@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+}
+
+.cart-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.cart-item {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.cart-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.item-details {
+  padding: 10px;
+}
+
+button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #cc0000;
+}
+
+</style>
+</head>
+<body>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<!-- Display the cart items here -->
+
+  <h1>Shopping Cart</h1>
+  
+  <div class="cart-items">
+    {% for item in cart_items %}
+      <div class="cart-item">
+        <img src="{{ url_for('static', filename='uploads/' + image_files[0]) }}" alt="Property Image">
+        <div class="item-details">
+          <h2>{{ item.property.title }}</h2>
+          <p>Location: {{ item.property.location }}</p>
+          <p>Price: {{ item.property.price }}</p>
+        </div>
+        <form action="{{ url_for('remove_from_cart', item_id=item.id) }}" method="post">
+          <button type="submit">Remove from Cart</button>
+        </form>
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
