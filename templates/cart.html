@@ -52,13 +52,147 @@ button {
 }
 
 button:hover {
-  background-color: #cc0000;
+  background-color: #510000;
 }
+.alert-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.alert {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.alert-success {
+    background-color: #28a745;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+}
+.button {
+  height: 50px;
+  width: 200px;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid #252525;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #333;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-txt {
+  z-index: 1;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.type1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: #333;
+  border-radius: 30px;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+
+.button:hover {
+  box-shadow: 1px 1px 200px #510000;
+  color: #fff;
+  border: none;
+}
+
+.type1:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+}
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+ 
+}
+p{
+  font-family: cabinet Grotesk;
+  font-size: 16px;
+  padding-left: 10%;
+}
+.second{
+  font-size: 18px;
+}
+.services-list {
+  padding-left: 10%; /* Remove default padding */
+  font-family: cabinet Grotesk;
+}
+
+.services-list li {
+  list-style-type:disc; /* Remove default list style */
+  margin-bottom: 10px; /* Add margin between list items */
+}
+
+/* Ensure proper spacing between paragraphs and buttons */
+.second {
+  margin-bottom: 20px;
+}
+
+#proceedButton,
+#realtorButton {
+  margin-right: 30px; /* Add space between buttons */
+}
+/* Close Button */.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+  @media (max-width: 480px) {
+    .modal-content{
+      width: 80%;
+    }
+  }
 
 </style>
 </head>
 <body>
 
+  <div id="alert-container" class="alert-container">
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
         {% for category, message in messages %}
@@ -68,6 +202,8 @@ button:hover {
         {% endfor %}
     {% endif %}
 {% endwith %}
+  </div>
+
 
 <!-- Display the cart items here -->
 
@@ -76,17 +212,91 @@ button:hover {
   <div class="cart-items">
     {% for item in cart_items %}
       <div class="cart-item">
-        <img src="{{ url_for('static', filename='uploads/' + item.property.main_image_filename) }}" alt="Property Image">
+        <img src="{{ url_for('static', filename='uploads/' + image_files[0]) }}" alt="Property Image">
         <div class="item-details">
           <h2>{{ item.property.title }}</h2>
           <p>Location: {{ item.property.location }}</p>
           <p>Price: {{ item.property.price }}</p>
         </div>
+        <div  class="row">
+        
         <form action="{{ url_for('remove_from_cart', item_id=item.id) }}" method="post">
-          <button type="submit">Remove from Cart</button>
+          <button class="button type1" type="submit">
+            <span class="btn-txt"> Remove from Cart</span>
+           </button>
         </form>
+        <br>
+    
+          <button id="buyButton" class="button type1" style="background-color: green;" type="submit">
+            <span class="btn-txt">Buy</span>
+          </button>
+      
+      </div>
+        
+        
       </div>
     {% endfor %}
   </div>
+
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 style="color: #510000; text-align: center;">Verify & Claim Your Land Today!</h2>
+      <p>Buying land is a significant investment, and ensuring its legitimacy is crucial for your peace of mind and financial security.</p>
+      <p class="second">CadLands is your trusted partner in secure and efficient land verification. We provide:</p>
+      <ul class="services-list">
+        <li>Seamless data access: Gain instant insights into land ownership records, boundary maps, and zoning regulations.</li>
+        <li>Advanced verification tools: Utilize satellite imagery, drone surveys, and on-ground verification services for comprehensive property analysis.</li>
+        <li>Fraud detection algorithms: Identify potential discrepancies and red flags early on, mitigating risks and protecting your investment.</li>
+      </ul>
+      <p>Land verification will incur a small fee to ensure accuracy and security.</p>
+      <a href="/transferpayment">
+        <button class="button" id="proceedButton">Proceed</button>
+      </a>
+      
+      <button class="button" id="realtorButton">Meet Realtor</button>
+    </div>
+  </div>
+
+  <script>
+    // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("buyButton");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Button to proceed
+document.getElementById("proceedButton").onclick = function() {
+  // Code to proceed with the purchase
+  // You can redirect the user to a payment page or perform other actions
+}
+
+// Button to meet realtor
+document.getElementById("realtorButton").onclick = function() {
+  // Code to contact the realtor
+}
+
+  </script>
 </body>
 </html>

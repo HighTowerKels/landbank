@@ -219,8 +219,9 @@ text-align: left;
 
 
     .content {
-      flex: 1; /* Make the content take up remaining space */
+      /*flex: 1;  Make the content take up remaining space */
       padding: 20px;
+      width: 100%;
     }
 .row{
     display: flex;
@@ -254,7 +255,7 @@ color: whitesmoke
 
 }
 .div1{
-  width: 120%;
+  width: 100%;
 height: 8rem;
 padding: 0px;
 margin-left: -10%;
@@ -272,7 +273,13 @@ margin-left: -10%;
   display: flex;
   flex-direction: row;
 }
-
+.div2 , .div3, .div4{
+  width:60%;
+  margin: 5%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20%;
+}
     }
   </style>
 </head>
@@ -313,7 +320,7 @@ margin-left: -10%;
         <ul>
             <li>
               <a
-                href=""
+                href="/dashboard"
                 class="flex items-center gap-2 border-s-[3px] border-blue-500 bg-blue-50 px-4 py-3 text-blue-700"
               >
               <i class="fa fa-home"></i>
@@ -323,7 +330,7 @@ margin-left: -10%;
           
             <li>
               <a
-                href=""
+                href="/verification"
                 class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
               >
               <i class="fa fa-user"></i>
@@ -333,7 +340,7 @@ margin-left: -10%;
           
             <li>
               <a
-                href=""
+                href="/creatinglisting"
                 class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
               >
               <i class="fa fa-file"></i>
@@ -344,7 +351,7 @@ margin-left: -10%;
           
             <li>
               <a
-                href=""
+                href="/biddings"
                 class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
               >
               <i class="fa fa-briefcase"></i>
@@ -370,7 +377,7 @@ margin-left: -10%;
           
             <li>
               <a
-                href=""
+                href="/settings"
                 class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
               >
               <i class="fa fa-cog"></i>
@@ -381,7 +388,7 @@ margin-left: -10%;
           
             <li>
               <a
-                href=""
+                href="/contact"
                 class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
               >
               <i class="fa fa-info-circle"></i>
@@ -402,7 +409,7 @@ margin-left: -10%;
           
             <li>
               <a
-                href=""
+                href="/logout"
                 class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
               >
               <i class="fa fa-sign-out"></i>
@@ -433,26 +440,26 @@ margin-left: -10%;
                 {% endfor %}
             {% endif %}
         {% endwith %}
-        <section class="mx-auto max-w-screen-xl">
-          <div class="parent">
-            <div class="child">
+        <section class="mx-auto ">
+          <div class="paren grid gap-6 md:grid-cols-[4fr,1fr] mb-28">
+            <div class="child w-full ">
               <div class="div1"><canvas id="myChart" style="width:100%;max-width:700px"></canvas> </div>
 
             </div>
-            <div class="child">
-              <div class="row-child">
+            <div class="child  ">
+              <div class="row-child w-full">
                 <div class="div2 mt-2">
-                  <div class="card">
-                    <div class="card-body items-center text-center">
+                  <div class="card ">
+                    <div class="card-body w-full items-center text-center">
                       <div class="rows">
                           <div class="columns mr-4">
                               <img class="card-title text-left item-left" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACvElEQVR4nO2ZPYgTQRTH36GIWoilwkG8zEQhjYXaKMd1YmFxCFdoY+GZ91ZOxEIsLO4s/LjmCj+qa8XCQi2vO1TQ9xLBJgqCHDbxAwttRPHgIpNs9mazu2LikbxIfrAk2WXh98+bnZmdARgyZMgfKU5VtxiSeUP8wZLU//YwKDUT8CRowSDf7CRALAzxr7GgfAg0YFBqDamgfLij+0gWGoGQ3+4uvdwO/caG/26n9+VOL2+1yNWwMndhUIM4Csj7DfLPbptmV80ZpWaQb7hnGzYqSHj/8Vbz7PFxfUOD9Jo8Vo60KjPQQTKdh0EGoSITs8ubLcq1Tkf7Xh/G78HSghiUK/2WtJ32YKlBiN91M9r3tQezbUFy52RX4xzKZ1BOzndtD2JKcqx5kZdAOcZ3bQ9iA7ncKBfJPCjH+q6JipDcD8+dAuUY3zURBOVNWK4iKMeQvI5c/SCjF59vMyirluSHG0tAMaPtrn4Q97bX/M0VUE6+JAdjrn4Qg3I2LNUiKMeQTMdc/SAW5U5zgOEZUI4luR1zjQUheea+F4jHQTkG5WnMdT1IfcQSf7PEa7kLr3aCauojFvlrzLUVpBCU8+HgsgLK2TvNYwnXKEipfCLsBR6CckzAkwnXaG5PcjW8OAvKMShzCVdvTv+4OXVXtAyagUV5lHCNgqC8d5/78MUeUI4hWUm4rleE11yv5XoEUIw9zztSXWPvwMRPQDkF4vFU1/i7L98C5RjkmVTXWBDkM6Aci7yY6hprWgEfAOVY4kqqaxQCZdVtFYBmph5sssTfU129ZlUF5VjkYqar12PdA+UUkE9mukZzLeJLoBwT7nemukZNK+CjoByLvJTp2griVu1AOZbkU6arIf7iLrp1VFCMDcoT0TpvGm5Zvscr5/+6lTCXGsStCYUPUaNsag/kj277QPt625D/jt/n94yiC7n6RQAAAABJRU5ErkJggg==">
     
                           </div>
-                          <div class="columns mr-4">
+                          <div class="columns  mr">
                               <h3>Revenue</h3>
-                              <h2 style="font-size:20px ;
-                              font-weight: bold; justify-items: center;">NGN 1.250.031000</h2>
+                              <h2 style="font-size:14px ;
+                              font-weight: bold; ">NGN 1.250.031000</h2>
                           </div>
                       </div>
                       
@@ -461,7 +468,7 @@ margin-left: -10%;
                 </div>
                 <div class="div3 mt-2">
                   <div class="card">
-                    <div class="card-body items-center text-center">
+                    <div class="card-body w-full items-center text-center">
                       <div class="rows">
                           <div class="columns mr-4">
                               <img class="card-title text-left item-left" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACvElEQVR4nO2ZPYgTQRTH36GIWoilwkG8zEQhjYXaKMd1YmFxCFdoY+GZ91ZOxEIsLO4s/LjmCj+qa8XCQi2vO1TQ9xLBJgqCHDbxAwttRPHgIpNs9mazu2LikbxIfrAk2WXh98+bnZmdARgyZMgfKU5VtxiSeUP8wZLU//YwKDUT8CRowSDf7CRALAzxr7GgfAg0YFBqDamgfLij+0gWGoGQ3+4uvdwO/caG/26n9+VOL2+1yNWwMndhUIM4Csj7DfLPbptmV80ZpWaQb7hnGzYqSHj/8Vbz7PFxfUOD9Jo8Vo60KjPQQTKdh0EGoSITs8ubLcq1Tkf7Xh/G78HSghiUK/2WtJ32YKlBiN91M9r3tQezbUFy52RX4xzKZ1BOzndtD2JKcqx5kZdAOcZ3bQ9iA7ncKBfJPCjH+q6JipDcD8+dAuUY3zURBOVNWK4iKMeQvI5c/SCjF59vMyirluSHG0tAMaPtrn4Q97bX/M0VUE6+JAdjrn4Qg3I2LNUiKMeQTMdc/SAW5U5zgOEZUI4luR1zjQUheea+F4jHQTkG5WnMdT1IfcQSf7PEa7kLr3aCauojFvlrzLUVpBCU8+HgsgLK2TvNYwnXKEipfCLsBR6CckzAkwnXaG5PcjW8OAvKMShzCVdvTv+4OXVXtAyagUV5lHCNgqC8d5/78MUeUI4hWUm4rleE11yv5XoEUIw9zztSXWPvwMRPQDkF4vFU1/i7L98C5RjkmVTXWBDkM6Aci7yY6hprWgEfAOVY4kqqaxQCZdVtFYBmph5sssTfU129ZlUF5VjkYqar12PdA+UUkE9mukZzLeJLoBwT7nemukZNK+CjoByLvJTp2griVu1AOZbkU6arIf7iLrp1VFCMDcoT0TpvGm5Zvscr5/+6lTCXGsStCYUPUaNsag/kj277QPt625D/jt/n94yiC7n6RQAAAABJRU5ErkJggg==">
@@ -479,7 +486,7 @@ margin-left: -10%;
                 </div>
                 <div class="div4 mt-2">
                   <div class="card">
-                    <div class="card-body items-center text-center">
+                    <div class="card-body w-full items-center text-center">
                       <div class="rows">
                           <div class="columns mr-4">
                               <img class="card-title text-left item-left" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACvElEQVR4nO2ZPYgTQRTH36GIWoilwkG8zEQhjYXaKMd1YmFxCFdoY+GZ91ZOxEIsLO4s/LjmCj+qa8XCQi2vO1TQ9xLBJgqCHDbxAwttRPHgIpNs9mazu2LikbxIfrAk2WXh98+bnZmdARgyZMgfKU5VtxiSeUP8wZLU//YwKDUT8CRowSDf7CRALAzxr7GgfAg0YFBqDamgfLij+0gWGoGQ3+4uvdwO/caG/26n9+VOL2+1yNWwMndhUIM4Csj7DfLPbptmV80ZpWaQb7hnGzYqSHj/8Vbz7PFxfUOD9Jo8Vo60KjPQQTKdh0EGoSITs8ubLcq1Tkf7Xh/G78HSghiUK/2WtJ32YKlBiN91M9r3tQezbUFy52RX4xzKZ1BOzndtD2JKcqx5kZdAOcZ3bQ9iA7ncKBfJPCjH+q6JipDcD8+dAuUY3zURBOVNWK4iKMeQvI5c/SCjF59vMyirluSHG0tAMaPtrn4Q97bX/M0VUE6+JAdjrn4Qg3I2LNUiKMeQTMdc/SAW5U5zgOEZUI4luR1zjQUheea+F4jHQTkG5WnMdT1IfcQSf7PEa7kLr3aCauojFvlrzLUVpBCU8+HgsgLK2TvNYwnXKEipfCLsBR6CckzAkwnXaG5PcjW8OAvKMShzCVdvTv+4OXVXtAyagUV5lHCNgqC8d5/78MUeUI4hWUm4rleE11yv5XoEUIw9zztSXWPvwMRPQDkF4vFU1/i7L98C5RjkmVTXWBDkM6Aci7yY6hprWgEfAOVY4kqqaxQCZdVtFYBmph5sssTfU129ZlUF5VjkYqar12PdA+UUkE9mukZzLeJLoBwT7nemukZNK+CjoByLvJTp2griVu1AOZbkU6arIf7iLrp1VFCMDcoT0TpvGm5Zvscr5/+6lTCXGsStCYUPUaNsag/kj277QPt625D/jt/n94yiC7n6RQAAAABJRU5ErkJggg==">
@@ -500,7 +507,10 @@ margin-left: -10%;
            
            
             
-            </div>
+          </div>
+          <!-- hero sect ends here -->
+
+
        <div class="bottom">
         <div class="row">
           <div class="column">
@@ -639,7 +649,7 @@ margin-left: -10%;
   <div class="column">
     <div style="position: relative;">
       <input style="text-align: right;" placeholder="sq ft" type="text" id="inputField" name="inputField">
-      <label for="inputField" style="position: absolute; top: 15%; left: 0;">Min</label>
+      <label for="inputField" style="position: absolute; padding: 4px; top: 15%; left: 0;">Min</label>
    
     </div>
     
@@ -647,7 +657,7 @@ margin-left: -10%;
   <div class="column">
     <div style="position: absolute;">
       <input style="text-align: right;" placeholder="sq ft" type="text" id="inputField" name="inputField">
-      <label for="inputField" style="position: absolute; top: 15%; left: 0;">Max</label>
+      <label for="inputField" style="position: absolute; padding: 4px; top: 15%; left: 0;">Max</label>
    
     </div>
     
@@ -841,311 +851,151 @@ margin-left: -10%;
                 </div>
               </form>
             </div>
-          </div>
-          <div class="column">
-            <div class="row">
-              <div class="column">
-                <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
-                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
-                
-                    <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
-                    <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
-                
-                    <div class="flex items-center mb-4">
-                        <div class="icons flex items-center">
-                          <i class='bx bx-bath text-gray-500'></i>
-                          <span class="ml-2">2</span>
-                        </div>
-                        <div class="icons flex items-center">
-                          <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
-                          <span class="ml-2">3</span>
-                        </div>
-                        <div class="icons flex items-center">
-                          <i class='bx bxs-parking text-gray-500'></i>
-                          <span class="ml-2">1</span>
-                        </div>
-                        <div class="icons flex items-center">
-                          <i class='bx bx-square text-gray-500'></i>
-                          <span class="ml-2">1000sqft</span>
-                        </div>
+          </div> 
+
+          <div class="w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2  gap-6 w-full">
+              {% for property in approved_properties %}
+                <div class="block rounded-lg p-4 bg-white w-full shadow-sm shadow-indigo-100">
+                  <a href="{{ url_for('property_details', property_id=property.id)}}" >
+                    <div class="grid gap-8 relative">
+                      {% if property.image_filenames %}
+                      {% set image_files = property.image_filenames.split(',') %}
+                      <img class="max-h-auto w-full aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_files[0]) }}" alt="Publication Image" >
+                      <div class="absolute left-2 top-4">
+                        <span class="bg-[#510000] px-4 py-2 text-white font-normal text-lg rounded-md ">Negotiable</span>
                       </div>
-                  
-                    <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
-                
-                    <!-- <div class="flex items-center mb-4">
-                      <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
-                      <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
-                    </div> -->
-                    <div class="rowty">
-                        <div class="column">
-                            <div class="flex items-center text-gray-700 mb-4">
-                                <span class="price font-bold">NGN 250,000</span>
-                              </div>
-                        </div>
-                        <div class="column com">
-                            <div class="rows">
-                                <div class="column">
-                                    <i class='bx bx-like' ></i>
-                                </div>
-                                <div class="column">
-                                    <i class='bx bx-cart-add' ></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    
-                
-                    <div class="flex items-center text-gray-700 mb-4">
-                      
-                        <i class='bx bxs-map-pin'></i>                   
-                           <span> 123 Main Street, City</span>
-                    </div>
-                
-                    <div class="flex items-center text-gray-700 mb-4">
-                        <i class='bx bx-time-five' ></i>
-                
-                      <span> January 15, 2023</span>
-                    </div>
-                
-                    <div class="flex items-center text-gray-700 mb-4">
-                    
-                        <i class='bx bx-user' ></i>
-                    
-                      <span> John Doe</span>
-                    </div>
-                
-                    <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
-                  </div>
-            </div>
-            <div class="column">
-               <div class="column">
-              <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
-                  <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
-              
-                  <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
-                  <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
-              
-                  <div class="flex items-center mb-4">
-                      <div class="icons flex items-center">
-                        <i class='bx bx-bath text-gray-500'></i>
-                        <span class="ml-2">2</span>
-                      </div>
-                      <div class="icons flex items-center">
-                        <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
-                        <span class="ml-2">3</span>
-                      </div>
-                      <div class="icons flex items-center">
-                        <i class='bx bxs-parking text-gray-500'></i>
-                        <span class="ml-2">1</span>
-                      </div>
-                      <div class="icons flex items-center">
-                        <i class='bx bx-square text-gray-500'></i>
-                        <span class="ml-2">1000sqft</span>
-                      </div>
-                    </div>
-                
-                  <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
-              
-                  <!-- <div class="flex items-center mb-4">
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
-                    <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
-                  </div> -->
-                  <div class="rowty">
-                      <div class="column">
-                          <div class="flex items-center text-gray-700 mb-4">
-                              <span class="price font-bold">NGN 250,000</span>
-                            </div>
-                      </div>
-                      <div class="column com">
-                          <div class="rows">
-                              <div class="column">
-                                  <i class='bx bx-like' ></i>
-                              </div>
-                              <div class="column">
-                                  <i class='bx bx-cart-add' ></i>
-                              </div>
+                    {% endif %}
+                      <!-- <img alt="Home" src="{{ property.main_image_one }}" class="h-56 w-full rounded-md object-cover"> -->
+                      <div class="grid gap-6">
+                        <!-- <dl>
+                          <div>
+                            <dt class="sr-only">Price</dt>
+                            <dd class="text-sm text-gray-500">${{ property.price }}</dd>
                           </div>
-                      </div>
-                  </div>
-              
-                  
-              
-                  <div class="flex items-center text-gray-700 mb-4">
                     
-                      <i class='bx bxs-map-pin'></i>                   
-                         <span> 123 Main Street, City</span>
-                  </div>
-              
-                  <div class="flex items-center text-gray-700 mb-4">
-                      <i class='bx bx-time-five' ></i>
-              
-                    <span> January 15, 2023</span>
-                  </div>
-              
-                  <div class="flex items-center text-gray-700 mb-4">
-                  
-                      <i class='bx bx-user' ></i>
-                  
-                    <span> John Doe</span>
-                  </div>
-              
-                  <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
-                </div>
-          </div></div>
-            </div>
-            <div class="row mt-4">
-              <div class="column">
-                <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
-                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
-                
-                    <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
-                    <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
-                
-                    <div class="flex items-center mb-4">
-                        <div class="icons flex items-center">
-                          <i class='bx bx-bath text-gray-500'></i>
-                          <span class="ml-2">2</span>
-                        </div>
-                        <div class="icons flex items-center">
-                          <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
-                          <span class="ml-2">3</span>
-                        </div>
-                        <div class="icons flex items-center">
-                          <i class='bx bxs-parking text-gray-500'></i>
-                          <span class="ml-2">1</span>
-                        </div>
-                        <div class="icons flex items-center">
-                          <i class='bx bx-square text-gray-500'></i>
-                          <span class="ml-2">1000sqft</span>
-                        </div>
-                      </div>
-                  
-                    <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
-                
-                    <!-- <div class="flex items-center mb-4">
-                      <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
-                      <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
-                    </div> -->
-                    <div class="rowty">
-                        <div class="column">
-                            <div class="flex items-center text-gray-700 mb-4">
-                                <span class="price font-bold">NGN 250,000</span>
-                              </div>
-                        </div>
-                        <div class="column com">
-                            <div class="rows">
-                                <div class="column">
-                                    <i class='bx bx-like' ></i>
-                                </div>
-                                <div class="column">
-                                    <i class='bx bx-cart-add' ></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    
-                
-                    <div class="flex items-center text-gray-700 mb-4">
-                      
-                        <i class='bx bxs-map-pin'></i>                   
-                           <span> 123 Main Street, City</span>
-                    </div>
-                
-                    <div class="flex items-center text-gray-700 mb-4">
-                        <i class='bx bx-time-five' ></i>
-                
-                      <span> January 15, 2023</span>
-                    </div>
-                
-                    <div class="flex items-center text-gray-700 mb-4">
-                    
-                        <i class='bx bx-user' ></i>
-                    
-                      <span> John Doe</span>
-                    </div>
-                
-                    <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
-                  </div>
-            </div>
-            <div class="column">
-               <div class="column">
-              <div class="w-11/12 mx-auto bg-white p-8 rounded-md shadow-md">
-                  <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Property Image" class="w-full h-48 object-cover mb-4 rounded-md">
-              
-                  <h2 class="text-xl font-bold mb-2">Terraced duplex for Sale</h2>
-                  <p class=" desp text-gray-600 mb-4">4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja.</p>
-              
-                  <div class="flex items-center mb-4">
-                      <div class="icons flex items-center">
-                        <i class='bx bx-bath text-gray-500'></i>
-                        <span class="ml-2">2</span>
-                      </div>
-                      <div class="icons flex items-center">
-                        <i class='bx bx-building-house h-6 w-6 text-gray-500'></i>
-                        <span class="ml-2">3</span>
-                      </div>
-                      <div class="icons flex items-center">
-                        <i class='bx bxs-parking text-gray-500'></i>
-                        <span class="ml-2">1</span>
-                      </div>
-                      <div class="icons flex items-center">
-                        <i class='bx bx-square text-gray-500'></i>
-                        <span class="ml-2">1000sqft</span>
-                      </div>
-                    </div>
-                
-                  <!-- <p class="text-gray-600 mb-4">Square Feet: 1200 sqft</p> -->
-              
-                  <!-- <div class="flex items-center mb-4">
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add to Cart</button>
-                    <button class="text-gray-500 px-4 py-2 rounded-md border">Like</button>
-                  </div> -->
-                  <div class="rowty">
-                      <div class="column">
-                          <div class="flex items-center text-gray-700 mb-4">
-                              <span class="price font-bold">NGN 250,000</span>
-                            </div>
-                      </div>
-                      <div class="column com">
-                          <div class="rows">
-                              <div class="column">
-                                  <i class='bx bx-like' ></i>
-                              </div>
-                              <div class="column">
-                                  <i class='bx bx-cart-add' ></i>
-                              </div>
+                          <div>
+                            <dt class="sr-only">Address</dt>
+                            <dd class="font-medium">{{ property.location }}</dd>
                           </div>
-                      </div>
-                  </div>
-              
-                  
-              
-                  <div class="flex items-center text-gray-700 mb-4">
+                        </dl> -->
+      
+                        <div class="grid gap-3">
+                          <h3>{{property.name}}</h3>
+                          <p class="text-sm text-gray-500">{{property.description}}</p>
+                        </div>
+      
+                        <span class="text-[#510000] text-[20px] font-bold ">NGN {{property.price}}</span>
+      
+                        <div class="grid gap-2 text-base">
+                          <div class="flex gap-1">
+                            icon
+                            <span>Maitama, {{property.address}}</span>
+                          </div>
+                          <div class="flex gap-1">
+                            icon
+                            <span>6 Hours ago</span>
+                          </div>
+                          <div class="flex gap-1">
+                            icon
+                            <span>@cadland_prop</span>
+                          </div>
+                        </div>
+      
+                        <div class="flex gap-[10px] text-base font-normal">
+                          <span class="border border-[#EBEBEB] p-[10px]">{{property.num_rooms}} bed</span>
+                          <span class="border border-[#EBEBEB] p-[10px]">{{property.num_toilets}} toilets</span>
+                          <span class="border border-[#EBEBEB] p-[10px]"> 780,000sq. ft.</span>    <!--{{property.area}} -->
+                          <span class="border border-[#EBEBEB] p-[10px]">12 parking space</span>  <!--{{property.num_rooms}} -->
+                        </div>
+                        
+                        <span class="text-right text-[#02AADF] text-[10px]">Click to see more details icon </span>
                     
-                      <i class='bx bxs-map-pin'></i>                   
-                         <span> 123 Main Street, City</span>
-                  </div>
-              
-                  <div class="flex items-center text-gray-700 mb-4">
-                      <i class='bx bx-time-five' ></i>
-              
-                    <span> January 15, 2023</span>
-                  </div>
-              
-                  <div class="flex items-center text-gray-700 mb-4">
-                  
-                      <i class='bx bx-user' ></i>
-                  
-                    <span> John Doe</span>
-                  </div>
-              
-                  <a href="#" class="more text-blue-500 hover:underline">Click to see more details</a>
+                        <!-- <div class="mt-6 flex items-center gap-8 text-xs">
+                          <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                            <svg
+                              class="h-4 w-4 text-indigo-700"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+                              />
+                            </svg>
+                    
+                            <div class="mt-1.5 sm:mt-0">
+                              <p class="text-gray-500">Toilet</p>
+                    
+                              <p class="font-medium">{{property.num_toilets}}</p>
+                            </div>
+                          </div>
+                    
+                          <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                            <svg
+                              class="h-4 w-4 text-indigo-700"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                              />
+                            </svg>
+                            <i class="fas fa-camera"></i>
+                    
+                            <div class="mt-1.5 sm:mt-0">
+                              <p class="text-gray-500">Bathroom</p>
+      
+                    
+                              <p class="font-medium">{{property.num_baths}}</p>
+                            </div>
+                          </div>
+                    
+                          <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                            <svg
+                              class="h-4 w-4 text-indigo-700"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                              />
+                            </svg>
+                    
+                            <div class="mt-1.5 sm:mt-0">
+                              <p class="text-gray-500">Bedroom</p>
+                    
+                              <p class="font-medium">{{property.num_rooms}}</p>
+                            </div>
+                          </div>
+                        </div> -->
+                      </div>
+                    </div>
+                  </a>
                 </div>
-          </div></div>
-            </div>
+              {% endfor %}        
+            </div>     
+              
           </div>
+      
+      
+        </div>
+
+
         </div>
        </div>
         </section>
