@@ -435,16 +435,16 @@ margin-left: -10%;
             {% endif %}
         {% endwith %}
         <section class="mx-auto ">
-          <div class="paren grid gap-6 md:grid-cols-[4fr,1fr] mb-28">
+          <div class="paren grid gap-6 lg:grid-cols-[4fr,1fr] mb-28">
             <div class="child w-full ">
               <div class="div1"><canvas id="myChart" style="width:100%;max-width:700px"></canvas> </div>
 
             </div>
-            <div class="child  ">
-              <div class="row-child w-full">
-                <div class="div2 mt-2">
-                  <div class="card ">
-                    <div class="card-body w-full items-center text-center">
+            <div class="child  md:mt-20 ">
+              <div class="flex flex-col mt-10 md:mt-64 lg:mt-0 gap-3">
+                <div class="div 2 mt -2 flex-grow">
+                  <div class="card w-2/3 lg:w-full">
+                    <div class="card-bdy w-full items-center text-center">
                       <div class="rows">
                           <div class="columns mr-4">
                               <img class="card-title text-left item-left" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACvElEQVR4nO2ZPYgTQRTH36GIWoilwkG8zEQhjYXaKMd1YmFxCFdoY+GZ91ZOxEIsLO4s/LjmCj+qa8XCQi2vO1TQ9xLBJgqCHDbxAwttRPHgIpNs9mazu2LikbxIfrAk2WXh98+bnZmdARgyZMgfKU5VtxiSeUP8wZLU//YwKDUT8CRowSDf7CRALAzxr7GgfAg0YFBqDamgfLij+0gWGoGQ3+4uvdwO/caG/26n9+VOL2+1yNWwMndhUIM4Csj7DfLPbptmV80ZpWaQb7hnGzYqSHj/8Vbz7PFxfUOD9Jo8Vo60KjPQQTKdh0EGoSITs8ubLcq1Tkf7Xh/G78HSghiUK/2WtJ32YKlBiN91M9r3tQezbUFy52RX4xzKZ1BOzndtD2JKcqx5kZdAOcZ3bQ9iA7ncKBfJPCjH+q6JipDcD8+dAuUY3zURBOVNWK4iKMeQvI5c/SCjF59vMyirluSHG0tAMaPtrn4Q97bX/M0VUE6+JAdjrn4Qg3I2LNUiKMeQTMdc/SAW5U5zgOEZUI4luR1zjQUheea+F4jHQTkG5WnMdT1IfcQSf7PEa7kLr3aCauojFvlrzLUVpBCU8+HgsgLK2TvNYwnXKEipfCLsBR6CckzAkwnXaG5PcjW8OAvKMShzCVdvTv+4OXVXtAyagUV5lHCNgqC8d5/78MUeUI4hWUm4rleE11yv5XoEUIw9zztSXWPvwMRPQDkF4vFU1/i7L98C5RjkmVTXWBDkM6Aci7yY6hprWgEfAOVY4kqqaxQCZdVtFYBmph5sssTfU129ZlUF5VjkYqar12PdA+UUkE9mukZzLeJLoBwT7nemukZNK+CjoByLvJTp2griVu1AOZbkU6arIf7iLrp1VFCMDcoT0TpvGm5Zvscr5/+6lTCXGsStCYUPUaNsag/kj277QPt625D/jt/n94yiC7n6RQAAAABJRU5ErkJggg==">
@@ -460,9 +460,10 @@ margin-left: -10%;
                     </div>
                   </div> 
                 </div>
-                <div class="div3 mt-2">
-                  <div class="card">
-                    <div class="card-body w-full items-center text-center">
+
+                <div class="div 3 mt -2 flex-grow">
+                  <div class="card w-2/3 lg:w-full">
+                    <div class="card-bdy w-full items-center text-center">
                       <div class="rows">
                           <div class="columns mr-4">
                               <img class="card-title text-left item-left" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACvElEQVR4nO2ZPYgTQRTH36GIWoilwkG8zEQhjYXaKMd1YmFxCFdoY+GZ91ZOxEIsLO4s/LjmCj+qa8XCQi2vO1TQ9xLBJgqCHDbxAwttRPHgIpNs9mazu2LikbxIfrAk2WXh98+bnZmdARgyZMgfKU5VtxiSeUP8wZLU//YwKDUT8CRowSDf7CRALAzxr7GgfAg0YFBqDamgfLij+0gWGoGQ3+4uvdwO/caG/26n9+VOL2+1yNWwMndhUIM4Csj7DfLPbptmV80ZpWaQb7hnGzYqSHj/8Vbz7PFxfUOD9Jo8Vo60KjPQQTKdh0EGoSITs8ubLcq1Tkf7Xh/G78HSghiUK/2WtJ32YKlBiN91M9r3tQezbUFy52RX4xzKZ1BOzndtD2JKcqx5kZdAOcZ3bQ9iA7ncKBfJPCjH+q6JipDcD8+dAuUY3zURBOVNWK4iKMeQvI5c/SCjF59vMyirluSHG0tAMaPtrn4Q97bX/M0VUE6+JAdjrn4Qg3I2LNUiKMeQTMdc/SAW5U5zgOEZUI4luR1zjQUheea+F4jHQTkG5WnMdT1IfcQSf7PEa7kLr3aCauojFvlrzLUVpBCU8+HgsgLK2TvNYwnXKEipfCLsBR6CckzAkwnXaG5PcjW8OAvKMShzCVdvTv+4OXVXtAyagUV5lHCNgqC8d5/78MUeUI4hWUm4rleE11yv5XoEUIw9zztSXWPvwMRPQDkF4vFU1/i7L98C5RjkmVTXWBDkM6Aci7yY6hprWgEfAOVY4kqqaxQCZdVtFYBmph5sssTfU129ZlUF5VjkYqar12PdA+UUkE9mukZzLeJLoBwT7nemukZNK+CjoByLvJTp2griVu1AOZbkU6arIf7iLrp1VFCMDcoT0TpvGm5Zvscr5/+6lTCXGsStCYUPUaNsag/kj277QPt625D/jt/n94yiC7n6RQAAAABJRU5ErkJggg==">
@@ -478,9 +479,10 @@ margin-left: -10%;
                     </div>
                   </div>  
                 </div>
-                <div class="div4 mt-2">
-                  <div class="card">
-                    <div class="card-body w-full items-center text-center">
+
+                <div class="div 4 mt -2 flex-grow">
+                  <div class="card  w-2/3 lg:w-full">
+                    <div class="card-bdy w-full items-center text-center">
                       <div class="rows">
                           <div class="columns mr-4">
                               <img class="card-title text-left item-left" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACvElEQVR4nO2ZPYgTQRTH36GIWoilwkG8zEQhjYXaKMd1YmFxCFdoY+GZ91ZOxEIsLO4s/LjmCj+qa8XCQi2vO1TQ9xLBJgqCHDbxAwttRPHgIpNs9mazu2LikbxIfrAk2WXh98+bnZmdARgyZMgfKU5VtxiSeUP8wZLU//YwKDUT8CRowSDf7CRALAzxr7GgfAg0YFBqDamgfLij+0gWGoGQ3+4uvdwO/caG/26n9+VOL2+1yNWwMndhUIM4Csj7DfLPbptmV80ZpWaQb7hnGzYqSHj/8Vbz7PFxfUOD9Jo8Vo60KjPQQTKdh0EGoSITs8ubLcq1Tkf7Xh/G78HSghiUK/2WtJ32YKlBiN91M9r3tQezbUFy52RX4xzKZ1BOzndtD2JKcqx5kZdAOcZ3bQ9iA7ncKBfJPCjH+q6JipDcD8+dAuUY3zURBOVNWK4iKMeQvI5c/SCjF59vMyirluSHG0tAMaPtrn4Q97bX/M0VUE6+JAdjrn4Qg3I2LNUiKMeQTMdc/SAW5U5zgOEZUI4luR1zjQUheea+F4jHQTkG5WnMdT1IfcQSf7PEa7kLr3aCauojFvlrzLUVpBCU8+HgsgLK2TvNYwnXKEipfCLsBR6CckzAkwnXaG5PcjW8OAvKMShzCVdvTv+4OXVXtAyagUV5lHCNgqC8d5/78MUeUI4hWUm4rleE11yv5XoEUIw9zztSXWPvwMRPQDkF4vFU1/i7L98C5RjkmVTXWBDkM6Aci7yY6hprWgEfAOVY4kqqaxQCZdVtFYBmph5sssTfU129ZlUF5VjkYqar12PdA+UUkE9mukZzLeJLoBwT7nemukZNK+CjoByLvJTp2griVu1AOZbkU6arIf7iLrp1VFCMDcoT0TpvGm5Zvscr5/+6lTCXGsStCYUPUaNsag/kj277QPt625D/jt/n94yiC7n6RQAAAABJRU5ErkJggg==">
