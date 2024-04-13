@@ -12,8 +12,14 @@
 <link rel="stylesheet" href="../static/css/differemt.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <style>
+body, html{
+    background-color:'white';
+    color: 'black';
+}
     * {
   box-sizing: border-box;
+   background-color:'white';
+    color: 'black';
 }
 
 /* Position the image container (needed to position the left and right arrows) */
@@ -323,7 +329,7 @@ text-wrap:wrap;
 
 </style>
 </head>
-<body>
+<body class="bg-white text-black">
     {% include "dash_nav.html" %}
     <div id="alert-container" class="alert-container">
       {% with messages = get_flashed_messages(with_categories=true) %}
@@ -342,12 +348,12 @@ text-wrap:wrap;
 <!-- Display the cart items here -->
 
 <section>
-    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+    <div class="bg-white text-black mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
       <div class="max-w-3xl">
        
       </div>
   
-      <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+      <div class="bg-white text-black mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
         <div class="relative h-64 overflow-hidden sm:h-80 lg:h-full">
         
           <img
@@ -358,9 +364,9 @@ text-wrap:wrap;
 
         </div>
   
-        <div class="lg:py-16">
-          <article class="space-y-4 text-gray-600">
-            <div class="container">
+        <div class="bg-white text-black lg:py-16">
+          <article class="bg-white text-black space-y-4 text-gray-600">
+            <div class="bg-white text-black container">
 
               {% if property.image_filenames %}
               {% set image_files = property.image_filenames.split(',') %}
@@ -479,10 +485,10 @@ text-wrap:wrap;
             <h4>Reviews: 100</h4>
             <span id="contactDetails">Contact Details: 
               <!-- <span class="hide">080622********</span> -->
-              <span class="hidden-content">08062234130</span>
+              <span class="hidden-content">{{property.user.nin}}</span>
             </span>
             <button style="background-color: #510000; color: #FFFFFF; width: 80px;" onclick="revealContent()">Show</button>
-            <h4 style="color: #510000;">View all properties by this agent</h4>
+            <!-- <h4 style="color: #510000;">View all properties by this agent</h4> -->
             <br>
             <br>
            
@@ -490,9 +496,9 @@ text-wrap:wrap;
           </div>
           <div id="Paris" class="tabcontent  mx-auto ">
             <div id="pariscard" class="pariscard mx-auto bg-white rounded-lg overflow-hidden shadow-lg  ">
-              <div class="p-6 pariscard ">
+              <div class="p-6 pariscard">
                 <h2 class="text-xl font-bold mb-4">Property Details</h2>
-                <div class="grid grid-cols-1 gap-x-1 gap-y-1 lg:grid-cols-1">
+                <div class="grid grid-cols-1 gap-x-1 gap-y-1 lg:grid-cols-2 lg:flex-row">
                   <div class="flex flex-col">
                     <h3 class="text-lg font-bold mb-2">Location:</h3>
                     <p>{{ property.location }}</p>
@@ -535,6 +541,7 @@ text-wrap:wrap;
                   </div>
                 </div>
               </div>
+              
             </div>
              </div>
             
@@ -662,7 +669,15 @@ function showSlides(n) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>
-
+<script>
+  // Function to hide alert messages after 5 seconds
+  setTimeout(function() {
+      var alertContainer = document.getElementById('alert-container');
+      if (alertContainer) {
+          alertContainer.innerHTML = ''; // Clear the content of the alert container
+      }
+  }, 5000); // 5000 milliseconds = 5 seconds
+</script>
 
 </body>
 

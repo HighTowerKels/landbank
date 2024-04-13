@@ -1,0 +1,333 @@
+OSError: LSAPI: Socket read/write error
+OSError: LSAPI: File error
+[2024-03-22 23:23:34,544] ERROR in app: Exception on /property/details/1 [POST]
+Traceback (most recent call last):
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/getophfu/landbank_project/server.py", line 677, in property_details
+    cart_item = CartItem(property_id=property_id, user_id=current_user.id)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'id'
+[2024-03-22 23:29:58,590] ERROR in app: Exception on /property/details/1 [POST]
+Traceback (most recent call last):
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/getophfu/landbank_project/server.py", line 680, in property_details
+    cart_item = CartItem(property_id=property_id, user_id=current_user.id)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'id'
+[2024-03-22 23:30:06,973] ERROR in app: Exception on /property/details/1 [POST]
+Traceback (most recent call last):
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/getophfu/landbank_project/server.py", line 680, in property_details
+    cart_item = CartItem(property_id=property_id, user_id=current_user.id)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'id'
+[2024-03-22 23:30:19,854] ERROR in app: Exception on /property/details/1 [POST]
+Traceback (most recent call last):
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/getophfu/landbank_project/server.py", line 680, in property_details
+    cart_item = CartItem(property_id=property_id, user_id=current_user.id)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'id'
+UPLOAD_FOLDER: /home/getophfu/landbank_project/static/uploads
+Uploaded Image Path: /home/getophfu/landbank_project/static/uploads/IMG-20240322-WA0106.jpg
+Profile Picture Path: uploads/IMG-20240322-WA0106.jpg
+UPLOAD_FOLDER: /home/getophfu/landbank_project/static/uploads
+Uploaded Image Path: /home/getophfu/landbank_project/static/uploads/ukfinal-734x1024.jpg
+Profile Picture Path: uploads/ukfinal-734x1024.jpg
+UPLOAD_FOLDER: /home/getophfu/landbank_project/static/uploads
+Uploaded Image Path: /home/getophfu/landbank_project/static/uploads/IMG-20240322-WA0106.jpg
+Profile Picture Path: uploads/IMG-20240322-WA0106.jpg
+OSError: LSAPI: File error
+OSError: LSAPI: Socket read/write error
+OSError: LSAPI: File error
+OSError: LSAPI: Socket read/write error
+[2024-03-25 05:26:07,728] ERROR in app: Exception on /signup [POST]
+Traceback (most recent call last):
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.nin
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/getophfu/landbank_project/server.py", line 530, in signup
+    new_user.save()
+  File "/home/getophfu/landbank_project/server.py", line 77, in save
+    db.session.commit()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 1046, in commit
+    self.transaction.commit()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 504, in commit
+    self._prepare_impl()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 483, in _prepare_impl
+    self.session.flush()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 2540, in flush
+    self._flush(objects)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 2682, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 2642, in _flush
+    flush_context.execute()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 586, in execute
+    persistence.save_obj(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 239, in save_obj
+    _emit_insert_statements(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1135, in _emit_insert_statements
+    result = cached_connections[connection].execute(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.nin
+[SQL: INSERT INTO user (firstname, lastname, email, password, nin, is_admin, profile_picture) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Precious ', 'Abamba ', 'abambaprecious08@gmail.com', 'pbkdf2:sha256:150000$5mJfFts1$c3586ce6b0ec3c5f56576c82802430772397d9313e9c13beac6d5f256a7b8f61', 'aZxcvf', 0, 'uploads/image-removebg-preview_34.png')]
+(Background on this error at: http://sqlalche.me/e/13/gkpj)
+[2024-03-25 09:29:36,749] ERROR in app: Exception on /signup [POST]
+Traceback (most recent call last):
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/getophfu/landbank_project/server.py", line 530, in signup
+    new_user.save()
+  File "/home/getophfu/landbank_project/server.py", line 77, in save
+    db.session.commit()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 1046, in commit
+    self.transaction.commit()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 504, in commit
+    self._prepare_impl()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 483, in _prepare_impl
+    self.session.flush()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 2540, in flush
+    self._flush(objects)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 2682, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 2642, in _flush
+    flush_context.execute()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 586, in execute
+    persistence.save_obj(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 239, in save_obj
+    _emit_insert_statements(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1135, in _emit_insert_statements
+    result = cached_connections[connection].execute(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.email
+[SQL: INSERT INTO user (firstname, lastname, email, password, nin, is_admin, profile_picture) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Precious ', 'Abamba ', 'abambaprecious08@gmail.com', 'pbkdf2:sha256:150000$w7GxbrPn$8ba3827eb8ebb29ac37216444d8ab9072d58d9b875b95a7105363e469c5dad38', '.,mjnhbgvfcd', 0, 'uploads/Frame_26085703.png')]
+(Background on this error at: http://sqlalche.me/e/13/gkpj)
+UPLOAD_FOLDER: /home/getophfu/landbank_project/static/uploads
+Uploaded Image Path: /home/getophfu/landbank_project/static/uploads/Frame_26085703.png
+Profile Picture Path: uploads/Frame_26085703.png
+[2024-04-04 22:54:03,968] ERROR in app: Exception on /signup [POST]
+Traceback (most recent call last):
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/getophfu/landbank_project/server.py", line 549, in signup
+    new_user.save()
+  File "/home/getophfu/landbank_project/server.py", line 76, in save
+    db.session.commit()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 1046, in commit
+    self.transaction.commit()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 504, in commit
+    self._prepare_impl()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 483, in _prepare_impl
+    self.session.flush()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 2540, in flush
+    self._flush(objects)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 2682, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/session.py", line 2642, in _flush
+    flush_context.execute()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 586, in execute
+    persistence.save_obj(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 239, in save_obj
+    _emit_insert_statements(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1135, in _emit_insert_statements
+    result = cached_connections[connection].execute(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib64/python3.8/site-packages/sqlalchemy/engine/default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.email
+[SQL: INSERT INTO user (firstname, lastname, email, password, nin, is_admin, profile_picture) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('ibeh', 'Kelechi', 'ibehkelechi47@gmail.com', 'pbkdf2:sha256:150000$8xm1ozJ3$27197d27ab409fbcf429be5bf18ad5a1dc39bd5110c92607b70711fc0b0012a0', None, 0, None)]
+(Background on this error at: http://sqlalche.me/e/13/gkpj)
+[2024-04-05 04:50:18,376] ERROR in app: Exception on /verification [GET]
+Traceback (most recent call last):
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/getophfu/landbank_project/server.py", line 808, in verification
+    user_id = current_user.id
+  File "/home/getophfu/virtualenv/landbank_project/3.8/lib/python3.8/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'id'
+[UID:2603][3148530] packetLen < 0

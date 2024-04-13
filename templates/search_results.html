@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+   
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landbank | Listing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="../static/css/differemt.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+ <style>
+.heros h1{
+color: whitesmoke;
+text-align: start;
+font-family: Cabinet Grotesk;
+font-size: 56px;
+font-weight: 400;
+line-height: 69px;
+letter-spacing: 0em;
+text-align: left;
+color:#110229;
+
+}
+.heros p{
+font-family: Cabinet Grotesk;
+font-size: 22px;
+font-weight: 400;
+line-height: 36px;
+letter-spacing: 0em;
+text-align: left;
+color: #585981;
+
+
+}
+.navtab{
+font-family: Cabinet Grotesk;
+font-size: 14px;
+font-weight: 400;
+line-height: 36px;
+letter-spacing: 0.2em;
+text-align: left;
+
+}
+.tab-content{
+    margin-top: 2%;
+    
+}
+.tabs{
+    width: 150%;
+}
+.tab{
+    background-color: transparent;
+    font-family: Cabinet Grotesk;
+font-size: 14px;
+font-weight: 400;
+line-height: 36px;
+letter-spacing: 0.2em;
+text-align: left;
+}
+.columns{
+    padding: 2%;
+    justify-content: space-between;
+   
+
+}
+label{
+    text-align: start;
+    padding-right: 40%;
+}
+.form-control{
+    width: 150%;
+}
+.listing{
+  font-family: Cabinet Grotesk;
+font-size: 24px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: 0em;
+}
+.listings{
+font-family: Cabinet Grotesk;
+font-size: 24px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: 0em;
+text-align: left;
+align-items: center;
+justify-content:center;
+display: flex;
+justify-items: center;
+align-content: center;
+
+
+
+}
+
+.see{
+    float: right;
+  
+}
+.desp{
+    font-family: Cabinet Grotesk;
+font-size: 14px;
+font-weight: 400;
+line-height: 17px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.rowty{
+    display: flex;
+    flex-direction: row;
+}
+.com{
+    padding-left: 20%;
+}
+.com .column{
+    padding-left: 50%;
+
+}
+.price{
+    font-family: Cabinet Grotesk;
+font-size: 20px;
+font-weight: 700;
+line-height: 25px;
+letter-spacing: 0em;
+text-align: left;
+color: #510000;
+
+
+}
+.icons{
+    margin-right: 1rem;
+}
+span{
+    
+    font-family: Cabinet Grotesk;
+font-size: 15px;
+font-weight: 400;
+line-height: 12px;
+letter-spacing: 0em;
+text-align: left;
+color: black;
+}
+.more{
+font-family: Cabinet Grotesk;
+font-size: 10px;
+font-weight: 400;
+line-height: 12px;
+letter-spacing: 0em;
+text-align: left;
+color:#02AADF;
+float: right;
+
+
+}
+.button{
+  margin-top: 4%;
+}
+.btn{
+  background-color: #510000;
+  color: whitesmoke;
+}
+@media only screen and (max-width: 600px) {
+   .tab-content{
+    width: 65%;
+   }
+ 
+}
+
+ </style>
+</head>
+<body>
+    {% include "dash_nav.html" %}
+
+    <!--
+  Heads up! 👋
+
+  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
+-->
+
+<section
+class="heros relative bg-[url(/static/image/listbg.png)] bg-cover bg-center bg-no-repeat"
+>
+<div
+  class="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
+></div>
+
+<div
+  class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
+>
+  <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+    <h1 class="text-3xl font-extrabold sm:text-5xl">
+      Easy way to find a perfect property
+
+    </h1>
+
+    <p class="mt-4 max-w-lg sm:text-xl/relaxed">
+        We provide a complete service for the sale,
+        purchase or rental of real estate.
+    </p>
+    <div role="tablist" class="tabs tabs-lifted">
+        <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Rent" />
+        <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+         <form action="{{ url_for('search_properties') }}" method="post">
+          <div class="row">
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Location</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                        <input name="location" type="text" placeholder="Select city" class="input input-bordered w-full max-w-xs sm:w-full" />
+                    </div>
+                </label>
+            </div>
+            <hr class="sm:hidden">
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Property Type</span>
+                    </div>
+                    <select name="propertytype" class="select select-bordered w-full max-w-xs sm:w-full">
+                      <option disabled selected>Choose a location</option>
+                        <option>Abuja</option>
+                        <option>Lagos</option>
+                    </select>
+                </label>
+            </div>
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Price Range</span>
+                    </div>
+                    <input name="price" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs sm:w-full" />
+                </label>
+            </div>
+            <div class="columns button">
+              <button type="submit" class="btn btn-wide">Search</button>
+            </div>
+        </div>
+         </form>
+         
+        
+        </div> 
+      
+        <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Buy" checked />
+        <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+          <div class="row">
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Location</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                        <input type="text" placeholder="Select city" class="input input-bordered w-full max-w-xs sm:w-full" />
+                    </div>
+                </label>
+            </div>
+            <hr class="sm:hidden">
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Property Type</span>
+                    </div>
+                    <select class="select select-bordered w-full max-w-xs sm:w-full">
+                        <option disabled selected>Who shot first?</option>
+                        <option>Han Solo</option>
+                        <option>Greedo</option>
+                    </select>
+                </label>
+            </div>
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Price Range</span>
+                    </div>
+                    <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs sm:w-full" />
+                </label>
+            </div>
+            <div class="columns button">
+              <button class="btn btn-wide">Search</button>
+            </div>
+        </div>
+        
+        </div>    
+        <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Sell" />
+        <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+          <div class="row">
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Location</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                        <input type="text" placeholder="Select city" class="input input-bordered w-full max-w-xs sm:w-full" />
+                    </div>
+                </label>
+            </div>
+            <hr class="sm:hidden">
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Property Type</span>
+                    </div>
+                    <select class="select select-bordered w-full max-w-xs sm:w-full">
+                        <option disabled selected>Who shot first?</option>
+                        <option>Han Solo</option>
+                        <option>Greedo</option>
+                    </select>
+                </label>
+            </div>
+            <div class="columns sm:w-full">
+                <label class="form-control">
+                    <div class="label">
+                        <span class="label-text">Price Range</span>
+                    </div>
+                    <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs sm:w-full" />
+                </label>
+            </div>
+            <div class="columns button">
+              <button class="btn btn-wide">Search</button>
+            </div>
+        </div>
+        
+        </div>      
+      </div>
+     
+
+  </div>
+</div>
+</section>
+<section
+class="listing bg-[#FFF] py-10 px-6 lg:px-[80px] w-full grid gap-10"
+>
+<div class="w-full font-bold text-black">
+  <h2 class="capitalize text-2xl leading-[32px] font-bold">
+    SEARCH RESULTS 
+  </h2>
+</div>
+
+<div id="property-listings" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full text-[20px]">
+
+    {% for property in properties %}
+
+    <div id="card" class="block rounded-lg p-4 bg-white w-full shadow-sm shadow-indigo-100">
+      <a href="{{ url_for('property_details', property_id=property.id)}}" >
+        <div class="grid gap-8 relative">
+          {% if property.image_filenames %}
+          {% set image_files = property.image_filenames.split(',') %}
+          <img class="max-h-auto w-full aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_files[1]) }}" alt="Publication Image" >
+          <div class="absolute left-2 top-4">
+            <span class="bg-[#510000] px-4 py-2 text-white font-normal text-lg rounded-md">
+                {% if property.price_type == 'Negotiable' %}
+                    Negotiable
+                {% else %}
+                    Non-Negotiable
+                {% endif %}
+            </span>
+        </div>
+        {% endif %}
+          <!-- <img alt="Home" src="{{ property.main_image_one }}" class="h-56 w-full rounded-md object-cover"> -->
+          <div class="grid gap-6">
+            <!-- <dl>
+              <div>
+                <dt class="sr-only">Price</dt>
+                <dd class="text-sm text-gray-500">${{ property.price }}</dd>
+              </div>
+        
+              <div>
+                <dt class="sr-only">Address</dt>
+                <dd class="font-medium">{{ property.location }}</dd>
+              </div>
+            </dl> -->
+
+            <div class="grid gap-3 text-[20px]">
+              <h3 class="detais ">{{property.property_type}}</h3>
+              <p class="text-sm text-gray-500 text-[30px]">{{property.description}}</p>
+            </div>
+
+            <span class="text-[#510000] text-[20px] font-bold ">NGN {{property.price}}</span>
+
+            <div class="grid gap-2 text-[20px]">
+              <div class="flex gap-1">
+                <img width="30" height="24" src="https://img.icons8.com/material-outlined/24/marker.png" alt="marker"/>
+                <span>Maitama, {{property.location}}</span>
+              </div>
+              <div class="flex gap-1">
+                <img width="30" height="24" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-hour-date-and-time-tanah-basah-basic-outline-tanah-basah.png" alt="external-hour-date-and-time-tanah-basah-basic-outline-tanah-basah"/>
+                <span>{{property.time_posted}}</span>
+              </div>
+              <div class="flex gap-1">
+                <img width="30" height="24" src="https://img.icons8.com/material-rounded/24/user.png" alt="user"/>
+                <span>{{property.user.firstname}}</span>
+              </div>
+            </div>
+
+            <div class="flex gap-[10px] text-[15px] font-normal">
+              <span class="border border-[#EBEBEB] p-[10px]">{{property.num_rooms}} bed</span>
+              <span class="border border-[#EBEBEB] p-[10px]">{{property.num_toilets}} toilets</span>
+              <span class="border border-[#EBEBEB] p-[10px]"> {{property.square_feet}}sq. ft.</span>    <!--{{property.area}} -->
+              <span class="border border-[#EBEBEB] p-[10px]">{{property.num_baths}}</span>  <!--{{property.num_rooms}} -->
+            </div>
+            
+            <span class="text-right text-[#02AADF] text-[15px]">Click to see more details icon </span>
+        
+            <!-- <div class="mt-6 flex items-center gap-8 text-xs">
+              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                <svg
+                  class="h-4 w-4 text-indigo-700"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+                  />
+                </svg>
+        
+                <div class="mt-1.5 sm:mt-0">
+                  <p class="text-gray-500">Toilet</p>
+        
+                  <p class="font-medium">{{property.num_toilets}}</p>
+                </div>
+              </div>
+        
+              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                <svg
+                  class="h-4 w-4 text-indigo-700"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                  />
+                </svg>
+                <i class="fas fa-camera"></i>
+        
+                <div class="mt-1.5 sm:mt-0">
+                  <p class="text-gray-500">Bathroom</p>
+
+        
+                  <p class="font-medium">{{property.num_baths}}</p>
+                </div>
+              </div>
+        
+              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                <svg
+                  class="h-4 w-4 text-indigo-700"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
+                </svg>
+        
+                <div class="mt-1.5 sm:mt-0">
+                  <p class="text-gray-500">Bedroom</p>
+        
+                  <p class="font-medium">{{property.num_rooms}}</p>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </a>
+    </div>
+    
+  {% endfor %}        
+</div>            
+  
+<button
+  class="bt ns bt n bt n-wide py-2 px-7 bg-[#510000] w-fit mx-auto text-center rounded-[40px] border border-white text-white font-normal"
+> 
+   Load more
+</button>
+</section>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('search-button').addEventListener('click', function() {
+        // Get search parameters (location, property type, price range)
+        var location = document.getElementById('location-input').value;
+        var propertyType = document.getElementById('property-type-select').value;
+        var priceRange = document.getElementById('price-range-input').value;
+
+        // Send AJAX request to search route
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/search', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                var properties = JSON.parse(xhr.responseText);
+                var propertyListingsContainer = document.getElementById('property-listings');
+                propertyListingsContainer.innerHTML = ''; // Clear existing listings
+                properties.forEach(function(property) {
+                    // Create HTML for property listing
+                    var propertyListing = '<div class="block rounded-lg p-4 bg-white w-full shadow-sm shadow-indigo-100">';
+                    // Add property details to listing HTML
+                    propertyListing += '<h3>' + property.name + '</h3>';
+                    propertyListing += '<p>' + property.description + '</p>';
+                    propertyListing += '<p>Price: NGN ' + property.price + '</p>';
+                    // Add other property fields as needed
+                    propertyListing += '</div>';
+                    // Append property listing HTML to container
+                    propertyListingsContainer.insertAdjacentHTML('beforeend', propertyListing);
+                });
+            } else {
+                console.error('Request failed: ' + xhr.status);
+            }
+        };
+        var data = JSON.stringify({ location: location, property_type: propertyType, price_range: priceRange });
+        xhr.send(data);
+    });
+});
+
+</script>
+    <script>
+        // Toggle mobile menu
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>

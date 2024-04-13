@@ -16,6 +16,7 @@
     /* Your existing styles */
 
     .sidebar {
+      position:fixed;
           width: 256px;
           height: 950px;
           top: 74px;
@@ -37,8 +38,8 @@
       display: flex; /* Use flexbox for the container */
     }
         .content {
-      flex: 1; /* Make the content take up remaining space */
-      padding: 20px;
+          flex: 2; /* Make the content take up remaining space */
+      margin-left: 21%;
     }
     .row .columnsy{
         display: flex;
@@ -161,7 +162,7 @@ text-align: left;
 }
 
 .file-upload-container .btns:hover {
-  background-color: #0056b3;
+  background-color: #510000;
 }
 .file-item {
     display: flex;
@@ -247,6 +248,9 @@ height: 207px;
     cursor: pointer;
 }
 
+.check .column{
+  padding-left: 10%;
+}
 
 
     /* Mobile styles */
@@ -366,155 +370,162 @@ body {
  width: 100%;
 }
 
+
+
     }
+    #Option1{
+  
+  color:#510000 ;
+}
+
+@media only screen and (max-width: 768px) {
+      .sidebar {
+        width: 100%; /* Full width */
+        z-index: 1000; /* Ensure it overlays other content */
+      }
+    }
+
+    .sidebar {
+      background-color: #f8f9fa;
+      width: 256px;
+          height: 950px;
+          top: 74px;
+          padding: 24px;
+          border: 1px solid #ccc;
+          gap: 24px;
+      position: fixed;
+      
+      left: 0;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    /* Styles for sidebar links */
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .sidebar ul li a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+
+
   </style>
 </head>
 
 <body>
 
-  <div class="navbar bg-base-100">
-    <div class="flex-1">
-      <span id="sidebar-toggle">&#9776;</span>
-      <a class="btn btn-ghost text-xl">Landbank</a>
-    </div>
-    <div class="flex-none">
-      <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-          <div class="indicator">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-            <span class="badge badge-sm indicator-item">8</span>
-          </div>
-        </div>
-      </div>
-      <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-          <div class="w-10 rounded-full">
-            <img alt="Tailwind CSS Navbar component"
-              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% include "dash_nav.html" %}
 
   <div class="container">
     <div class="sidebar">
-        <ul>
-            <li>
-              <a
-                href="/dashboard"
-                class="flex items-center gap-2 border-s-[3px] border-blue-500 bg-blue-50 px-4 py-3 text-blue-700"
-              >
-              <i class="fa fa-home"></i>
-                <span class="text-sm font-medium"> Dashboard </span>
-              </a>
-            </li>
-          
-            <li>
-              <a
-                href="/verification"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <i class="fa fa-user"></i>
-                <span class="text-sm font-medium"> Verification </span>
-              </a>
-            </li>
-          
-            <li>
-              <a
-                href="/creatinglisting"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <i class="fa fa-file"></i>
-          
-                <span class="text-sm font-medium"> Listings </span>
-              </a>
-            </li>
-          
-            <li>
-              <a
-                href=""
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <i class="fa fa-briefcase"></i>
-          
-                <span class="text-sm font-medium"> Biddings </span>
-              </a>
-            </li>
-          
-           
-          </ul>
-          <hr>
-          <br>
-          <ul>
-            <li>
-              <h3 style="font-family: Inter;
-              font-size: 10px;
-              font-weight: 500;
-              line-height: 12px;
-              letter-spacing: 0.4000000059604645px;
-              text-align: left;
-              ">SETTINGS</h3>
-            </li>
-          
-            <li>
-              <a
-                href="/settings"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <i class="fa fa-cog"></i>
-          
-                <span class="text-sm font-medium"> Setting </span>
-              </a>
-            </li>
-          
-            <li>
-              <a
-                href=""
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <i class="fa fa-info-circle"></i>
-          
-                <span class="text-sm font-medium"> help </span>
-              </a>
-            </li>
-          
+      <ul>
+          <li>
+            <a
+              href="/dashboard"
+              class="flex items-center gap-2 border-s-[3px] border-blue-500 bg-blue-50 px-4 py-3 text-blue-700"
+            >
+            <i class="fa fa-home"></i>
+              <span class="text-sm font-medium"> Dashboard </span>
+            </a>
+          </li>
         
-          </ul>
-    
-          <br>
-          <br><br>
-          <hr>
-    
-          <ul>
-          
-          
-            <li>
-              <a
-                href=""
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <i class="fa fa-sign-out"></i>
-          
-                <span style="font-family: Inter;
-                font-size: 14px;
-                font-weight: 500;
-                line-height: 20px;
-                letter-spacing: -0.02em;
-                text-align: left;
-                color: #D55F54;" class="text-sm font-medium"> Logout Account  </span>
-              </a>
-            </li>
-          
+          <li>
+            <a
+              href="/verification"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
+            <i class="fa fa-user"></i>
+              <span class="text-sm font-medium"> Verification </span>
+            </a>
+          </li>
+        
+          <li>
+            <a
+              href="/creatinglisting"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
+            <i class="fa fa-file"></i>
+        
+              <span class="text-sm font-medium"> Listings </span>
+            </a>
+          </li>
+        
          
-          
         
-          </ul>
-    </div>
+         
+        </ul>
+        <hr>
+        <br>
+        <ul>
+          <li>
+            <h3 style="font-family: Inter;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 12px;
+            letter-spacing: 0.4000000059604645px;
+            text-align: left;
+            ">SETTINGS</h3>
+          </li>
+        
+          <li>
+            <a
+              href="/settings"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
+            <i class="fa fa-cog"></i>
+        
+              <span class="text-sm font-medium"> Setting </span>
+            </a>
+          </li>
+        
+          <li>
+            <a
+              href="/help"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
+            <i class="fa fa-info-circle"></i>
+        
+              <span class="text-sm font-medium"> help </span>
+            </a>
+          </li>
+        
+      
+        </ul>
+  
+        <br>
+        <br><br>
+        <hr>
+  
+        <ul>
+        
+        
+          <li>
+            <a
+              href="/logout"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
+            <i class="fa fa-sign-out"></i>
+        
+              <span style="font-family: Inter;
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 20px;
+              letter-spacing: -0.02em;
+              text-align: left;
+              color: #D55F54;" class="text-sm font-medium"> Logout Account  </span>
+            </a>
+          </li>
+        
+       
+        
+      
+        </ul>
+  </div>
 
 
     <div class="content">
@@ -531,23 +542,20 @@ body {
                 <div class="mt-8 grid grid-cols-6 gap-6">
                     <div class="col-span-6 sm:col-span-3">
                         <label for="FirstName" class="block text-sm font-medium text-gray-700">
-                          Property Type
+                          Ownership Type
                         </label>
             
                         <select
-                        name="property_type"
+                        name="property_ownership"
                         id="HeadlineAct"
                         
                         class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                       >
-                        <option value="Own_property">Own Property</option>
-                        <option value="Lease">For Lease</option>
-                        <option value="Rent">For Rent</option>
-                        <option value="Uncompleted">Uncompleted</option>
-                        <option value="Buy">Buy</option>
-                        <option value="Short Let">Short Let</option>
-                        <option value="Developing">Developing</option>
-                        <option value="Sale">Sale</option>
+                        <option value="personal">Personal</option>
+                        <option value="developer">Developer</option>
+                        <option value="realtor">Realtor</option>
+                        <option value="agent">Agent</option>
+                        
                        
                       </select>
                       </div>
@@ -556,123 +564,370 @@ body {
                     Location
                   </label>
       
-                  <input
-                    type="text"
-                    id="LastName"
-                    name="location"
-                    placeholder="Add Property Location"
-                    class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                  />
-                </div>
-                <div class="col-span-6 sm:col-span-3">
-                  <label for="FirstName" class="block text-sm font-medium text-gray-700">
-                    Pricing Type
-                  </label>
-      
                   <select
-                  name="price_type"
-                  id="HeadlineAct"
-                  
+                  id="location"
+                  name="location"
                   class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                >
-                  <option value="Negotiable">Negotiable</option>
-                  <option value="Non-Negotiable">Non-Negotiable</option>
-                 
+
+
+                  >
+                  <option  value="">Select State</option>
+                  <option value="Abia">Abia</option>
+                  <option value="Adamawa">Adamawa</option>
+                  <option value="Akwa Ibom">Akwa Ibom</option>
+                  <option value="Anambra">Anambra</option>
+                  <option value="Bauchi">Bauchi</option>
+                  <option value="Bayelsa">Bayelsa</option>
+                  <option value="Benue">Benue</option>
+                  <option value="Borno">Borno</option>
+                  <option value="Cross River">Cross River</option>
+                  <option value="Delta">Delta</option>
+                  <option value="Ebonyi">Ebonyi</option>
+                  <option value="Edo">Edo</option>
+                  <option value="Ekiti">Ekiti</option>
+                  <option value="Enugu">Enugu</option>
+                  <option value="Gombe">Gombe</option>
+                  <option value="Imo">Imo</option>
+                  <option value="Jigawa">Jigawa</option>
+                  <option value="Kaduna">Kaduna</option>
+                  <option value="Kano">Kano</option>
+                  <option value="Katsina">Katsina</option>
+                  <option value="Kebbi">Kebbi</option>
+                  <option value="Kogi">Kogi</option>
+                  <option value="Kwara">Kwara</option>
+                  <option value="Lagos">Lagos</option>
+                  <option value="Nasarawa">Nasarawa</option>
+                  <option value="Niger">Niger</option>
+                  <option value="Ogun">Ogun</option>
+                  <option value="Ondo">Ondo</option>
+                  <option value="Osun">Osun</option>
+                  <option value="Oyo">Oyo</option>
+                  <option value="Plateau">Plateau</option>
+                  <option value="Rivers">Rivers</option>
+                  <option value="Sokoto">Sokoto</option>
+                  <option value="Taraba">Taraba</option>
+                  <option value="Yobe">Yobe</option>
+                  <option value="Zamfara">Zamfara</option>
+                  <option value="Federal Capital Territory">Federal Capital Territory</option>
                 </select>
+                
                 </div>
-                <div class="col-span-6 sm:col-span-3">
-            <label for="LastName" class="block text-sm font-medium text-gray-700">
-              Amount
-            </label>
-      
-            <input
-              type="text"
-              id="LastName"
-              name="price"
-              placeholder="Enter Amount in Naira"
-              class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-            />
-          </div>
-          <div class="col-span-6 sm:col-span-3">
-            <label for="LastName" class="block text-sm font-medium text-gray-700">
-              Service Type
-            </label>
-
-            <input
-              type="text"
-              id="LastName"
-              name="service_type"
-              placeholder="service type"
-              class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-            />
-          </div>
-          <div class="col-span-6 sm:col-span-3">
-            <label for="LastName" class="block text-sm font-medium text-gray-700">
-              Number of room
-            </label>
-
-            <input
-              type="text"
-              id="LastName"
-              name="num_rooms"
-              placeholder="Number of rooms"
-              class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-            />
-          </div>
-          <div class="col-span-6 sm:col-span-3">
-            <label for="LastName" class="block text-sm font-medium text-gray-700">
-              Number of Bathroom
-            </label>
-
-            <input
-              type="text"
-              id="LastName"
-              name="num_baths"
-              placeholder="Number of Bathroom"
-              class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-            />
-          </div>
-          <div class="col-span-6 sm:col-span-3">
-            <label for="LastName" class="block text-sm font-medium text-gray-700">
-              Number of toilets
-            </label>
-
-            <input
-              type="text"
-              id="LastName"
-              name="num_toilets"
-              placeholder="Number of Toilet"
-              class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-            />
-          </div>
-
-          <div class="col-span-6 sm:col-span-3">
-            <label for="LastName" class="block text-sm font-medium text-gray-700">
-              Square Feet
-            </label>
-
-            <input
-              type="text"
-              id="LastName"
-              name="square_feet"
-              placeholder="square_feet"
-              class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-            />
-          </div>
-          <div class="col-span-6 sm:col-span-3">
-            <label for="LastName" class="block text-sm font-medium text-gray-700">
-              How many percent Off
-            </label>
-
-            <input
-              type="text"
-              id="LastName"
-              name="percent"
-              placeholder="percent off"
-              class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-            />
-          </div>
                 </div>
+              
+                <div class="mt-8 grid grid-cols-10 gap-6 pl-14">
+                 
+            
+                  <div class="col-span-6 sm:col-span-3">
+                    <label for="LastName" class="block text-sm font-medium text-gray-700">
+                      Available For
+                      </label>
+                  <select class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                  id="availableFor" name="property_available">
+                  
+                  <option value="">Please select</option>
+                  <option value="forHouse">House</option>
+
+                  <option value="forSale">Shared Apartment</option>
+                  <option value="forRent">Shortlet</option>
+                  <option value="JV">JV (Joint Venture)</option>
+                  <option value="shortlet">Land</option>
+                  </select>
+                  </div>
+
+                  <div class="col-span-6 sm:col-span-3">
+              <label for="LastName" class="block text-sm font-medium text-gray-700">
+                Type
+              </label>
+        
+              <select
+              name="property_type"
+              id="typeSelect"
+              
+              class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            >
+              <option value="land">Land</option>
+              <option value="house">House</option>
+              <option value="commercial">commercial/ Special Use</option>
+              
+             
+            </select>
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="LastName" class="block text-sm font-medium text-gray-700">
+                SubType
+              </label>
+        
+              <select
+              name="property_subtype" id="subtypeSelect"
+              
+              class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            >
+            <option value="">Please select a property type</option>
+            <option value="ApartmentCondo">Apartment/Condo</option>
+            <option value="Duplex">Duplex</option>
+            <option value="SemiDetachedDuplex">Semi-detached Duplex</option>
+            <option value="TerraceTownhouse">Terrace/Townhouse</option>
+            <option value="Bungalow">Bungalow</option>
+            <option value="SemiDetachedBungalow">Semi-detached Bungalow</option>
+            <option value="Mansionette">Mansionette</option>
+            <option value="BoysQuarters">Boys Quarters</option>
+            <option value="MiniFlat">Mini-Flat</option>
+            <option value="Penthouse">Penthouse</option>
+            <option value="SelfContain">Self-contain</option>
+            <option value="SharedApartment">Shared Apartment</option>
+            <option value="StudioApartment">Studio Apartment</option>
+             
+            </select>
+            </div>
+                  </div>
+
+                  <div class="mt-8 grid grid-cols-4 gap-6">
+                    <div>
+                      <label for="negotiationStatus" class="block text-sm font-medium text-gray-700">
+                        Negotiation Status
+                      </label>
+                      <select
+                        name="property_negotiation"
+                        id="negotiationStatus"
+                        class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      >
+                        <option value="Negotiable">Negotiable</option>
+                        <option value="Non-Negotiable">Non-Negotiable</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="percentNegotiation" class="block text-sm font-medium text-gray-700">
+                        % Negotiation
+                      </label>
+                      <select
+                      id="percentNegotiation"
+                      name="property_percent"
+                      class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                    >
+                      <option value="5%">5%</option>
+                      <option value="10%">10%</option>
+                      <option value="15%">15%</option>
+                      <option value="20%">20%</option>
+                      <option value="25%">25%</option>
+                      <option value="30%">30%</option>
+                      <option value="35%">35%</option>
+                      <option value="40%">40%</option>
+                      <option value="45%">45%</option>
+                      <option value="50%">50%</option>
+                      <option value="55%">55%</option>
+                      <option value="60%">60%</option>
+                      <option value="65%">65%</option>
+                      <option value="70%">70%</option>
+                      <option value="75%">75%</option>
+                      <option value="80%">80%</option>
+                      <option value="85%">85%</option>
+                      <option value="90%">90%</option>
+                      <option value="95%">95%</option>
+                      <option value="100%">100%</option>
+                    </select>
+                    
+                    </div>
+                    <div>
+                      <label for="rentAmount" class="block text-sm font-medium text-gray-700">
+                        Rent Amount
+                      </label>
+                      <input
+                        type="text"
+                        id="rentAmount"
+                        name="property_price"
+                        placeholder="Enter Amount in Naira"
+                        class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      />
+                    </div>
+                    <div>
+                      <label for="otherCharges" class="block text-sm font-medium text-gray-700">
+                        Other Charges
+                      </label>
+                      <input
+                        type="text"
+                        id="otherCharges"
+                        name="property_charges"
+                        placeholder="Enter Amount in Naira"
+                        class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      />
+                    </div>
+                  </div>
+                  
+
+              
+                  
+                  <label for="negotiationStatus" class="block text-sm font-medium text-gray-700 mt-4">
+                    House Feautres 
+                  </label>
+                  <div class="mt-4 mb-4 grid grid-cols-4 gap-6">
+           
+                    <div>
+                      
+                        <select
+                        id="numberofroom"
+                        name="property_num_rooms"
+                        class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      >
+                      <option>Number of Bedroom</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                      
+                    </div>
+                    <div>
+                      <label for="percentNegotiation" class="block text-sm font-medium text-gray-700">
+                        
+                      </label>
+                      <select
+                      id="numberofroom"
+                      name="property_num_toilet"
+                      class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                    >
+                    <option value="">Number of Toilet</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                    
+                    </div>
+                    <div>
+                      <label for="rentAmount" class="block text-sm font-medium text-gray-700">
+                        
+                      </label>
+                      <select
+                      placeholder="Number of Bathroom"
+                      id="numberofroom"
+                      name="property_num_bath"
+                      class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                    >
+                    <option value="">Number of  Bathroom</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                    
+                    </div>
+                    <div>
+                      <label for="otherCharges" class="block text-sm font-medium text-gray-700">
+                        
+                      </label>
+                      <select
+                      placeholder="Number of Parlour"
+                      id="numberofroom"
+                      name="property_num_parlour"
+                      class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                    >
+                    <option value="">Number of  Parlour</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                    </div>
+                  </div>
+          <label for="negotiationStatus" class="block text-sm font-medium text-gray-700 mt-4">
+            Size
+          </label>
+          <div class="mt-2 mb-4 grid grid-cols-6 gap-6">
+           
+<div class="row check mt-1">
+  <div class="column">
+    <div style="position: relative;">
+      <input style="text-align: right;" placeholder="sq ft" type="text" id="inputField" name="property_size_min">
+      <label for="inputField" style="position: absolute; padding-left: 6px; top: 15%; left: 0;">Min</label>
+   
+    </div>
+    
+  </div>
+  <div class="column">
+    <div style="position: absolute;">
+      <input style="text-align: right;" placeholder="sq ft" type="text" id="inputField" name="property_size_max">
+      <label for="inputField" style="position: absolute; padding-left: 6px; top: 15%; left: 0;">Max</label>
+   
+    </div>
+    
+  </div>
+</div>
+        </div>
+
+<label for="">Housing Status</label>
+<div class="mt-4 grid grid-cols-4 gap-6 mb-6">
+  <label for="completedFurnished" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300" id="completedFurnished" name="completedFurnished" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Completed and Furnished </strong>
+    </div>
+  </label>
+
+  <label for="completedUnfurnished" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300" id="completedUnfurnished" name="completedUnfurnished" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Completed and Unfurnished </strong>
+    </div>
+  </label>
+
+  <label for="carcas" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300" id="carcas" name="carcas" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Carcas </strong>
+    </div>
+  </label>
+
+  <label for="newlyBuilt" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300" id="newlyBuilt" name="newlyBuilt" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Newly Built </strong>
+    </div>
+  </label>
+</div>
+
+
+
+
+
+
+         
+          
+         
+         
+        
+              
                 
                
 
@@ -683,7 +938,7 @@ body {
                   
                     <textarea 
                       id="OrderNotes"
-                      name="description"
+                      name="property_description"
                       class="textarea mt-2  rounded-lg border-gray-200 align-top shadow-sm sm:text-sm"
                       rows="4"
                       placeholder="Write About Property"
@@ -757,6 +1012,82 @@ color: #fff;" class="btn btn-wide mt-8">Submit</button>
       </div>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+<script>
+  document.getElementById('availableFor').addEventListener('change', function() {
+  var selectedOption = this.value;
+
+  if (selectedOption) {
+    var redirectUrl = '';
+
+    switch (selectedOption) {
+      case 'forSale':
+        redirectUrl = '/forsale'; // Replace with the URL of the for sale page
+        break;
+      case 'forRent':
+        redirectUrl = '/forrent'; // Replace with the URL of the for rent page
+        break;
+      case 'JV':
+        redirectUrl = '/jv'; // Replace with the URL of the JV page
+        break;
+      case 'shortlet':
+        redirectUrl = '/shortlet'; // Replace with the URL of the shortlet page
+        break;
+      case 'forHouse':
+        redirectUrl = '/creatinglisting'
+        break;
+      default:
+        break;
+    }
+
+    if (redirectUrl) {
+      window.location.href = redirectUrl;
+    }
+  }
+});
+
+</script>
+
+<script>
+  document.getElementById('typeSelect').addEventListener('change', function() {
+  const subtypeSelect = document.getElementById('subtypeSelect');
+  subtypeSelect.innerHTML = ''; // Clear existing options
+
+  // Check if "commercial / Special Use" is selected
+  if (this.value === 'commercial') {
+    const options = [
+    "Hotel/Guest House", "Fuel Station", "Workspace", "Office Space", 
+      "Conference Room", "Church", "Event Centre", "Factory", 
+      "School", "Shop", "Shop in a mall", "Show room", 
+      "Tank Farm", "Warehouse"
+    ];
+
+    // Add a default option
+    const defaultOption = document.createElement('option');
+    defaultOption.value = "";
+    defaultOption.text = "Please select a property type";
+    subtypeSelect.appendChild(defaultOption);
+
+    // Populate the subtype select with new options
+    options.forEach(option => {
+      const newOption = document.createElement('option');
+      newOption.value = option.replace(/[\W_]+/g,""); // Remove special characters and spaces
+      newOption.text = option;
+      subtypeSelect.appendChild(newOption);
+    });
+  }
+});
+
+</script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const sidebarToggle = document.getElementById('sidebar-toggle');

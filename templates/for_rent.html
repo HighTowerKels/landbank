@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landbank | Listing</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/different.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    /* Your existing styles */
+
+    .sidebar {
+      position:fixed;
+          width: 256px;
+          height: 950px;
+          top: 74px;
+          padding: 24px;
+          border: 1px solid #ccc;
+          gap: 24px;
+        }
+        .navbar{
+          position:static;
+        }
+        #sidebar-toggle {
+            display: none;
+        }
+        .row , .rows{
+            display: flex;
+            flex-direction: row;
+        }
+        .container {
+      display: flex; /* Use flexbox for the container */
+    }
+        .content {
+          flex: 2; /* Make the content take up remaining space */
+      margin-left: 21%;
+    }
+    .row .columnsy{
+        display: flex;
+        align-content: space-around;
+        justify-content: space-between;
+        margin-right: 10px; /* Adjust the value as needed */
+        margin-left: 3px; /* Adjust the value as needed */
+        padding-left: 5px; /* Optional padding for the card content */
+    
+    }
+   
+.card{
+    width: 120%;
+height: Hug (94px);
+padding: 10px;
+border-radius: 16px;
+border: 1px;
+gap: 16px;
+background-color: #f3f4f6;
+
+}
+
+.columns h3{
+    font-family: Noto Sans;
+font-size: 18px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+color: #A59795;
+text-align: justify;
+
+
+
+}
+.card-body{
+    width: 120%;
+}
+.columnsy .btn{
+    margin-top: 25%;
+    width: 185px;
+height: 40px;
+padding: 12px, 44px, 12px, 45px;
+border-radius: 40px;
+border: 1px;
+gap: 10px;
+background-color: #510000;
+color: whitesmoke
+;
+
+}
+.textarea{
+    width: 700px;
+    height: 200px;
+    gap: 14px
+    
+}
+
+.file-upload-container {
+  display: inline-block;
+  position: relative;
+  width: 700px;
+height: 207px;
+
+border-radius: 8px;
+border: 1px
+
+}
+label{
+    font-family: Cabinet Grotesk;
+font-size: 16px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+ 
+}
+.file-upload-container #file-upload {
+  display: none;
+}
+
+.file-upload-container #file-drag {
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  display: block; /* Ensures the label takes up full width */
+}
+
+.file-upload-container #file-drag:hover {
+  background-color: #f5f5f5;
+}
+
+.file-upload-container #start {
+  display: block;
+}
+
+.file-upload-container .hidden {
+  display: none !important;
+}
+
+.file-upload-container .btns {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #510000;
+  color: #fff;
+  border-radius: 4px;
+}
+.btns{
+    display: inline-block;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #510000;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.file-upload-container .btns:hover {
+  background-color: #510000;
+}
+.file-item {
+    display: flex;
+    align-items: center;
+}
+
+.file-image {
+    margin-right: 10px;
+}
+
+.file-details {
+    display: flex;
+    align-items: center;
+}
+
+.file-progress {
+    margin-left: 10px;
+    width: 100px; /* Adjust as needed */
+}
+
+.delete-icon {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.document-upload-container {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    width: 700px;
+height: 207px;
+}
+
+.document-upload-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#document-upload {
+    display: none;
+}
+
+#document-drag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#document-drag img {
+    max-width: 100px;
+}
+
+#start-document {
+    text-align: center;
+}
+
+#document-list {
+    list-style: none;
+    padding: 0;
+}
+
+.document-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.document-item span {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.document-progress {
+    flex: 2;
+    margin: 0 10px;
+    width: auto;
+}
+
+.delete-icon {
+    cursor: pointer;
+}
+
+.check .column{
+  padding-left: 10%;
+}
+
+
+    /* Mobile styles */
+    @media only screen and (max-width: 640px) {
+      
+      .container {
+        flex-direction: column; /* Stack items on top of each other on mobile */
+      }
+
+      .sidebar.visible {
+        left: 0; /* Show the sidebar when 'visible' class is present */
+      }
+
+      .content {
+        flex: 1; /* Make content take up full width on mobile */
+        transition: margin-left 0.3s ease; /* Add transition effect for smooth animation */
+      }
+
+      .content.overlay {
+        margin-left: 200px; /* Adjust the margin to match sidebar width */
+      }
+      .container {
+      display: flex; /* Use flexbox for the container */
+    }
+
+    .sidebar {
+      width: 100%; /* Adjust the width of the sidebar as needed */
+      background-color: #510000;
+      padding: 20px;
+      position: fixed; /* Fix the sidebar position */
+      top: 8%;
+      left: -200px; /* Hide the sidebar off-screen initially */
+      height: auto; /* Set sidebar height to full viewport height */
+      z-index: 1000; /* Set a high z-index to ensure it overlays other elements */
+      transition: left 0.3s ease; /* Add transition effect for smooth animation */
+    overflow-y: scroll;
+    }
+
+    .content {
+      flex: 1; /* Make the content take up remaining space */
+      padding: 20px;
+    }
+
+    /* Hamburger menu styles */
+    #sidebar-toggle {
+      display: block;
+      cursor: pointer;
+      font-size: 24px;
+    }
+    .container {
+      display: flex; /* Use flexbox for the container */
+    }
+
+    .sidebar {
+      width: 200px; /* Adjust the width of the sidebar as needed */
+      background-color: #f3f4f6;
+      padding: 20px;
+    }
+    .wider-sidebar {
+  width: 100%; /* Adjust the width as needed */
+  /* Add any other styles for the wider sidebar */
+}
+
+
+    .content {
+      flex: 1; /* Make the content take up remaining space */
+      padding: 20px;
+    }
+.row{
+    display: flex;
+    flex-direction: column;
+}
+.rows{
+    display: flex;
+    flex-direction: row;
+}
+.row .columnsy{
+        display: flex;
+        align-content: space-around;
+        justify-content: space-between;
+        margin-right: 10px; /* Adjust the value as needed */
+        margin-left: 3px; /* Adjust the value as needed */
+        padding-left: 5px; /* Optional padding for the card content */
+        padding-bottom: 5px;
+    
+    }
+    .columnsy > .btn{
+    margin-top: 10%;
+    width: 300px;
+height: 40px;
+padding: 12px, 44px, 12px, 45px;
+border-radius: 40px;
+border: 1px;
+gap: 10px;
+background-color: #510000;
+color: whitesmoke
+;
+
+}
+.textarea{
+    width: 300px;
+    height: 200px;
+    gap: 14px
+    
+}
+.document-upload-container , .file-upload-container{
+    width: 300px;
+    height: 200px;
+}
+
+
+body {
+  height: 270vh;
+  background-color: #f3f4f6;
+}
+.file-upload-container , .document-upload-container{
+ width: 100%;
+}
+
+
+
+    }
+    input[type="checkbox"]{
+  
+  color:#510000 ;
+}
+  </style>
+</head>
+
+<body>
+
+  {% include "dash_nav.html" %}
+
+  <div class="container">
+    <div class="sidebar">
+      <ul>
+          <li>
+            <a
+              href="/dashboard"
+              class="flex items-center gap-2 border-s-[3px] border-blue-500 bg-blue-50 px-4 py-3 text-blue-700"
+            >
+            <i class="fa fa-home"></i>
+              <span class="text-sm font-medium"> Dashboard </span>
+            </a>
+          </li>
+        
+          <li>
+            <a
+              href="/verification"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
+            <i class="fa fa-user"></i>
+              <span class="text-sm font-medium"> Verification </span>
+            </a>
+          </li>
+        
+          <li>
+            <a
+              href="/creatinglisting"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
+            <i class="fa fa-file"></i>
+        
+              <span class="text-sm font-medium"> Listings </span>
+            </a>
+          </li>
+        
+         
+        
+         
+        </ul>
+        <hr>
+        <br>
+        <ul>
+          <li>
+            <h3 style="font-family: Inter;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 12px;
+            letter-spacing: 0.4000000059604645px;
+            text-align: left;
+            ">SETTINGS</h3>
+          </li>
+        
+          <li>
+            <a
+              href="/settings"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
+            <i class="fa fa-cog"></i>
+        
+              <span class="text-sm font-medium"> Setting </span>
+            </a>
+          </li>
+        
+          <li>
+            <a
+              href="/help"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
+            <i class="fa fa-info-circle"></i>
+        
+              <span class="text-sm font-medium"> help </span>
+            </a>
+          </li>
+        
+      
+        </ul>
+  
+        <br>
+        <br><br>
+        <hr>
+  
+        <ul>
+        
+        
+          <li>
+            <a
+              href="/logout"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
+            <i class="fa fa-sign-out"></i>
+        
+              <span style="font-family: Inter;
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 20px;
+              letter-spacing: -0.02em;
+              text-align: left;
+              color: #D55F54;" class="text-sm font-medium"> Logout Account  </span>
+            </a>
+          </li>
+        
+       
+        
+      
+        </ul>
+  </div>
+
+
+    <div class="content">
+        <section class="mx-auto max-w-screen-xl">
+          <div class="card" style="width: 100%;">
+            <h3 style=" font-family: Cabinet Grotesk;
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 29px;
+            letter-spacing: 0em;
+            text-align: left;
+            ">Create New Listing</h3>
+            <form method="post" enctype="multipart/form-data" action="{{ url_for('create_shortlet') }}" >
+                <div class="mt-8 grid grid-cols-6 gap-6">
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="FirstName" class="block text-sm font-medium text-gray-700">
+                          Ownership Type
+                        </label>
+            
+                        <select
+                        name="shortlet_property_ownership"
+                        id="HeadlineAct"
+                        
+                        class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      >
+                        <option value="personal">Personal</option>
+                        <option value="developer">Developer</option>
+                        <option value="realtor">Realtor</option>
+                        <option value="agent">Agent</option>
+                        
+                       
+                      </select>
+                      </div>
+                      <div class="col-span-6 sm:col-span-3">
+                  <label for="LastName" class="block text-sm font-medium text-gray-700">
+                    Location
+                  </label>
+      
+                  <select
+                  id="location"
+                  name="location"
+                  class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+
+
+                  >
+                  <option  value="">Select State</option>
+                  <option value="Abia">Abia</option>
+                  <option value="Adamawa">Adamawa</option>
+                  <option value="Akwa Ibom">Akwa Ibom</option>
+                  <option value="Anambra">Anambra</option>
+                  <option value="Bauchi">Bauchi</option>
+                  <option value="Bayelsa">Bayelsa</option>
+                  <option value="Benue">Benue</option>
+                  <option value="Borno">Borno</option>
+                  <option value="Cross River">Cross River</option>
+                  <option value="Delta">Delta</option>
+                  <option value="Ebonyi">Ebonyi</option>
+                  <option value="Edo">Edo</option>
+                  <option value="Ekiti">Ekiti</option>
+                  <option value="Enugu">Enugu</option>
+                  <option value="Gombe">Gombe</option>
+                  <option value="Imo">Imo</option>
+                  <option value="Jigawa">Jigawa</option>
+                  <option value="Kaduna">Kaduna</option>
+                  <option value="Kano">Kano</option>
+                  <option value="Katsina">Katsina</option>
+                  <option value="Kebbi">Kebbi</option>
+                  <option value="Kogi">Kogi</option>
+                  <option value="Kwara">Kwara</option>
+                  <option value="Lagos">Lagos</option>
+                  <option value="Nasarawa">Nasarawa</option>
+                  <option value="Niger">Niger</option>
+                  <option value="Ogun">Ogun</option>
+                  <option value="Ondo">Ondo</option>
+                  <option value="Osun">Osun</option>
+                  <option value="Oyo">Oyo</option>
+                  <option value="Plateau">Plateau</option>
+                  <option value="Rivers">Rivers</option>
+                  <option value="Sokoto">Sokoto</option>
+                  <option value="Taraba">Taraba</option>
+                  <option value="Yobe">Yobe</option>
+                  <option value="Zamfara">Zamfara</option>
+                  <option value="Federal Capital Territory">Federal Capital Territory</option>
+                </select>
+                
+                </div>
+                </div>
+              
+                <div class="mt-8 grid grid-cols-10 gap-6 pl-14">
+                 
+            
+                  <div class="col-span-6 sm:col-span-3">
+                    <label for="LastName" class="block text-sm font-medium text-gray-700">
+                      Available For
+                      </label>
+                  <select class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                  id="availableFor" name="shortlet_property_available">
+                  
+                  <option value="">Please select</option>
+                  <option value="forHouse">House</option>
+
+                  <option value="forSale">Shared Apartment</option>
+                  <option value="forRent">Shortlet</option>
+                  <option value="JV">JV (Joint Venture)</option>
+                  <option value="shortlet">Land</option>
+                  </select>
+                  </div>
+
+                  <div class="col-span-6 sm:col-span-3">
+              <label for="LastName" class="block text-sm font-medium text-gray-700">
+                Type
+              </label>
+        
+              <select
+              name="shortlet_property_type"
+              id="typeSelect"
+              
+              class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            >
+              <option value="land">Land</option>
+              <option value="house">House</option>
+              <option value="commercial">commercial/ Special Use</option>
+              
+             
+            </select>
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="LastName" class="block text-sm font-medium text-gray-700">
+                SubType
+              </label>
+        
+              <select
+              name="shortlet_subtype" id="subtypeSelect"
+              
+              class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            >
+            <option value="">Please select a property type</option>
+            <option value="ApartmentCondo">Apartment/Condo</option>
+            <option value="Duplex">Duplex</option>
+            <option value="SemiDetachedDuplex">Semi-detached Duplex</option>
+            <option value="TerraceTownhouse">Terrace/Townhouse</option>
+            <option value="Bungalow">Bungalow</option>
+            <option value="SemiDetachedBungalow">Semi-detached Bungalow</option>
+            <option value="Mansionette">Mansionette</option>
+            <option value="BoysQuarters">Boys Quarters</option>
+            <option value="MiniFlat">Mini-Flat</option>
+            <option value="Penthouse">Penthouse</option>
+            <option value="SelfContain">Self-contain</option>
+            <option value="SharedApartment">Shared Apartment</option>
+            <option value="StudioApartment">Studio Apartment</option>
+             
+            </select>
+            </div>
+                  </div>
+
+                  <div class="mt-8 grid grid-cols-4 gap-6">
+                    <div>
+                      <label for="negotiationStatus" class="block text-sm font-medium text-gray-700">
+                        Negotiation Status
+                      </label>
+                      <select
+                        name="shortlet_negotiation"
+                        id="negotiationStatus"
+                        class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      >
+                        <option value="Negotiable">Negotiable</option>
+                        <option value="Non-Negotiable">Non-Negotiable</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="percentNegotiation" class="block text-sm font-medium text-gray-700">
+                        % Negotiation
+                      </label>
+                      <select
+                      id="percentNegotiation"
+                      name="shortlet_percent"
+                      class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                    >
+                      <option value="5%">5%</option>
+                      <option value="10%">10%</option>
+                      <option value="15%">15%</option>
+                      <option value="20%">20%</option>
+                      <option value="25%">25%</option>
+                      <option value="30%">30%</option>
+                      <option value="35%">35%</option>
+                      <option value="40%">40%</option>
+                      <option value="45%">45%</option>
+                      <option value="50%">50%</option>
+                      <option value="55%">55%</option>
+                      <option value="60%">60%</option>
+                      <option value="65%">65%</option>
+                      <option value="70%">70%</option>
+                      <option value="75%">75%</option>
+                      <option value="80%">80%</option>
+                      <option value="85%">85%</option>
+                      <option value="90%">90%</option>
+                      <option value="95%">95%</option>
+                      <option value="100%">100%</option>
+                    </select>
+                    
+                    </div>
+                    <div>
+                      <label for="rentAmount" class="block text-sm font-medium text-gray-700">
+                        Rent Amount
+                      </label>
+                      <input
+                        type="text"
+                        id="rentAmount"
+                        name="shortlet_price"
+                        placeholder="Enter Amount in Naira"
+                        class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      />
+                    </div>
+                    <div>
+                      <label for="otherCharges" class="block text-sm font-medium text-gray-700">
+                        Other Charges
+                      </label>
+                      <input
+                        type="text"
+                        id="otherCharges"
+                        name="shortlet_charges"
+                        placeholder="Enter Amount in Naira"
+                        class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      />
+                    </div>
+                  </div>
+                  
+
+              
+                  
+                  <label for="negotiationStatus" class="block text-sm font-medium text-gray-700 mt-4">
+                    Rental Requirements (Please always specify the number of days available for Long stay)
+                  </label>
+                            <div class="mt-4 mb-4 grid grid-cols-4 gap-6">
+           
+            <div>
+              
+                <select
+                id="numberofroom"
+                name="shortlet_num_rooms"
+                class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+              >
+              <option>Select Guest</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              
+            </div>
+            <div>
+              <label for="percentNegotiation" class="block text-sm font-medium text-gray-700">
+                
+              </label>
+              <select
+              id="numberofroom"
+              name="shortlet_num_toilets"
+              class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            >
+            <option value="">Number of Rooms</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+            
+            </div>
+            <div>
+              <label for="rentAmount" class="block text-sm font-medium text-gray-700">
+                
+              </label>
+              <input
+                        type="text"
+                        id="rentAmount"
+                        name="shortlet_stay"
+                        placeholder="Long Stay"
+                        class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      />
+            
+            </div>
+        
+          </div>
+          <label for="">Owner Hosting </label>
+<div class="mt-4 grid grid-cols-4 gap-6 mb-6">
+  <label for="completedFurnished" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300"  id="Option1" name="completedFurnished" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Available </strong>
+    </div>
+  </label>
+
+  <label for="completedUnfurnished" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300"  id="Option1" name="completedUnfurnished" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Unavailable  </strong>
+    </div>
+  </label>
+
+  <label for="completedUnfurnished" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300"  id="Option1" name="checkin" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Self Check In  </strong>
+    </div>
+  </label>
+
+  <label for="completedUnfurnished" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300"  id="Option1" name="Cancellation" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Free Cancellation  </strong>
+    </div>
+  </label>
+  </div>
+
+<label for="">Housing Amenities</label>
+<div class="mt-4 grid grid-cols-4 gap-6 mb-6">
+    <label for="fullyFurnished" class="flex cursor-pointer items-start gap-4">
+      <div class="flex items-center">
+        <input type="checkbox" class="size-4 rounded border-gray-300" id="fullyFurnished" name="fullyFurnished" />
+      </div>
+      <div>
+        <strong class="font-medium text-gray-900"> Fully Furnished </strong>
+      </div>
+    </label>
+  
+    <label for="partlyFurnished" class="flex cursor-pointer items-start gap-4">
+      <div class="flex items-center">
+        <input type="checkbox" class="size-4 rounded border-gray-300" id="partlyFurnished" name="partlyFurnished" />
+      </div>
+      <div>
+        <strong class="font-medium text-gray-900"> Partly Furnished </strong>
+      </div>
+    </label>
+  
+    <label for="parkingSpace" class="flex cursor-pointer items-start gap-4">
+      <div class="flex items-center">
+        <input type="checkbox" class="size-4 rounded border-gray-300" id="parkingSpace" name="parkingSpace" />
+      </div>
+      <div>
+        <strong class="font-medium text-gray-900"> Parking Space </strong>
+      </div>
+    </label>
+  
+    <label for="laundryRoom" class="flex cursor-pointer items-start gap-4">
+      <div class="flex items-center">
+        <input type="checkbox" class="size-4 rounded border-gray-300" id="laundryRoom" name="laundryRoom" />
+      </div>
+      <div>
+        <strong class="font-medium text-gray-900"> Laundry Room </strong>
+      </div>
+    </label>
+  
+    <label for="sharedKitchen" class="flex cursor-pointer items-start gap-4">
+      <div class="flex items-center">
+        <input type="checkbox" class="size-4 rounded border-gray-300" id="sharedKitchen" name="sharedKitchen" />
+      </div>
+      <div>
+        <strong class="font-medium text-gray-900"> Shared Kitchen </strong>
+      </div>
+    </label>
+  
+    <label for="sharedBathroom" class="flex cursor-pointer items-start gap-4">
+      <div class="flex items-center">
+        <input type="checkbox" class="size-4 rounded border-gray-300" id="sharedBathroom" name="sharedBathroom" />
+      </div>
+      <div>
+        <strong class="font-medium text-gray-900"> Shared Bathroom </strong>
+      </div>
+    </label>
+  
+    <label for="noiseLevel" class="flex cursor-pointer items-start gap-4">
+      <div class="flex items-center">
+        <input type="checkbox" class="size-4 rounded border-gray-300" id="noiseLevel" name="noiseLevel" />
+      </div>
+      <div>
+        <strong class="font-medium text-gray-900"> Noise Level </strong>
+      </div>
+    </label>
+  
+    <label for="visitors" class="flex cursor-pointer items-start gap-4">
+      <div class="flex items-center">
+        <input type="checkbox" class="size-4 rounded border-gray-300" id="visitors" name="visitors" />
+      </div>
+      <div>
+        <strong class="font-medium text-gray-900"> Visitors </strong>
+      </div>
+    </label>
+  
+    <label for="fitnessCenter" class="flex cursor-pointer items-start gap-4">
+      <div class="flex items-center">
+        <input type="checkbox" class="size-4 rounded border-gray-300" id="fitnessCenter" name="fitnessCenter" />
+      </div>
+      <div>
+        <strong class="font-medium text-gray-900"> Fitness Center </strong>
+      </div>
+    </label>
+    <label for="internet" class="flex cursor-pointer items-start gap-4">
+        <div class="flex items-center">
+          <input type="checkbox" class="size-4 rounded border-gray-300" id="internet" name="internet" />
+        </div>
+        <div>
+          <strong class="font-medium text-gray-900"> Internet Services </strong>
+        </div>
+      </label>
+  </div>
+  
+
+
+
+
+
+
+         
+          
+         
+         
+        
+              
+                
+               
+
+                <div>
+                    <label for="OrderNotes" class="block text-sm font-medium text-gray-700 mt-2" style="width: 174px;
+                    height: 20px
+                    "> Add Property Description </label>
+                  
+                    <textarea 
+                      id="OrderNotes"
+                      name="shortlet_description"
+                      class="textarea mt-2  rounded-lg border-gray-200 align-top shadow-sm sm:text-sm"
+                      rows="4"
+                      placeholder="Write About Property"
+                    ></textarea>
+                  </div>
+                  
+
+
+<div class="file-upload-container mt-8">
+    <label for=""class="mb-2">Upload property image</label>
+    
+    <input class="mt-2" id="file-upload" type="file" name="fileUpload[]" accept="image/*" multiple />
+    
+  <label for="file-upload" id="file-drag">
+    <img id="file-image" src="#" alt="Preview" class="hidden">
+    <div id="start">
+      <i class="fa fa-download" aria-hidden="true"></i>
+      <div>Drop your files here</div>
+      <div id="notimage" class="hidden">Drop your files here</div>
+      <span id="file-upload-btn" class="btns btn-primary">Select a file</span>
+    </div>
+    <!-- <div id="response" class="hidden">
+      <div id="messages"></div>
+      <progress class="progress" id="file-progress" value="0">
+        <span>0</span>%
+      </progress>
+    </div> -->
+  </label>
+ 
+<ul id="file-list">
+<div id="file-progress-container" class="mt-2">
+    <progress class="block rounded-full bg-gray-200" id="file-progress" value="0" max="100"></progress>
+    
+</div>
+</ul>
+
+</div>
+
+          
+<!-- 
+<div class="document-upload-container mt-8">
+    <label for="" class="mb-2">Upload document</label>
+    
+    <input class="mt-2" id="document-upload" type="file" name="documentUpload[]" accept=".pdf, .doc, .docx" multiple />
+    
+    <label for="document-upload" id="document-drag">
+        <img id="document-image" src="#" alt="Document Icon" class="hidden">
+        <div id="start-document">
+            <i class="fa fa-download" aria-hidden="true"></i>
+            <div>Drop your files here</div>
+            <div id="not-document" class="hidden">Drop your files here</div>
+            <span id="document-upload-btn" class="btns btn-primary">Select a file</span>
+        </div>
+    </label>
+  
+    
+  
+</div>
+<ul id="document-list">
+    <div id="document-progress-container" class="mt-2">
+        <progress class="block rounded-full bg-gray-200" id="document-progress" value="0" max="100"></progress>
+    </div>
+</ul> -->
+<br>
+<button style="background-color: #510000;
+color: #fff;" class="btn btn-wide mt-8">Submit</button>
+            </form>
+          </div>
+        </section>
+        
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script>
+  document.getElementById('availableFor').addEventListener('change', function() {
+  var selectedOption = this.value;
+
+  if (selectedOption) {
+    var redirectUrl = '';
+
+    switch (selectedOption) {
+      case 'forSale':
+        redirectUrl = '/forsale'; // Replace with the URL of the for sale page
+        break;
+      case 'forRent':
+        redirectUrl = '/forrent'; // Replace with the URL of the for rent page
+        break;
+      case 'JV':
+        redirectUrl = '/jv'; // Replace with the URL of the JV page
+        break;
+      case 'shortlet':
+        redirectUrl = '/shortlet'; // Replace with the URL of the shortlet page
+        break;
+      case 'forHouse':
+        redirectUrl = '/creatinglisting'
+        break;
+      default:
+        break;
+    }
+
+    if (redirectUrl) {
+      window.location.href = redirectUrl;
+    }
+  }
+});
+
+</script>
+
+
+<script>
+  document.getElementById('typeSelect').addEventListener('change', function() {
+  const subtypeSelect = document.getElementById('subtypeSelect');
+  subtypeSelect.innerHTML = ''; // Clear existing options
+
+  // Check if "commercial / Special Use" is selected
+  if (this.value === 'commercial') {
+    const options = [
+    "Hotel/Guest House", "Fuel Station", "Workspace", "Office Space", 
+      "Conference Room", "Church", "Event Centre", "Factory", 
+      "School", "Shop", "Shop in a mall", "Show room", 
+      "Tank Farm", "Warehouse"
+    ];
+
+    // Add a default option
+    const defaultOption = document.createElement('option');
+    defaultOption.value = "";
+    defaultOption.text = "Please select a property type";
+    subtypeSelect.appendChild(defaultOption);
+
+    // Populate the subtype select with new options
+    options.forEach(option => {
+      const newOption = document.createElement('option');
+      newOption.value = option.replace(/[\W_]+/g,""); // Remove special characters and spaces
+      newOption.text = option;
+      subtypeSelect.appendChild(newOption);
+    });
+  }
+});
+
+</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sidebarToggle = document.getElementById('sidebar-toggle');
+      const sidebar = document.querySelector('.sidebar');
+      const content = document.querySelector('.content');
+  
+      sidebarToggle.addEventListener('click', function () {
+        sidebar.classList.toggle('visible');
+        content.classList.toggle('overlay');
+  
+        // Check if sidebar is visible
+        if (sidebar.classList.contains('visible')) {
+          // If sidebar is visible, hide the content
+          content.style.display = 'none';
+          // Add a class to the sidebar for wider width
+          sidebar.classList.add('wider-sidebar');
+        } else {
+          // If sidebar is not visible, show the content
+          content.style.display = 'block';
+          // Remove the class for wider width
+          sidebar.classList.remove('wider-sidebar');
+        }
+      });
+    });
+  </script>
+<script>
+    document.getElementById('document-upload').addEventListener('change', function(e) {
+    var files = e.target.files;
+    var overallProgress = document.getElementById('document-progress');
+    var fileList = document.getElementById('document-list');
+
+    // Remove any existing progress bars and file list items
+    overallProgress.value = 0;
+    fileList.innerHTML = '';
+
+    // Limit to 5 documents
+    var maxFiles = Math.min(files.length, 5);
+
+    // Upload each document
+    for (var i = 0; i < maxFiles; i++) {
+        var file = files[i];
+
+        // Upload file and add to file list
+        uploadDocument(file, overallProgress, fileList);
+    }
+});
+
+// Function to upload a document and add to file list
+function uploadDocument(file, overallProgress, fileList) {
+    var formData = new FormData();
+    formData.append('file', file);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/upload', true);
+
+    xhr.upload.onprogress = function(e) {
+        if (e.lengthComputable) {
+            var overallPercentage = Math.round((e.loaded / e.total) * 100);
+            overallProgress.value = overallPercentage;
+        }
+    };
+
+    xhr.onload = function() {
+        // Create a list item for the uploaded document
+        var listItem = document.createElement('li');
+
+        // Create a container for document details
+        var documentContainer = document.createElement('div');
+        documentContainer.classList.add('document-item');
+
+        // Create a span for document name
+        var documentName = document.createElement('span');
+        documentName.textContent = file.name;
+
+        // Create a progress bar for document upload progress
+        var progressBar = document.createElement('progress');
+        progressBar.value = 100;
+        progressBar.max = 100;
+        progressBar.classList.add('document-progress');
+
+        // Create a delete icon
+        var deleteIcon = document.createElement('i');
+        deleteIcon.classList.add('fa', 'fa-trash', 'delete-icon');
+        deleteIcon.setAttribute('aria-hidden', 'true');
+        deleteIcon.addEventListener('click', function() {
+            listItem.remove();
+        });
+
+        // Append document details to container
+        documentContainer.appendChild(documentName);
+        documentContainer.appendChild(progressBar);
+        documentContainer.appendChild(deleteIcon);
+
+        // Append container to list item
+        listItem.appendChild(documentContainer);
+
+        // Append list item to file list
+        fileList.appendChild(listItem);
+    };
+
+    xhr.send(formData);
+}
+
+</script>
+
+<script>
+    // Function to handle file uploads
+document.getElementById('file-upload').addEventListener('change', function(e) {
+    var files = e.target.files;
+    var overallProgress = document.getElementById('file-progress');
+    var fileList = document.getElementById('file-list');
+
+    // Remove any existing progress bars and file list items
+    overallProgress.value = 0;
+    fileList.innerHTML = '';
+
+    // Limit to 5 images
+    var maxFiles = Math.min(files.length, 5);
+
+    // Upload each file
+    for (var i = 0; i < maxFiles; i++) {
+        var file = files[i];
+
+        // Upload file and add to file list
+        uploadFile(file, overallProgress, fileList);
+    }
+});
+
+// Function to upload a file and add to file list
+function uploadFile(file, overallProgress, fileList) {
+    var formData = new FormData();
+    formData.append('file', file);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/upload', true);
+
+    xhr.upload.onprogress = function(e) {
+        if (e.lengthComputable) {
+            var overallPercentage = Math.round((e.loaded / e.total) * 100);
+            overallProgress.value = overallPercentage;
+        }
+    };
+
+    xhr.onload = function() {
+        // Create a container for the file item
+        var container = document.createElement('div');
+        container.classList.add('file-item');
+
+        // Create an image element for the uploaded image
+        var image = document.createElement('img');
+        image.src = URL.createObjectURL(file);
+        image.classList.add('file-image');
+        image.style.width = '80px'; // Set image width to 80px
+        container.appendChild(image);
+
+        // Create a container for the file details
+        var fileDetails = document.createElement('div');
+        fileDetails.classList.add('file-details');
+
+        // Create a list item for the uploaded image name
+        var fileName = document.createElement('span');
+        fileName.textContent = file.name;
+        fileDetails.appendChild(fileName);
+
+        // Create a progress bar for the uploaded image
+        var progressBar = document.createElement('progress');
+        progressBar.value = 100;
+        progressBar.max = 100;
+        progressBar.classList.add('file-progress');
+        fileDetails.appendChild(progressBar);
+
+        // Create a delete icon
+        var deleteIcon = document.createElement('i');
+        deleteIcon.classList.add('fa', 'fa-trash', 'delete-icon');
+        deleteIcon.setAttribute('aria-hidden', 'true');
+        fileDetails.appendChild(deleteIcon);
+
+        // Append file details to container
+        container.appendChild(fileDetails);
+
+        // Append container to file list
+        fileList.appendChild(container);
+    };
+
+    xhr.send(formData);
+}
+
+</script>
+
+</html>

@@ -303,7 +303,7 @@ margin-left: -15%;
 } */
 .step-p{
   color: #0A0A0A;
-  width: 200px;
+  width: 350px;
   padding-left: 10%;
   text-align: start;
   padding: 10%;
@@ -328,13 +328,13 @@ margin-left: -15%;
 }
 
 .wrapper-small-text{
-  width: 100%;
+  width: auto;
   margin: 0;
   padding: 0%;
   text-align: center;
-  font-size: 25px;
-  padding: 5% 15%;
-  margin-left: -20%;
+  font-size: 35px;
+  padding:5% 15%;
+  margin-left: -30%%;
 }
 .second{
   width: auto;

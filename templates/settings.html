@@ -327,34 +327,7 @@ margin-left: -10%;
 
 <body>
 
-  <div class="navbar bg-base-100">
-    <div class="flex-1">
-      <span id="sidebar-toggle">&#9776;</span>
-      <a class="btn btn-ghost text-xl">Landbank</a>
-    </div>
-    <div class="flex-none">
-      <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-          <div class="indicator">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-            <span class="badge badge-sm indicator-item">8</span>
-          </div>
-        </div>
-      </div>
-      <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-          <div class="w-10 rounded-full">
-            <img alt="Tailwind CSS Navbar component"
-              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% include "dash_nav.html" %}
   <!-- header ends here -->
 
     <div class="grid grid-cols-1 md:grid-cols-[1fr,3.5fr]">
@@ -392,16 +365,7 @@ margin-left: -10%;
                 </a>
             </li>
             
-            <li>
-                <a
-                href="/biddings"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-                >
-                <i class="fa fa-briefcase"></i>
-            
-                <span class="text-sm font-medium"> Biddings </span>
-                </a>
-            </li>
+
             
             
             </ul>
@@ -431,7 +395,7 @@ margin-left: -10%;
             
             <li>
                 <a
-                href=""
+                href="/help"
                 class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
                 >
                 <i class="fa fa-info-circle"></i>
@@ -452,7 +416,7 @@ margin-left: -10%;
             
             <li>
                 <a
-                href=""
+                href="/logout"
                 class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
                 >
                 <i class="fa fa-sign-out"></i>
@@ -487,13 +451,23 @@ margin-left: -10%;
             <!-- profile tab -->
             <div id="Profile" class="tabcontent w-full flex flex-col gap-[50px]">
                 <!-- profile image -->
-               <div class="relative mx-auto">
-                <img src="/static/image/profile.png" alt=""  class="" />
-                <i class="fa fa-camera absolute bottom-2 right-2 rounded-full bg-[#510000] text-white p-2"></i>
-               </div>
-
-               <!-- field set -->
-               <div class="flex flex-col gap-[30px]">
+                <form action="{{url_for('update_profile')}}">
+                  <div class="relative mx-auto">
+                 <center>
+                  <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div  class="rounded-full">
+                      {% if user.profile_picture %}
+                      <img src="{{ url_for('static', filename=user.profile_picture) }}" alt="Profile Picture" width="100" height="100">
+                      {% else %}
+                  <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                  {% endif %}
+                    </div>
+                  </div>
+                 </center>
+                    <i class="fa fa-camera absolute bottom-2 right-2 rounded-full bg-[#510000] text-white p-2"></i>
+                   </div>
+                
+                   <div class="flex flex-col gap-[30px]">
                     <!-- personal info -->
                     <div class="grid gap-[30px]">
                         <h3 class="text-[#510000] font-semibold text-base">Personal Information</h3>
@@ -501,7 +475,7 @@ margin-left: -10%;
                             <fieldset class="border-2 py-1 px-4 w-full rounded-md">
                                 <legend>First Name</legend>
                                 <div class="relative w-full">
-                                    <input type="text" placeholder="Patrick" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full ">
+                                    <input name="firstname" type="text" placeholder="Patrick" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full ">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                         <!-- Replace the following line with your icon -->
                                         <i class="fa-regular fa-user"></i>
@@ -511,7 +485,7 @@ margin-left: -10%;
                             <fieldset class="border-2 py-1 px-4 w-full rounded-md">
                                 <legend>Last Name</legend>
                                 <div class="relative w-full">
-                                    <input type="text" placeholder="Eze" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                    <input name="lastname" type="text" placeholder="Eze" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                         <!-- Replace the following line with your icon -->
                                         <i class="fa-regular fa-user"></i>
@@ -523,7 +497,7 @@ margin-left: -10%;
                             <fieldset class="border-2 py-1 px-4 w-full rounded-md">
                                 <legend>Street</legend>
                                 <div class="relative w-full">
-                                    <input type="text" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                    <input name="street" type="text" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                         <!-- Replace the following line with your icon -->
                                         <i class="fa-regular fa-location-dot"></i>
@@ -533,7 +507,7 @@ margin-left: -10%;
                             <fieldset class="border-2 py-1 px-4 w-full rounded-md">
                                 <legend>House Number</legend>
                                 <div class="relative w-full">
-                                    <input type="text" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                    <input name="house_number" type="text" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                         <!-- Replace the following line with your icon -->
                                         <i class="fa-regular fa-location-dot"></i>
@@ -545,7 +519,7 @@ margin-left: -10%;
                             <fieldset class="border-2 py-1 px-4 w-full rounded-md">
                                 <legend>City</legend>
                                 <div class="relative w-full">
-                                    <input type="text" placeholder="F.C.T." class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                    <input name="city" type="text" placeholder="F.C.T." class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                         <!-- Replace the following line with your icon -->
                                         <i class="fa-solid fa-phone"></i>
@@ -555,7 +529,7 @@ margin-left: -10%;
                             <fieldset class="border-2 py-1 px-4 w-full rounded-md">
                                 <legend>State</legend>
                                 <div class="relative w-full">
-                                    <input type="text" placeholder="Abuja" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                    <input name="state" type="text" placeholder="Abuja" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                         <!-- Replace the following line with your icon -->
                                         <i class="fa-solid fa-phone"></i>
@@ -572,7 +546,7 @@ margin-left: -10%;
                             <fieldset class="border-2 py-1 px-4 w-full rounded-md">
                                 <legend>Email Address</legend>
                                 <div class="relative w-full">
-                                    <input type="text" placeholder="Patze@yahoo.com" class="min-w-full pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent">
+                                    <input name="email" type="text" placeholder="Patze@yahoo.com" class="min-w-full pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                         <!-- Replace the following line with your icon -->
                                         <i class="fa-regular fa-envelope"></i>
@@ -586,7 +560,7 @@ margin-left: -10%;
                             <fieldset class="border-2 py-1 px-4 w-full rounded-md">
                                 <legend>Phone Number</legend>
                                 <div class="relative w-full">
-                                    <input type="text" placeholder="09123456789" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                    <input name="phone_number" type="text" placeholder="09123456789" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                         <!-- Replace the following line with your icon -->
                                         <i class="fa-solid fa-phone"></i>
@@ -596,7 +570,7 @@ margin-left: -10%;
                             <fieldset class="border-2 py-1 px-4 w-full rounded-md">
                                 <legend>Alternative <span class="hidden lg:inline ">Phone</span> Number</legend>
                                 <div class="relative w">
-                                    <input type="text" placeholder="08034567890" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                    <input name="alitnumber" type="text" placeholder="08034567890" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                         <!-- Replace the following line with your icon -->
                                         <i class="fa-solid fa-phone"></i>
@@ -607,11 +581,19 @@ margin-left: -10%;
 
                     </div>
                </div>
+               <br>
+               <div class="text-center w-full">
+                <button type="submit" class=" bg-[#510000] w-2/3 text-center text-white font-bold py-2 px-4 rounded-full">Save</button>
+               </div>
+                
+                  </form>
+               
+
+               <!-- field set -->
+           
 
                <!-- button -->
-               <div class="text-center w-full">
-                <button class=" bg-[#510000] w-2/3 text-center text-white font-bold py-2 px-4 rounded-full">Save</button>
-               </div>
+             
             </div>
 
             <!-- message tab -->
@@ -635,10 +617,7 @@ margin-left: -10%;
                                 <span>Patze@yahoo.com</span>
                                 <span class="text-[#0C7731] text-sm">Verified</span>
                             </div>
-                            <div class="flex rounded-full border gap-[8px] p-[6px] border-[#222222]">
-                              <i class="fa-regular fa-pen-to-square"></i>
-                                <span class="px-1">edit</span>
-                            </div>
+                           
                         </div>
 
                     </div>
