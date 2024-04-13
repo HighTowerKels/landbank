@@ -16,12 +16,14 @@
     /* Your existing styles */
 
     .sidebar {
+      position:fixed;
           width: 256px;
           height: 950px;
           top: 74px;
           padding: 24px;
           border: 1px solid #ccc;
           gap: 24px;
+   
         }
         .navbar{
           position:static;
@@ -37,8 +39,8 @@
       display: flex; /* Use flexbox for the container */
     }
         .content {
-      flex: 1; /* Make the content take up remaining space */
-      padding: 20px;
+      flex: 2; /* Make the content take up remaining space */
+      margin-left: 25%;
     }
     .row .columnsy{
         display: flex;
@@ -255,7 +257,7 @@ color: whitesmoke
 
 }
 .div1{
-  width: 100%;
+  width: 120%;
 height: 8rem;
 padding: 0px;
 margin-left: -10%;
@@ -273,47 +275,29 @@ margin-left: -10%;
   display: flex;
   flex-direction: row;
 }
-.div2 , .div3, .div4{
-  width:60%;
-  margin: 5%;
-  align-items: center;
-  justify-content: center;
-  margin-left: 20%;
-}
+
     }
+    alert {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.alert-success {
+    background-color: #28a745;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+}
   </style>
 </head>
 
 <body>
 
-  <div class="navbar bg-base-100">
-    <div class="flex-1">
-      <span id="sidebar-toggle">&#9776;</span>
-      <a class="btn btn-ghost text-xl">Landbank</a>
-    </div>
-    <div class="flex-none">
-      <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-          <div class="indicator">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-            <span class="badge badge-sm indicator-item">8</span>
-          </div>
-        </div>
-      </div>
-      <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-          <div class="w-10 rounded-full">
-            <img alt="Tailwind CSS Navbar component"
-              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% include "dash_nav.html" %}
 
   <div class="container">
     <div class="sidebar">
@@ -349,16 +333,7 @@ margin-left: -10%;
               </a>
             </li>
           
-            <li>
-              <a
-                href="/biddings"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <i class="fa fa-briefcase"></i>
-          
-                <span class="text-sm font-medium"> Biddings </span>
-              </a>
-            </li>
+           
           
            
           </ul>
@@ -388,7 +363,7 @@ margin-left: -10%;
           
             <li>
               <a
-                href="/contact"
+                href="/help"
                 class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
               >
               <i class="fa fa-info-circle"></i>
@@ -430,27 +405,30 @@ margin-left: -10%;
           </ul>
     </div>
 
-    <div class="content">
-      {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="alert alert-{{ category }}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
+    <div class="content" style="margin-top: 10%;">
+      
+      <div id="alert-container" class="alert-container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+      </div>
         <section class="mx-auto ">
-          <div class="paren grid gap-6 md:grid-cols-[4fr,1fr] mb-28">
+          <div class="paren grid gap-6 lg:grid-cols-[4fr,1fr] mb-28">
             <div class="child w-full ">
               <div class="div1"><canvas id="myChart" style="width:100%;max-width:700px"></canvas> </div>
 
             </div>
-            <div class="child  ">
-              <div class="row-child w-full">
-                <div class="div2 mt-2">
-                  <div class="card ">
-                    <div class="card-body w-full items-center text-center">
+            <div class="child  md:mt-20 ">
+              <div class="flex flex-col mt-10 md:mt-64 lg:mt-0 gap-3">
+                <div class="div 2 mt -2 flex-grow">
+                  <div class="card w-2/3 lg:w-full">
+                    <div class="card-bdy w-full items-center text-center">
                       <div class="rows">
                           <div class="columns mr-4">
                               <img class="card-title text-left item-left" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACvElEQVR4nO2ZPYgTQRTH36GIWoilwkG8zEQhjYXaKMd1YmFxCFdoY+GZ91ZOxEIsLO4s/LjmCj+qa8XCQi2vO1TQ9xLBJgqCHDbxAwttRPHgIpNs9mazu2LikbxIfrAk2WXh98+bnZmdARgyZMgfKU5VtxiSeUP8wZLU//YwKDUT8CRowSDf7CRALAzxr7GgfAg0YFBqDamgfLij+0gWGoGQ3+4uvdwO/caG/26n9+VOL2+1yNWwMndhUIM4Csj7DfLPbptmV80ZpWaQb7hnGzYqSHj/8Vbz7PFxfUOD9Jo8Vo60KjPQQTKdh0EGoSITs8ubLcq1Tkf7Xh/G78HSghiUK/2WtJ32YKlBiN91M9r3tQezbUFy52RX4xzKZ1BOzndtD2JKcqx5kZdAOcZ3bQ9iA7ncKBfJPCjH+q6JipDcD8+dAuUY3zURBOVNWK4iKMeQvI5c/SCjF59vMyirluSHG0tAMaPtrn4Q97bX/M0VUE6+JAdjrn4Qg3I2LNUiKMeQTMdc/SAW5U5zgOEZUI4luR1zjQUheea+F4jHQTkG5WnMdT1IfcQSf7PEa7kLr3aCauojFvlrzLUVpBCU8+HgsgLK2TvNYwnXKEipfCLsBR6CckzAkwnXaG5PcjW8OAvKMShzCVdvTv+4OXVXtAyagUV5lHCNgqC8d5/78MUeUI4hWUm4rleE11yv5XoEUIw9zztSXWPvwMRPQDkF4vFU1/i7L98C5RjkmVTXWBDkM6Aci7yY6hprWgEfAOVY4kqqaxQCZdVtFYBmph5sssTfU129ZlUF5VjkYqar12PdA+UUkE9mukZzLeJLoBwT7nemukZNK+CjoByLvJTp2griVu1AOZbkU6arIf7iLrp1VFCMDcoT0TpvGm5Zvscr5/+6lTCXGsStCYUPUaNsag/kj277QPt625D/jt/n94yiC7n6RQAAAABJRU5ErkJggg==">
@@ -466,9 +444,10 @@ margin-left: -10%;
                     </div>
                   </div> 
                 </div>
-                <div class="div3 mt-2">
-                  <div class="card">
-                    <div class="card-body w-full items-center text-center">
+
+                <div class="div 3 mt -2 flex-grow">
+                  <div class="card w-2/3 lg:w-full">
+                    <div class="card-bdy w-full items-center text-center">
                       <div class="rows">
                           <div class="columns mr-4">
                               <img class="card-title text-left item-left" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACvElEQVR4nO2ZPYgTQRTH36GIWoilwkG8zEQhjYXaKMd1YmFxCFdoY+GZ91ZOxEIsLO4s/LjmCj+qa8XCQi2vO1TQ9xLBJgqCHDbxAwttRPHgIpNs9mazu2LikbxIfrAk2WXh98+bnZmdARgyZMgfKU5VtxiSeUP8wZLU//YwKDUT8CRowSDf7CRALAzxr7GgfAg0YFBqDamgfLij+0gWGoGQ3+4uvdwO/caG/26n9+VOL2+1yNWwMndhUIM4Csj7DfLPbptmV80ZpWaQb7hnGzYqSHj/8Vbz7PFxfUOD9Jo8Vo60KjPQQTKdh0EGoSITs8ubLcq1Tkf7Xh/G78HSghiUK/2WtJ32YKlBiN91M9r3tQezbUFy52RX4xzKZ1BOzndtD2JKcqx5kZdAOcZ3bQ9iA7ncKBfJPCjH+q6JipDcD8+dAuUY3zURBOVNWK4iKMeQvI5c/SCjF59vMyirluSHG0tAMaPtrn4Q97bX/M0VUE6+JAdjrn4Qg3I2LNUiKMeQTMdc/SAW5U5zgOEZUI4luR1zjQUheea+F4jHQTkG5WnMdT1IfcQSf7PEa7kLr3aCauojFvlrzLUVpBCU8+HgsgLK2TvNYwnXKEipfCLsBR6CckzAkwnXaG5PcjW8OAvKMShzCVdvTv+4OXVXtAyagUV5lHCNgqC8d5/78MUeUI4hWUm4rleE11yv5XoEUIw9zztSXWPvwMRPQDkF4vFU1/i7L98C5RjkmVTXWBDkM6Aci7yY6hprWgEfAOVY4kqqaxQCZdVtFYBmph5sssTfU129ZlUF5VjkYqar12PdA+UUkE9mukZzLeJLoBwT7nemukZNK+CjoByLvJTp2griVu1AOZbkU6arIf7iLrp1VFCMDcoT0TpvGm5Zvscr5/+6lTCXGsStCYUPUaNsag/kj277QPt625D/jt/n94yiC7n6RQAAAABJRU5ErkJggg==">
@@ -484,9 +463,10 @@ margin-left: -10%;
                     </div>
                   </div>  
                 </div>
-                <div class="div4 mt-2">
-                  <div class="card">
-                    <div class="card-body w-full items-center text-center">
+
+                <div class="div 4 mt -2 flex-grow">
+                  <div class="card  w-2/3 lg:w-full">
+                    <div class="card-bdy w-full items-center text-center">
                       <div class="rows">
                           <div class="columns mr-4">
                               <img class="card-title text-left item-left" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACvElEQVR4nO2ZPYgTQRTH36GIWoilwkG8zEQhjYXaKMd1YmFxCFdoY+GZ91ZOxEIsLO4s/LjmCj+qa8XCQi2vO1TQ9xLBJgqCHDbxAwttRPHgIpNs9mazu2LikbxIfrAk2WXh98+bnZmdARgyZMgfKU5VtxiSeUP8wZLU//YwKDUT8CRowSDf7CRALAzxr7GgfAg0YFBqDamgfLij+0gWGoGQ3+4uvdwO/caG/26n9+VOL2+1yNWwMndhUIM4Csj7DfLPbptmV80ZpWaQb7hnGzYqSHj/8Vbz7PFxfUOD9Jo8Vo60KjPQQTKdh0EGoSITs8ubLcq1Tkf7Xh/G78HSghiUK/2WtJ32YKlBiN91M9r3tQezbUFy52RX4xzKZ1BOzndtD2JKcqx5kZdAOcZ3bQ9iA7ncKBfJPCjH+q6JipDcD8+dAuUY3zURBOVNWK4iKMeQvI5c/SCjF59vMyirluSHG0tAMaPtrn4Q97bX/M0VUE6+JAdjrn4Qg3I2LNUiKMeQTMdc/SAW5U5zgOEZUI4luR1zjQUheea+F4jHQTkG5WnMdT1IfcQSf7PEa7kLr3aCauojFvlrzLUVpBCU8+HgsgLK2TvNYwnXKEipfCLsBR6CckzAkwnXaG5PcjW8OAvKMShzCVdvTv+4OXVXtAyagUV5lHCNgqC8d5/78MUeUI4hWUm4rleE11yv5XoEUIw9zztSXWPvwMRPQDkF4vFU1/i7L98C5RjkmVTXWBDkM6Aci7yY6hprWgEfAOVY4kqqaxQCZdVtFYBmph5sssTfU129ZlUF5VjkYqar12PdA+UUkE9mukZzLeJLoBwT7nemukZNK+CjoByLvJTp2griVu1AOZbkU6arIf7iLrp1VFCMDcoT0TpvGm5Zvscr5/+6lTCXGsStCYUPUaNsag/kj277QPt625D/jt/n94yiC7n6RQAAAABJRU5ErkJggg==">
@@ -535,7 +515,7 @@ margin-left: -10%;
                   <select
                     name="HeadlineAct"
                     id="HeadlineAct"
-                    class="mt-1.5 w-full h-12 rounded-lg border-gray-300 text-gray-700 sm:text-sm"
+                    class="mt-1.5 w-full h-12 pl-3 rounded-lg border-gray-300 text-gray-700 sm:text-sm"
                   >
                     <option value="">Abuja</option>
                     <option value="JM">John Mayer</option>
@@ -649,7 +629,7 @@ margin-left: -10%;
   <div class="column">
     <div style="position: relative;">
       <input style="text-align: right;" placeholder="sq ft" type="text" id="inputField" name="inputField">
-      <label for="inputField" style="position: absolute; padding: 4px; top: 15%; left: 0;">Min</label>
+      <label for="inputField" style="position: absolute; padding-left: 6px; top: 15%; left: 0;">Min</label>
    
     </div>
     
@@ -657,7 +637,7 @@ margin-left: -10%;
   <div class="column">
     <div style="position: absolute;">
       <input style="text-align: right;" placeholder="sq ft" type="text" id="inputField" name="inputField">
-      <label for="inputField" style="position: absolute; padding: 4px; top: 15%; left: 0;">Max</label>
+      <label for="inputField" style="position: absolute; padding-left: 6px; top: 15%; left: 0;">Max</label>
    
     </div>
     
@@ -861,10 +841,16 @@ margin-left: -10%;
                     <div class="grid gap-8 relative">
                       {% if property.image_filenames %}
                       {% set image_files = property.image_filenames.split(',') %}
-                      <img class="max-h-auto w-full aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_files[0]) }}" alt="Publication Image" >
+                      <img class="max-h-auto w-full aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_files[1]) }}" alt="Publication Image" >
                       <div class="absolute left-2 top-4">
-                        <span class="bg-[#510000] px-4 py-2 text-white font-normal text-lg rounded-md ">Negotiable</span>
-                      </div>
+                        <span class="bg-[#510000] px-4 py-2 text-white font-normal text-lg rounded-md">
+                            {% if property.price_type == 'Negotiable' %}
+                                Negotiable
+                            {% else %}
+                                Non-Negotiable
+                            {% endif %}
+                        </span>
+                    </div>
                     {% endif %}
                       <!-- <img alt="Home" src="{{ property.main_image_one }}" class="h-56 w-full rounded-md object-cover"> -->
                       <div class="grid gap-6">
@@ -879,37 +865,52 @@ margin-left: -10%;
                             <dd class="font-medium">{{ property.location }}</dd>
                           </div>
                         </dl> -->
-      
-                        <div class="grid gap-3">
-                          <h3>{{property.name}}</h3>
-                          <p class="text-sm text-gray-500">{{property.description}}</p>
+            
+                        <div class="grid gap-3 text-[20px]">
+                          <h3 class="detais ">{{property.property_type}}</h3>
+                          <p class="text-sm text-gray-500 text-[30px]">{{property.description}}</p>
                         </div>
-      
+            
                         <span class="text-[#510000] text-[20px] font-bold ">NGN {{property.price}}</span>
-      
-                        <div class="grid gap-2 text-base">
+            
+                        <div class="grid gap-2 text-[20px]">
                           <div class="flex gap-1">
-                            icon
-                            <span>Maitama, {{property.address}}</span>
+                            <img width="30" height="24" src="https://img.icons8.com/material-outlined/24/marker.png" alt="marker"/>
+                            <span>Maitama, {{property.location}}</span>
                           </div>
                           <div class="flex gap-1">
-                            icon
-                            <span>6 Hours ago</span>
+                            <img width="30" height="24" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-hour-date-and-time-tanah-basah-basic-outline-tanah-basah.png" alt="external-hour-date-and-time-tanah-basah-basic-outline-tanah-basah"/>
+                            <span>{{property.time_posted}}</span>
                           </div>
                           <div class="flex gap-1">
-                            icon
-                            <span>@cadland_prop</span>
+                            <img width="30" height="24" src="https://img.icons8.com/material-rounded/24/user.png" alt="user"/>
+                            <span>{{property.user.firstname}}</span>
                           </div>
                         </div>
-      
-                        <div class="flex gap-[10px] text-base font-normal">
-                          <span class="border border-[#EBEBEB] p-[10px]">{{property.num_rooms}} bed</span>
-                          <span class="border border-[#EBEBEB] p-[10px]">{{property.num_toilets}} toilets</span>
-                          <span class="border border-[#EBEBEB] p-[10px]"> 780,000sq. ft.</span>    <!--{{property.area}} -->
-                          <span class="border border-[#EBEBEB] p-[10px]">12 parking space</span>  <!--{{property.num_rooms}} -->
-                        </div>
+            
+                  <!-- For desktop -->
+<div class="hidden md:flex gap-[10px] text-[15px] font-normal">
+  <span class="border border-[#EBEBEB] p-[10px]">{{ property.num_rooms }} bed</span>
+  <span class="border border-[#EBEBEB] p-[10px]">{{ property.num_toilets }} toilets</span>
+  <span class="border border-[#EBEBEB] p-[10px]">{{ property.square_feet }} sq. ft.</span>
+  <span class="border border-[#EBEBEB] p-[10px]">{{ property.num_baths }} bathroom</span>
+</div>
+
+<!-- For smaller or mobile screens -->
+<div class="md:hidden md:block flex flex-wrap gap-[10px] text-[15px] font-normal">
+  <div class="w-full md:w-1/2">
+      <div class="border border-[#EBEBEB] p-[10px] mb-2">{{ property.num_rooms }} bed</div>
+      <div class="border border-[#EBEBEB] p-[10px] mb-2">{{ property.num_toilets }} toilets</div>
+  </div>
+  <div class="w-full md:w-1/2">
+      <div class="border border-[#EBEBEB] p-[10px] mb-2">{{ property.square_feet }} sq. ft.</div>
+      <div class="border border-[#EBEBEB] p-[10px] mb-2">{{ property.num_baths }} bathroom</div>
+  </div>
+</div>
+
+
                         
-                        <span class="text-right text-[#02AADF] text-[10px]">Click to see more details icon </span>
+                        <span class="text-right text-[#02AADF] text-[15px]">Click to see more details icon </span>
                     
                         <!-- <div class="mt-6 flex items-center gap-8 text-xs">
                           <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
@@ -954,7 +955,7 @@ margin-left: -10%;
                     
                             <div class="mt-1.5 sm:mt-0">
                               <p class="text-gray-500">Bathroom</p>
-      
+            
                     
                               <p class="font-medium">{{property.num_baths}}</p>
                             </div>
@@ -1058,6 +1059,14 @@ new Chart("myChart", {
     });
   </script>
   
-  
+  <script>
+    // Function to hide alert messages after 5 seconds
+    setTimeout(function() {
+        var alertContainer = document.getElementById('alert-container');
+        if (alertContainer) {
+            alertContainer.innerHTML = ''; // Clear the content of the alert container
+        }
+    }, 5000); // 5000 milliseconds = 5 seconds
+  </script>
 
 </html>

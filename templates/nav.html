@@ -8,13 +8,19 @@
         button{
             border-radius: 50%;
         }
+        nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10; /* Ensure it's above other content */
+}
     </style>
 </head>
 <body>
 
 
     {% if current_user.is_authenticated %}
-    <nav class="bg-white">
+    <nav class="bg-white fixed w-full z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
@@ -45,8 +51,9 @@
     
                 <!-- Auth Buttons (Hidden on Mobile) -->
                 <div class="hidden md:flex items-center space-x-2">
-                    <button id="navbtn" style="background-color: whitesmoke; color: #AA0000; border:#AA0000 1px solid" class="bg-blue-500 text-center hover:bg-white px-8 md:px-16 py-2 rounded-full text-center">Dashboard</button>
-                    <button id="navbtn" style="background-color:#AA0000; text-align: center;" class="text-white hover:bg-white px-8 md:px-16 py-2 rounded-full">Logout</button>
+                    <a href="/dashboard"><button id="navbtn" style="background-color: whitesmoke; color: #510000; border:#510000 1px solid" class="bg-blue-500 text-center hover:bg-white px-8 md:px-16 py-2 rounded-full text-center">Dashboard</button></a>
+                    <a href="/logout"><button id="navbtn" style="background-color:#510000; text-align: center;" class="text-white hover:bg-white px-8 md:px-16 py-2 rounded-full">Logout</button></a>
+                    
                 </div>
             </div>
         </div>
@@ -63,8 +70,14 @@
             <a href="/#contact" class="text-gray-700 hover:text-gray-900 block py-2 px-4">Contact</a>
             
             <!-- Auth Buttons -->
-            <button  style="background-color: whitesmoke; color: #AA0000; border:#AA0000 1px solid" class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full w-full mt-4">Dashboard</button>
-            <button style="background-color:#AA0000;" class="text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-full w-full mt-2">Logout</button>
+            <a href="/dashboard">
+                <button  style="background-color: whitesmoke; color: #510000; border:#510000 1px solid" class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full w-full mt-4">Dashboard</button>
+
+            </a>
+            <a href="/logout">
+                <button style="background-color:#510000;" class="text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-full w-full mt-2">Logout</button>
+
+            </a>
         </div>
     </div>
     {%else%}
@@ -100,11 +113,11 @@
                 <!-- Auth Buttons (Hidden on Mobile) -->
                 <div class="hidden md:flex items-center space-x-2">
                     <a href="/login">
-                        <button  style="background-color: whitesmoke; color: #AA0000; border:#AA0000 1px solid" class="bg-blue-500 text-center hover:bg-white px-8 md:px-16 py-2 rounded-full text-center">Login</button>
+                        <button  style="background-color: whitesmoke; color: #510000; border:#510000 1px solid" class="bg-blue-500 text-center hover:bg-white px-8 md:px-16 py-2 rounded-full text-center">Login</button>
 
                     </a>
                     <a href="/signup">
-                        <button  style="background-color:#AA0000; text-align: center;" class="text-white hover:bg-white px-8 md:px-16 py-2 rounded-full">Register</button>
+                        <button  style="background-color:#510000; text-align: center;" class="text-white hover:bg-white px-8 md:px-16 py-2 rounded-full">Signup</button>
 
                     </a>
                 </div>
@@ -124,11 +137,11 @@
             
             <!-- Auth Buttons -->
             <a href="/login">
-                <button  style="background-color: whitesmoke; color: #AA0000; border:#AA0000 1px solid" class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full w-full mt-4">Login</button>
+                <button  style="background-color: whitesmoke; color: #510000; border:#510000 1px solid" class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full w-full mt-4">Login</button>
 
             </a>
             <a href="/signup">
-                <button  style="background-color:#AA0000;" class="text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-md w-full mt-2">Register</button>
+                <button  style="background-color:#510000;" class="text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-full w-full mt-2 rounded-full">Signup</button>
 
             </a>
         </div>

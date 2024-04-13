@@ -20,6 +20,44 @@
   <p>No pending properties for approval.</p>
 {% endif %}
 
+
+
+{% if pending_shortlet %}
+  <h2>Pending shortlet for Approval</h2>
+  <ul>
+    {% for shortlet in pending_shortlet %}
+      <li>{{ shortlet.shortlet_property_type }} - {{ shortlet.location }} - <a href="{{ url_for('approve_shortlet', shortlet_id=shortlet.id) }}">Approve</a> | <a href="{{ url_for('reject_shortlet', shortlet_id=shortlet.id) }}">Reject</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No pending shortlet for approval.</p>
+{% endif %}
+
+
+{% if pending_shared %}
+  <h2>Pending shared for Approval</h2>
+  <ul>
+    {% for shared in pending_shared %}
+      <li>{{ shared.shared_property_type }} - {{ shared.location }} - <a href="{{ url_for('approve_shared', shared_id=shared.id) }}">Approve</a> | <a href="{{ url_for('reject_shared', shared_id=shared.id) }}">Reject</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No pending shared for approval.</p>
+{% endif %}
+
+
+{% if pending_jva %}
+  <h2>Pending jva for Approval</h2>
+  <ul>
+    {% for jva in pending_jva %}
+      <li>{{ jva.jva_property_type }} - {{ jva.location }} - <a href="{{ url_for('approve_jva', jva_id=jva.id) }}">Approve</a> | <a href="{{ url_for('reject_jva', jva_id=jva.id) }}">Reject</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No pending shortlet for approval.</p>
+{% endif %}
+
+
 <a href="{{ url_for('index') }}">Go back to homepage</a>
 
 </body>
