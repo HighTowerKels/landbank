@@ -1,188 +1,912 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landbank | Listing</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="../static/css/global.css" />
+    <link rel="stylesheet" href="../static/css/ListingLandingPage.css" />
+    <link rel="stylesheet" href="../static/css/index.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cabinet Grotesk:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto Sans:wght@500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+    />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="../static/css/differemt.css">
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
- <style>
-.heros h1{
-color: whitesmoke;
-text-align: start;
-font-family: Cabinet Grotesk;
-font-size: 56px;
-font-weight: 400;
-line-height: 69px;
-letter-spacing: 0em;
-text-align: left;
-color:#110229;
-
-}
-.heros p{
-font-family: Cabinet Grotesk;
-font-size: 22px;
-font-weight: 400;
-line-height: 36px;
-letter-spacing: 0em;
-text-align: left;
-color: #585981;
-
-
-}
-.navtab{
-font-family: Cabinet Grotesk;
-font-size: 14px;
-font-weight: 400;
-line-height: 36px;
-letter-spacing: 0.2em;
-text-align: left;
-
-}
-.tab-content{
-    margin-top: 2%;
-    
-}
-.tabs{
-    width: 150%;
-}
-.tab{
-    background-color: transparent;
-    font-family: Cabinet Grotesk;
-font-size: 14px;
-font-weight: 400;
-line-height: 36px;
-letter-spacing: 0.2em;
-text-align: left;
-}
-.columns{
-    padding: 2%;
-    justify-content: space-between;
-   
-
-}
-label{
-    text-align: start;
-    padding-right: 40%;
-}
-.form-control{
-    width: 150%;
-}
-.listing{
-  font-family: Cabinet Grotesk;
-font-size: 24px;
-font-weight: 400;
-line-height: 30px;
-letter-spacing: 0em;
-}
-.listings{
-font-family: Cabinet Grotesk;
-font-size: 24px;
-font-weight: 400;
-line-height: 30px;
-letter-spacing: 0em;
-text-align: left;
-align-items: center;
-justify-content:center;
-display: flex;
-justify-items: center;
-align-content: center;
-
-
-
-}
-
-.see{
-    float: right;
-  
-}
-.desp{
-    font-family: Cabinet Grotesk;
-font-size: 14px;
-font-weight: 400;
-line-height: 17px;
-letter-spacing: 0em;
-text-align: left;
-
-}
-.rowty{
+<style>
+  .row{
     display: flex;
     flex-direction: row;
-}
-.com{
-    padding-left: 20%;
-}
-.com .column{
-    padding-left: 50%;
-
-}
-.price{
-    font-family: Cabinet Grotesk;
-font-size: 20px;
-font-weight: 700;
-line-height: 25px;
-letter-spacing: 0em;
-text-align: left;
-color: #510000;
-
-
-}
-.icons{
-    margin-right: 1rem;
-}
-/* span{
-    
-    font-family: Cabinet Grotesk;
-font-size: 15px;
-font-weight: 400;
-line-height: 12px;
-letter-spacing: 0em;
-text-align: left;
-color: black;
-} */
-.more{
-font-family: Cabinet Grotesk;
-font-size: 10px;
-font-weight: 400;
-line-height: 12px;
-letter-spacing: 0em;
-text-align: left;
-color:#02AADF;
-float: right;
-
-
-}
-.button{
-  margin-top: 4%;
-}
-.btn{
-  background-color: #510000;
-  color: whitesmoke;
-}
-@media only screen and (max-width: 600px) {
-   .tab-content{
-    width: 65%;
-   }
- 
-}
-
- </style>
-</head>
-<body>
+  }
+  .column{
+    padding: 5%;
+  }
+  .bedroom-terraced-duplex{
+    color: black;
+  }
+  .terraced-duplex-for{
+    color: black;
+    font-size: 30px;
+  }
+</style>
+  </head>
+  <body>
     {% include "nav.html" %}
 
-    <!--
-  Heads up! 👋
+    <div class="listing-landing-page">
+      <div class="frame-parent348">
+        <div class="filter">
+          <h3 style="font-family: Cabinet Grotesk;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 22px;
+          letter-spacing: 0px;
+          text-align: left;
+          ">Filter</h3>
+          <form action="">
+            <div>
+              <label style="font-family: Cabinet Grotesk;
+              font-size: 18px;
+              font-weight: 500;
+              line-height: 22px;
+              letter-spacing: 0px;
+              text-align: left;
+              " for="HeadlineAct" class="block text-sm font-medium text-gray-900 mt-2"> Location </label>
+            
+              <select
+                name="HeadlineAct"
+                id="HeadlineAct"
+                class="mt-1.5 w-full h-12 pl-3 rounded-lg border-gray-300 text-gray-700 sm:text-sm"
+              >
+                <option value="">Abuja</option>
+                <option value="JM">John Mayer</option>
+                <option value="SRV">Stevie Ray Vaughn</option>
+                <option value="JH">Jimi Hendrix</option>
+                <option value="BBK">B.B King</option>
+                <option value="AK">Albert King</option>
+                <option value="BG">Buddy Guy</option>
+                <option value="EC">Eric Clapton</option>
+              </select>
+            </div>
 
-  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
+            <label for="">Type of Place</label>
+            <div class="row check">
+              <div class="column">
+
+
+<fieldset>
+<legend class="sr-only">Checkboxes</legend>
+
+<div class="space-y-2">
+<label for="Option1" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900"> All </strong>
+  </div>
+</label>
+
+<label for="Option2" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900"> Building </strong>
+  </div>
+</label>
+
+<label for="Option3" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900">Apartment </strong>
+  </div>
+</label>
+</div>
+</fieldset>
+              </div>
+              <div class="column">
+                <!--
+Heads up! 👋
+
+Plugins:
+- @tailwindcss/forms
 -->
 
-<section
+<fieldset>
+<legend class="sr-only">Checkboxes</legend>
+
+<div class="space-y-2">
+<label for="Option1" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900"> Office </strong>
+  </div>
+</label>
+
+<label for="Option2" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900"> Shop </strong>
+  </div>
+</label>
+
+<label for="Option3" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900"> House </strong>
+  </div>
+</label>
+</div>
+</fieldset>
+              </div>
+            </div>
+           
+<label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Min-max range</label>
+<input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+
+<h3>Size</h3>
+<div class="row check">
+<div class="column">
+<div style="position: relative;">
+  <input style="text-align: right; width: 80%;" placeholder="sq ft" type="text" id="inputField" name="inputField">
+  <label for="inputField" style="position: absolute; padding-left: 6px; top: 15%; left: 0; width: 10%; ">Min</label>
+
+</div>
+
+</div>
+<div class="column">
+<div style="position: relative;">
+  <input style="text-align: right; width: 80%; " placeholder="sq ft" type="text" id="inputField" name="inputField">
+  <label for="inputField" style="position: absolute; padding-left: 6px; top: 15%; left: 0; width: 10%;">Max</label>
+
+</div>
+
+</div>
+</div>
+<label for="">Features</label>
+            <div class="row check">
+              <div class="column">
+
+
+<fieldset>
+<legend class="sr-only">Checkboxes</legend>
+
+<div class="space-y-2">
+<label for="Option1" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900"> Clubhouse </strong>
+  </div>
+</label>
+
+<label for="Option2" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900"> Spa </strong>
+  </div>
+</label>
+
+<label for="Option3" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900"> Pool </strong>
+  </div>
+</label>
+<label for="Option3" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900"> Valet Parking </strong>
+  </div>
+</label>
+</div>
+</fieldset>
+              </div>
+              <div class="column">
+                <!--
+Heads up! 👋
+
+Plugins:
+- @tailwindcss/forms
+-->
+
+<fieldset>
+<legend class="sr-only">Checkboxes</legend>
+
+<div class="space-y-2">
+<label for="Option1" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900">Ac & Heating</strong>
+  </div>
+</label>
+
+<label for="Option2" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900"> Dishwasher </strong>
+  </div>
+</label>
+
+<label for="Option3" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900"> Balcony </strong>
+  </div>
+</label>
+<label for="Option3" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900">Fitness </strong>
+  </div>
+</label>
+</div>
+</fieldset>
+              </div>
+            </div>
+            <label for="">Style</label>
+            <div class="row check">
+              <div class="column">
+
+
+<fieldset>
+<legend class="sr-only">Checkboxes</legend>
+
+<div class="space-y-2">
+<label for="Option1" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900"> A-Frame </strong>
+  </div>
+</label>
+
+<label for="Option2" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900"> Cottage </strong>
+  </div>
+</label>
+
+
+</div>
+</fieldset>
+              </div>
+              <div class="column">
+                <!--
+Heads up! 👋
+
+Plugins:
+- @tailwindcss/forms
+-->
+
+<fieldset>
+<legend class="sr-only">Checkboxes</legend>
+
+<div class="space-y-2">
+<label for="Option1" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900"> Dome </strong>
+  </div>
+</label>
+
+<label for="Option2" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
+  </div>
+
+  <div>
+    <strong class="font-medium text-gray-900"> Spanish</strong>
+  </div>
+</label>
+
+
+</div>
+</fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="frame-parent361">
+
+          <div class="size-container">
+            <div class="lands-parent">
+              <b class="lands">Lands</b>
+              <div class="show-more" id="showMoreText">Show more</div>
+            </div>
+            <div class="frame-parent363">
+              {% for property in approved_properties %}
+              <div class="frame-wrapper167">
+                <div class="frame-parent3">
+                  <div class="frame-wrapper2">
+                    <div class="frame-wrapper3">
+                      {% if property.image_filenames %}
+                      {% set image_files = property.image_filenames.split(',') %}
+                      {% if image_files %}
+                          {% set image_file = image_files[0] %}
+                          <img class="max-h-auto w-full aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="Publication Image">
+                      {% else %}
+                          <p>No images available</p>
+                      {% endif %}
+                  {% else %}
+                      <p>No images available</p>
+                
+                  
+                      <button class="negotiable-wrapper">
+                        <div class="negotiable">
+                          {% if property.property_negotiation == 'Negotiable' %}
+                    Negotiable
+                {% else %}
+                    Non-Negotiable
+                {% endif %}
+                        </div>
+                      </button>
+                      {% endif %}
+
+                    </div>
+                  </div>
+                  <div class="frame-parent4">
+                    <div class="terraced-duplex-for-sale-parent">
+                      <h3 class="terraced-duplex-for">{{property.property_type}}</h3>
+                      <div class="bedroom-terraced-duplex">
+                        {{property.description}}
+                      </div>
+                      <div class="logic-branch">
+                        <div class="value-processor">
+                          <b class="ngn-400000000">NGN {{property.price}}</b>
+                          <div class="output-divider">
+                            <div class="loop-control-wrapper">
+                              <div class="loop-control">
+                                <img
+                                  class="system-uiconslocation"
+                                  alt=""
+                                  src="../static/images2/systemuiconslocation.svg"
+                                />
+    
+                                <div class="maitama-abuja">{{property.location}}</div>
+                              </div>
+                            </div>
+                            <div class="output-divider-inner">
+                              <div class="mingcutetime-line-parent">
+                                <img
+                                  class="mingcutetime-line-icon"
+                                  alt=""
+                                  src="../static/images2/mingcutetimeline.svg"
+                                />
+    
+                                <div class="hours-ago">{{property.time_posted}}</div>
+                              </div>
+                            </div>
+                            <div class="solaruser-outline-parent">
+                              <img
+                                class="solaruser-outline-icon"
+                                alt=""
+                                src="../static/images2/"
+                              />
+    
+                              <div class="cadland-prop">{{property.user.firstname}}</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="logic-branch-inner">
+                          <div class="frame-parent5">
+                            <div class="icbaseline-favorite-wrapper">
+                              <img
+                                class="icbaseline-favorite-icon"
+                                loading="lazy"
+                                alt=""
+                                src="../static/images2/icbaselinefavorite.svg"
+                              />
+                            </div>
+                            <img
+                              class="component-8-icon"
+                              loading="lazy"
+                              alt=""
+                              src="../static/images2/component-8.svg"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="frame-parent6">
+                      <button class="bedrooms-wrapper" style="border-radius: 0%;">
+                        <div class="bedrooms" style="color: black; height: 1.2rem; text-align: center;  border-radius: 0%;">{{ property.property_num_rooms }} bed</div>
+                      </button>
+                      <button class="toilets-wrapper" style="border-radius: 0%;">
+                        <div class="toilets" style="color: black; height: 1.2rem; text-align: center; width: 10%;">{{ property.property_num_toilets }} toilets</div>
+                      </button>
+                      <button class="sq-ft-wrapper" style="border-radius: 0%;">
+                        <div class="sq-ft" style="color: black; height: 1.2rem; text-align: center; width: 10%;">{{ property.property_size_max  }} max sq. ft.</div>
+                      </button>
+                      <button class="parking-space-wrapper" style="border-radius: 0%;">
+                        <div class="parking-space" style="color: black; height: 1.2rem; text-align: center; width: 10%;">{{ property.property_num_baths }} bathroom</div>
+                      </button>
+                    </div>
+                    <div
+                      class="click-to-see-more-details-parent"
+                      id="frameContainer2"
+                    >
+                      <div class="click-to-see">Click to see more details</div>
+                      <img
+                        class="pajamaslong-arrow-icon"
+                        alt=""
+                        src="../static/images2/pajamaslongarrow.svg"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}    
+              
+            </div>
+          </div>
+          <div class="size-container">
+            <div class="terraces-and-duplex-parent">
+              <b class="lands">Terraces and Duplex</b>
+              <div class="show-more1">Show more</div>
+            </div>
+            <div class="frame-parent363">
+              {% for shortlet in approved_shortlets %}
+              <div class="frame-wrapper167">
+                <div class="frame-parent3">
+                  <div class="frame-wrapper2">
+                    <div class="frame-wrapper3">
+                      {% if shortlet.image_filenames %}
+                      {% set image_files = shortlet.image_filenames.split(',') %}
+                      {% if image_files %}
+                          {% set image_file = image_files[0] %}
+                          <img class="max-h-auto w-full aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="Publication Image">
+                      {% else %}
+                          <p>No images available</p>
+                      {% endif %}
+                  {% else %}
+                      <p>No images available</p>
+                
+                  
+                      <button class="negotiable-wrapper">
+                        <div class="negotiable">
+                          {% if shortlet.shortlet_negotiation == 'Negotiable' %}
+                    Negotiable
+                {% else %}
+                    Non-Negotiable
+                {% endif %}
+                        </div>
+                      </button>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="frame-parent4">
+                    <div class="terraced-duplex-for-sale-parent">
+                      <h3 class="terraced-duplex-for">{{shortlet.shortlet_property_type}}</h3>
+                      <div class="bedroom-terraced-duplex">
+                        {{shortlet.shortlet_description}}
+                      </div>
+                      <div class="logic-branch">
+                        <div class="value-processor">
+                          <b class="ngn-400000000">NGN {{shortlet.shortlet_price}}</b>
+                          <div class="output-divider">
+                            <div class="loop-control-wrapper">
+                              <div class="loop-control">
+                                <img
+                                  class="system-uiconslocation"
+                                  alt=""
+                                  src="../static/images2/systemuiconslocation.svg"
+                                />
+    
+                                <div class="maitama-abuja">{{shortlet.location}}</div>
+                              </div>
+                            </div>
+                            <div class="output-divider-inner">
+                              <div class="mingcutetime-line-parent">
+                                <img
+                                  class="mingcutetime-line-icon"
+                                  alt=""
+                                  src="../static/images2/mingcutetimeline.svg"
+                                />
+    
+                                <div class="hours-ago">{{shortlet.shortlet_time_posted}}</div>
+                              </div>
+                            </div>
+                            <div class="solaruser-outline-parent">
+                              <img
+                                class="solaruser-outline-icon"
+                                alt=""
+                                src="../static/images2/"
+                              />
+    
+                              <div class="cadland-prop">{{shortlet.user.firstname}}</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="logic-branch-inner">
+                          <div class="frame-parent5">
+                            <div class="icbaseline-favorite-wrapper">
+                              <img
+                                class="icbaseline-favorite-icon"
+                                loading="lazy"
+                                alt=""
+                                src="../static/images2/icbaselinefavorite.svg"
+                              />
+                            </div>
+                            <img
+                              class="component-8-icon"
+                              loading="lazy"
+                              alt=""
+                              src="../static/images2/component-8.svg"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="frame-parent6">
+                      <button class="bedrooms-wrapper" style="border-radius: 0%;">
+                        <div class="bedrooms" style="color: black; height: 1.2rem; text-align: center;  border-radius: 0%;">{{ shortlet.num_roms }} bed</div>
+                      </button>
+                      <button class="toilets-wrapper" style="border-radius: 0%;">
+                        <div class="toilets" style="color: black; height: 1.2rem; text-align: center; width: 10%;">{{ shortlet.shortlet_num_toilets }} toilets</div>
+                      </button>
+                      <button class="sq-ft-wrapper" style="border-radius: 0%;">
+                        <div class="sq-ft" style="color: black; height: 1.2rem; text-align: center; width: 10%;">{{ shortlet.parking_space  }} car</div>
+                      </button>
+                      <button class="parking-space-wrapper" style="border-radius: 0%;">
+                        <div class="parking-space" style="color: black; height: 1.2rem; text-align: center; width: 10%;">{{ shortlet.shortlet_stay }} days</div>
+                      </button>
+                    </div>
+                    <div
+                      class="click-to-see-more-details-parent"
+                      id="frameContainer2"
+                    >
+                      <div class="click-to-see">Click to see more details</div>
+                      <img
+                        class="pajamaslong-arrow-icon"
+                        alt=""
+                        src="../static/images2/pajamaslongarrow.svg"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+             
+            </div>
+          </div>
+          <div class="frame-parent416">
+            <div class="shared-apartments-parent">
+              <b class="lands">Shared Apartments</b>
+              <div class="show-more1">Show more</div>
+            </div>
+            {% for shared in approved_shared %}
+
+            <div class="cards1">
+              <div class="card-1">
+                <div class="hotels1"></div>
+                <div class="frame-parent417">
+                  <div class="rectangle-parent30">
+                    {% if shared.image_filenames %}
+                    {% set image_files = shared.image_filenames.split(',') %}
+                    <img class="max-h-auto w-full aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_files[1]) }}" alt="Publication Image" >
+                    {% endif %}
+                    <div class="sekarwangi">
+                     
+                      <img
+                        class="sekarwangi-child"
+                        alt=""
+                        src="../static/image/group-1734.svg"
+                      />
+                      <br>
+                      
+                      <div class="ngn2500000-parent">
+                        <b class="ngn2500000">{{shared.shared_price}} <span>/year</span></b>
+                      </div>
+                    </div>
+                    
+                    <div class="frame-child69"></div>
+                    <div class="roommates1">
+                      <p class="richard-and-gill">{{shared.shared_num_rooms}}</p>
+                    </div>
+                    <div class="richard-and-gill-container">
+                      <p class="richard-and-gill">{{shared.location}}</p>
+                    </div>
+                    <img
+                      class="frame-child70"
+                      alt=""
+                      src="../static/image/ellipse-17@2x.png"
+                    />
+
+                    <img
+                      class="frame-child71"
+                      alt=""
+                      src="../static/image/ellipse-18@2x.png"
+                    />
+
+                    <div class="wifi-air-container">
+                      <p class="richard-and-gill">
+                        <ul>
+                          {% for amenity in amenities %}
+                              <li>{{ amenity }}</li>
+                          {% endfor %}
+                      </ul>
+                                          </p>
+                      <!-- <p class="richard-and-gill">
+                        • Parking • Balcony • Animal friendly
+                      </p> -->
+                    </div>
+                    <img
+                      class="frame-child72"
+                      alt=""
+                      src="../static/image/group-2161.svg"
+                    />
+
+                    <div class="the-peoples-brownstone-container">
+                      <p class="richard-and-gill">{{shared.shared_subtype}}</p>
+                    </div>
+                    <div class="abuja-lane-jabi-parent">
+                      <div class="abuja-lane-jabi">{{shared.location}}</div>
+                      <img
+                        class="frame-child73"
+                        alt=""
+                        src="../static/image/group-2149.svg"
+                      />
+                    </div>
+                    <div class="popular"></div>
+                    <div class="popular1"></div>
+                  </div>
+                 
+                </div>
+              </div>
+             
+            </div>
+            {% endfor %}
+          </div>
+          <div class="frame-parent416">
+            <div class="shared-apartments-parent">
+              <b class="lands">Short lets</b>
+              <div class="show-more1">Show more</div>
+            </div>
+            <div class="cards1">
+              <div class="card-1">
+                <div class="hotels1"></div>
+                <div class="frame-parent417">
+                  <div class="rectangle-parent30">
+                    <img
+                      class="frame-child68"
+                      alt=""
+                      src="../static/image/rectangle-7@2x.png"
+                    />
+
+                    <div class="sekarwangi">
+                     
+                      <img
+                        class="sekarwangi-child"
+                        alt=""
+                        src="../static/image/group-1734.svg"
+                      />
+                      <br>
+                      
+                      <div class="ngn2500000-parent">
+                        <b class="ngn2500000">NGN250,0000 <span>/year</span></b>
+                      </div>
+                    </div>
+                    
+                    <div class="frame-child69"></div>
+                    <div class="roommates1">
+                      <p class="richard-and-gill">2 Roommates</p>
+                    </div>
+                    <div class="richard-and-gill-container">
+                      <p class="richard-and-gill">Richard and Gill</p>
+                    </div>
+                   
+
+                    <div class="wifi-air-container">
+                      <p class="richard-and-gill">
+                        Wifi • Air conditioning • Kitchen • Heating • Smokers
+                      </p>
+                      <p class="richard-and-gill">
+                        • Parking • Balcony • Animal friendly
+                      </p>
+                    </div>
+                    <img
+                      class="frame-child72"
+                      alt=""
+                      src="../static/image/group-2161.svg"
+                    />
+
+                    <div class="the-peoples-brownstone-container">
+                      <p class="richard-and-gill">The People's Brownstone</p>
+                    </div>
+                    <div class="abuja-lane-jabi-parent">
+                      <div class="abuja-lane-jabi">145 Abuja lane, Jabi</div>
+                      <img
+                        class="frame-child73"
+                        alt=""
+                        src="../static/image/group-2149.svg"
+                      />
+                    </div>
+                    <div class="popular"></div>
+                    <div class="popular1"></div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-parent424">
+            <div class="joint-venture-parent">
+              <b class="lands">Joint Venture</b>
+              <div class="show-more1">Show more</div>
+            </div>
+            <div class="cards3">
+              <div class="card-1">
+                <div class="hotels1"></div>
+                <div class="frame-parent417">
+                  <div class="rectangle-parent30">
+                    <img
+                      class="frame-child68"
+                      alt=""
+                      src="../static/images/rectangle-7@2x.png"
+                    />
+
+                    <div class="sekarwangi">
+                     
+                      <img
+                        class="sekarwangi-child"
+                        alt=""
+                        src="../static/images/group-1734.svg"
+                      />
+                      <br>
+                      
+                      <div class="ngn2500000-parent">
+                        <b class="ngn2500000">NGN250,0000 <span>/year</span></b>
+                      </div>
+                    </div>
+                    
+                    <div class="frame-child69"></div>
+                    <div class="roommates1">
+                      <p class="richard-and-gill">2 Roommates</p>
+                    </div>
+                    <div class="richard-and-gill-container">
+                      <p class="richard-and-gill">Richard and Gill</p>
+                    </div>
+                    <img
+                      class="frame-child70"
+                      alt=""
+                      src="../static/images/ellipse-17@2x.png"
+                    />
+
+                    <img
+                      class="frame-child71"
+                      alt=""
+                      src="../static/images/ellipse-18@2x.png"
+                    />
+
+                    <div class="wifi-air-container">
+                      <p class="richard-and-gill">
+                        Wifi • Air conditioning • Kitchen • Heating • Smokers
+                      </p>
+                      <p class="richard-and-gill">
+                        • Parking • Balcony • Animal friendly
+                      </p>
+                    </div>
+                    <img
+                      class="frame-child72"
+                      alt=""
+                      src="../static/images/group-2161.svg"
+                    />
+
+                    <div class="the-peoples-brownstone-container">
+                      <p class="richard-and-gill">The People's Brownstone</p>
+                    </div>
+                    <div class="abuja-lane-jabi-parent">
+                      <div class="abuja-lane-jabi">145 Abuja lane, Jabi</div>
+                      <img
+                        class="frame-child73"
+                        alt=""
+                        src="../static/images/group-2149.svg"
+                      />
+                    </div>
+                    <div class="popular"></div>
+                    <div class="popular1"></div>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame10">
+        <section
 class="bg-white text-black heros relative bg-[url(/static/image/listbg.png)] bg-cover bg-center bg-no-repeat"
 >
 <div
@@ -341,595 +1065,395 @@ class="bg-white text-black heros relative bg-[url(/static/image/listbg.png)] bg-
 
   </div>
 </div>
-</section>
-<section
-  class="listing bg-[#fff] py-10 px-6 lg:px-[80px] w-full grid gap-10"
->
-  <div class="w-full font-bold text-black">
-    <h2 class="capitalize text-2xl leading-[32px] font-bold">
-      FEATURE LISTINGS
-    </h2>
-  </div>
-
-  <div id="property-listings" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full text-[20px]">
-
-    {% for property in approved_properties %}
+<style>
+  .heros h1{
+  color: whitesmoke;
+  text-align: start;
+  font-family: Cabinet Grotesk;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 69px;
+  letter-spacing: 0em;
+  text-align: left;
+  color:#110229;
   
-    <div  class="block rounded-lg p-4 bg-white w-full shadow-sm shadow-indigo-100">
-      <a href="{{ url_for('property_details', property_id=property.id)}}" >
-        <div class="grid gap-8 relative">
-          {% if property.image_filenames %}
-          {% set image_files = property.image_filenames.split(',') %}
-          <img class="max-h-auto w-full aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_files[1]) }}" alt="Publication Image" >
-          <div class="absolute left-2 top-4">
-            <span class="bg-[#510000] px-4 py-2 text-white font-normal text-lg rounded-md">
-                {% if property.price_type == 'Negotiable' %}
-                    Negotiable
-                {% else %}
-                    Non-Negotiable
-                {% endif %}
-            </span>
-        </div>
-        {% endif %}
-          <!-- <img alt="Home" src="{{ property.main_image_one }}" class="h-56 w-full rounded-md object-cover"> -->
-          <div class="grid gap-6">
-            <!-- <dl>
-              <div>
-                <dt class="sr-only">Price</dt>
-                <dd class="text-sm text-gray-500">${{ property.price }}</dd>
-              </div>
-        
-              <div>
-                <dt class="sr-only">Address</dt>
-                <dd class="font-medium">{{ property.location }}</dd>
-              </div>
-            </dl> -->
-
-            <div class="grid gap-3 text-[20px]">
-              <h3 class="text-black detais ">{{property.property_type}}</h3>
-              <p class="text-black text-sm text-gray-500 text-[30px]">{{property.description}}</p>
-            </div>
-
-            <span class="text-[#510000] text-[20px] font-bold ">NGN {{property.price}}</span>
-
-            <div class="grid gap-2 text-[20px]">
-              <div class="flex gap-1">
-                <img width="30" height="24" src="https://img.icons8.com/material-outlined/24/marker.png" alt="marker"/>
-                <span class="text-black">Location: {{property.location}}</span>
-              </div>
-              <div class="flex gap-1">
-                <img width="30" height="24" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-hour-date-and-time-tanah-basah-basic-outline-tanah-basah.png" alt="external-hour-date-and-time-tanah-basah-basic-outline-tanah-basah"/>
-                <span class="text-black">{{property.time_posted}}</span>
-              </div>
-              <div class="flex gap-1">
-                <img width="30" height="24" src="https://img.icons8.com/material-rounded/24/user.png" alt="user"/>
-                <span class="text-black">{{property.user.firstname}}</span>
-              </div>
-            </div>
-
-      <!-- For desktop -->
-<div class="hidden md:flex gap-[10px] text-[15px] font-normal">
-<span class="text-black border border-[#EBEBEB] p-[10px]">{{ property.property_num_rooms }} bed</span>
-<span class="text-black border border-[#EBEBEB] p-[10px]">{{ property.property_num_toilets }} toilets</span>
-<span class="text-black border border-[#EBEBEB] p-[10px]">{{ property.property_square_feet }} sq. ft.</span>
-<span class="text-black border border-[#EBEBEB] p-[10px]">{{ property.property_num_baths }} bathroom</span>
-</div>
-
-<!-- For smaller or mobile screens -->
-<div class="md:hidden md:block flex flex-wrap gap-[10px] text-[15px] font-normal">
-<div class="w-full md:w-1/2">
-<div class="text-black border border-[#EBEBEB] p-[10px] mb-2">{{ property.property_num_rooms }} bed</div>
-<div class="text-black border border-[#EBEBEB] p-[10px] mb-2">{{ property.property_num_toilets }} toilets</div>
-</div>
-<div class="w-full md:w-1/2">
-<div class="text-black border border-[#EBEBEB] p-[10px] mb-2">{{ property.property_size_min  }} min sq. ft.</div>
-<div class="text-black border border-[#EBEBEB] p-[10px] mb-2">{{ property.property_size_max  }} max sq. ft.</div>
-
-<div class="text-black border border-[#EBEBEB] p-[10px] mb-2">{{ property.property_num_baths }} bathroom</div>
-</div>
-</div>
-
-
-            
-            <span class="text-right text-[#02AADF] text-[15px]">Click to see more details icon </span>
-        
-            <!-- <div class="mt-6 flex items-center gap-8 text-xs">
-              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-                <svg
-                  class="h-4 w-4 text-indigo-700"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
-                  />
-                </svg>
-        
-                <div class="mt-1.5 sm:mt-0">
-                  <p class="text-gray-500">Toilet</p>
-        
-                  <p class="font-medium">{{property.num_toilets}}</p>
-                </div>
-              </div>
-        
-              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-                <svg
-                  class="h-4 w-4 text-indigo-700"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                  />
-                </svg>
-                <i class="fas fa-camera"></i>
-        
-                <div class="mt-1.5 sm:mt-0">
-                  <p class="text-gray-500">Bathroom</p>
-
-        
-                  <p class="font-medium">{{property.num_baths}}</p>
-                </div>
-              </div>
-        
-              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-                <svg
-                  class="h-4 w-4 text-indigo-700"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                  />
-                </svg>
-        
-                <div class="mt-1.5 sm:mt-0">
-                  <p class="text-gray-500">Bedroom</p>
-        
-                  <p class="font-medium">{{property.num_rooms}}</p>
-                </div>
-              </div>
-            </div> -->
-          </div>
-        </div>
-      </a>
-    </div>
+  }
+  .heros p{
+  font-family: Cabinet Grotesk;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #585981;
+  
+  
+  }
+  .navtab{
+  font-family: Cabinet Grotesk;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0.2em;
+  text-align: left;
+  
+  }
+  .tab-content{
+      margin-top: 2%;
       
-    {% endfor %}        
-  </div>         
+  }
+  .tabs{
+      width: 150%;
+  }
+  .tab{
+      background-color: transparent;
+      font-family: Cabinet Grotesk;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0.2em;
+  text-align: left;
+  }
+  .columns{
+      padding: 2%;
+      justify-content: space-between;
+     
   
-
-
-
- 
+  }
+  label{
+      text-align: start;
+      padding-right: 40%;
+  }
+  .form-control{
+      width: 150%;
+  }
+  .listing{
+    font-family: Cabinet Grotesk;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0em;
+  }
+  .listings{
+  font-family: Cabinet Grotesk;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+  align-items: center;
+  justify-content:center;
+  display: flex;
+  justify-items: center;
+  align-content: center;
   
   
-  <button
-    class="bt ns bt n bt n-wide py-2 px-7 bg-[#510000] w-fit mx-auto text-center rounded-[40px] border border-white text-white font-normal"
-  >
-     Load more
-  </button>
-</section>
-
-
-
-
-<section
-  class="listing bg-[#fff] py-10 px-6 lg:px-[80px] w-full grid gap-10"
->
-  <div class="w-full font-bold text-black">
-    <h2 class="capitalize text-2xl leading-[32px] font-bold">
-        DISCOUNT LISTINGS
-    </h2>
-  </div>
-
-   <div id="property-listings" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full text-[20px]">
-
-    {% for property in approved_properties %}
   
-    <div  class="block rounded-lg p-4 bg-white w-full shadow-sm shadow-indigo-100">
-      <a href="{{ url_for('property_details', property_id=property.id)}}" >
-        <div class="grid gap-8 relative">
-          {% if property.image_filenames %}
-          {% set image_files = property.image_filenames.split(',') %}
-          <img class="max-h-auto w-full aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_files[1]) }}" alt="Publication Image" >
-          <div class="absolute left-2 top-4">
-            <span class="bg-[#510000] px-4 py-2 text-white font-normal text-lg rounded-md">
-                {% if property.price_type == 'Negotiable' %}
-                    Negotiable
-                {% else %}
-                    Non-Negotiable
-                {% endif %}
-            </span>
-        </div>
-        {% endif %}
-          <!-- <img alt="Home" src="{{ property.main_image_one }}" class="h-56 w-full rounded-md object-cover"> -->
-          <div class="grid gap-6">
-            <!-- <dl>
-              <div>
-                <dt class="sr-only">Price</dt>
-                <dd class="text-sm text-gray-500">${{ property.price }}</dd>
-              </div>
-        
-              <div>
-                <dt class="sr-only">Address</dt>
-                <dd class="font-medium">{{ property.location }}</dd>
-              </div>
-            </dl> -->
-
-            <div class="grid gap-3 text-[20px]">
-              <h3 class="text-black detais ">{{property.property_type}}</h3>
-              <p class="text-black text-sm text-gray-500 text-[30px]">{{property.description}}</p>
-            </div>
-
-            <span class="text-[#510000] text-[20px] font-bold ">NGN {{property.price}}</span>
-
-            <div class="grid gap-2 text-[20px]">
-              <div class="flex gap-1">
-                <img width="30" height="24" src="https://img.icons8.com/material-outlined/24/marker.png" alt="marker"/>
-                <span class="text-black">Location: {{property.location}}</span>
-              </div>
-              <div class="flex gap-1">
-                <img width="30" height="24" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-hour-date-and-time-tanah-basah-basic-outline-tanah-basah.png" alt="external-hour-date-and-time-tanah-basah-basic-outline-tanah-basah"/>
-                <span class="text-black">{{property.time_posted}}</span>
-              </div>
-              <div class="flex gap-1">
-                <img width="30" height="24" src="https://img.icons8.com/material-rounded/24/user.png" alt="user"/>
-                <span class="text-black">{{property.user.firstname}}</span>
-              </div>
-            </div>
-
-      <!-- For desktop -->
-<div class="hidden md:flex gap-[10px] text-[15px] font-normal">
-<span class="text-black border border-[#EBEBEB] p-[10px]">{{ property.property_num_rooms }} bed</span>
-<span class="text-black border border-[#EBEBEB] p-[10px]">{{ property.property_num_toilets }} toilets</span>
-<span class="text-black border border-[#EBEBEB] p-[10px]">{{ property.property_square_feet }} sq. ft.</span>
-<span class="text-black border border-[#EBEBEB] p-[10px]">{{ property.property_num_baths }} bathroom</span>
-</div>
-
-<!-- For smaller or mobile screens -->
-<div class="md:hidden md:block flex flex-wrap gap-[10px] text-[15px] font-normal">
-<div class="w-full md:w-1/2">
-<div class="text-black border border-[#EBEBEB] p-[10px] mb-2">{{ property.property_num_rooms }} bed</div>
-<div class="text-black border border-[#EBEBEB] p-[10px] mb-2">{{ property.property_num_toilets }} toilets</div>
-</div>
-<div class="w-full md:w-1/2">
-<div class="text-black border border-[#EBEBEB] p-[10px] mb-2">{{ property.property_size_min  }} min sq. ft.</div>
-<div class="text-black border border-[#EBEBEB] p-[10px] mb-2">{{ property.property_size_max  }} max sq. ft.</div>
-
-<div class="text-black border border-[#EBEBEB] p-[10px] mb-2">{{ property.property_num_baths }} bathroom</div>
-</div>
-</div>
-
-
-            
-            <span class="text-right text-[#02AADF] text-[15px]">Click to see more details icon </span>
-        
-            <!-- <div class="mt-6 flex items-center gap-8 text-xs">
-              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-                <svg
-                  class="h-4 w-4 text-indigo-700"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
-                  />
-                </svg>
-        
-                <div class="mt-1.5 sm:mt-0">
-                  <p class="text-gray-500">Toilet</p>
-        
-                  <p class="font-medium">{{property.num_toilets}}</p>
-                </div>
-              </div>
-        
-              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-                <svg
-                  class="h-4 w-4 text-indigo-700"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                  />
-                </svg>
-                <i class="fas fa-camera"></i>
-        
-                <div class="mt-1.5 sm:mt-0">
-                  <p class="text-gray-500">Bathroom</p>
-
-        
-                  <p class="font-medium">{{property.num_baths}}</p>
-                </div>
-              </div>
-        
-              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-                <svg
-                  class="h-4 w-4 text-indigo-700"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                  />
-                </svg>
-        
-                <div class="mt-1.5 sm:mt-0">
-                  <p class="text-gray-500">Bedroom</p>
-        
-                  <p class="font-medium">{{property.num_rooms}}</p>
-                </div>
-              </div>
-            </div> -->
-          </div>
-        </div>
-      </a>
-    </div>
-      
-    {% endfor %}        
-  </div>          
+  }
+  
+  .see{
+      float: right;
     
-  <button
-    class="bt ns bt n bt n-wide py-2 px-7 bg-[#510000] w-fit mx-auto text-center rounded-[40px] border border-white text-white font-normal"
-  >
-     Load more
-  </button>
-</section>
-
-<!-- LANDBANK LISTINGS -->
-
-<section
-  class="listing bg-[#fff] py-10 px-6 lg:px-[80px] w-full grid gap-10"
->
-  <div class="w-full font-bold text-black">
-    <h2 class="capitalize text-2xl leading-[32px] font-bold">
-        LANDBANK LISTINGS
-    </h2>
-  </div>
-
-  <div id="property-listings" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full text-[20px]">
-
-    {% for property in approved_properties %}
+  }
+  .desp{
+      font-family: Cabinet Grotesk;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
   
-    <div  class="block rounded-lg p-4 bg-white w-full shadow-sm shadow-indigo-100">
-      <a href="{{ url_for('property_details', property_id=property.id)}}" >
-        <div class="grid gap-8 relative">
-          {% if property.image_filenames %}
-          {% set image_files = property.image_filenames.split(',') %}
-          <img class="max-h-auto w-full aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_files[1]) }}" alt="Publication Image" >
-          <div class="absolute left-2 top-4">
-            <span class="bg-[#510000] px-4 py-2 text-white font-normal text-lg rounded-md">
-                {% if property.price_type == 'Negotiable' %}
-                    Negotiable
-                {% else %}
-                    Non-Negotiable
-                {% endif %}
-            </span>
-        </div>
-        {% endif %}
-          <!-- <img alt="Home" src="{{ property.main_image_one }}" class="h-56 w-full rounded-md object-cover"> -->
-          <div class="grid gap-6">
-            <!-- <dl>
-              <div>
-                <dt class="sr-only">Price</dt>
-                <dd class="text-sm text-gray-500">${{ property.price }}</dd>
-              </div>
-        
-              <div>
-                <dt class="sr-only">Address</dt>
-                <dd class="font-medium">{{ property.location }}</dd>
-              </div>
-            </dl> -->
+  }
+  .rowty{
+      display: flex;
+      flex-direction: row;
+  }
+  .com{
+      padding-left: 20%;
+  }
+  .com .column{
+      padding-left: 50%;
+  
+  }
+  .price{
+      font-family: Cabinet Grotesk;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #510000;
+  
+  
+  }
+  .icons{
+      margin-right: 1rem;
+  }
+  /* span{
+      
+      font-family: Cabinet Grotesk;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+  } */
+  .more{
+  font-family: Cabinet Grotesk;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: left;
+  color:#02AADF;
+  float: right;
+  
+  
+  }
+  .button{
+    margin-top: 4%;
+  }
+  .btn{
+    background-color: #510000;
+    color: whitesmoke;
+  }
+  @media only screen and (max-width: 600px) {
+     .tab-content{
+      width: 65%;
+     }
+   
+  }
+  
+   </style>
+</section>
+        <div class="frame11">
+          
+          <div class="frame14">
+            <div class="frame-parent426">
+              <div class="frame-parent427">
+                <div class="frame-parent428">
+                  <div class="frame-parent429">
+                    <div class="frame-parent430">
+                      <div class="frame15">
+                        <div class="frame15">
+                          <img
+                            class="frame-child108"
+                            alt=""
+                            src="../static/images/vector-171.svg"
+                          />
 
-            <div class="grid gap-3 text-[20px]">
-              <h3 class="text-black detais ">{{property.property_type}}</h3>
-              <p class="text-black text-sm text-gray-500 text-[30px]">{{property.description}}</p>
+                          <div class="frame-child109"></div>
+                        </div>
+                        <div class="frame17">
+                          <div class="frame-child110"></div>
+                          <div class="frame-child111"></div>
+                        </div>
+                      </div>
+                      <div class="frame18">
+                        <div class="frame-child111"></div>
+                        <div class="frame-child113"></div>
+                        <div class="frame-child110"></div>
+                      </div>
+                    </div>
+                    <div class="filter1">Fuel Stations</div>
+                  </div>
+                  <div class="frame-parent429">
+                    <div class="frame-parent430">
+                      <div class="frame15">
+                        <img
+                          class="frame-child108"
+                          alt=""
+                          src="../static/images/vector-171.svg"
+                        />
+
+                        <div class="frame-child109"></div>
+                      </div>
+                      <div class="frame20">
+                        <div class="frame-child117"></div>
+                        <div class="frame21">
+                          <div class="frame-child111"></div>
+                          <div class="frame-child117"></div>
+                        </div>
+                        <div class="frame22">
+                          <div class="frame-child111"></div>
+                          <div class="frame-child117"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter1">Hotels</div>
+                  </div>
+                  <div class="frame-parent429">
+                    <div class="frame-parent430">
+                      <div class="frame15">
+                        <div class="frame-child122"></div>
+                        <div class="frame15">
+                          <img
+                            class="frame-child108"
+                            alt=""
+                            src="../static/images/vector-171.svg"
+                          />
+
+                          <div class="frame-child109"></div>
+                        </div>
+                      </div>
+                      <div class="frame20">
+                        <div class="frame-child117"></div>
+                        <div class="frame-child126"></div>
+                        <div class="frame22">
+                          <div class="frame-child111"></div>
+                          <div class="frame-child117"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter1">Event Centers</div>
+                  </div>
+                </div>
+                <div class="frame-wrapper199">
+                  <div class="bisearch-group">
+                    <img
+                      class="system-uiconslocation28"
+                      alt=""
+                      src="../static/images/bisearch.svg"
+                    />
+
+                    <div class="lands">
+                      Didn't find what you are looking for? search for something
+                      else
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="searchbar1">
+                <div class="frame27">
+                  <div class="frame-child129"></div>
+                  <div class="frame27">
+                    <div class="frame-inner1">
+                      <div class="frame-parent435">
+                        <div class="price-group">
+                          <div class="price2">Price</div>
+                          <div class="frame-parent436">
+                            <div class="frame-wrapper200">
+                              <div class="minimum-group">
+                                <div class="minimum1">Minimum</div>
+                                <img
+                                  class="vector-icon10"
+                                  alt=""
+                                  src="../static/images/group-42.svg"
+                                />
+                              </div>
+                            </div>
+                            <div class="frame-wrapper201">
+                              <div class="minimum-group">
+                                <div class="minimum1">Maximum</div>
+                                <img
+                                  class="vector-icon10"
+                                  alt=""
+                                  src="../static/images/group-42.svg"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="frame29">
+                          <div class="property-type-group">
+                            <div class="property-type1">Property Type</div>
+                            <div class="choose-property-type1">
+                              Choose Property Type
+                            </div>
+                            <div class="frame-child130"></div>
+                            <img
+                              class="vector-icon12"
+                              alt=""
+                              src="../static/images/group-4.svg"
+                            />
+                          </div>
+                          <div class="bedroom-group">
+                            <div class="bedroom1">Bedroom</div>
+                            <div class="number-of-bedroom1">
+                              Number of bedroom
+                            </div>
+                            <div class="frame-child131"></div>
+                            <img
+                              class="vector-icon13"
+                              alt=""
+                              src="../static/images/group-41.svg"
+                            />
+                          </div>
+                          <div class="line-parent13">
+                            <div class="frame-child132"></div>
+                            <img
+                              class="frame-child133"
+                              alt=""
+                              src="../static/images/group-3.svg"
+                            />
+
+                            <div class="frame30">
+                              <div class="location4">Location</div>
+                              <div class="select-your-city1">
+                                Select Your City
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="frame31">
+
+                  <div class="frame32">
+                    <div class="search-tab1">
+                      <div class="rent1">Rent</div>
+                      <div class="frame33">
+                        <div class="sell1">Sell</div>
+                        <div class="buy1">Buy</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <span class="text-[#510000] text-[20px] font-bold ">NGN {{property.price}}</span>
-
-            <div class="grid gap-2 text-[20px]">
-              <div class="flex gap-1">
-                <img width="30" height="24" src="https://img.icons8.com/material-outlined/24/marker.png" alt="marker"/>
-                <span class="text-black">Location: {{property.location}}</span>
-              </div>
-              <div class="flex gap-1">
-                <img width="30" height="24" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-hour-date-and-time-tanah-basah-basic-outline-tanah-basah.png" alt="external-hour-date-and-time-tanah-basah-basic-outline-tanah-basah"/>
-                <span class="text-black">{{property.time_posted}}</span>
-              </div>
-              <div class="flex gap-1">
-                <img width="30" height="24" src="https://img.icons8.com/material-rounded/24/user.png" alt="user"/>
-                <span class="text-black">{{property.user.firstname}}</span>
-              </div>
-            </div>
-
-      <!-- For desktop -->
-<div class="hidden md:flex gap-[10px] text-[15px] font-normal">
-<span class="text-black border border-[#EBEBEB] p-[10px]">{{ property.property_num_rooms }} bed</span>
-<span class="text-black border border-[#EBEBEB] p-[10px]">{{ property.property_num_toilets }} toilets</span>
-<span class="text-black border border-[#EBEBEB] p-[10px]">{{ property.property_square_feet }} sq. ft.</span>
-<span class="text-black border border-[#EBEBEB] p-[10px]">{{ property.property_num_baths }} bathroom</span>
-</div>
-
-<!-- For smaller or mobile screens -->
-<div class="md:hidden md:block flex flex-wrap gap-[10px] text-[15px] font-normal">
-<div class="w-full md:w-1/2">
-<div class="text-black border border-[#EBEBEB] p-[10px] mb-2">{{ property.property_num_rooms }} bed</div>
-<div class="text-black border border-[#EBEBEB] p-[10px] mb-2">{{ property.property_num_toilets }} toilets</div>
-</div>
-<div class="w-full md:w-1/2">
-<div class="text-black border border-[#EBEBEB] p-[10px] mb-2">{{ property.property_size_min  }} min sq. ft.</div>
-<div class="text-black border border-[#EBEBEB] p-[10px] mb-2">{{ property.property_size_max  }} max sq. ft.</div>
-
-<div class="text-black border border-[#EBEBEB] p-[10px] mb-2">{{ property.property_num_baths }} bathroom</div>
-</div>
-</div>
-
-
-            
-            <span class="text-right text-[#02AADF] text-[15px]">Click to see more details icon </span>
-        
-            <!-- <div class="mt-6 flex items-center gap-8 text-xs">
-              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-                <svg
-                  class="h-4 w-4 text-indigo-700"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
-                  />
-                </svg>
-        
-                <div class="mt-1.5 sm:mt-0">
-                  <p class="text-gray-500">Toilet</p>
-        
-                  <p class="font-medium">{{property.num_toilets}}</p>
-                </div>
-              </div>
-        
-              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-                <svg
-                  class="h-4 w-4 text-indigo-700"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                  />
-                </svg>
-                <i class="fas fa-camera"></i>
-        
-                <div class="mt-1.5 sm:mt-0">
-                  <p class="text-gray-500">Bathroom</p>
-
-        
-                  <p class="font-medium">{{property.num_baths}}</p>
-                </div>
-              </div>
-        
-              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-                <svg
-                  class="h-4 w-4 text-indigo-700"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                  />
-                </svg>
-        
-                <div class="mt-1.5 sm:mt-0">
-                  <p class="text-gray-500">Bedroom</p>
-        
-                  <p class="font-medium">{{property.num_rooms}}</p>
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
-      </a>
+      </div>
     </div>
-      
-    {% endfor %}        
-  </div>   
-    
-  <button
-    class="bt ns bt n bt n-wide py-2 px-7 bg-[#510000] w-fit mx-auto text-center rounded-[40px] border border-white text-white font-normal"
-  >
-     Load more
-  </button>
-</section>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('search-button').addEventListener('click', function() {
-        // Get search parameters (location, property type, price range)
-        var location = document.getElementById('location-input').value;
-        var propertyType = document.getElementById('property-type-select').value;
-        var priceRange = document.getElementById('price-range-input').value;
 
-        // Send AJAX request to search route
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/search', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                var properties = JSON.parse(xhr.responseText);
-                var propertyListingsContainer = document.getElementById('property-listings');
-                propertyListingsContainer.innerHTML = ''; // Clear existing listings
-                properties.forEach(function(property) {
-                    // Create HTML for property listing
-                    var propertyListing = '<div class="block rounded-lg p-4 bg-white w-full shadow-sm shadow-indigo-100">';
-                    // Add property details to listing HTML
-                    propertyListing += '<h3>' + property.name + '</h3>';
-                    propertyListing += '<p>' + property.description + '</p>';
-                    propertyListing += '<p>Price: NGN ' + property.price + '</p>';
-                    // Add other property fields as needed
-                    propertyListing += '</div>';
-                    // Append property listing HTML to container
-                    propertyListingsContainer.insertAdjacentHTML('beforeend', propertyListing);
-                });
-            } else {
-                console.error('Request failed: ' + xhr.status);
-            }
-        };
-        var data = JSON.stringify({ location: location, property_type: propertyType, price_range: priceRange });
-        xhr.send(data);
-    });
-});
-
-</script>
     <script>
-        // Toggle mobile menu
-        document.getElementById('mobile-menu-button').addEventListener('click', function () {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
+      var showMoreText = document.getElementById("showMoreText");
+      if (showMoreText) {
+        showMoreText.addEventListener("click", function (e) {
+          window.location.href = "./category-opened.html";
         });
-    </script>
-</body>
+      }
+      
+      var frameContainer1 = document.getElementById("frameContainer1");
+      if (frameContainer1) {
+        frameContainer1.addEventListener("click", function (e) {
+          // Please sync "View Property detailsDetails" to the project
+        });
+      }
+      
+      var frameContainer3 = document.getElementById("frameContainer3");
+      if (frameContainer3) {
+        frameContainer3.addEventListener("click", function (e) {
+          // Please sync "View Property detailsDetails" to the project
+        });
+      }
+      
+      var jmsoltech1Image = document.getElementById("jmsoltech1Image");
+      if (jmsoltech1Image) {
+        jmsoltech1Image.addEventListener("click", function (e) {
+          window.location.href = "./ListingLandingPage.html";
+        });
+      }
+      
+      var profilContainer = document.getElementById("profilContainer");
+      if (profilContainer) {
+        profilContainer.addEventListener("click", function (e) {
+          window.location.href = "./dashboard.html";
+        });
+      }
+      </script>
+  </body>
 </html>

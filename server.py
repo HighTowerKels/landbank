@@ -34,8 +34,8 @@ app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = 'info@intexcoin.com'
 app.config['MAIL_SERVER'] = 'server148.web-hosting.com'
 app.config['UPLOAD_FOLDER'] = os.path.join('static', 'uploads')
-app.add_url_rule('/uploads/<filename>', 'uploads', build_only=True)
-UPLOAD_FOLDER = 'uploads'
+app.add_url_rule('/static/uploads/<filename>', 'uploads', build_only=True)
+UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'pdf', 'doc', 'docx'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -52,9 +52,24 @@ class User(db.Model, UserMixin):
     firstname = db.Column(db.String(255)  )
     lastname = db.Column(db.String(255))
 
-    email = db.Column(db.String(255), unique=True, nullable=False)
-    password = db.Column(db.String(255), nullable=False)
-    nin = db.Column(db.String(20), unique=True)
+    email = db.Column(db.String(255), unique=True, nullable=True)
+    password = db.Column(db.String(255), nullable=True)
+    location = db.Column(db.String(100), nullable=True)  # Making user_location nullable
+    nin_number = db.Column(db.String(20), nullable=True)  # Making nin_number nullable
+    nin_slip = db.Column(db.String(100), nullable=True)  # Making nin_photo nullable
+    bio = db.Column(db.Text, nullable=True)  # Making bio nullable
+    phone_number = db.Column(db.String(20), nullable=True)  # Making phone_number nullable
+    phone_number_two = db.Column(db.String(20), nullable=True)
+    biz_name = db.Column(db.String(100), nullable=True)
+    biz_bio = db.Column(db.Text, nullable=True)
+    biz_location = db.Column(db.String(100), nullable=True)
+    biz_number = db.Column(db.String(20), nullable=True)
+    cac_numbers = db.Column(db.String(100), nullable=True)
+    cac_slip = db.Column(db.String(100), nullable=True)
+
+
+
+
     is_admin = db.Column(db.Boolean, default=False)
     cart_items = db.relationship('CartItem', backref='user', lazy=True)
     profile_picture = db.Column(db.String(255))  # Add profile picture column
@@ -70,7 +85,24 @@ class User(db.Model, UserMixin):
         self.lastname = lastname
         self.email = email
         self.password = generate_password_hash(password, method='sha256')
-       
+    
+    def is_profile_updated(self):
+        # Check if all mandatory fields are filled
+        required_fields = [self.location, self.cac_numbers, self.nin_number, self.nin_slip, self.bio, self.phone_number]
+        return all(required_fields)
+
+        # Optionally, check if specific optional fields are filled
+        # For example, check if the second phone number is filled
+        # if not self.second_phone_number:
+        #     return False
+
+        # # Optionally, check if uploaded documents are valid
+        # # For example, check if the NIN photo exists
+        # if not os.path.exists(self.nin_photo):
+        #     return False
+    
+    
+    
     def save(self):
         db.session.add(self)
         db.session.commit()
@@ -177,7 +209,7 @@ class Shared(db.Model):
     shared_num_baths = db.Column(db.Integer, nullable=False)
     shared_num_toilets = db.Column(db.Integer, nullable=False)
     shared_num_parlour = db.Column(db.Integer, nullable=False)
-    
+    amenities = db.Column(db.String(255))
     shared_description = db.Column(db.Text, nullable=False)
     completed_furnished = db.Column(db.Boolean, nullable=False, default=False)
     completed_unfurnished = db.Column(db.Boolean, nullable=False, default=False)
@@ -411,6 +443,11 @@ def uploaded_file(filename):
 @app.route('/create_property', methods=['GET', 'POST'])
 @login_required
 def create_property():
+    if not current_user.is_profile_updated():
+        flash('Please update your profile before creating a property!', 'warning')
+        return redirect(url_for('update_profile'))
+
+    
     if request.method == 'POST':
         # Extract form data
         property_ownership = request.form.get('property_ownership')
@@ -449,14 +486,24 @@ def create_property():
         uploaded_document_filenames = []
 
         # Save uploaded files and generate comma-separated filenames
+        num_uploaded_images = 0
+
         for file in image_files:
+            if num_uploaded_images >= 5:
+                flash("You can upload a maximum of 5 images", 'error')
+                break  
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
-                file.save(os.path.join(upload_folder, filename))
-                uploaded_image_filenames.append(filename)
-                print("Uploaded Image:", filename)
-            else:
-                flash(f"Failed to upload image: {file.filename}", 'error')
+                file_path = os.path.join(upload_folder, filename)
+                try:
+                    file.save(file_path)
+                    uploaded_image_filenames.append(filename)
+                    print("Uploaded Image:", filename)
+                    num_uploaded_images += 1
+                except Exception as e:
+                    flash(f"Failed to save image: {str(e)}", 'error')
+        else:
+            flash(f"Failed to upload image: {file.filename}", 'error')
 
         for file in document_files:
             if file and allowed_file(file.filename):
@@ -470,11 +517,12 @@ def create_property():
         # If no images were uploaded successfully, return to the form
         if not uploaded_image_filenames:
             flash("No images uploaded", 'error')
-            return redirect(request.url)
+            return redirect(create_property)
 
         # Convert lists to comma-separated strings
         image_filenames = ','.join(uploaded_image_filenames)
         document_filenames = ','.join(uploaded_document_filenames)
+        current_time = datetime.now()
 
         # Create new JVA object
         new_property = Property(
@@ -503,7 +551,7 @@ def create_property():
             image_filenames=image_filenames,
             document_filenames=document_filenames,
             user=current_user,
-            time_posted=datetime.now().time()
+            time_posted=current_time.strftime("%H")
         )
         
         # Add and commit to the database
@@ -519,10 +567,13 @@ def create_property():
 @app.route('/create_shared', methods=['GET', 'POST'])
 @login_required
 def create_shared():
+    if not current_user.is_profile_updated():
+        flash('Please update your profile before creating a property!', 'warning')
+        return redirect(url_for('update_profile'))
+
     if request.method == 'POST':
         # Extract form data
         shared_property_ownership = request.form.get('shared_property_ownership')
-
         shared_property_available = request.form.get('shared_property_available')
         location = request.form.get('location')
         shared_property_type = request.form.get('shared_property_type')
@@ -535,21 +586,30 @@ def create_shared():
         shared_num_baths = int(request.form.get('shared_num_baths', 0))
         shared_num_toilets = int(request.form.get('shared_num_toilets', 0))
         shared_num_parlour = int(request.form.get('shared_num_parlour', 0))
-        
-       
         shared_description = request.form.get('shared_description')
-        fully_furnished = 'fullyFurnished' in request.form
-        partly_furnished = 'partlyFurnished' in request.form
-        parking_space = 'parkingSpace' in request.form
-        laundry_room = 'laundryRoom' in request.form
-        shared_kitchen = 'sharedKitchen' in request.form
-        shared_bathroom = 'sharedBathroom' in request.form
-        noise_level = 'noiseLevel' in request.form
-        visitors = 'visitors' in request.form
-        fitness_center = 'fitnessCenter' in request.form
-        internet_service = 'internet' in request.form
-        completed_furnished = request.form.get('completedFurnished') == 'on'
-        completed_unfurnished = request.form.get('completedUnfurnished') == 'on'
+        
+        # Amenities
+        amenities = []
+        if 'fullyFurnished' in request.form:
+            amenities.append('Fully Furnished')
+        if 'partlyFurnished' in request.form:
+            amenities.append('Partly Furnished')
+        if 'parkingSpace' in request.form:
+            amenities.append('Parking Space')
+        if 'laundryRoom' in request.form:
+            amenities.append('Laundry Room')
+        if 'sharedKitchen' in request.form:
+            amenities.append('Shared Kitchen')
+        if 'sharedBathroom' in request.form:
+            amenities.append('Shared Bathroom')
+        if 'noiseLevel' in request.form:
+            amenities.append('Noise Level')
+        if 'visitors' in request.form:
+            amenities.append('Visitors Allowed')
+        if 'fitnessCenter' in request.form:
+            amenities.append('Fitness Center')
+        if 'internet' in request.form:
+            amenities.append('Internet Service')
 
         # Ensure the UPLOAD_FOLDER exists
         upload_folder = os.path.join(app.root_path, app.config['UPLOAD_FOLDER'])
@@ -558,34 +618,39 @@ def create_shared():
         # Upload Main Image
         image_files = request.files.getlist('fileUpload[]')
         
-
         # Initialize lists to store uploaded filenames
         uploaded_image_filenames = []
 
         # Save uploaded files and generate comma-separated filenames
+        num_uploaded_images = 0
         for file in image_files:
+            if num_uploaded_images >= 5:
+                flash("You can upload a maximum of 5 images", 'error')
+                break  
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
-                file.save(os.path.join(upload_folder, filename))
-                uploaded_image_filenames.append(filename)
-                print("Uploaded Image:", filename)
-            else:
-                flash(f"Failed to upload image: {file.filename}", 'error')
-
-       
+                file_path = os.path.join(upload_folder, filename)
+                try:
+                    file.save(file_path)
+                    uploaded_image_filenames.append(filename)
+                    print("Uploaded Image:", filename)
+                    num_uploaded_images += 1
+                except Exception as e:
+                    flash(f"Failed to save image: {str(e)}", 'error')
+        else:
+            flash(f"Failed to upload image: {file.filename}", 'error')
 
         # If no images were uploaded successfully, return to the form
         if not uploaded_image_filenames:
             flash("No images uploaded", 'error')
-            return redirect(request.url)
+            return redirect(create_shared)
 
         # Convert lists to comma-separated strings
         image_filenames = ','.join(uploaded_image_filenames)
 
         # Create new Shared object
         new_shared = Shared(
-            shared_property_ownership = shared_property_ownership,
-
+            shared_property_ownership=shared_property_ownership,
             shared_property_available=shared_property_available,
             location=location,
             shared_property_type=shared_property_type,
@@ -598,22 +663,10 @@ def create_shared():
             shared_num_baths=shared_num_baths,
             shared_num_toilets=shared_num_toilets,
             shared_num_parlour=shared_num_parlour,
-            shared_description = shared_description,
-            fully_furnished=fully_furnished,
-            partly_unfurnished=partly_furnished,
-            parking_space=parking_space,
-            laundry_room=laundry_room,
-            shared_kitchen=shared_kitchen,
-            shared_bathroom=shared_bathroom,
-            noise_level=noise_level,
-            visitors=visitors,
-            fitness_center=fitness_center,
-            internet_service=internet_service,
-            approved=False,
+            shared_description=shared_description,
+            amenities=', '.join(amenities),  # Convert list to comma-separated string
             image_filenames=image_filenames,
             user=current_user,
-            completed_furnished=completed_furnished,
-            completed_unfurnished=completed_unfurnished,
             time_posted=datetime.now().time()
         )
 
@@ -629,6 +682,10 @@ def create_shared():
 @app.route('/create_shortlet', methods=['GET', 'POST'])
 @login_required
 def create_shortlet():
+    if not current_user.is_profile_updated():
+        flash('Please update your profile before creating a property!', 'warning')
+        return redirect(url_for('update_profile'))
+
     if request.method == 'POST':
         # Extract form data
         shortlet_property_available = request.form.get('shortlet_property_available')
@@ -666,20 +723,24 @@ def create_shortlet():
         uploaded_image_filenames = []
 
         # Save uploaded files and generate comma-separated filenames
+        num_uploaded_images = 0
+
         for file in image_files:
+            if num_uploaded_images >= 5:
+                flash("You can upload a maximum of 5 images", 'error')
+                break  
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
-                file.save(os.path.join(upload_folder, filename))
-                uploaded_image_filenames.append(filename)
-                print("Uploaded Image:", filename)
-            else:
-                flash(f"Failed to upload image: {file.filename}", 'error')
-
-        
-        # If no images were uploaded successfully, return to the form
-        if not uploaded_image_filenames:
-            flash("No images uploaded", 'error')
-            return redirect(request.url)
+                file_path = os.path.join(upload_folder, filename)
+                try:
+                    file.save(file_path)
+                    uploaded_image_filenames.append(filename)
+                    print("Uploaded Image:", filename)
+                    num_uploaded_images += 1
+                except Exception as e:
+                    flash(f"Failed to save image: {str(e)}", 'error')
+        else:
+            flash(f"Failed to upload image: {file.filename}", 'error')
 
         # Convert lists to comma-separated strings
         image_filenames = ','.join(uploaded_image_filenames)
@@ -727,6 +788,10 @@ def create_shortlet():
 @app.route('/create_jva', methods=['GET', 'POST'])
 @login_required
 def create_jva():
+    if not current_user.is_profile_updated():
+        flash('Please update your profile before creating a property!', 'warning')
+        return redirect(url_for('update_profile'))
+
     if request.method == 'POST':
         # Extract form data
         jva_property_ownership = request.form.get('jva_property_ownership')
@@ -755,15 +820,24 @@ def create_jva():
         uploaded_document_filenames = []
 
         # Save uploaded files and generate comma-separated filenames
+        num_uploaded_images = 0
+
         for file in image_files:
+            if num_uploaded_images >= 5:
+                flash("You can upload a maximum of 5 images", 'error')
+                break  
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
-                file.save(os.path.join(upload_folder, filename))
-                uploaded_image_filenames.append(filename)
-                print("Uploaded Image:", filename)
-            else:
-                flash(f"Failed to upload image: {file.filename}", 'error')
-
+                file_path = os.path.join(upload_folder, filename)
+                try:
+                    file.save(file_path)
+                    uploaded_image_filenames.append(filename)
+                    print("Uploaded Image:", filename)
+                    num_uploaded_images += 1
+                except Exception as e:
+                    flash(f"Failed to save image: {str(e)}", 'error')
+        else:
+            flash(f"Failed to upload image: {file.filename}", 'error')
         for file in document_files:
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
@@ -776,7 +850,7 @@ def create_jva():
         # If no images were uploaded successfully, return to the form
         if not uploaded_image_filenames:
             flash("No images uploaded", 'error')
-            return redirect(request.url)
+            return redirect(create_property)
 
         # Convert lists to comma-separated strings
         image_filenames = ','.join(uploaded_image_filenames)
@@ -1364,13 +1438,22 @@ def dash_nav():
 @app.route('/listing')
 def listing():
     properties = Property.query.all()
-    shortlets = ShortLet.query.all()
+    shortlet = ShortLet.query.all()
+    shared = Shared.query.all()
+    jva = JVA.query.all()
+    
     approved_properties = Property.query.filter_by(approved=True).all()
     pending_properties = Property.query.filter_by(approved=False).all()
     
     approved_shortlets = ShortLet.query.filter_by(approved=True).all()
     pending_shortlets = ShortLet.query.filter_by(approved=False).all()
-    return render_template('listing.html' , properties=properties, approved_properties=approved_properties, pending_properties=pending_properties, approve_shortlets = approved_shortlets, pending_shortlets = pending_shortlets, shortlets = shortlets)
+    
+    approved_shared = Shared.query.filter_by(approved=True).all()
+    pending_shared = Shared.query.filter_by(approved=False).all()
+    
+    approved_jva = JVA.query.filter_by(approved=True).all()
+    pending_jva = JVA.query.filter_by(approved=False).all()
+    return render_template('listing.html' , properties=properties, approved_properties=approved_properties, pending_properties=pending_properties, approved_shortlets = approved_shortlets, pending_shortlets = pending_shortlets, shortlet = shortlet, shared = shared, approved_shared = approved_shared, pending_shared = pending_shared, jva = jva, approved_jva= approved_jva, pending_jva = pending_jva)
 
 
 @app.route('/listinguser')
@@ -1535,22 +1618,83 @@ def cardpayment():
 def bankpayment():
     return render_template('bank.html')
 
-@app.route('/update_profile', methods=['POST'])
+@app.route('/update_profile', methods=['GET', 'POST'])
 def update_profile():
-    user_id = current_user.id
-    user = User.query.get(user_id)
-    if user:
-        user.firstname = request.form['firstname']
-        user.lastname = request.form['lastname']
-        user.email = request.form['email']
-        user.phone_number = request.form['phone_number']
-        user.save()
-        flash('Profile updated successfully!', 'success')
-        return redirect(url_for('dashboard'))  # Redirect to the verification page or any other appropriate page
-    else:
-        flash('User not found!', 'error')
-        return redirect(url_for('dashboard'))  # Redirect to the verification page or any other appropriate page
+    if request.method == 'POST':
+        user_id = current_user.id
+        user = User.query.get(user_id)
+        
+        if user:
+            # Update user profile fields
+            user.phone_number = request.form['phone_number']
+            user.location = request.form['house_number']
+            user.nin_number = request.form['nin_number']
+            user.phone_number_two = request.form['alitnumber']
+            user.bio = request.form['bio']
+            
+            
+            if 'biz_name' in request.form:
+                user.biz_name = request.form['biz_name']
 
+            if 'biz_bio' in request.form:
+                user.biz_bio = request.form['biz_bio']
+
+            if 'biz_location' in request.form:
+                user.biz_location = request.form['biz_location']
+
+            if 'biz_number' in request.form:
+                user.biz_number = request.form['biz_number']
+
+            if 'cac_numbers' in request.form:
+                user.cac_numbers = request.form['cac_numbers']
+            
+            # Handle file uploads for user documents
+            if 'nin_slip' in request.files:
+                nin_slip = request.files['nin_slip']
+                if nin_slip.filename != '':
+                    filename = secure_filename(nin_slip.filename)
+                    file_path = os.path.join(UPLOAD_FOLDER, filename)
+                    nin_slip.save(file_path)
+                    user.nin_slip = file_path
+            
+            if 'cac_slip' in request.files:
+                cac_slip = request.files['cac_slip']
+                if cac_slip.filename != '':
+                    filename = secure_filename(cac_slip.filename)
+                    file_path = os.path.join(UPLOAD_FOLDER, filename)
+                    cac_slip.save(file_path)
+                    user.cac_slip = file_path
+
+            # Commit user profile changes
+            db.session.commit()
+
+            # Create new profile
+            new_profile = User(
+                phone_number=user.phone_number,
+                location=user.location,
+                nin_number=user.nin_number,
+                phone_number_two=user.phone_number_two,
+                bio=user.bio,
+                biz_name=user.biz_name,
+                biz_bio=user.biz_bio,
+                biz_location=user.biz_location,
+                biz_number=user.biz_number,
+                cac_numbers=user.cac_numbers,
+                # Populate other fields as needed
+            )
+
+            # Add and commit new profile to the database
+            db.session.add(new_profile)
+            db.session.commit()
+
+            flash('Profile updated successfully! New profile has been created.', 'success')
+            return redirect(url_for('dashboard'))  # Redirect to the appropriate page
+        else:
+            flash('User not found!', 'error')
+            return redirect(url_for('dashboard'))  # Redirect to the appropriate page
+    else:
+        # Handle GET request if needed
+        return render_template('settings.html', user=current_user)  # Render the update profile form
 
 @app.route('/verification')
 def verification():
@@ -1597,7 +1741,7 @@ def logout():
     flash('You have been logged out.', 'success')
     return redirect(url_for('index'))
 
-@app.route("/db")
+@app.route("/db/renew")
 def database():
     db.drop_all()
     db.create_all()
