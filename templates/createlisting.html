@@ -412,7 +412,21 @@ body {
       text-decoration: none;
       color: #333;
     }
+    .alert {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+}
 
+.alert-success {
+    background-color: #28a745;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+}
 
   </style>
 </head>
@@ -420,6 +434,18 @@ body {
 <body>
 
   {% include "dash_nav.html" %}
+
+  <div id="alert-container" class="alert-container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+  </div>
 
   <div class="container">
     <div class="sidebar">
