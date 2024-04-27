@@ -1,0 +1,101 @@
+.check-one-icon {
+  width: 48px;
+  height: 48px;
+}
+.check-one-icon,
+.successfully-listed {
+  position: relative;
+}
+.successfully-listed-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.label70 {
+  position: relative;
+  font-weight: 500;
+}
+.interfacecopy-icon {
+  width: 24px;
+  position: relative;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.button8,
+.button9,
+.iconcontainer {
+  flex-direction: row;
+  align-items: center;
+}
+.iconcontainer {
+  display: none;
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+}
+.button8,
+.button9 {
+  align-self: stretch;
+  border-radius: var(--br-21xl);
+  background-color: var(--primary-colour);
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  padding: var(--padding-sm) var(--padding-xl);
+  box-sizing: border-box;
+  gap: var(--gap-3xs);
+}
+.button9 {
+  background-color: var(--background1);
+  border: 1px solid var(--dark-medium);
+  cursor: pointer;
+  color: var(--dark-medium);
+}
+.button-parent,
+.check-one-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button-parent {
+  align-self: stretch;
+  justify-content: flex-start;
+  gap: var(--gap-base);
+  font-size: var(--font-size-sm);
+  color: var(--grey-light);
+  font-family: var(--font-inter);
+}
+.check-one-parent {
+  position: absolute;
+  top: -0.5px;
+  left: calc(50% - 275px);
+  border-radius: var(--br-5xs);
+  background-color: var(--background1);
+  box-shadow: var(--shadow-small);
+  border: 1px solid var(--stroke-light);
+  box-sizing: border-box;
+  width: 551px;
+  justify-content: center;
+  padding: 36px var(--padding-21xl);
+  gap: var(--gap-5xl);
+}
+.listing-confirmation-modal-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 557px;
+  height: 297px;
+}
+.listing-confirmation-modal {
+  width: 557px;
+  position: relative;
+  height: 370px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--secondary-dark-color);
+  font-family: var(--font-cabinet-grotesk);
+}

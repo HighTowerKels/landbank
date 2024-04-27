@@ -1,684 +1,377 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landbank | Listing</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="../static/css/differemt.css">
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-<style>
-body, html{
-    background-color:'white';
-    color: 'black';
-}
-    * {
-  box-sizing: border-box;
-   background-color:'white';
-    color: 'black';
-}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
+    <link rel="stylesheet" href="../static/css/property_details.css" />
+    <link rel="stylesheet" href="../static/css/property_details2.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cabinet Grotesk:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600&display=swap"
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
+    />
+    <link href="https://fonts.cdnfonts.com/css/cabinet-grotesk" rel="stylesheet">
+  </head>
+  <body>
+    <div class="view-property-detailsdetails">
+      <header class="div">
+        <img
+          class="jmsoltech-1-icon"
+          alt=""
+          src="../static/image/jmsoltech-1@2x.png"
+          id="jmsoltech1Image"
+        />
 
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
+        <div class="profil" id="profilContainer">
+          <img
+            class="avatar-icon"
+            loading="lazy"
+            alt=""
+            src="../static/image/avatar@2x.png"
+          />
 
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
+          <div class="content-wrapper">
+            <div class="content">
+              <div class="overline">View Dashboard</div>
+              <div class="title">Andrew Smith</div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="desktop-13">
+        <div class="image-5-parent">
+          <img
+            class="image-5-icon"
+            loading="lazy"
+            alt=""
+            src="../static/image/image5.png"
+          />
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-h2{
-font-family: Cabinet Grotesk;
-font-size: 24px;
-font-weight: 700;
-line-height: 30px;
-letter-spacing: 0em;
-text-align: left;
-color: black;
-
-}
-.desp{
-    font-family: Cabinet Grotesk;
-font-size: 14px;
-font-weight: 400;
-line-height: 17px;
-letter-spacing: 0em;
-text-align: left;
-color: black;
-
-}
-.price{
-    font-family: Cabinet Grotesk;
-font-size: 20px;
-font-weight: 700;
-line-height: 25px;
-letter-spacing: 0em;
-text-align: left;
-color: #510000;
-
-}
-.two{
-    width: 215px;
-height: 40px;
-padding: 8px, 57px, 8px, 58px;
-border-radius: 40px;
-border: 1px;
-gap: 10px;
-background: linear-gradient(0deg, #510000, #510000),
-linear-gradient(0deg, #FFFFFF, #FFFFFF);
-color: #f2f2f2;
-
-}
-.one{
-  color: #510000;
-    background-color: white;
-    width: 215px;
-height: 40px;
-padding: 8px, 57px, 8px, 58px;
-border-radius: 40px;
-border: 1px;
-border:1px solid linear-gradient(0deg, #510000, #510000),
-linear-gradient(0deg, #FFFFFF, #FFFFFF);;
-}
-/* Style the tab buttons */
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 10px 10px;
-  font-size: 15px;
-  width: 30%;
-}
-
-/* Change background color of buttons on hover */
-.tablink:hover {
-  background-color: #777;
-}
-h4{
-  font-weight: 900;
-  padding-bottom: 3px;
-}
-h3{
-  font-family: Cabinet Grotesk;
-font-size: 16px;
-font-weight: 500;
-line-height: 20px;
-letter-spacing: 0em;
-text-align: left;
-
-}
-
-
-/* Set default styles for tab content */
-.tabcontent {
-  color:black;
-  display: none;
-  padding: 50px;
-  text-align: start;
-}
-    .hidden-content {
-      display: none;
-    }
-    .rowy{
-      margin-bottom: 30%;
-    }
-    .alert-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.alert {
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-.alert-success {
-    background-color: #28a745;
-}
-
-.alert-danger {
-    background-color: #dc3545;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 50%;
- 
-}
-p{
-  font-family: cabinet Grotesk;
-  font-size: 16px;
-  padding-left: 10%;
-}
-.second{
-  font-size: 18px;
-}
-.services-list {
-  padding-left: 10%; /* Remove default padding */
-  font-family: cabinet Grotesk;
-}
-
-.services-list li {
-  list-style-type:disc; /* Remove default list style */
-  margin-bottom: 10px; /* Add margin between list items */
-}
-
-/* Ensure proper spacing between paragraphs and buttons */
-.second {
-  margin-bottom: 20px;
-}
-
-#proceedButton,
-#realtorButton {
-  margin-right: 30px; /* Add space between buttons */
-}
-/* Close Button */.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-.row{
-  display: flex;
-  flex-direction: row;
-}
-.columns{
-  padding: 3%;
-}
-.pariscard{
-    width: 100%;
-  }
-@media (max-width: 480px) {
-  .row{
-    display: flex; flex-direction: column;
-   
-
-  }
-  #London{
-    align-items: flex-start;
-    text-align: left;
-    margin-left: -10%;
-  }
-  #London h2{
-overflow-wrap: break-word;
-font-size: 18px;
-text-wrap:wrap;
-  }
-  .pariscard{
-    width: 130%;
-    margin-left: -5%;
-  }
-  #Paris{
-    width: 130%;
-    margin-left: -10%;
-    overflow-x: hidden;
-  }
-}
-
-  </style>
-
-
-</style>
-</head>
-<body class="bg-white text-black">
-    {% include "dash_nav.html" %}
-    <div id="alert-container" class="alert-container">
-      {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-          {% for category, message in messages %}
-              <div class="alert alert-{{ category }}">
-                  {{ message }}
+          <div class="line-wrapper">
+            <div class="frame-child"></div>
+          </div>
+        </div>
+        <div class="frame-parent">
+          <div class="frame-group">
+            <div class="frame-container">
+              <button class="slightly-negotiable-wrapper">
+                <div class="slightly-negotiable">Slightly Negotiable</div>
+              </button>
+              <!-- <img src="../static/image/Frame 26085668 (1)" alt=""> -->
+              <div class="preview-wrapper">
+                <b class="preview">Preview</b>
               </div>
-          {% endfor %}
-      {% endif %}
-  {% endwith %}
+            </div>
+            <div class="no-reviews-instance">
+              <img
+                class="icbaseline-favorite-icon"
+                loading="lazy"
+                alt=""
+                src="../static/image/icbaselinefavorite.svg"
+              />
+            </div>
+          </div>
+          <div class="frame-div">
+            <div class="iconamoonarrow-left-2-wrapper">
+              <img
+                class="iconamoonarrow-left-2"
+                loading="lazy"
+                alt=""
+                src="../static/image/iconamoonarrowleft2.svg"
+              />
+            </div>
+            <div class="frame-parent1">
+              <div class="frame-parent2">
+                <img
+                  class="frame-item"
+                  loading="lazy"
+                  alt=""
+                  src="../static/image/frame-26085681@2x.png"
+                />
+
+                <img
+                  class="frame-inner"
+                  loading="lazy"
+                  alt=""
+                  src="../static/image/frame-26085681@2x.png"
+                />
+
+                <img
+                  class="frame-icon"
+                  loading="lazy"
+                  alt=""
+                  src="../static/image/frame-26085681@2x.png"
+                />
+
+                <img
+                  class="frame-child1"
+                  loading="lazy"
+                  alt=""
+                  src="../static/image/frame-26085681@2x.png"
+                />
+
+                <img
+                  class="iconamoonarrow-right-2-duoton"
+                  loading="lazy"
+                  alt=""
+                  src="../static/image/iconamoonarrowright2duotone.svg"
+                />
+              </div>
+              <div class="terraced-duplex-for-sale-parent">
+                <h3 class="terraced-duplex-for">Terraced duplex for Sale</h3>
+                <div class="bedroom-terraced-duplex">
+                  4bedroom terraced duplex with a room bq in an estate off
+                  guzape road, maitama, Abuja.
+                </div>
+                <div class="ngn-400000000-parent">
+                  <b class="ngn-400000000">NGN 400,000,000</b>
+                  <div class="cadland-properties">Cadland Properties</div>
+                  <div class="rc-registeration-rc41234567">
+                    RC Registeration: RC41234567
+                  </div>
+                  <div class="registered-3-months">
+                    Registered: 3 Months ago
+                  </div>
+                  <div class="star-rating-5">Star Rating: 5</div>
+                  <div class="reviews-100">Reviews: 100</div>
+                </div>
+                <div class="contact-details-081658-container">
+                  <span class="contact-details-081658-container1">
+                    <span>
+                      <span>Contact Details:</span>
+                      <span class="span"> </span>
+                    </span>
+                    <span class="span1">
+                      <b>081658********</b>
+                    </span>
+                  </span>
+                </div>
+                <div class="view-all-properties" id="viewAllProperties">
+                  View all properties by this agent
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="view-property-detailsdetails-inner">
+        <div class="frame-parent3">
+          <div class="precautionary-tip-do-not-make-wrapper">
+            <div class="precautionary-tip-do-container">
+              <span>
+                <p class="precautionary-tip">
+                  <b class="precautionary-tip1">Precautionary Tip</b>
+                </p>
+                <p class="blank-line">
+                  <b class="blank-line1">&nbsp;</b>
+                </p>
+                <ol class="do-not-make-any-inspection-fee">
+                  <li class="do-not-make-any-inspection-fee1">
+                    <span class="do-not-make"
+                      >Do not make any inspection fee without seeing the agent
+                      and property.</span
+                    >
+                  </li>
+                  <li class="only-pay-rental-fee-sales-fee">
+                    <span class="only-pay-rental"
+                      >Only pay Rental fee, Sales fee or any upfront payment
+                      after you verify the Landlord.</span
+                    >
+                  </li>
+                  <li class="ensure-you-meet-the-agent-in-a">
+                    <span class="ensure-you-meet"
+                      >Ensure you meet the Agent in an open location.</span
+                    >
+                  </li>
+                  <li>
+                    <span class="the-agent-does"
+                      >The Agent does not represent Landbank and Landbank is not
+                      liable for any monetary transaction between you and the
+                      Agent.</span
+                    >
+                  </li>
+                </ol>
+              </span>
+            </div>
+          </div>
+          <div class="no-reviews-wrapper">
+            <div class="no-reviews">
+              <div class="frame-parent4">
+                <button class="description-wrapper">
+                  <div class="description">Description</div>
+                </button>
+                <button class="additional-information-wrapper">
+                  <div class="additional-information">
+                    Additional Information
+                  </div>
+                </button>
+                <button class="review-wrapper">
+                  <div class="review">Review</div>
+                </button>
+              </div>
+              <div class="no-reviews-inner">
+                <div class="frame-parent5">
+                  <div class="frame-parent6">
+                    <div class="property-details-parent">
+                      <h3 class="property-details">Property Details</h3>
+                      <div class="bedroom-terraced-duplex1">
+                        4bedroom terraced duplex with a room bq in an estate off
+                        guzape road, maitama, Abuja. Newly Built and furnished,
+                        come with a BQ
+                      </div>
+                      <div class="bedroom-terraced-duplex2">
+                        4bedroom terraced duplex with a room bq in an estate off
+                        guzape road, maitama, Abuja. Newly Built and furnished,
+                        come with a BQ
+                      </div>
+                      <div class="bedroom-terraced-duplex3">
+                        4bedroom terraced duplex with a room bq in an estate off
+                        guzape road, maitama, Abuja. Newly Built and furnished,
+                        come with a BQ
+                      </div>
+                    </div>
+                    <div class="bathrooms-en-suite-parent">
+                      <div class="bathrooms-en-suite">4 Bathrooms en suite</div>
+                      <div class="spacious-bq-and">
+                        Spacious BQ and gateman house
+                      </div>
+                      <div class="toilets-including-guest">
+                        6 toilets including guest toilet for sitting rooms
+                      </div>
+                      <div class="car-parking-space">12 car parking space</div>
+                      <div class="asking-price-ngn400000000-container">
+                        <span>
+                          <span>
+                            <span>Asking Price:</span>
+                          </span>
+                          <b class="ngn400000000-slightly-nego">
+                            <span> </span>
+                            <span>NGN400,000,000 ( Slightly Negotiable)</span>
+                          </b>
+                        </span>
+                      </div>
+                      <div class="ownership-type-personal-container">
+                        <span class="ownership-type-personal-container1">
+                          <span>Ownership Type: </span>
+                          <span class="personal">Personal</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="precaution-tip-parent">
+                      <div class="precaution-tip">
+                        <div class="posted-by">Posted By</div>
+                        <div class="cadland-properties-parent">
+                          <div class="cadland-properties1">
+                            Cadland Properties
+                          </div>
+                          <div class="rc-registeration-rc412345671">
+                            RC Registeration: RC41234567
+                          </div>
+                          <div class="registered-3-months1">
+                            Registered: 3 Months ago
+                          </div>
+                          <div class="star-rating-51">Star Rating: 5</div>
+                          <div class="reviews-1001">Reviews: 100</div>
+                          <div class="contact-details-081658">
+                            Contact Details: 081658********
+                          </div>
+                          <div
+                            class="view-all-properties1"
+                            id="viewAllProperties1"
+                          >
+                            View all properties by this agent
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bedroom-property"></div>
+                    </div>
+                  </div>
+                  <div class="instance-parent">
+                    <button class="frame-wrapper">
+                      <div class="component-6-parent">
+                        <img
+                          class="component-6-icon"
+                          alt=""
+                          src="../static/image/component-6.svg"
+                        />
+
+                        <div class="share-icon">
+                          <div class="buy-now">Save Property</div>
+                        </div>
+                      </div>
+                    </button>
+                    <button class="frame-button">
+                      <div class="component-6-group">
+                        <img
+                          class="component-6-icon1"
+                          alt=""
+                          src="../static/image/component-6.svg"
+                        />
+
+                        <div class="buy-now-wrapper">
+                          <div class="buy-now1">Buy Now</div>
+                        </div>
+                      </div>
+                    </button>
+                    <button class="cadland-properties-info-wrapper">
+                      <div class="cadland-properties-info">
+                        <img
+                          class="material-symbols-lightshare-icon"
+                          alt=""
+                          src="../static/image/materialsymbolslightshare.svg"
+                        />
+
+                        <div class="contact-button">
+                          <div class="share">Share</div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
- 
-
-<!-- Display the cart items here -->
-
-<section>
-    <div class="bg-white text-black mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-      <div class="max-w-3xl">
-       
-      </div>
-  
-      <div class="bg-white text-black mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-        <div class="relative h-64 overflow-hidden sm:h-80 lg:h-full">
-        
-          <img
-        alt="Party"
-        src="{{ url_for('static', filename='image/map.png') }}"
-        class="absolute inset-0 h-full w-full object-cover"
-    />
-
-        </div>
-  
-        <div class="bg-white text-black lg:py-16">
-          <article class="bg-white text-black space-y-4 text-gray-600">
-            <div class="bg-white text-black container">
-
-              {% if property.image_filenames %}
-              {% set image_files = property.image_filenames.split(',') %}
-              {% for image_file in image_files %}
-                  <div class="mySlides">
-                      <div class="numbertext">{{ loop.index }} / {{ image_files|length }}</div>
-                      <img src="{{ url_for('static', filename='uploads/' + image_file.strip()) }}" style="width:100%">
-                  </div>
-              {% endfor %}
-          {% endif %}
-              
-              
-                <!-- Next and previous buttons -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-              
-                <!-- Image text -->
-                <div class="caption-container">
-                  <p id="caption"></p>
-                </div>
-              
-                <!-- Thumbnail images -->
-                <div class="rowy">
-                  {% if property.image_filenames %}
-                      {% for index, image_file in property.image_filenames.split(',') | enumerate %}
-                          <div class="column">
-                              <img class="demo cursor" src="{{ url_for('static', filename='uploads/' + image_file.strip()) }}" style="width:100%" onclick="currentSlide({{ index + 1 }})" alt="Image {{ index + 1 }}">
-                          </div>
-                      {% endfor %}
-                  {% endif %}
-              </div>
-              </div>
-              <p></p>
-              <h2></h2>
-              <h2 class="text-xl font-bold mb-2 mb-11">Location : {{property.location}}</h2>
-              <h2 class="text-xl font-bold mb-2 mb-11">Service Type : {{property.service_type}}</h2>
-              <h2 class="text-xl font-bold mb-2 mb-11">Type of Property : {{property.property_type}}</h2>
-
-                <p class="text-xl font-bold mb-2 mb-11 mb-2"></p>
-                <div class=" text-xl font-bold flex items-center text-gray-700 mb-4">Price : 
-                  <span class="price font-bold"> NGN {{property.price}}</span>
-                </div>
-            
-          
-              
-              <br>
-              <div class="row">
-                <div class="columns">
-                  <form action="{{ url_for('property_details', property_id=property.id) }}" method="post">
-                    <button style="background-color: #510000; color: whitesmoke;" type="submit" name="add_to_cart" class="one btn btn">Add to Cart</button>
-                </form>
-                </div>
-                <div class="columns">
-                  <a href="/cart">
-                    <button id="buyButton" style="background-color: #510000; color: whitesmoke;" class="one btn btn" tabindex="-1" role="button" aria-disabled="true">Buy Now</button>
-
-                  </a>
-
-                </div>
-             
-</div>              
-</article>
-              </div>
-             
-           
-        </div>  
-        </div>
-
-  <!-- tabs navigation start here  -->
-          <div class="max-w-full mb-10 ">
-            <button class="tablink w-1/3 text-sm" onclick="openCity('London', this, '#510000')" id="defaultOpen">Description</button>
-            <button class="tablink w-1/3 text-sm" onclick="openCity('Paris', this, '#510000')"><span class="hidden md:inline">Additional</span> Information</button>
-            <button class="tablink w-1/3 text-sm" onclick="openCity('Tokyo', this, '#510000')">Review</button>
-          </div>
-          <!-- <h1>Property Details</h1>
-            <p>4bedroom  terraced duplex with a room bq in an estate off guzape road, maitama, Abuja. Newly Built and furnished, come with a BQ</p>
-            <h4>4 Bathrooms en suite</h4>
-            <h4>Spacious BQ and gateman house</h4>
-            <h4>6 toilets including guest toilet for sitting rooms</h4>
-            <h4>12 car parking space</h4>
-            <h4>Asking Price: <span style="color: #510000;">NGN400,000,000 ( Slightly Negotiable)</span> </h4>
-            <h4>Ownership Type: Personal</h4> -->
-            <div id="myModal" class="modal">
-              <!-- Modal content -->
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2 style="color: #510000; text-align: center;">Verify & Claim Your Land Today!</h2>
-                <p>Buying land is a significant investment, and ensuring its legitimacy is crucial for your peace of mind and financial security.</p>
-                <p class="second">CadLands is your trusted partner in secure and efficient land verification. We provide:</p>
-                <ul class="services-list">
-                  <li>Seamless data access: Gain instant insights into land ownership records, boundary maps, and zoning regulations.</li>
-                  <li>Advanced verification tools: Utilize satellite imagery, drone surveys, and on-ground verification services for comprehensive property analysis.</li>
-                  <li>Fraud detection algorithms: Identify potential discrepancies and red flags early on, mitigating risks and protecting your investment.</li>
-                </ul>
-                <p>Land verification will incur a small fee to ensure accuracy and security.</p>
-                <a href="/transferpayment">
-                  <button class="button" id="proceedButton">Proceed</button>
-                </a>
-                
-                <button class="button" id="realtorButton">Meet Realtor</button>
-              </div>
-            </div>
-            <div id="London" class="tabcontent mx-auto w-fit">
-              <h2 class="w-auto text-xs font-bold mb-2 mb-11 lg:text-xl font-bold mb-2 mb-11">Property Description : {{property.description}}</h2>
-              <h2 class="text-xl font-bold mb-2 mb-11">Asking Price  : {{property.price}} <span style="color: #510000;">({{property.price_type}})</span></h2>
-
-
-
-
-            <h3 style="color: #510000; font-weight: bolder; padding-top: 5px;">Posted By</h3>
-            
-            <h4>{{property.user.firstname}}</h4>
-
-            <h4>RC Registeration: RC41234567</h4>
-            <h4>Registered:  3 Months ago</h4>
-            <h4>Reviews: 100</h4>
-            <span id="contactDetails">Contact Details: 
-              <!-- <span class="hide">080622********</span> -->
-              <span class="hidden-content">{{property.user.nin}}</span>
-            </span>
-            <button style="background-color: #510000; color: #FFFFFF; width: 80px;" onclick="revealContent()">Show</button>
-            <!-- <h4 style="color: #510000;">View all properties by this agent</h4> -->
-            <br>
-            <br>
-           
-            
-          </div>
-          <div id="Paris" class="tabcontent  mx-auto ">
-            <div id="pariscard" class="pariscard mx-auto bg-white rounded-lg overflow-hidden shadow-lg  ">
-              <div class="p-6 pariscard">
-                <h2 class="text-xl font-bold mb-4">Property Details</h2>
-                <div class="grid grid-cols-1 gap-x-1 gap-y-1 lg:grid-cols-2 lg:flex-row">
-                  <div class="flex flex-col">
-                    <h3 class="text-lg font-bold mb-2">Location:</h3>
-                    <p>{{ property.location }}</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <h3 class="text-lg font-bold mb-2">Service Type:</h3>
-                    <p>{{ property.service_type }}</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <h3 class="text-lg font-bold mb-2">Type of Property:</h3>
-                    <p>{{ property.property_type }}</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <h3 class="text-lg font-bold mb-2">Square Feet:</h3>
-                    <p>{{ property.square_feet }}</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <h3 class="text-lg font-bold mb-2">Price Type:</h3>
-                    <p>{{ property.price_type }}</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <h3 class="text-lg font-bold mb-2">How many percent off:</h3>
-                    <p>{{ property.percent }}</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <h3 class="text-lg font-bold mb-2">Percentage:</h3>
-                    <p>{{ property.percent }}</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <h3 class="text-lg font-bold mb-2">Number of rooms:</h3>
-                    <p>{{ property.num_rooms }}</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <h3 class="text-lg font-bold mb-2">Number of bathrooms:</h3>
-                    <p>{{ property.num_baths }}</p>
-                  </div>
-                  <div class="flex flex-col">
-                    <h3 class="text-lg font-bold mb-2">Number of toilets:</h3>
-                    <p>{{ property.num_toilets }}</p>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-             </div>
-            
-            <div id="Tokyo" class="tabcontent  mx-auto w-fit">
-              <h1>Tokyo</h1>
-              <p>Tokyo is the capital of Japan.</p>
-            </div>
-            
-            <div id="Oslo" class="tabcontent  mx-auto w-fit">
-              <h1>Oslo</h1>
-              <p>Oslo is the capital of Norway.</p>
-            </div>
-          </div>
-          <!--  tabs navigation ends here  -->            
-  </section>
-  <script>
-    // Get the modal
-  var modal = document.getElementById("myModal");
-  
-  // Get the button that opens the modal
-  var btn = document.getElementById("buyButton");
-  
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-  
-  // When the user clicks the button, open the modal 
-  btn.onclick = function() {
-  modal.style.display = "block";
-  }
-  
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-  modal.style.display = "none";
-  }
-  
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-  }
-  
-  // Button to proceed
-  document.getElementById("proceedButton").onclick = function() {
-  // Code to proceed with the purchase
-  // You can redirect the user to a payment page or perform other actions
-  }
-  
-  // Button to meet realtor
-  document.getElementById("realtorButton").onclick = function() {
-  // Code to contact the realtor
-  }
-  
-  </script>
-  <!-- Scripts -->
-  <script>
-    function revealContent() {
-      var hiddenContent = document.querySelector('.hidden-content');
-      var hideContent = document.querySelector('.hide');
+    <script>
+      var jmsoltech1Image = document.getElementById("jmsoltech1Image");
+      if (jmsoltech1Image) {
+        jmsoltech1Image.addEventListener("click", function (e) {
+          // Please sync "Listing landing page" to the project
+        });
+      }
       
-      if (hiddenContent.style.display === 'none') {
-        hiddenContent.style.display = 'inline';
-        hideContent.style.display = 'none';
-      } else {
-        hiddenContent.style.display = 'none';
-        hideContent.style.display = 'inline';
+      var profilContainer = document.getElementById("profilContainer");
+      if (profilContainer) {
+        profilContainer.addEventListener("click", function (e) {
+          // Please sync "dashboard" to the project
+        });
       }
-    }
-  </script>
-<script>
-    let slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("demo");
-  let captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-
-</script>
-<script>
-  function openCity(cityName, elmnt, color) {
-  // Hide all elements with class="tabcontent" by default */
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  // Remove the background color of all tablinks/buttons
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-
-  // Show the specific tab content
-  document.getElementById(cityName).style.display = "block";
-
-  // Add the specific color to the button used to open the tab content
-  elmnt.style.backgroundColor = color;
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
-<script>
-  // Function to hide alert messages after 5 seconds
-  setTimeout(function() {
-      var alertContainer = document.getElementById('alert-container');
-      if (alertContainer) {
-          alertContainer.innerHTML = ''; // Clear the content of the alert container
+      
+      var viewAllProperties = document.getElementById("viewAllProperties");
+      if (viewAllProperties) {
+        viewAllProperties.addEventListener("click", function (e) {
+          // Please sync "View agent property profile" to the project
+        });
       }
-  }, 5000); // 5000 milliseconds = 5 seconds
-</script>
-
-</body>
-
+      
+      var viewAllProperties1 = document.getElementById("viewAllProperties1");
+      if (viewAllProperties1) {
+        viewAllProperties1.addEventListener("click", function (e) {
+          // Please sync "View agent property profile" to the project
+        });
+      }
+      </script>
+  </body>
 </html>
