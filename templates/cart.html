@@ -360,7 +360,7 @@ p{
 
 <!-- Display the cart items here -->
 
-  <h1>Shopping Cart</h1>
+  <h1>Purchase Property</h1>
   
   <div class="cart-items">
     {% for item in cart_items %}
@@ -369,7 +369,7 @@ p{
         <div class="item-details">
           <h2>{{ item.property.title }}</h2>
           <p>Location: {{ item.property.location }}</p>
-          <p>Price: {{ item.property.price }}</p>
+          <p>Price: NGN {{ item.property.property_price }}</p>
         </div>
         <div  class="row">
         

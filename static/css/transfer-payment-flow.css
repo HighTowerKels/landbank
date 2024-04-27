@@ -1,0 +1,455 @@
+.order-summary-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-whitesmoke-500);
+  border: 1px solid var(--color-gainsboro-600);
+  box-sizing: border-box;
+  width: 720px;
+  height: 1024px;
+}
+.order-summary6 {
+  width: 179px;
+  position: relative;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  flex-shrink: 0;
+}
+.frame-child29 {
+  width: 477px;
+  position: relative;
+  border-top: 1px solid var(--stroke);
+  box-sizing: border-box;
+  height: 1px;
+}
+.order-summary-parent1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+}
+.frame-child30 {
+  width: 134px;
+  position: relative;
+  border-radius: var(--br-8xs);
+  height: 92px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.land-verification3,
+.ngn-2000003 {
+  width: 197px;
+  position: relative;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  flex-shrink: 0;
+}
+.ngn-2000003 {
+  width: 90px;
+}
+.land-verification-parent1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-100xl);
+}
+.bedroom-terraced-duplex25,
+.qty-13 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.bedroom-terraced-duplex25 {
+  width: 272px;
+  /* white-space: pre-wrap; */
+  height: 16px;
+}
+.qty-13 {
+  width: 51px;
+  line-height: 22px;
+  color: var(--stroke);
+  height: 25px;
+}
+.frame-parent202 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-5xs) 0 var(--padding-12xs);
+  gap: var(--gap-25xl);
+  color: var(--text);
+}
+.frame-parent201 {
+  flex-direction: column;
+  gap: var(--gap-9xs);
+}
+.frame-parent200,
+.frame-parent201,
+.frame-wrapper94 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frame-parent200 {
+  flex-direction: row;
+  gap: var(--gap-base);
+}
+.frame-wrapper94 {
+  flex-direction: column;
+}
+.gift-or-discount3 {
+  position: relative;
+  line-height: 22px;
+}
+.gift-or-discount-code-wrapper1 {
+  border-radius: var(--br-9xs);
+  background-color: var(--background1);
+  border: 1.5px solid var(--stroke);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-sm) var(--padding-173xl) var(--padding-sm)
+    var(--padding-base);
+}
+.apply-wrapper1,
+.apply3 {
+  display: flex;
+  align-items: center;
+}
+.apply3 {
+  width: 46px;
+  position: relative;
+  line-height: 22px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.apply-wrapper1 {
+  border-radius: var(--br-9xs);
+  background-color: var(--stroke);
+  border: 1.5px solid var(--stroke);
+  flex-direction: row;
+  justify-content: center;
+  padding: var(--padding-smi) var(--padding-4xl);
+  color: var(--background);
+}
+.line-parent7 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-17xl);
+  color: var(--stroke);
+}
+.ngn2000003,
+.subtotal3 {
+  width: 70px;
+  position: relative;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  flex-shrink: 0;
+}
+.ngn2000003 {
+  width: 83px;
+}
+.subtotal-parent1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-327xl);
+}
+.ngn20003 {
+  width: 78px;
+  position: relative;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  flex-shrink: 0;
+}
+.frame-parent204,
+.line-parent8 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-base);
+}
+.line-parent8 {
+  gap: var(--gap-5xl);
+}
+.total3 {
+  width: 38px;
+  height: 22px;
+}
+.including-taxes3,
+.ngn-2020003,
+.total3 {
+  position: relative;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.including-taxes3 {
+  width: 166px;
+  color: var(--stroke);
+  height: 22px;
+}
+.ngn-2020003 {
+  width: 127px;
+  height: 55px;
+}
+.frame-parent199,
+.frame-parent205 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frame-parent205 {
+  width: 506px;
+  flex-direction: row;
+  gap: var(--gap-231xl);
+}
+.frame-parent199 {
+  position: absolute;
+  top: 75px;
+  left: 18px;
+  flex-direction: column;
+  padding: var(--padding-29xl);
+  gap: var(--gap-17xl);
+}
+.order-summary5 {
+  position: absolute;
+  top: 0;
+  left: 720px;
+  width: 720px;
+  height: 1024px;
+}
+.payment3,
+.verify-claim2 {
+  position: relative;
+  /* flex-shrink: 0; */
+}
+.verify-claim2 {
+  /* width: 564px;
+  line-height: 16px; */
+  text-transform: capitalize;
+  /* display: flex; */
+  height: 34px;
+}
+.payment3 {
+  width: 207px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  height: 48px;
+}
+.card-child1,
+.pay-with3 {
+  position: relative;
+  height: 15px;
+}
+.pay-with3 {
+  width: 92px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.card-child1 {
+  width: 15px;
+}
+.card10,
+.transfer6 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-5xs);
+}
+.card10 {
+  cursor: pointer;
+}
+.transfer6 {
+  color: var(--text1);
+}
+.card-parent1,
+.frame-parent207 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.card-parent1 {
+  flex-direction: row;
+  gap: var(--gap-lgi);
+  color: var(--stroke);
+}
+.frame-parent207 {
+  flex-direction: column;
+  gap: var(--gap-17xl);
+}
+.polaris-bank {
+  position: absolute;
+  top: -3px;
+  left: 26.5px;
+  line-height: 22px;
+  display: inline-block;
+  width: 107px;
+  height: 20px;
+}
+.copy-05-icon {
+  width: 16px;
+  position: relative;
+  height: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.parent {
+  position: absolute;
+  top: 20px;
+  left: 0.5px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.polaris-bank-parent {
+  position: absolute;
+  top: 48px;
+  left: 14px;
+  width: 162px;
+  height: 48px;
+  color: var(--text1);
+}
+.expires-in,
+.transfer-usd4980-to {
+  position: absolute;
+  top: 0;
+  line-height: 22px;
+}
+.transfer-usd4980-to {
+  left: 13px;
+  display: inline-block;
+  width: 169px;
+  height: 24px;
+}
+.expires-in {
+  left: 0;
+}
+.minutes {
+  left: 129px;
+  line-height: 22px;
+}
+.countdown,
+.div22,
+.minutes {
+  position: absolute;
+  top: 0;
+}
+.div22 {
+  left: 0;
+  line-height: 22px;
+}
+.countdown {
+  left: 82px;
+  width: 45px;
+  height: 12px;
+  color: var(--indicator);
+}
+.expires {
+  position: absolute;
+  top: 132px;
+  left: 0;
+  width: 195px;
+  height: 16px;
+}
+.frame-parent209 {
+  width: 189px;
+  position: relative;
+  height: 148px;
+}
+.pay4 {
+  width: 476px;
+  border-radius: var(--br-21xl);
+  background-color: var(--primary-colour);
+  height: 44px;
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+
+  padding: var(--padding-xl) var(--padding-174xl);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.your-personal-data4 {
+  width: 475px;
+  position: relative;
+  line-height: 22px;
+  color: var(--stroke);
+  display: inline-block;
+}
+.frame-parent208,
+.pay-parent2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-4xl);
+  color: var(--background);
+}
+.frame-parent208 {
+  align-items: center;
+  gap: var(--gap-78xl);
+  color: var(--stroke);
+}
+.frame-parent206 {
+  gap: 58px;
+}
+.frame-parent206,
+.frame-wrapper96,
+.verify-claim-your-land-today-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frame-wrapper96 {
+  border-radius: var(--br-5xs);
+  padding: var(--padding-29xl) var(--padding-29xl) var(--padding-29xl)
+    var(--padding-9xs);
+  font-size: var(--font-size-sm);
+  color: var(--text1);
+}
+.verify-claim-your-land-today-group {
+  position: absolute;
+  top: 120px;
+  left: 80px;
+  gap: var(--gap-12xl);
+  font-size: var(--font-size-21xl);
+  color: var(--primary-colour);
+}
+.transfer-payment-flow {
+  width: 100%;
+  position: relative;
+  background-color: var(--background1);
+  border: 1px solid var(--whiite);
+  box-sizing: border-box;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-sm);
+  color: var(--text1);
+  font-family: var(--font-cabinet-grotesk);
+}

@@ -125,7 +125,7 @@
     align-self: stretch;
     width: 136px;
     position: relative;
-    max-height: 100%;
+    max-height: 100%;     
     object-fit: cover;
     min-height: 28px;
   }
@@ -2148,8 +2148,7 @@
     align-items: center;
   }
   .at-landbankng-ltd {
-    height: 109px;
-    width: 650px;
+    
     position: absolute;
     margin: 0 !important;
     right: -10px;
@@ -2402,6 +2401,8 @@
     line-height: 30px;
     font-weight: 700;
     font-family: inherit;
+    color: #0A0A0A;
+    text-align: center;
   }
   .we-leverage-years {
     align-self: stretch;
@@ -2459,7 +2460,9 @@
     letter-spacing: 0.01em;
     line-height: 30px;
     font-weight: 700;
+    color: #0A0A0A;
     font-family: inherit;
+    text-align: center;
   }
   .secure-transactions-wrapper {
     align-self: stretch;
@@ -2525,6 +2528,8 @@
     line-height: 30px;
     font-weight: 700;
     font-family: inherit;
+    color: #0A0A0A;
+    text-align: center;
   }
   .transparency-trust-wrapper {
     align-self: stretch;
@@ -2589,6 +2594,8 @@
     line-height: 30px;
     font-weight: 700;
     font-family: inherit;
+    color: #0A0A0A;
+    text-align: center;
   }
   .customized-solutions-wrapper {
     align-self: stretch;
@@ -2989,7 +2996,6 @@
     flex: 1;
     position: relative;
     font-size: inherit;
-    letter-spacing: 0.01em;
     line-height: 30px;
     font-weight: 500;
     font-family: inherit;
@@ -3000,7 +3006,6 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 0 var(--padding-44xl) 0 var(--padding-44xl-5);
   }
   .whether-youre-seeking {
     align-self: stretch;
@@ -5277,8 +5282,10 @@
   .step-progress-item {
     position: relative;
     counter-increment: list;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-right : 75%;
+    padding-bottom: -50px;
+
    
   }
   .step-p{
@@ -5287,6 +5294,8 @@
       padding-left: 10%;
       text-align: start;
       padding: 10%;
+      margin-top: 15%;
+      line-height: 30px;
   }
   .class{
       
@@ -5322,37 +5331,56 @@
     height: 32px;
     border: 2px solid #ccc;
     border-radius: 50%;
-    background-color: #fff;
+    background-color:#888686;
   }
   .step-progress-item.is-done::before {
-    border-left: 2px solid #00417b;
+    border-left: 2px solid #ccc;
   }
   .step-progress-item.is-done::after {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4IiB2aWV3Qm94PSIxMjAgNDUgMzIgMzIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgaWQ9ImNoZWNrLTMyIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjAuMDAwMDAwLCA0NS4wMDAwMDApIj48ZyBpZD0iY2hlY2stMzItY3JvcCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNy4wMDAwMDAsIDkuMDAwMDAwKSIgZmlsbD0iIzAwNWFhMCI+PHBvbHlnb24gaWQ9IlBhZ2UtMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOS40MDc1NjcsIDcuMjI5MDk2KSByb3RhdGUoLTM2MC4wMDAwMDApIHRyYW5zbGF0ZSgtOS40MDc1NjcsIC03LjIyOTA5NikgIiBwb2ludHM9IjE3LjI4MDQ4NjIgMC42MDgyMTc2MzcgNi44NjcxNTU2OCAxMS4wMjE1NDgyIDEuNTU1OTE0MzIgNS43MTAzMDY3OCAwLjEyNzAzNDA4NyA3LjEwOTg1MzY4IDYuODY3MTU1NjggMTMuODQ5OTc1MyAxOC42ODgwOTk4IDIuMDI5MDMxMiI+PC9wb2x5Z29uPjwvZz48L2c+PC9zdmc+);
+    content: '1';
     font-size: 20px;
-    color: #fff;
+    color: #ffff;
     text-align: center;
-    border: 2px solid #00417b;
+    border: 2px solid #ccc;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .step-progress-item.is-dones::after {
+    content: '2';
+    font-size: 20px;
+    color: #ffff;
+    text-align: center;
+    border: 2px solid #ccc;
+    text-align: center;
+    padding: 5px;
   }
   
   .step-progress-item.current::before {
-    border-left: 2px solid #00417b;
+    border-left: 2px solid #ccc;
   }
   .step-progress-item.current::after {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzIgMzIiIGlkPSJpY29uLWdlYXItMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+PGcgZmlsbD0iIzAwNDE3YiIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTYuMDAyIDE4LjE4YTIuMTMzIDIuMTMzIDAgMCAxLTIuMTMxLTIuMTMyYzAtMS4xNzUuOTU2LTIuMTMgMi4xMzEtMi4xMyAxLjE3NSAwIDIuMTMxLjk1NSAyLjEzMSAyLjEzYTIuMTMzIDIuMTMzIDAgMCAxLTIuMTMxIDIuMTMxbTAtNi4yNjJhNC4xMzUgNC4xMzUgMCAwIDAtNC4xMzEgNC4xMzEgNC4xMzUgNC4xMzUgMCAwIDAgNC4xMzEgNC4xMzEgNC4xMzUgNC4xMzUgMCAwIDAgNC4xMzEtNC4xMyA0LjEzNSA0LjEzNSAwIDAgMC00LjEzMS00LjEzMiI+PC9wYXRoPjxwYXRoIGQ9Ik0yMy43ODcgMTguNDU2YTEwLjI2MiAxMC4yNjIgMCAwIDEtMS43NjUgMi45ODVsLS40NTUuNTM3IDEuNDk0IDIuNTgtMy4xMTkgMS44MjQtMS41MDMtMi41OTctLjcxNS4xNTlhNy41NzUgNy41NzUgMCAwIDEtMS43MjIuMTk5IDcuMTE2IDcuMTE2IDAgMCAxLTEuNjk2LS4xOTNsLS43My0uMTgzLTEuNTE1IDIuNjE1LTMuMTE4LTEuODIzIDEuNTEtMi42MS0uNS0uNTRjLS44NjctLjk0LTEuNDEtMS44NTYtMS43MTMtMi44ODRsLS4yMS0uNzE4SDV2LTMuNTkxaDIuOTczbC4yNDQtLjY1YTEwLjI2MiAxMC4yNjIgMCAwIDEgMS43NjUtMi45ODRsLjQ1NC0uNTM4LTEuNDkzLTIuNTggMy4xMTgtMS44MjMgMS41MDUgMi41OTguNzE1LS4xNmE3LjQ3NyA3LjQ3NyAwIDAgMSAxLjcyMS0uMmMuNjAzIDAgMS4xOS4wNjggMS42OTYuMTk1bC43MzEuMTgzIDEuNTEzLTIuNjE2IDMuMTIgMS44MjMtMS41MSAyLjYwOS41LjU0Yy44NjUuOTQgMS40MSAxLjg1NyAxLjcxMiAyLjg4NWwuMjExLjcxOGgzLjAzdjMuNTlIMjQuMDNsLS4yNDQuNjV6bTUuMjE3IDEuMzV2LTcuNTloLTMuNTY3YTguOTM1IDguOTM1IDAgMCAwLTEuNDI4LTIuMzk3bDEuNzgxLTMuMDc2TDE5LjIxOCAyLjlsLTEuNzg1IDMuMDg1YTkuNTQ4IDkuNTQ4IDAgMCAwLTIuODU5LjAwNGwtMS43ODgtMy4wOS02LjU3MiAzLjg0NCAxLjc5NyAzLjEwNGExMi4zNyAxMi4zNyAwIDAgMC0xLjQgMi4zNjlIM3Y3LjU5aDMuNTY2YTguOTQ2IDguOTQ2IDAgMCAwIDEuNDI4IDIuMzk4bC0xLjc4IDMuMDc3IDYuNTcxIDMuODQyIDEuNzg2LTMuMDg0YTkuNDc3IDkuNDc3IDAgMCAwIDIuODU4LS4wMDVsMS43ODggMy4wODkgNi41NzItMy44NDItMS43OTctMy4xMDVjLjU1Ni0uNzQgMS4wMy0xLjU0MiAxLjQtMi4zN2gzLjYxMXoiPjwvcGF0aD48L2c+PC9zdmc+);
-    background-size: 24px 24px;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 32px;
-    height: 32px;
-    top: 0;
-    left: -38px;
-    font-size: 14px;
+    
+    content: '3';
+    font-size: 20px;
+    color: #ffff;
     text-align: center;
-    color: #00417b;
-    border: 2px solid #00417b;
-    background-color: white;
+    border: 2px solid #ccc;
+    text-align: center;
+    padding: 5px;
+    background-color:#888686;
   }
+  .step-progress-item.is-final::after {
+    content: '4';
+    font-size: 20px;
+    color: #ffff;
+    text-align: center;
+    border: 2px solid #ccc;
+    text-align: center;
+    padding: 5px;
+  }
+  
+
   .step-progress strong {
     display: block;
   }
@@ -5386,3 +5414,152 @@
     text-align: start;
     color: whitesmoke;
   }
+
+  /* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+  .frame-parent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .your-trusted-partner-in-real-e-parent {
+    margin-bottom: 20px;
+  }
+
+  .frame-wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .account-circle-parent {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .account-circle-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .signup-for-free {
+    margin-left: 0; /* Align text below the icon */
+    margin-top: 10px; /* Space between icon and text */
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .frame-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cadland-logo-1, .cadland-logo-2, .cadland-logo-3 {
+
+display: none;  }
+}
+
+/* Additional styles for smaller mobile devices */
+@media (max-width: 480px) {
+  .desktop-1-child {
+    height: 200px; /* Shorter height for smaller devices */
+  }
+
+  .your-trusted-partner {
+    font-size: 30px; /* Smaller font size for headings */
+  }
+
+  .at-landbankng-we {
+    font-size: 14px; /* Smaller text for better readability on small screens */
+  }
+  .desktop-12{
+    margin-top: -45%;
+  }
+  .let-us-help{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: -12px;
+  }
+  .latest-listings{
+    font-size: 25px;
+  }
+  .at-landbankng-ltd{
+    margin-top: 10%;
+    text-align: start;
+    padding: 10%;
+  }
+  .our-mission{
+   margin-bottom: 35%;
+  }
+  .at-landbankng-ltd1{
+    margin-top: 10%;
+    text-align: start;
+    padding: 10%;
+  }
+  .our-vision{
+   margin-bottom: 3%;
+  }
+  .size-scaler-x{
+    display: none;
+  }
+  .symbol-assigner-child{
+    display: none;
+  }
+  .desktop-7{
+    margin-top: -35rem;
+  }
+  .we-are-the{
+    font-size: 20px;
+    text-align: center;
+  }
+  .why-chose-us{
+    font-size: 35px;
+    text-align: center;
+    width: 100%;
+    padding-left: 6%;
+  }
+  .expertise-experience, .transparency-trust{
+    text-align: center;
+    padding-left: 10%;
+  }
+  .desktop-10{
+    margin-top: -3rem;
+  }
+  .our-services{
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    padding-left: 1%;
+  }
+  .we-offer-peace{
+    font-size: 18px;
+    padding: 0;
+    text-align:start ;
+    font-weight: bold;
+  }
+  .wrapper-head-text{
+    margin-top: 60%;
+    font-size: 25px;
+    text-align: center;
+  }
+  .wrapper-small-text{
+    font-size:18px;
+    text-align: center;
+  }
+  .step-p{
+    text-align: justify;
+    padding: 20%;
+
+    
+  }
+  .testimonials{
+    text-align: center;
+    padding-left: 2%;
+    font-size: 25px;
+  }
+  .our-clients-agree{
+    font-size: 20px;
+    margin-top: -5%;
+    padding-left: 10%;
+  }
+}
+

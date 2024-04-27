@@ -1,0 +1,74 @@
+.rectangle-icon3 {
+  position: absolute;
+  top: -10px;
+  left: 112px;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+.thank-you-for2 {
+  position: absolute;
+  top: 6px;
+  left: 157px;
+  line-height: 22px;
+  display: inline-block;
+  width: 222px;
+  height: 21px;
+}
+.order-123rgr231567y-confirmed2 {
+  position: absolute;
+  top: 303px;
+  left: 161px;
+  line-height: 22px;
+  color: var(--text1);
+}
+.track-order5 {
+  position: relative;
+  line-height: 22px;
+}
+.track-order4 {
+  position: absolute;
+  top: 350px;
+  left: 0;
+  border-radius: var(--br-21xl);
+  background-color: var(--primary-colour);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-xl) var(--padding-194xl-5);
+  cursor: pointer;
+  color: var(--background1);
+}
+.order-confirmation2 {
+  position: absolute;
+  top: 189px;
+  left: 460px;
+  width: 520px;
+  height: 464px;
+}
+.generate-receipt2 {
+  position: absolute;
+  top: 624px;
+  left: 648px;
+  border-radius: var(--br-9xs);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-mid-5) var(--padding-3xs);
+  color: var(--text-2);
+}
+.transfer-order-complete {
+  width: 100%;
+  position: relative;
+  background-color: var(--background);
+  border: 1px solid var(--whiite);
+  box-sizing: border-box;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-sm);
+  color: var(--text);
+  font-family: var(--font-cabinet-grotesk);
+}

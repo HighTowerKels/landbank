@@ -1,0 +1,367 @@
+.rectangle-icon1 {
+  position: absolute;
+  top: -10px;
+  left: 112px;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+.thank-you-for {
+  position: absolute;
+  top: 6px;
+  left: 157px;
+  line-height: 22px;
+  display: inline-block;
+  width: 222px;
+  height: 21px;
+}
+.order-123rgr231567y-confirmed {
+  position: absolute;
+  top: 303px;
+  left: 147px;
+  line-height: 22px;
+  color: var(--text1);
+}
+.track-order1 {
+  position: relative;
+  line-height: 22px;
+}
+.track-order {
+  position: absolute;
+  top: 372px;
+  left: 0;
+  border-radius: var(--br-21xl);
+  background-color: var(--primary-colour);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-xl) var(--padding-194xl-5);
+  cursor: pointer;
+  color: var(--background1);
+}
+.order-confirmation {
+  position: absolute;
+  top: 203px;
+  left: 460px;
+  width: 520px;
+  height: 464px;
+}
+.generate-receipt {
+  position: absolute;
+  top: 667px;
+  left: 713px;
+  border-radius: var(--br-9xs);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-mid-5) var(--padding-3xs);
+  color: var(--text-2);
+}
+.card-order-complete {
+  width: 100%;
+  position: relative;
+  background-color: var(--whiite);
+  border: 1px solid var(--whiite);
+  box-sizing: border-box;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-sm);
+  color: var(--text);
+  font-family: var(--font-cabinet-grotesk);
+}
+.invoice,
+.landbank-property-ltd {
+  position: absolute;
+  top: calc(50% - 299px);
+  left: 82.35%;
+  font-size: var(--font-size-xl);
+  text-align: right;
+}
+.landbank-property-ltd {
+  top: calc(50% - 260px);
+  left: 67.56%;
+  font-size: var(--font-size-sm);
+}
+.reg-123000123000 {
+  position: absolute;
+  top: calc(50% - 239px);
+  left: 77.14%;
+  text-align: right;
+}
+.hellolandbankcom0803000000,
+.john-deo {
+  position: absolute;
+  top: calc(50% - 221px);
+  left: 64.37%;
+  text-align: right;
+}
+.john-deo {
+  width: 37.65%;
+  top: calc(50% - 173px);
+  left: 57.48%;
+  font-size: var(--font-size-sm);
+  display: inline-block;
+}
+.invoice-number {
+  margin: 0;
+}
+.inv-0002-02-jan-container,
+.invoice-number-invoice-container {
+  position: absolute;
+  top: calc(50% - 150px);
+  left: 57.48%;
+}
+.inv-0002-02-jan-container {
+  left: 83.87%;
+  text-align: right;
+}
+.qty,
+.rectangle {
+  position: absolute;
+}
+.rectangle {
+  top: 348.5px;
+  left: 23.5px;
+  border-radius: var(--br-10xs);
+  border: 1px solid var(--color-gainsboro-500);
+  box-sizing: border-box;
+  width: 548px;
+  height: 81px;
+}
+.qty {
+  top: 361px;
+  left: 292px;
+  font-size: var(--font-size-3xs);
+  line-height: 100%;
+}
+.description {
+  position: absolute;
+  left: 33px;
+}
+.amount,
+.description,
+.price1 {
+  top: 361px;
+  font-size: var(--font-size-3xs);
+  line-height: 100%;
+}
+.amount {
+  position: absolute;
+  left: 518px;
+}
+.price1 {
+  left: 361px;
+}
+.line-icon,
+.price1,
+.tax {
+  position: absolute;
+}
+.tax {
+  top: 361px;
+  left: 450px;
+  font-size: var(--font-size-3xs);
+  line-height: 100%;
+}
+.line-icon {
+  top: 383px;
+  left: 24px;
+  width: 547px;
+  height: 1px;
+}
+.div38 {
+  position: absolute;
+  left: 337px;
+  font-size: var(--font-size-3xs);
+  line-height: 100%;
+}
+.div38,
+.div39,
+.div40 {
+  top: 400px;
+  text-align: center;
+}
+.div39 {
+  position: absolute;
+  left: 294px;
+  font-size: var(--font-size-3xs);
+  line-height: 100%;
+}
+.div40 {
+  left: 446px;
+}
+.div40,
+.div41,
+.land-verification5 {
+  position: absolute;
+  font-size: var(--font-size-3xs);
+  line-height: 100%;
+}
+.div41 {
+  top: 400px;
+  left: 513px;
+  text-align: center;
+}
+.land-verification5 {
+  top: calc(50% - 21px);
+  left: 5.55%;
+}
+.line-icon1 {
+  position: absolute;
+  top: 428px;
+  left: 24px;
+  width: 547px;
+  height: 1px;
+}
+.jmsoltech-1-icon9 {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  width: 223px;
+  height: 119px;
+  object-fit: cover;
+}
+.rectangle1 {
+  position: absolute;
+  top: -0.5px;
+  left: -0.5px;
+  border-radius: var(--br-10xs);
+  background-color: var(--color-whitesmoke-600);
+  border: 1px solid var(--color-gainsboro-500);
+  box-sizing: border-box;
+  width: 320px;
+  height: 125px;
+}
+.ngn-2000005 {
+  top: 20px;
+  left: 229px;
+}
+.ngn-2000,
+.ngn-2000005,
+.sub-total {
+  position: absolute;
+  line-height: 100%;
+}
+.sub-total {
+  top: 20px;
+  left: 16px;
+  text-align: left;
+}
+.ngn-2000 {
+  top: 46px;
+  left: 246px;
+}
+.credit-card-fee,
+.ngn-10,
+.total-vat {
+  position: absolute;
+  top: 72px;
+  left: 264px;
+  line-height: 100%;
+}
+.credit-card-fee,
+.total-vat {
+  top: 46px;
+  left: 16px;
+  text-align: left;
+}
+.credit-card-fee {
+  top: 72px;
+}
+.rectangle-parent29 {
+  position: absolute;
+  top: 469px;
+  left: 252px;
+  width: 319px;
+  height: 124px;
+  text-align: right;
+}
+.rectangle2 {
+  position: absolute;
+  top: 652px;
+  left: 2px;
+  background-color: var(--color-whitesmoke-600);
+  width: 595px;
+  height: 193px;
+}
+.httpsbuystripecom {
+  position: absolute;
+  top: 717px;
+  left: 427px;
+  text-decoration: underline;
+  line-height: 100%;
+}
+.landbank-property-ltd1 {
+  position: absolute;
+  top: 697px;
+  left: 24px;
+  line-height: 100%;
+}
+.account-number-12-1234-123456,
+.for-any-questions,
+.please-use-as {
+  position: absolute;
+  top: 749px;
+  left: 24px;
+  line-height: 100%;
+}
+.for-any-questions,
+.please-use-as {
+  top: 765px;
+}
+.for-any-questions {
+  top: 809px;
+  left: 25px;
+}
+.bank-name-abc,
+.payment-instructions,
+.swiftiban-nz0201230012 {
+  position: absolute;
+  top: 733px;
+  left: 24px;
+  line-height: 100%;
+}
+.bank-name-abc,
+.payment-instructions {
+  top: 717px;
+}
+.payment-instructions {
+  top: 673px;
+  text-transform: uppercase;
+  color: #635bff;
+}
+.image-1-icon1,
+.pay-online {
+  position: absolute;
+  left: 427px;
+}
+.pay-online {
+  top: 697px;
+  line-height: 100%;
+}
+.image-1-icon1 {
+  top: 745px;
+  border-radius: var(--br-10xs);
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+}
+.invoice-light {
+  width: 595px;
+  position: relative;
+  background-color: var(--background1);
+  border: 1px solid var(--whiite);
+  box-sizing: border-box;
+  height: 842px;
+  overflow-y: auto;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  text-align: left;
+  font-size: var(--body-3-size);
+  color: var(--color-gray-800);
+  font-family: var(--font-cabinet-grotesk);
+}

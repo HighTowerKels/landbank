@@ -126,7 +126,7 @@
     <div class="container">
     <div class="background"></div>
     <div class="white-background">
-        <div class="card">
+        <div class="card" style="margin-left: 20%;">
             {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
@@ -157,7 +157,7 @@
                 <div class="link">
                     <a href="">Forget password</a>
                 </div>
-                <button style="background-color: #510000;" type="submit" class="btn">Login</button>
+                <button style="background-color: #510000;" type="submit" class="btn rounded-full">Login</button>
             </form>
         </div>
     </div>

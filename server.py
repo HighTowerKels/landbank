@@ -159,6 +159,7 @@ class Property(db.Model):
     property_ownership = db.Column(db.String, nullable=False)
 
     location = db.Column(db.String(255), nullable=False)
+    property_lga = db.Column(db.String(255), nullable=False)
     property_type = db.Column(db.String, nullable=False)
     property_subtype = db.Column(db.String, nullable=False)
     property_negotiation = db.Column(db.String, nullable=False)
@@ -169,8 +170,8 @@ class Property(db.Model):
     property_num_baths = db.Column(db.Integer, nullable=False)
     property_num_toilets = db.Column(db.Integer, nullable=False)
     property_num_parlour = db.Column(db.Integer, nullable=False)
-    property_size_min = db.Column(db.Integer, nullable=False)
-    property_size_max = db.Column(db.Integer, nullable=False)
+    property_size_min = db.Column(db.String, nullable=False)
+    property_size_max = db.Column(db.String, nullable=False)
     completed_furnished = db.Column(db.Boolean, nullable=False, default=False)
     completed_unfurnished = db.Column(db.Boolean, nullable=False, default=False)
     carcas = db.Column(db.Boolean, nullable=False, default=False)
@@ -197,6 +198,7 @@ class Shared(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     shared_property_available = db.Column(db.String, nullable=False)
     shared_property_ownership = db.Column(db.String, nullable=False)
+    shared_lga = db.Column(db.String(255), nullable=False)
 
     location = db.Column(db.String(255), nullable=False)
     shared_property_type = db.Column(db.String, nullable=False)
@@ -244,6 +246,7 @@ class ShortLet(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     shortlet_property_available = db.Column(db.String, nullable=False)
     shortlet_property_ownership = db.Column(db.String, nullable=False)
+    shortlet_lga = db.Column(db.String(255), nullable=False)
 
     location = db.Column(db.String(255), nullable=False)
     shortlet_property_type = db.Column(db.String, nullable=False)
@@ -290,6 +293,7 @@ class ShortLet(db.Model):
 class JVA(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     jva_property_ownership = db.Column(db.String, nullable=False)
+    jva_lga = db.Column(db.String(255), nullable=False)
 
     jva_property_available = db.Column(db.String, nullable=False)
     location = db.Column(db.String(255), nullable=False)
@@ -464,10 +468,10 @@ def create_property():
         property_num_baths = int(request.form.get('property_num_baths', 0))
         property_num_toilets = int(request.form.get('property_num_toilets', 0))
         property_num_parlour = int(request.form.get('property_num_parlour', 0))
-        property_size_min = int(request.form.get('property_size_min', 0))
-        property_size_max = int(request.form.get('property_size_max', 0))
+        property_size_min = request.form.get('property_size_min')
+        property_size_max = request.form.get('property_size_max')
         property_description = request.form.get('property_description')
-        
+        property_lga = request.form.get('property_lga')
         # Handle checkboxes
         completed_furnished = request.form.get('completedFurnished') == 'on'
         completed_unfurnished = request.form.get('completedUnfurnished') == 'on'
@@ -522,7 +526,7 @@ def create_property():
         # Convert lists to comma-separated strings
         image_filenames = ','.join(uploaded_image_filenames)
         document_filenames = ','.join(uploaded_document_filenames)
-        current_time = datetime.now()
+       #
 
         # Create new JVA object
         new_property = Property(
@@ -542,7 +546,7 @@ def create_property():
             property_size_min=property_size_min,
             property_size_max=property_size_max,
             property_description=property_description,
-           
+            property_lga = property_lga,
             completed_furnished=completed_furnished,
             completed_unfurnished=completed_unfurnished,
             carcas=carcas,
@@ -551,7 +555,7 @@ def create_property():
             image_filenames=image_filenames,
             document_filenames=document_filenames,
             user=current_user,
-            time_posted=current_time.strftime("%H")
+           
         )
         
         # Add and commit to the database
@@ -587,7 +591,7 @@ def create_shared():
         shared_num_toilets = int(request.form.get('shared_num_toilets', 0))
         shared_num_parlour = int(request.form.get('shared_num_parlour', 0))
         shared_description = request.form.get('shared_description')
-        
+        shared_lga = request.form.get('lga')
         # Amenities
         amenities = []
         if 'fullyFurnished' in request.form:
@@ -667,6 +671,7 @@ def create_shared():
             amenities=', '.join(amenities),  # Convert list to comma-separated string
             image_filenames=image_filenames,
             user=current_user,
+            shared_lga = shared_lga,
             time_posted=datetime.now().time()
         )
 
@@ -711,7 +716,7 @@ def create_shortlet():
         visitors = 'visitors' in request.form
         fitness_center = 'fitnessCenter' in request.form
         internet_service = 'internet' in request.form
-
+        shortlet_lga = request.form.get('lga')
         # Ensure the UPLOAD_FOLDER exists
         upload_folder = os.path.join(app.root_path, app.config['UPLOAD_FOLDER'])
         os.makedirs(upload_folder, exist_ok=True)
@@ -774,7 +779,8 @@ def create_shortlet():
             approved=False,
             image_filenames=image_filenames,
             user=current_user,
-            shortlet_time_posted=datetime.now().time()
+            shortlet_time_posted=datetime.now().time(),
+            shortlet_lga = shortlet_lga
         )
 
         # Add and commit to the database
@@ -795,7 +801,7 @@ def create_jva():
     if request.method == 'POST':
         # Extract form data
         jva_property_ownership = request.form.get('jva_property_ownership')
-
+        jva_lga = request.form.get('lga')
         jva_property_available = request.form.get('jva_property_available')
         location = request.form.get('location')
         jva_property_type = request.form.get('jva_property_type')
@@ -875,7 +881,8 @@ def create_jva():
             image_filenames=image_filenames,
             document_filenames=document_filenames,
             user=current_user,
-            time_posted=datetime.now().time()
+            time_posted=datetime.now().time(),
+            jva_lga = jva_lga
         )
 
         # Add and commit to the database
@@ -1284,17 +1291,17 @@ def signup():
         lastname = request.form.get('lastname')
         email = request.form.get('email')
         password = request.form.get('password')
-        
 
-        # Create new user without profile picture
+        # Create new user without location
         new_user = User(firstname=firstname, lastname=lastname, email=email)
         new_user.set_password(password)
-        new_user.save()
+        db.session.add(new_user)
+        db.session.commit()
 
         # Redirect to the login page
         login_user(new_user)
-        flash('Login successful!', 'success')
-        return redirect(url_for('dashboard'))
+        flash('Signup successful!', 'success')
+        return redirect(url_for('listing'))
 
     return render_template('signup.html')
 
@@ -1382,7 +1389,7 @@ def login():
         if user and user.check_password(password):
             login_user(user)
             flash('Login successful!', 'success')
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('listing'))
         else:
             flash('Login failed. Please check your email and password.', 'danger')
 
@@ -1437,6 +1444,15 @@ def dash_nav():
 
 @app.route('/listing')
 def listing():
+    user = current_user
+    shared_instance = Shared.query.first()  # Or however you fetch a Shared object
+    
+    amenity = None  # Initialize amenity variable
+    
+    # Check if shared_instance is not None before accessing its attributes
+    if shared_instance:
+        amenity = shared_instance.amenities 
+    
     properties = Property.query.all()
     shortlet = ShortLet.query.all()
     shared = Shared.query.all()
@@ -1453,7 +1469,9 @@ def listing():
     
     approved_jva = JVA.query.filter_by(approved=True).all()
     pending_jva = JVA.query.filter_by(approved=False).all()
-    return render_template('listing.html' , properties=properties, approved_properties=approved_properties, pending_properties=pending_properties, approved_shortlets = approved_shortlets, pending_shortlets = pending_shortlets, shortlet = shortlet, shared = shared, approved_shared = approved_shared, pending_shared = pending_shared, jva = jva, approved_jva= approved_jva, pending_jva = pending_jva)
+    
+    return render_template('listing.html' ,shared_instance= shared_instance ,amenity= amenity ,  properties=properties, approved_properties=approved_properties, pending_properties=pending_properties, approved_shortlets = approved_shortlets, pending_shortlets = pending_shortlets, shortlet = shortlet, shared = shared, approved_shared = approved_shared, pending_shared = pending_shared, jva = jva, approved_jva= approved_jva, pending_jva = pending_jva, user=user)
+
 
 
 @app.route('/listinguser')
@@ -1748,4 +1766,4 @@ def database():
     return "Hello done!!!"
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    app.run(host='127.0.0.1', port=8000, debug=True)
