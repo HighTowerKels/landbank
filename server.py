@@ -668,7 +668,7 @@ def create_shared():
             shared_num_toilets=shared_num_toilets,
             shared_num_parlour=shared_num_parlour,
             shared_description=shared_description,
-            amenities=', '.join(amenities),  # Convert list to comma-separated string
+            amenities=', '.join(amenities) if amenities else '', # Convert list to comma-separated string
             image_filenames=image_filenames,
             user=current_user,
             shared_lga = shared_lga,
@@ -1452,6 +1452,8 @@ def listing():
     # Check if shared_instance is not None before accessing its attributes
     if shared_instance:
         amenity = shared_instance.amenities 
+    else:
+        print("shared_instance is None")
     
     properties = Property.query.all()
     shortlet = ShortLet.query.all()
@@ -1470,9 +1472,9 @@ def listing():
     approved_jva = JVA.query.filter_by(approved=True).all()
     pending_jva = JVA.query.filter_by(approved=False).all()
     
+    print("shared_instance:", shared_instance)  # Print shared_instance
+    
     return render_template('listing.html' ,shared_instance= shared_instance ,amenity= amenity ,  properties=properties, approved_properties=approved_properties, pending_properties=pending_properties, approved_shortlets = approved_shortlets, pending_shortlets = pending_shortlets, shortlet = shortlet, shared = shared, approved_shared = approved_shared, pending_shared = pending_shared, jva = jva, approved_jva= approved_jva, pending_jva = pending_jva, user=user)
-
-
 
 @app.route('/listinguser')
 def listinguser():
@@ -1562,7 +1564,69 @@ def shortlet_details(shortlet_id):
     return render_template('shortlet_details.html', shortlet=shortlet,image_files=shortlet_images, user = user)
 
 
+@app.route('/shared/details/<int:shared_id>', methods=['GET', 'POST'])
+def shared_details(shared_id):
+    user = current_user
 
+    shared = Shared.query.get(shared_id)
+    if not shared:
+        flash('Shared property not found', 'error')
+        return redirect(url_for('index'))
+
+    if not current_user.is_authenticated:
+        flash('Please log in to add items to your cart.', 'info')
+        return redirect(url_for('login'))
+
+    # Assuming you have a property_images attribute in your Property model
+    shared_images = shared.image_filenames.split(',') if shared.image_filenames else []
+    
+    
+    if request.method == 'POST':
+        if 'add_to_cart' in request.form:
+            cart_item = CartItem(shared_id=shared_id, user_id=current_user.id)
+            db.session.add(cart_item)
+            try:
+                db.session.commit()
+                flash('Shared property added to your cart', 'success')
+            except Exception as e:
+                db.session.rollback()
+                flash('An error occurred while adding the property to your cart. Please try again.', 'error')
+                app.logger.error(f"Error adding property to cart: {e}")
+            return redirect(url_for('shared_details', shared_id=shared_id))
+
+    return render_template('shared_details.html', shared=shared,image_files=shared_images, user = user)
+
+
+@app.route('/JVA/details/<int:jva_id>', methods=['GET', 'POST'])
+def jva_details(jva_id):
+    user = current_user
+
+    jva = JVA.query.get(jva_id)
+    if not jva:
+        flash('JVA property not found', 'error')
+        return redirect(url_for('index'))
+
+    if not current_user.is_authenticated:
+        flash('Please log in to add items to your cart.', 'info')
+        return redirect(url_for('login'))
+
+    # Assuming you have a property_images attribute in your Property model
+    jva_images = jva.image_filenames.split(',') if JVA.image_filenames else []
+    
+    if request.method == 'POST':
+        if 'add_to_cart' in request.form:
+            cart_item = CartItem(jva_id=jva_id, user_id=current_user.id)
+            db.session.add(cart_item)
+            try:
+                db.session.commit()
+                flash('JVA property added to your cart', 'success')
+            except Exception as e:
+                db.session.rollback()
+                flash('An error occurred while adding the property to your cart. Please try again.', 'error')
+                app.logger.error(f"Error adding property to cart: {e}")
+            return redirect(url_for('JVA_details', jva_id=jva_id))
+
+    return render_template('JVA_details.html', jva=jva, image_files=jva_images, user=user)
 
 
 

@@ -619,7 +619,7 @@ color:#510000 ;
                     </label>
         
                     <select
-                    name="property_ownership"
+                    name="shared_property_ownership"
                     id="HeadlineAct"
                     required
                     class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
@@ -637,7 +637,7 @@ color:#510000 ;
                         Type
                     </label>
                     <select
-                        name="property_type"
+                        name="shared_property_type"
                         id="typeSelect"
                         required
                         class="px-8 mt-1 w-60 h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
@@ -653,7 +653,7 @@ color:#510000 ;
                     </label>
                     <select
                         required
-                        name="property_subtype" id="subtypeSelect"
+                        name="shared_subtype" id="subtypeSelect"
                         class="px-8 mt-1 w-60 h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     >
                         <!-- Default option -->
@@ -670,8 +670,8 @@ color:#510000 ;
                 <label for="LastName" class="block text-sm font-medium text-gray-700">
                   Available For
                   </label>
-              <select required class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-              id="availableFor" name="property_available">
+              <select  class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+              id="availableFor" name="shared_property_available">
               <option value="forSale">Shared Apartment</option>
               <option value="forHouse">House</option>
 
@@ -683,7 +683,7 @@ color:#510000 ;
               </div>
               <div class="col-span-6 sm:col-span-3">
                 <label for="state" class="block text-sm font-medium text-gray-700">State</label>
-                <select id="state" name="state" class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" required>
+                <select id="state" name="location" class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" required>
                   <option value="">Select State</option>
                   <option value="Abia">Abia</option>
                   <option value="Adamawa">Adamawa</option>
