@@ -400,8 +400,8 @@ text-wrap:wrap;
           <article class="bg-white text-black space-y-4 text-gray-600">
             <div class="bg-white text-black container">
 
-              {% if property.image_filenames %}
-              {% set image_files = property.image_filenames.split(',') %}
+              {% if shared.image_filenames %}
+              {% set image_files = shared.image_filenames.split(',') %}
               {% for image_file in image_files %}
                   <div class="mySlides">
                       <div class="numbertext">{{ loop.index }} / {{ image_files|length }}</div>
@@ -422,8 +422,8 @@ text-wrap:wrap;
               
                 <!-- Thumbnail images -->
                 <div class="rowy">
-                  {% if property.image_filenames %}
-                      {% for index, image_file in property.image_filenames.split(',') | enumerate %}
+                  {% if shared.image_filenames %}
+                      {% for index, image_file in shared.image_filenames.split(',') | enumerate %}
                           <div class="column">
                               <img class="demo cursor" src="{{ url_for('static', filename='uploads/' + image_file.strip()) }}" style="width:100%" onclick="currentSlide({{ index + 1 }})" alt="Image {{ index + 1 }}">
                           </div>
@@ -433,16 +433,16 @@ text-wrap:wrap;
               </div>
               <p></p>
               <h2></h2>
-              <h2 class="text-xl font-bold mb-2 mb-11">Property Type : {{property.property_type}}</h2>
-              <h2 class="text-xl font-bold mb-2 mb-11">Property Ownership : {{property.property_ownership}} ({{property.user.firstname}} {{property.user.lastname}})</h2>
+              <h2 class="text-xl font-bold mb-2 mb-11">Property Type : {{shared.shared_property_type}}</h2>
+              <h2 class="text-xl font-bold mb-2 mb-11">Property Ownership : {{shared.shared_property_ownership}} ({{shared.user.firstname}} {{shared.user.lastname}})</h2>
 
 
-              <h2 class="text-xl font-bold mb-2 mb-11">Location : {{property.location}}</h2>
-              <h2 class="text-xl font-bold mb-2 mb-11">Type of Property : {{property.property_type}}</h2>
+              <h2 class="text-xl font-bold mb-2 mb-11">Location : {{shared.location}}</h2>
+              <h2 class="text-xl font-bold mb-2 mb-11">Type of Property : {{shared.shared_property_type}}</h2>
 
                 <p class="text-xl font-bold mb-2 mb-11 mb-2"></p>
                 <div class=" text-xl font-bold flex items-center text-gray-700 mb-4">Price : 
-                  <span class="price font-bold"> NGN {{property.property_price}}</span>
+                  <span class="price font-bold"> NGN {{shared.shared_price}}</span>
                 </div>
             
           
@@ -450,7 +450,7 @@ text-wrap:wrap;
               <br>
               <div class="row">
                 <div class="columns">
-                  <form action="{{ url_for('property_details', property_id=property.id) }}" method="post">
+                  <form action="{{ url_for('shared_details', shared_id=shared.id) }}" method="post">
                     <button style="background-color: #510000; color: whitesmoke;" type="submit" name="add_to_cart" class="one btn btn">Bookmark</button>
                 </form>
                 </div>
@@ -505,24 +505,24 @@ text-wrap:wrap;
               </div>
             </div>
             <div id="London" class="tabcontent mx-auto w-fit" style="text-align: start; margin-left: 10%;">
-              <h2 class="w-auto text-xs font-bold mb-2 mb-11 lg:text-xl font-bold mb-2 mb-11">Property Description : {{property.property_description}}</h2>
-              <h2 class="w-auto text-xs font-bold mb-2 mb-11 lg:text-xl font-bold mb-2 mb-11">Property Negotiation : {{property.property_negotiation}}</h2>
+              <h2 class="w-auto text-xs font-bold mb-2 mb-11 lg:text-xl font-bold mb-2 mb-11">Property Description : {{shared.shared_description}}</h2>
+              <h2 class="w-auto text-xs font-bold mb-2 mb-11 lg:text-xl font-bold mb-2 mb-11">Property Negotiation : {{shared.shared_negotiation}}</h2>
 
-              <h2 class="text-xl font-bold mb-2 mb-11">Asking Price  : {{property.property_price}} <span style="color: #510000;">({{property.property_percent}})</span></h2>
+              <h2 class="text-xl font-bold mb-2 mb-11">Asking Price  : {{shared.shared_price}} <span style="color: #510000;">({{shared.shared_percent}})</span></h2>
 
 
 
 
             <h3 style="color: #510000; font-weight: bolder; padding-top: 5px;">Posted By</h3>
             
-            <h4>{{property.user.firstname}} {{property.user.lastname}}</h4>
+            <h4>{{shared.user.firstname}} {{shared.user.lastname}}</h4>
 
             <h4>RC Registeration: RC41234567</h4>
             <h4>Registered:  3 Months ago</h4>
             <h4>Reviews: 100</h4>
             <span id="contactDetails">Contact Details: 
               <!-- <span class="hide">080622********</span> -->
-              <span class="hidden-content">{{property.user.nin}}</span>
+              <span class="hidden-content">{{shared.user.nin}}</span>
             </span>
             <button style="background-color: #510000; color: #FFFFFF; width: 80px;" onclick="revealContent()">Show</button>
             <!-- <h4 style="color: #510000;">View all properties by this agent</h4> -->
@@ -538,51 +538,51 @@ text-wrap:wrap;
                 <div class="grid grid-cols-1 gap-x-1 gap-y-1 lg:grid-cols-2 lg:flex-row">
                   <div class="flex flex-col">
                     <h3 class="text-lg font-bold mb-2">Location:</h3>
-                    <p>{{ property.location }}</p>
+                    <p>{{ shared.location }}</p>
                   </div>
                   <div class="flex flex-col">
                     <h3 class="text-lg font-bold mb-2">Service Type:</h3>
-                    <p>{{ property.property_type }}</p>
+                    <p>{{ shared.shared_property_type }}</p>
                   </div>
                   <div class="flex flex-col">
                     <h3 class="text-lg font-bold mb-2">Type of Property:</h3>
-                    <p>{{ property.property_type }}</p>
+                    <p>{{shared.shared_property_type }}</p>
                   </div>
                   <div class="flex flex-col">
                     <h3 class="text-lg font-bold mb-2">Square Feet (min):</h3>
-                    <p>{{ property.property_size_min }} sq.ft</p>
+                    <p>{{ shared.shared_size_min }} sq.ft</p>
                   </div>
                   <div class="flex flex-col">
                     <h3 class="text-lg font-bold mb-2">Square Feet (max):</h3>
-                    <p>{{ property.property_size_max }} sq.ft</p>
+                    <p>{{ shared.shared_size_max }} sq.ft</p>
                   </div>
                   <div class="flex flex-col">
                     <h3 class="text-lg font-bold mb-2">Price Type:</h3>
-                    <p>{{ property.property_negotiation }}</p>
+                    <p>{{ shared.shared_negotiation }}</p>
                   </div>
                   <div class="flex flex-col">
                     <h3 class="text-lg font-bold mb-2">How many percent off:</h3>
-                    <p>{{ property.property_percent }}</p>
+                    <p>{{ shared.shared_percent }}</p>
                   </div>
                   <div class="flex flex-col">
                     <h3 class="text-lg font-bold mb-2">Other charges:</h3>
-                    <p>{{ property.property_charges}}</p>
+                    <p>{{ shared.shared_charges}}</p>
                   </div>
                   <div class="flex flex-col">
                     <h3 class="text-lg font-bold mb-2">Number of rooms:</h3>
-                    <p>{{ property.property_num_rooms }}</p>
+                    <p>{{shared.shared_num_rooms }}</p>
                   </div>
                   <div class="flex flex-col">
                     <h3 class="text-lg font-bold mb-2">Number of bathrooms:</h3>
-                    <p>{{ property.property_num_baths }}</p>
+                    <p>{{ shared.shared_num_baths }}</p>
                   </div>
                   <div class="flex flex-col">
                     <h3 class="text-lg font-bold mb-2">Number of toilets:</h3>
-                    <p>{{ property.property_num_toilets }}</p>
+                    <p>{{ shared.shared_num_toilets }}</p>
                   </div>
                   <div class="flex flex-col">
                     <h3 class="text-lg font-bold mb-2">Property Sub type:</h3>
-                    <p>{{ property.property_subtype }}</p>
+                    <p>{{ shared.shared_property_subtype }}</p>
                   </div>
                 </div>
               </div>
@@ -602,6 +602,7 @@ text-wrap:wrap;
           </div>
           <!--  tabs navigation ends here  -->            
   </section>
+
   <script>
     // Get the modal
   var modal = document.getElementById("myModal");
