@@ -112,7 +112,15 @@ class User(db.Model, UserMixin):
         return str(self.id)
     def total_properties_uploaded(self):
         return Property.query.filter_by(user_id=self.id).count()
+    
+    def total_shared_uploaded(self):
+        return Shared.query.filter_by(user_id=self.id).count()
 
+    def total_shortlets_uploaded(self):
+        return ShortLet.query.filter_by(user_id=self.id).count()
+
+    def total_jva_uploaded(self):
+        return JVA.query.filter_by(user_id=self.id).count()
 class Realtor(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), unique=True)
@@ -1696,6 +1704,23 @@ def createlisting():
 def cardpayment():
     return render_template('card.html')
 
+
+@app.route('/bookmark')
+def bookmark():
+    user = current_user
+    
+    # Query the cart items for the current user
+    cart_items = CartItem.query.filter_by(user_id=current_user.id).all()
+    image_files = []
+    for item in cart_items:
+        # Assuming each cart item has a property with image_filenames attribute
+        image_files.append(item.property.image_filenames.split(',')[0])  # Add the first image filename for each cart item
+    
+    return render_template('bookmark.html', cart_items=cart_items, image_files=image_files, user = user)
+
+
+
+
 @app.route('/bankpayment/')
 def bankpayment():
     return render_template('bank.html')
@@ -1783,21 +1808,65 @@ def verification():
     user_id = current_user.id 
     user = User.query.get(user_id)  # Get the user instance (replace user_id with the actual user ID)
     total_properties = user.total_properties_uploaded()
+    total_shared = user.total_shared_uploaded()
+    total_shortlets = user.total_shortlets_uploaded()
+    total_jva = user.total_jva_uploaded()
 
     # Retrieve pending properties
     pending_properties = Property.query.filter_by(user_id=user_id, approved=False).all()
     total_pending_properties = len(pending_properties) if pending_properties else 0
-
+    
+    pending_shared = Shared.query.filter_by(user_id=user_id, approved=False).all()
+    total_pending_shared = len(pending_shared) if pending_shared else 0
+    
+    pending_shortlets = ShortLet.query.filter_by(user_id=user_id, approved=False).all()
+    total_pending_shortlets = len(pending_shortlets) if pending_shortlets else 0
+    
+    pending_jva = JVA.query.filter_by(user_id=user_id, approved=False).all()
+    total_pending_jva = len(pending_jva) if pending_jva else 0
+    
     # Retrieve approved properties
     approved_properties = Property.query.filter_by(user_id=user_id, approved=True).all()
     total_approved_properties = len(approved_properties) if approved_properties else 0
+    
+    approved_shared = Shared.query.filter_by(user_id=user_id, approved=True).all()
+    total_approved_shared = len(approved_shared) if approved_shared else 0
+    
+    approved_shortlets = ShortLet.query.filter_by(user_id=user_id, approved=True).all()
+    total_approved_shortlets = len(approved_shortlets) if approved_shortlets else 0
+    
+    approved_jva = JVA.query.filter_by(user_id=user_id, approved=True).all()
+    total_approved_jva = len(approved_jva) if approved_jva else 0
 
     return render_template('verification.html', 
                            total_properties=total_properties, 
                            total_pending_properties=total_pending_properties, 
                            total_approved_properties=total_approved_properties,
                            pending_properties=pending_properties,
-                           approved_properties=approved_properties, user=user)
+                           approved_properties=approved_properties,
+                           
+                           total_shared=total_shared, 
+                           total_pending_shared=total_pending_shared,
+                           total_approved_shared=total_approved_shared,
+                           pending_shared=pending_shared,
+                           approved_shared=approved_shared,
+                           
+                           total_shortlets=total_shortlets,
+                           total_pending_shortlets=total_pending_shortlets,
+                           total_approved_shortlets=total_approved_shortlets,
+                           pending_shortlets=pending_shortlets,
+                           approved_shortlets=approved_shortlets,
+                           
+                           total_jva=total_jva,
+                           total_pending_jva=total_pending_jva,
+                           total_approved_jva=total_approved_jva,
+                           pending_jva=pending_jva,
+                           approved_jva=approved_jva,
+                           
+                           user=user)
+
+
+
 
 @app.route('/transferpayment')
 def transferpayment():
@@ -1814,6 +1883,8 @@ def settings():
     approved_properties = Property.query.filter_by(approved=True).all()
     pending_properties = Property.query.filter_by(approved=False).all()
     return render_template('settings.html', properties=properties, approved_properties=approved_properties, pending_properties=pending_properties, user=user)
+
+
 
 
 

@@ -675,27 +675,57 @@ body {
 
             <!-- list div -->
             <div class="flex flex-col gap-5 lg:gap-10">
-                <h2 class="font-normal text-[20px] text-black ">My Listings</h2>
+                <h2 class="font-normal text-[20px] text-black ">My Listings (Houses)</h2>
                 <div class="flex flex-col gap-7">
 
                     
                     {% if approved_properties %}
                     {% for property in approved_properties %}
                     <div class="flex flex-col p-3 gap-6 items-center md:flex-row lg   shadow-sm shadow-indigo-100">
-                        <div class="w-full lg:w-fit">
-                            <img src="./../static/image/pic.png" class="w-full object-fill " alt="">
+                        <div class=" w-full lg:w-fit">
+                          {% if property.image_filenames %}
+                          {% set image_files = property.image_filenames.split(',') %}
+                          {% if image_files %}
+                              {% set image_file = image_files[0] %}
+                              <img class="h-32 w-full aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="Publication Image">
+                          {% else %}
+                              <p>No images available</p>
+                          {% endif %}
+                      {% else %}
+                          <p>No images available</p>
+                          {% endif %}
                         </div>
                         <!-- txt -->
                         <div class="flex flex-col justify-between lg:flex-row w-full gap-6">
                             <div class="flex flex-col gap-3 ">
                                 <div class="w-full flex-col gap-3 ">
-                                    <h2 class="font-bold text-2xl">{{ property.property_type}}</h2>
-                                    <h2  class="font-bold text-2xl">
+                                    <h2 class="font-bold" style="font-family: Cabinet Grotesk;
+                                    font-size: 24px;
+                                    font-weight: 700;
+                                    line-height: 29.76px;
+                                    text-align: left;
+                                    "> {{ property.property_type}}</h2>
+                                    <h2  class="font-bold " style="font-family: Cabinet Grotesk;
+                                    font-size: 24px;
+                                    font-weight: 700;
+                                    line-height: 29.76px;
+                                    text-align: left;
+                                    ">
                                         {{ property.location }}
                                     </h2>
-                                    <p class="text-sm font-normal">{{ property.description }}</p>
+                                    <p class="text-sm font-normal" style="font-family: Cabinet Grotesk;
+                                    font-size: 14px;
+                                    font-weight: 400;
+                                    line-height: 17.36px;
+                                    text-align: left;
+                                    ">{{ property.property_description }}</p>
                                 </div>
-                                <span class="font-bold text-[20px] text-[#510000] ">NGN {{ property.price }}</span>
+                                <span class="font-bold text-[20px] text-[#510000] " style="font-family: Cabinet Grotesk;
+                                font-size: 20px;
+                                font-weight: 700;
+                                line-height: 24.8px;
+                                text-align: left;
+                                ">&#8358;{{ property.property_price }}</span>
                             </div>
 
                             <div class="grid grid-cols-[3fr,1fr] justify-between items-center gap-5">
@@ -736,7 +766,7 @@ body {
                                     </h2>
                                     <p class="text-sm font-normal">{{ property.description }}</p>
                                 </div>
-                                <span class="font-bold text-[20px] text-[#510000] ">NGN {{ property.price }}</span>
+                                <span class="font-bold text-[20px] text-[#510000] ">&#8358;{{ property.price }}</span>
                             </div>
 
                             <div class="grid grid-cols-[3fr,1fr] justify-between items-center gap-5">
@@ -764,6 +794,290 @@ body {
                    
                 </div>
             </div>
+
+            <div class="flex flex-col gap-5 lg:gap-10">
+              <h2 class="font-normal text-[20px] text-black ">My Listings (Shared Apartment)</h2>
+              <div class="flex flex-col gap-7">
+                {% if approved_shared %}
+                {% for shared in approved_shared %}
+                <div class="flex flex-col p-3 gap-6 items-center md:flex-row lg   shadow-sm shadow-indigo-100">
+                    <div class="w-full lg:w-fit">
+                        {% if shared.image_filenames %}
+                        {% set image_files = shared.image_filenames.split(',') %}
+                        {% if image_files %}
+                            {% set image_file = image_files[0] %}
+                            <img class="h-32 w-full aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="Publication Image">
+                        {% else %}
+                            <p>No images available</p>
+                        {% endif %}
+                    {% else %}
+                        <p>No images available</p>
+                        {% endif %}
+                    </div>
+                    <!-- txt -->
+                    <div class="flex flex-col justify-between lg:flex-row w-full gap-6">
+                        <div class="flex flex-col gap-3 ">
+                            <div class="w-full flex-col gap-3 ">
+                                <h2 class="font-bold" style="font-family: Cabinet Grotesk; font-size: 24px; font-weight: 700; line-height: 29.76px; text-align: left;"> {{ shared.property_type}}</h2>
+                                <h2  class="font-bold " style="font-family: Cabinet Grotesk; font-size: 24px; font-weight: 700; line-height: 29.76px; text-align: left;">
+                                    {{ shared.location }}
+                                </h2>
+                                <p class="text-sm font-normal" style="font-family: Cabinet Grotesk; font-size: 14px; font-weight: 400; line-height: 17.36px; text-align: left;">{{ shared.shared_description }}</p>
+                            </div>
+                            <span class="font-bold text-[20px] text-[#510000] " style="font-family: Cabinet Grotesk; font-size: 20px; font-weight: 700; line-height: 24.8px; text-align: left;">&#8358;{{ shared.shared_price }}</span>
+                        </div>
+            
+                        <div class="grid grid-cols-[3fr,1fr] justify-between items-center gap-5">
+                            <div class="flex flex-col gap-3 lg:p-2 justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="bg-[#0C8140] rounded-full w-[10px] h-[10px]"></div>
+                                    <span class="text-[#0C8140]">Approved</span>
+                                </div>
+                                <span class="font-normal text-sm " >{{ shared.time_posted }}</span>
+                            </div>
+                            <div class="flex justify-end">
+                                <img src="./../static/image/dot.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <p>No approved listings found.</p>
+                {% endif %}
+                
+                {% if pending_shared %}
+                {% for shared in pending_shared %}
+                <div class="flex flex-col p-3 gap-6 items-center md:flex-row lg   shadow-sm shadow-indigo-100">
+                    <div class="w-full lg:w-fit">
+                        <img src="./../static/image/pic.png" class="w-full object-fill " alt="">
+                    </div>
+                    <!-- txt -->
+                    <div class="flex flex-col justify-between lg:flex-row w-full gap-6">
+                        <div class="flex flex-col gap-3 ">
+                            <div class="w-full flex-col gap-3 ">
+                                <h2 class="font-bold text-2xl">{{ shared.property_type}}</h2>
+                                <h2  class="font-bold text-2xl">
+                                    {{ shared.location }}
+                                </h2>
+                                <p class="text-sm font-normal">{{ shared.description }}</p>
+                            </div>
+                            <span class="font-bold text-[20px] text-[#510000] ">&#8358;{{ shared.price }}</span>
+                        </div>
+            
+                        <div class="grid grid-cols-[3fr,1fr] justify-between items-center gap-5">
+                            <div class="flex flex-col gap-3 lg:p-2 justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="bg-[#f50606] rounded-full w-[10px] h-[10px]"></div>
+                                    <span class="text-[f50606]">Pending </span>
+                                </div>
+                                <span class="font-normal text-sm " >{{ shared.time_posted }}</span>
+                            </div>
+                            <div class="flex justify-end">
+                                <img src="./../static/image/dot.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <p style="font-size: 20px;">No pending listings found.</p>
+                {% endif %}
+            </div>
+            
+          </div>
+
+
+          <div class="flex flex-col gap-5 lg:gap-10">
+            <h2 class="font-normal text-[20px] text-black ">My Listings (Shortlet Apartment)</h2>
+            <div class="flex flex-col gap-7">
+              {% if approved_shortlets %}
+              {% for shortlet in approved_shortlets %}
+              <div class="flex flex-col p-3 gap-6 items-center md:flex-row lg   shadow-sm shadow-indigo-100">
+                  <div class="w-full lg:w-fit">
+                      {% if shortlet.image_filenames %}
+                      {% set image_files = shortlet.image_filenames.split(',') %}
+                      {% if image_files %}
+                          {% set image_file = image_files[0] %}
+                          <img class="h-32 w-full aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="Publication Image">
+                      {% else %}
+                          <p>No images available</p>
+                      {% endif %}
+                  {% else %}
+                      <p>No images available</p>
+                      {% endif %}
+                  </div>
+                  <!-- txt -->
+                  <div class="flex flex-col justify-between lg:flex-row w-full gap-6">
+                      <div class="flex flex-col gap-3 ">
+                          <div class="w-full flex-col gap-3 ">
+                              <h2 class="font-bold" style="font-family: Cabinet Grotesk; font-size: 24px; font-weight: 700; line-height: 29.76px; text-align: left;"> {{ shortlet.shortlet_property_type}}</h2>
+                              <h2  class="font-bold " style="font-family: Cabinet Grotesk; font-size: 24px; font-weight: 700; line-height: 29.76px; text-align: left;">
+                                  {{ shortlet.location }}
+                              </h2>
+                              <p class="text-sm font-normal" style="font-family: Cabinet Grotesk; font-size: 14px; font-weight: 400; line-height: 17.36px; text-align: left;">{{ shortlet.shortlet_description }}</p>
+                          </div>
+                          <span class="font-bold text-[20px] text-[#510000] " style="font-family: Cabinet Grotesk; font-size: 20px; font-weight: 700; line-height: 24.8px; text-align: left;">&#8358;{{ shortlet.shortlet_price }}</span>
+                      </div>
+          
+                      <div class="grid grid-cols-[3fr,1fr] justify-between items-center gap-5">
+                          <div class="flex flex-col gap-3 lg:p-2 justify-between">
+                              <div class="flex items-center gap-2">
+                                  <div class="bg-[#0C8140] rounded-full w-[10px] h-[10px]"></div>
+                                  <span class="text-[#0C8140]">Approved</span>
+                              </div>
+                              <span class="font-normal text-sm " >{{ shortlet.shortlet_time_posted }}</span>
+                          </div>
+                          <div class="flex justify-end">
+                              <img src="./../static/image/dot.png" alt="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              {% endfor %}
+              {% else %}
+              <p>No approved listings found.</p>
+              {% endif %}
+              
+              {% if pending_shortlets %}
+              {% for shortlet in pending_shortlets %}
+              <div class="flex flex-col p-3 gap-6 items-center md:flex-row lg   shadow-sm shadow-indigo-100">
+                  <div class="w-full lg:w-fit">
+                      <img src="./../static/image/pic.png" class="w-full object-fill " alt="">
+                  </div>
+                  <!-- txt -->
+                  <div class="flex flex-col justify-between lg:flex-row w-full gap-6">
+                      <div class="flex flex-col gap-3 ">
+                          <div class="w-full flex-col gap-3 ">
+                              <h2 class="font-bold text-2xl">{{ shortlet.shortlet_property_type}}</h2>
+                              <h2  class="font-bold text-2xl">
+                                  {{ shortlet.location }}
+                              </h2>
+                              <p class="text-sm font-normal">{{ shortlet.shortlet_description }}</p>
+                          </div>
+                          <span class="font-bold text-[20px] text-[#510000] ">&#8358;{{ shortlet.shortlet_price }}</span>
+                      </div>
+          
+                      <div class="grid grid-cols-[3fr,1fr] justify-between items-center gap-5">
+                          <div class="flex flex-col gap-3 lg:p-2 justify-between">
+                              <div class="flex items-center gap-2">
+                                  <div class="bg-[#f50606] rounded-full w-[10px] h-[10px]"></div>
+                                  <span class="text-[f50606]">Pending </span>
+                              </div>
+                              <span class="font-normal text-sm " >{{ shortlet.shortlet_time_posted }}</span>
+                          </div>
+                          <div class="flex justify-end">
+                              <img src="./../static/image/dot.png" alt="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              {% endfor %}
+              {% else %}
+              <p style="font-size: 20px;">No pending listings found.</p>
+              {% endif %}
+          </div>
+          
+          
+        </div>
+
+
+        <div class="flex flex-col gap-5 lg:gap-10">
+          <h2 class="font-normal text-[20px] text-black ">My Listings (Joint Venture)</h2>
+          <div class="flex flex-col gap-7">
+            {% if approved_jva %}
+            {% for jva in approved_jva %}
+            <div class="flex flex-col p-3 gap-6 items-center md:flex-row lg shadow-sm shadow-indigo-100">
+                <div class="w-full lg:w-fit">
+                    {% if jva.image_filenames %}
+                    {% set image_files = jva.image_filenames.split(',') %}
+                    {% if image_files %}
+                        {% set image_file = image_files[0] %}
+                        <img class="h-32 w-full aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="Publication Image">
+                    {% else %}
+                        <p>No images available</p>
+                    {% endif %}
+                {% else %}
+                    <p>No images available</p>
+                    {% endif %}
+                </div>
+                <!-- txt -->
+                <div class="flex flex-col justify-between lg:flex-row w-full gap-6">
+                    <div class="flex flex-col gap-3 ">
+                        <div class="w-full flex-col gap-3 ">
+                            <h2 class="font-bold" style="font-family: Cabinet Grotesk; font-size: 24px; font-weight: 700; line-height: 29.76px; text-align: left;"> {{ jva.jva_property_type}}</h2>
+                            <h2  class="font-bold " style="font-family: Cabinet Grotesk; font-size: 24px; font-weight: 700; line-height: 29.76px; text-align: left;">
+                                {{ jva.location }}
+                            </h2>
+                            <p class="text-sm font-normal" style="font-family: Cabinet Grotesk; font-size: 14px; font-weight: 400; line-height: 17.36px; text-align: left;">{{ jva.jva_description }}</p>
+                        </div>
+                        <span class="font-bold text-[20px] text-[#510000] " style="font-family: Cabinet Grotesk; font-size: 20px; font-weight: 700; line-height: 24.8px; text-align: left;"> {{ jva.jva_price }}</span>
+                    </div>
+        
+                    <div class="grid grid-cols-[3fr,1fr] justify-between items-center gap-5">
+                        <div class="flex flex-col gap-3 lg:p-2 justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="bg-[#0C8140] rounded-full w-[10px] h-[10px]"></div>
+                                <span class="text-[#0C8140]">Approved</span>
+                            </div>
+                            <span class="font-normal text-sm " >{{ jva.jva_time_posted }}</span>
+                        </div>
+                        <div class="flex justify-end">
+                            <img src="./../static/image/dot.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>No approved listings found.</p>
+            {% endif %}
+            
+            {% if pending_jvas %}
+            {% for jva in pending_jvas %}
+            <div class="flex flex-col p-3 gap-6 items-center md:flex-row lg shadow-sm shadow-indigo-100">
+                <div class="w-full lg:w-fit">
+                    <img src="./../static/image/pic.png" class="w-full object-fill " alt="">
+                </div>
+                <!-- txt -->
+                <div class="flex flex-col justify-between lg:flex-row w-full gap-6">
+                    <div class="flex flex-col gap-3 ">
+                        <div class="w-full flex-col gap-3 ">
+                            <h2 class="font-bold text-2xl">{{ jva.property_type}}</h2>
+                            <h2  class="font-bold text-2xl">
+                                {{ jva.location }}
+                            </h2>
+                            <p class="text-sm font-normal">{{ jva.description }}</p>
+                        </div>
+                        <span class="font-bold text-[20px] text-[#510000] ">&#8358;{{ jva.price }}</span>
+                    </div>
+        
+                    <div class="grid grid-cols-[3fr,1fr] justify-between items-center gap-5">
+                        <div class="flex flex-col gap-3 lg:p-2 justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="bg-[#f50606] rounded-full w-[10px] h-[10px]"></div>
+                                <span class="text-[f50606]">Pending </span>
+                            </div>
+                            <span class="font-normal text-sm " >{{ jva.time_posted }}</span>
+                        </div>
+                        <div class="flex justify-end">
+                            <img src="./../static/image/dot.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p style="font-size: 20px;">No pending listings found.</p>
+            {% endif %}
+        </div>
+        
+        
+        
+      </div>
+
+
+            
         </div>
         
       </div>
