@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/css/global.css" />
     <link rel="stylesheet" href="../static/css/listings.css" />
     <link
@@ -34,330 +34,331 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
     />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/different.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/css/different.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
     <style>
       /* Your existing styles */
-  
+
       .sidebar {
-        position:fixed;
-            width: 256px;
-            height: 950px;
-            top: 74px;
-            padding: 24px;
-            border: 1px solid #ccc;
-            gap: 24px;
-          }
-          .navbar{
-            position:static;
-          }
-          #sidebar-toggle {
-              display: none;
-          }
-          .row , .rows{
-              display: flex;
-              flex-direction: row;
-          }
-          .listing2{
+        position: fixed;
+        width: 256px;
+        height: 950px;
+        top: 74px;
+        padding: 24px;
+        border: 1px solid #ccc;
+        gap: 24px;
+      }
+      .navbar {
+        position: static;
+      }
+      #sidebar-toggle {
+        display: none;
+      }
+      .row,
+      .rows {
+        display: flex;
+        flex-direction: row;
+      }
+      .listing2 {
         display: flex; /* Use flexbox for the container */
       }
-          .content {
-            flex: 2; /* Make the content take up remaining space */
+      .content {
+        flex: 2; /* Make the content take up remaining space */
         margin-left: 21%;
         margin-top: 6%;
       }
-      .row .columnsy{
-          display: flex;
-          align-content: space-around;
-          justify-content: space-between;
-          margin-right: 10px; /* Adjust the value as needed */
-          margin-left: 3px; /* Adjust the value as needed */
-          padding-left: 5px; /* Optional padding for the card content */
-      
+      .row .columnsy {
+        display: flex;
+        align-content: space-around;
+        justify-content: space-between;
+        margin-right: 10px; /* Adjust the value as needed */
+        margin-left: 3px; /* Adjust the value as needed */
+        padding-left: 5px; /* Optional padding for the card content */
       }
-     
-  .card{
-      width: 120%;
-  height: Hug (94px);
-  padding: 10px;
-  border-radius: 16px;
-  border: 1px;
-  gap: 16px;
-  background-color: #f3f4f6;
-  
-  }
-  
-  .columns h3{
-      font-family: Noto Sans;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 16px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #A59795;
-  text-align: justify;
-  
-  
-  
-  }
-  .card-body{
-      width: 120%;
-  }
-  .columnsy .btn{
-      margin-top: 25%;
-      width: 185px;
-  height: 40px;
-  padding: 12px, 44px, 12px, 45px;
-  border-radius: 40px;
-  border: 1px;
-  gap: 10px;
-  background-color: #510000;
-  color: whitesmoke
-  ;
-  
-  }
-  .textarea{
-      width: 700px;
-      height: 200px;
-      gap: 14px
-      
-  }
-  
-  .file-upload-container {
-    display: inline-block;
-    position: relative;
-    width: 700px;
-  height: 207px;
-  
-  border-radius: 8px;
-  border: 1px
-  
-  }
-  label{
-      font-family: Cabinet Grotesk;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0em;
-  text-align: left;
-   
-  }
-  .file-upload-container #file-upload {
-    display: none;
-  }
-  
-  .file-upload-container #file-drag {
-    border: 2px dashed #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
-    display: block; /* Ensures the label takes up full width */
-  }
-  
-  .file-upload-container #file-drag:hover {
-    background-color: #f5f5f5;
-  }
-  
-  .file-upload-container #start {
-    display: block;
-  }
-  
-  .file-upload-container .hidden {
-    display: none !important;
-  }
-  
-  .file-upload-container .btns {
-    display: inline-block;
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #510000;
-    color: #fff;
-    border-radius: 4px;
-  }
-  .btns{
-      display: inline-block;
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #510000;
-    color: #fff;
-    border-radius: 4px;
-  }
-  
-  .file-upload-container .btns:hover {
-    background-color: #510000;
-  }
-  .file-item {
-      display: flex;
-      align-items: center;
-  }
-  
-  .file-image {
-      margin-right: 10px;
-  }
-  
-  .file-details {
-      display: flex;
-      align-items: center;
-  }
-  
-  .file-progress {
-      margin-left: 10px;
-      width: 100px; /* Adjust as needed */
-  }
-  
-  .delete-icon {
-      margin-left: 10px;
-      cursor: pointer;
-  }
-  
-  .document-upload-container {
-      border: 2px dashed #ccc;
-      padding: 20px;
-      border-radius: 5px;
-      width: 700px;
-  height: 207px;
-  }
-  
-  .document-upload-container label {
-      display: block;
-      margin-bottom: 10px;
-  }
-  
-  #document-upload {
-      display: none;
-  }
-  
-  #document-drag {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-  }
-  
-  #document-drag img {
-      max-width: 100px;
-  }
-  
-  #start-document {
-      text-align: center;
-  }
-  
-  #document-list {
-      list-style: none;
-      padding: 0;
-  }
-  
-  .document-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px;
-      border-bottom: 1px solid #ccc;
-  }
-  
-  .document-item span {
-      flex: 1;
-      margin-right: 10px;
-  }
-  
-  .document-progress {
-      flex: 2;
-      margin: 0 10px;
-      width: auto;
-  }
-  
-  .delete-icon {
-      cursor: pointer;
-  }
-  
-  .check .column{
-    padding-left: 10%;
-  }
-  
-  
+
+      .card {
+        width: 120%;
+        height: Hug (94px);
+        padding: 10px;
+        border-radius: 16px;
+        border: 1px;
+        gap: 16px;
+        background-color: #f3f4f6;
+      }
+
+      .columns h3 {
+        font-family: Noto Sans;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #a59795;
+        text-align: justify;
+      }
+      .card-body {
+        width: 120%;
+      }
+      .columnsy .btn {
+        margin-top: 25%;
+        width: 185px;
+        height: 40px;
+        padding: 12px, 44px, 12px, 45px;
+        border-radius: 40px;
+        border: 1px;
+        gap: 10px;
+        background-color: #510000;
+        color: whitesmoke;
+      }
+      .textarea {
+        width: 700px;
+        height: 200px;
+        gap: 14px;
+      }
+
+      .file-upload-container {
+        display: inline-block;
+        position: relative;
+        width: 700px;
+        height: 207px;
+
+        border-radius: 8px;
+        border: 1px;
+      }
+      label {
+        font-family: Cabinet Grotesk;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+      .file-upload-container #file-upload {
+        display: none;
+      }
+
+      .file-upload-container #file-drag {
+        border: 2px dashed #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        display: block; /* Ensures the label takes up full width */
+      }
+
+      .file-upload-container #file-drag:hover {
+        background-color: #f5f5f5;
+      }
+
+      .file-upload-container #start {
+        display: block;
+      }
+
+      .file-upload-container .hidden {
+        display: none !important;
+      }
+
+      .file-upload-container .btns {
+        display: inline-block;
+        padding: 8px 16px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #510000;
+        color: #fff;
+        border-radius: 4px;
+      }
+      .btns {
+        display: inline-block;
+        padding: 8px 16px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #510000;
+        color: #fff;
+        border-radius: 4px;
+      }
+
+      .file-upload-container .btns:hover {
+        background-color: #510000;
+      }
+      .file-item {
+        display: flex;
+        align-items: center;
+      }
+
+      .file-image {
+        margin-right: 10px;
+      }
+
+      .file-details {
+        display: flex;
+        align-items: center;
+      }
+
+      .file-progress {
+        margin-left: 10px;
+        width: 100px; /* Adjust as needed */
+      }
+
+      .delete-icon {
+        margin-left: 10px;
+        cursor: pointer;
+      }
+
+      .document-upload-container {
+        border: 2px dashed #ccc;
+        padding: 20px;
+        border-radius: 5px;
+        width: 700px;
+        height: 207px;
+      }
+
+      .document-upload-container label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      #document-upload {
+        display: none;
+      }
+
+      #document-drag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      #document-drag img {
+        max-width: 100px;
+      }
+
+      #start-document {
+        text-align: center;
+      }
+
+      #document-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .document-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .document-item span {
+        flex: 1;
+        margin-right: 10px;
+      }
+
+      .document-progress {
+        flex: 2;
+        margin: 0 10px;
+        width: auto;
+      }
+
+      .delete-icon {
+        cursor: pointer;
+      }
+
+      .check .column {
+        padding-left: 10%;
+      }
+
       /* Mobile styles */
       @media only screen and (max-width: 640px) {
-        
         .container {
           flex-direction: column; /* Stack items on top of each other on mobile */
         }
-  
+
         .sidebar.visible {
           left: 0; /* Show the sidebar when 'visible' class is present */
         }
-  
+
         .content {
           flex: 1; /* Make content take up full width on mobile */
           transition: margin-left 0.3s ease; /* Add transition effect for smooth animation */
         }
-  
+
         .content.overlay {
           margin-left: 200px; /* Adjust the margin to match sidebar width */
         }
         .container {
-        display: flex; /* Use flexbox for the container */
-      }
-  
-      .sidebar {
-        width: 100%; /* Adjust the width of the sidebar as needed */
-        background-color: #510000;
-        padding: 20px;
-        position: fixed; /* Fix the sidebar position */
-        top: 8%;
-        left: -200px; /* Hide the sidebar off-screen initially */
-        height: auto; /* Set sidebar height to full viewport height */
-        z-index: 1000; /* Set a high z-index to ensure it overlays other elements */
-        transition: left 0.3s ease; /* Add transition effect for smooth animation */
-      overflow-y: scroll;
-      }
-  
-      .content {
-        flex: 1; /* Make the content take up remaining space */
-        padding: 20px;
-      }
-  
-      /* Hamburger menu styles */
-      #sidebar-toggle {
-        display: block;
-        cursor: pointer;
-        font-size: 24px;
-      }
-      .container {
-        display: flex; /* Use flexbox for the container */
-      }
-  
-      .sidebar {
-        width: 200px; /* Adjust the width of the sidebar as needed */
-        background-color: #f3f4f6;
-        padding: 20px;
-      }
-      .wider-sidebar {
-    width: 100%; /* Adjust the width as needed */
-    /* Add any other styles for the wider sidebar */
-  }
-  
-  
-      .content {
-        flex: 1; /* Make the content take up remaining space */
-        padding: 20px;
-      }
-  .row{
-      display: flex;
-      flex-direction: column;
-  }
-  .rows{
-      display: flex;
-      flex-direction: row;
-  }
-  .row .columnsy{
+          display: flex; /* Use flexbox for the container */
+        }
+
+        .sidebar {
+          width: 100%; /* Adjust the width of the sidebar as needed */
+          background-color: #510000;
+          padding: 20px;
+          position: fixed; /* Fix the sidebar position */
+          top: 8%;
+          left: -200px; /* Hide the sidebar off-screen initially */
+          height: auto; /* Set sidebar height to full viewport height */
+          z-index: 1000; /* Set a high z-index to ensure it overlays other elements */
+          transition: left 0.3s ease; /* Add transition effect for smooth animation */
+          overflow-y: scroll;
+        }
+
+        .content {
+          flex: 1; /* Make the content take up remaining space */
+          padding: 20px;
+        }
+
+        /* Hamburger menu styles */
+        #sidebar-toggle {
+          display: block;
+          cursor: pointer;
+          font-size: 24px;
+        }
+        .container {
+          display: flex; /* Use flexbox for the container */
+        }
+
+        .sidebar {
+          width: 200px; /* Adjust the width of the sidebar as needed */
+          background-color: #f3f4f6;
+          padding: 20px;
+        }
+        .wider-sidebar {
+          width: 100%; /* Adjust the width as needed */
+          /* Add any other styles for the wider sidebar */
+        }
+
+        .content {
+          flex: 1; /* Make the content take up remaining space */
+          padding: 20px;
+        }
+        .row {
+          display: flex;
+          flex-direction: column;
+        }
+        .rows {
+          display: flex;
+          flex-direction: row;
+        }
+        .row .columnsy {
           display: flex;
           align-content: space-around;
           justify-content: space-between;
@@ -365,77 +366,90 @@
           margin-left: 3px; /* Adjust the value as needed */
           padding-left: 5px; /* Optional padding for the card content */
           padding-bottom: 5px;
-      
+        }
+        .columnsy > .btn {
+          margin-top: 10%;
+          width: 300px;
+          height: 40px;
+          padding: 12px, 44px, 12px, 45px;
+          border-radius: 40px;
+          border: 1px;
+          gap: 10px;
+          background-color: #510000;
+          color: whitesmoke;
+        }
+        .textarea {
+          width: 300px;
+          height: 200px;
+          gap: 14px;
+        }
+        .document-upload-container,
+        .file-upload-container {
+          width: 300px;
+          height: 200px;
+        }
+
+        body {
+          height: 270vh;
+          background-color: #f3f4f6;
+        }
+        .file-upload-container,
+        .document-upload-container {
+          width: 100%;
+        }
       }
-      .columnsy > .btn{
-      margin-top: 10%;
-      width: 300px;
-  height: 40px;
-  padding: 12px, 44px, 12px, 45px;
-  border-radius: 40px;
-  border: 1px;
-  gap: 10px;
-  background-color: #510000;
-  color: whitesmoke
-  ;
-  
-  }
-  .textarea{
-      width: 300px;
-      height: 200px;
-      gap: 14px
-      
-  }
-  .document-upload-container , .file-upload-container{
-      width: 300px;
-      height: 200px;
-  }
-  
-  
-  body {
-    height: 270vh;
-    background-color: #f3f4f6;
-  }
-  .file-upload-container , .document-upload-container{
-   width: 100%;
-  }
-  
-  
-  
+      #Option1 {
+        color: #510000;
       }
-      #Option1{
-    
-    color:#510000 ;
-  }
-  
-  @media only screen and (max-width: 768px) {
+
+      @media only screen and (max-width: 768px) {
         .sidebar {
           width: 100%; /* Full width */
           z-index: 1000; /* Ensure it overlays other content */
         }
+
+        .frame-parent455{
+          display: inline-block;
+        }
+        .card4{
+          
+          display: inline-flex;
+          display: flex;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	max-width: 450px;
+	border: 1px solid;
+        }
       }
-  
+
       .sidebar {
         background-color: #f8f9fa;
         width: 256px;
-            height: 950px;
-            top: 74px;
-            padding: 24px;
-            border: 1px solid #ccc;
-            gap: 24px;
+        height: 950px;
+        top: 74px;
+        padding: 24px;
+        border: 1px solid #ccc;
+        gap: 24px;
         position: fixed;
-        
+
         left: 0;
         overflow-x: hidden;
         padding-top: 20px;
       }
-  
+
       /* Styles for sidebar links */
       .sidebar ul {
         list-style-type: none;
         padding: 0;
       }
-  
+
       .sidebar ul li a {
         display: block;
         padding: 10px;
@@ -443,194 +457,193 @@
         color: #333;
       }
       .alert {
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 16px;
-      color: #fff;
-      margin-bottom: 10px;
-  }
-  
-  .alert-success {
-      background-color: #28a745;
-  }
-  
-  .alert-danger {
-      background-color: #dc3545;
-  }
-  
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+
+      .alert-success {
+        background-color: #28a745;
+      }
+
+      .alert-danger {
+        background-color: #dc3545;
+      }
+
+      @media (max-width: 600px) {
+        .sidebar {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="listings2">
       <div class="sidebar">
         <ul>
-            <li>
-              <a
-                href="/dashboard"
-                class="flex items-center gap-2 border-s-[3px] border-blue-500 bg-blue-50 px-4 py-3 text-blue-700"
-              >
+          <li>
+            <a
+              href="/dashboard"
+              class="flex items-center gap-2 border-s-[3px] border-blue-500 bg-blue-50 px-4 py-3 text-blue-700"
+            >
               <div class="row">
-                  <div class="column">
-                      <img
-                      class="icon-home-simple-door6"
-                      alt=""
-                      src="../static/image/icon--homesimpledoor.svg"
-                    />
-                  </div>
-                  <div style="margin-top: 1%; padding-left: 10px;" class="column">
-                      <span  class="text-sm font-medium"> Dashboard </span>
-  
-                  </div>
+                <div class="column">
+                  <img
+                    class="icon-home-simple-door6"
+                    alt=""
+                    src="../static/image/icon--homesimpledoor.svg"
+                  />
+                </div>
+                <div style="margin-top: 1%; padding-left: 10px" class="column">
+                  <span class="text-sm font-medium"> Dashboard </span>
+                </div>
               </div>
-             
-              </a>
-            </li>
-  
-  
-            <li>
-              <a
-                href="/bookmark"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="/bookmark"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
               <div class="row">
-                  <div class="column">
-                      <img
-                      class="icon-home-simple-door6"
-                      alt=""
-                      src="../static/image/icon--page.svg"
-                    />
-                  </div>
-                  <div style="margin-top: 1%; padding-left: 10px;" class="column">
-                      <span  class="text-sm font-medium"> My property </span>
-  
-                  </div>
+                <div class="column">
+                  <img
+                    class="icon-home-simple-door6"
+                    alt=""
+                    src="../static/image/icon--page.svg"
+                  />
+                </div>
+                <div style="margin-top: 1%; padding-left: 10px" class="column">
+                  <span class="text-sm font-medium"> My property </span>
+                </div>
               </div>
-             
-              </a>
-            </li>
-          
-          
-            <li>
-              <a
-                href="/verification"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="/verification"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
               <div class="row">
-                  <div class="column">
-                      <img
-                      class="icon-home-simple-door6"
-                      alt=""
-                      src="../static/image/icon--user-1.svg"
-                      />
-                  </div>
-                  <div style="margin-top: 1%; padding-left: 10px;" class="column">
-                      <span  class="text-sm font-medium"> Verification </span>
-  
-                  </div>
+                <div class="column">
+                  <img
+                    class="icon-home-simple-door6"
+                    alt=""
+                    src="../static/image/icon--user-1.svg"
+                  />
+                </div>
+                <div style="margin-top: 1%; padding-left: 10px" class="column">
+                  <span class="text-sm font-medium"> Verification </span>
+                </div>
               </div>
-             
-              </a>
-            </li>
-          
-            <li>
-              <a
-                href="/listinguser"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="/listinguser"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
               <div class="row">
-                  <div class="column">
-                      <img
-                      class="icon-home-simple-door6"
-                      alt=""
-                      src="../static/image/icon--page.svg"
-                      />
-                  </div>
-                  <div style="margin-top: 1%; padding-left: 10px;" class="column">
-                      <span  class="text-sm font-medium"> Listing </span>
-  
-                  </div>
+                <div class="column">
+                  <img
+                    class="icon-home-simple-door6"
+                    alt=""
+                    src="../static/image/icon--page.svg"
+                  />
+                </div>
+                <div style="margin-top: 1%; padding-left: 10px" class="column">
+                  <span class="text-sm font-medium"> Listing </span>
+                </div>
               </div>
-             
-              </a>
-            </li>
-          
-           
-          
-           
-          </ul>
-          <hr>
-          <br>
-          <ul>
-            <li>
-              <h3 style="font-family: Inter;
-              font-size: 10px;
-              font-weight: 500;
-              line-height: 12px;
-              letter-spacing: 0.4000000059604645px;
-              text-align: left;
-              ">SETTINGS</h3>
-            </li>
-          
-            <li>
-              <a
-                href="/settings"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <i class="fa fa-cog"></i>
-          
-                <span class="text-sm font-medium"> Setting </span>
-              </a>
-            </li>
-          
-            <li>
-              <a
-                href="/help"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <i class="fa fa-info-circle"></i>
-          
-                <span class="text-sm font-medium"> help </span>
-              </a>
-            </li>
-          
-        
-          </ul>
-    
-          <br>
-          <br><br>
-          <hr>
-    
-          <ul>
-          
-          
-            <li>
-              <a
-                href="/logout"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <i class="fa fa-sign-out"></i>
-          
-                <span style="font-family: Inter;
-                font-size: 14px;
+            </a>
+          </li>
+        </ul>
+        <hr />
+        <br />
+        <ul>
+          <li>
+            <h3
+              style="
+                font-family: Inter;
+                font-size: 10px;
                 font-weight: 500;
-                line-height: 20px;
-                letter-spacing: -0.02em;
+                line-height: 12px;
+                letter-spacing: 0.4000000059604645px;
                 text-align: left;
-                color: #D55F54;" class="text-sm font-medium"> Logout Account  </span>
-              </a>
-            </li>
-          
-         
-          
-        
-          </ul>
-    </div>
-    {% include "dash_nav.html" %}
+              "
+            >
+              SETTINGS
+            </h3>
+          </li>
+
+          <li>
+            <a
+              href="/settings"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
+              <i class="fa fa-cog"></i>
+
+              <span class="text-sm font-medium"> Setting </span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="/help"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
+              <i class="fa fa-info-circle"></i>
+
+              <span class="text-sm font-medium"> help </span>
+            </a>
+          </li>
+        </ul>
+
+        <br />
+        <br /><br />
+        <hr />
+
+        <ul>
+          <li>
+            <a
+              href="/logout"
+              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+            >
+              <i class="fa fa-sign-out"></i>
+
+              <span
+                style="
+                  font-family: Inter;
+                  font-size: 14px;
+                  font-weight: 500;
+                  line-height: 20px;
+                  letter-spacing: -0.02em;
+                  text-align: left;
+                  color: #d55f54;
+                "
+                class="text-sm font-medium"
+              >
+                Logout Account
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      {% include "dash_nav.html" %}
 
       <div class="cards4">
         <div class="card14">
           <div class="circle4">
-            <img class="iconfolder1" alt="" src="../static/images/iconfolder@2x.png" />
+            <img
+              class="iconfolder1"
+              alt=""
+              src="../static/images/iconfolder@2x.png"
+            />
           </div>
           <div class="reveneu-parent2">
             <div class="reveneu4">Total Listings</div>
@@ -639,7 +652,11 @@
         </div>
         <div class="card14">
           <div class="circle5">
-            <img class="iconfolder1" alt="" src="../static/image/iconchart@2x.png" />
+            <img
+              class="iconfolder1"
+              alt=""
+              src="../static/image/iconchart@2x.png"
+            />
           </div>
           <div class="reveneu-parent2">
             <div class="reveneu4">In-Progress</div>
@@ -648,7 +665,11 @@
         </div>
         <div class="card14">
           <div class="circle6">
-            <img class="iconfolder1" alt="" src="../static/image/iconchart-1@2x.png" />
+            <img
+              class="iconfolder1"
+              alt=""
+              src="../static/image/iconchart-1@2x.png"
+            />
           </div>
           <div class="reveneu-parent2">
             <div class="reveneu4">Verified Listings</div>
@@ -657,7 +678,11 @@
         </div>
         <div class="card14">
           <div class="circle7">
-            <img class="iconfolder1" alt="" src="../static/image/iconchart-2@2x.png" />
+            <img
+              class="iconfolder1"
+              alt=""
+              src="../static/image/iconchart-2@2x.png"
+            />
           </div>
           <div class="reveneu-parent2">
             <div class="reveneu4">Rejected Listings</div>
@@ -674,11 +699,10 @@
                 alt=""
                 src="../static/images/account-circle.svg"
               />
-  
+
               <div class="signup-for-free10">Create Listing</div>
             </div>
           </a>
-         
         </div>
         <div class="my-listings-parent">
           <b class="my-listings">My Listings</b>
@@ -938,56 +962,56 @@
           window.location.href = "./ListingLandingPage.html";
         });
       }
-      
+
       var profilContainer = document.getElementById("profilContainer");
       if (profilContainer) {
         profilContainer.addEventListener("click", function (e) {
           window.location.href = "./dashboard.html";
         });
       }
-      
+
       var linkContainer = document.getElementById("linkContainer");
       if (linkContainer) {
         linkContainer.addEventListener("click", function (e) {
           window.location.href = "./dashboard.html";
         });
       }
-      
+
       var linkContainer1 = document.getElementById("linkContainer1");
       if (linkContainer1) {
         linkContainer1.addEventListener("click", function (e) {
           window.location.href = "./my-property.html";
         });
       }
-      
+
       var linkContainer2 = document.getElementById("linkContainer2");
       if (linkContainer2) {
         linkContainer2.addEventListener("click", function (e) {
           window.location.href = "land-verification-uy-b-now.html";
         });
       }
-      
+
       var linkContainer3 = document.getElementById("linkContainer3");
       if (linkContainer3) {
         linkContainer3.addEventListener("click", function (e) {
           window.location.href = "./listings.html";
         });
       }
-      
+
       var linkContainer = document.getElementById("linkContainer");
       if (linkContainer) {
         linkContainer.addEventListener("click", function (e) {
           window.location.href = "./profile.html";
         });
       }
-      
+
       var frameContainer = document.getElementById("frameContainer");
       if (frameContainer) {
         frameContainer.addEventListener("click", function (e) {
           window.location.href = "/creatinglisting";
         });
       }
-      
+
       var charmmenuKebabIcon = document.getElementById("charmmenuKebabIcon");
       if (charmmenuKebabIcon) {
         charmmenuKebabIcon.addEventListener("click", function () {
@@ -1002,7 +1026,7 @@
             popupStyle.justifyContent = "center";
           }
           popup.setAttribute("closable", "");
-      
+
           var onClick =
             popup.onClick ||
             function (e) {
@@ -1013,6 +1037,6 @@
           popup.addEventListener("click", onClick);
         });
       }
-      </script>
+    </script>
   </body>
 </html>
