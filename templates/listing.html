@@ -362,6 +362,24 @@ img{
 
 
 }
+.hamburger-menu {
+  display: block;
+  cursor: pointer;
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #333;
+  border-radius: 3px;
+}
+
+#filter {
+  display: none;
+}
 
 </style>
   </head>
@@ -370,6 +388,11 @@ img{
 
     <div class="listing-landing-page">
       <div class="frame-parent348">
+        <div class="hamburger-menu" onclick="toggleFilter()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div class="filter">
           <h3 style="font-family: Cabinet Grotesk;
           font-size: 18px;
@@ -1307,6 +1330,15 @@ class="relative bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c2
           window.location.href = "./dashboard.html";
         });
       }
+      function toggleFilter() {
+  var filter = document.getElementById("filter");
+  if (filter.style.display === "none") {
+    filter.style.display = "block";
+  } else {
+    filter.style.display = "none";
+  }
+}
+
       </script>
   </body>
 </html>
