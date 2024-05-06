@@ -1241,256 +1241,176 @@
     <div class="my-property">
         {% include "dash_nav.html" %}
 
-      <div class="sidebar">
-        <ul>
-            <li>
-              <a
-                href="/dashboard"
-                class="flex items-center gap-2 border-s-[3px] border-blue-500 bg-blue-50 px-4 py-3 text-blue-700"
-              >
-              <div class="row">
-                  <div class="column">
-                      <img
-                      class="icon-home-simple-door6"
-                      alt=""
-                      src="../static/image/icon--homesimpledoor.svg"
-                    />
-                  </div>
-                  <div style="margin-top: 1%;" class="column">
-                      <span  class="text-sm font-medium"> Dashboard </span>
-  
-                  </div>
-              </div>
-             
-              </a>
-            </li>
-  
-  
-            <li>
-              <a
-                href="/bookmark"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <div class="row">
-                  <div class="column">
-                      <img
-                      class="icon-home-simple-door6"
-                      alt=""
-                      src="../static/image/icon--page.svg"
-                    />
-                  </div>
-                  <div style="margin-top: 1%;" class="column">
-                      <span  class="text-sm font-medium"> My property </span>
-  
-                  </div>
-              </div>
-             
-              </a>
-            </li>
-          
-          
-            <li>
-              <a
-                href="/verification"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <div class="row">
-                  <div class="column">
-                      <img
-                      class="icon-home-simple-door6"
-                      alt=""
-                      src="../static/image/icon--user-1.svg"
-                      />
-                  </div>
-                  <div style="margin-top: 1%;" class="column">
-                      <span  class="text-sm font-medium"> Verification </span>
-  
-                  </div>
-              </div>
-             
-              </a>
-            </li>
-          
-            <li>
-              <a
-                href="/listinguser"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <div class="row">
-                  <div class="column">
-                      <img
-                      class="icon-home-simple-door6"
-                      alt=""
-                      src="../static/image/icon--page.svg"
-                      />
-                  </div>
-                  <div style="margin-top: 1%;" class="column">
-                      <span  class="text-sm font-medium"> Listing </span>
-  
-                  </div>
-              </div>
-             
-              </a>
-            </li>
-          
-           
-          
-           
-          </ul>
-          <hr>
-          <br>
-          <ul>
-            <li>
-              <h3 style="font-family: Inter;
-              font-size: 10px;
-              font-weight: 500;
-              line-height: 12px;
-              letter-spacing: 0.4000000059604645px;
-              text-align: left;
-              ">SETTINGS</h3>
-            </li>
-          
-            <li>
-              <a
-                href="/settings"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <i class="fa fa-cog"></i>
-          
-                <span class="text-sm font-medium"> Setting </span>
-              </a>
-            </li>
-          
-            <li>
-              <a
-                href="/help"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <i class="fa fa-info-circle"></i>
-          
-                <span class="text-sm font-medium"> help </span>
-              </a>
-            </li>
-          
-        
-          </ul>
-    
-          <br>
-          <br><br>
-          <hr>
-    
-          <ul>
-          
-          
-            <li>
-              <a
-                href="/logout"
-                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-              >
-              <i class="fa fa-sign-out"></i>
-          
-                <span style="font-family: Inter;
-                font-size: 14px;
-                font-weight: 500;
-                line-height: 20px;
-                letter-spacing: -0.02em;
-                text-align: left;
-                color: #D55F54;" class="text-sm font-medium"> Logout Account  </span>
-              </a>
-            </li>
-          
-         
-          
-        
-          </ul>
-    </div>
-      <div class="you-have-saved-45-properties-parent">
-        <b class="you-have-saved">You have saved  properties</b>
-        <div class="instance-group" >
-            {% for item in cart_items %}
+     <!-- Hamburger menu button -->
+<div class="block lg:hidden fixed top-5 left-5 z-50">
+  <button id="sidebarToggle" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+    <svg viewBox="0 0 20 20" fill="currentColor" class="menu w-6 h-6">
+      <path fill-rule="evenodd" d="M3 5a1 1 0 0 1 0-2h14a1 1 0 0 1 0 2H3zm0 7a1 1 0 0 1 0-2h14a1 1 0 0 1 0 2H3zm0 7a1 1 0 0 1 0-2h14a1 1 0 0 1 0 2H3z" clip-rule="evenodd" />
+    </svg>
+  </button>
+</div>
 
-          <div style="height: 8rem;" class="frame-parent320">
-           
-            <img  class="instance-child3" src="{{ url_for('static', filename='uploads/' + image_files[0]) }}" alt="Property Image">
-
-
-            <div class="frame-wrapper153">
-              <div class="terraced-duplex-for-sale-parent32">
-                <b class="terraced-duplex-for34">{{ item.property.title }}</b>
-                <div class="bedroom-terraced-duplex39">
-                    {{ item.property.property_description }}
-<br>
-                    {{ item.property.location }}
-                    <br>
-                </div>
-              </div>
+<!-- Sidebar -->
+<div id="sidebar" class="lg:w-64 lg:block hidden fixed top-0 left-0 bg-white h-full overflow-y-auto shadow z-40">
+  <div class="sidebar">
+    <ul>
+      <li>
+        <a href="/dashboard" class="flex items-center gap-2 border-s-[3px] border-blue-500 bg-blue-50 px-4 py-3 text-blue-700">
+          <div class="row">
+            <div class="column">
+              <img class="icon-home-simple-door6" alt="" src="../static/image/icon--homesimpledoor.svg"/>
             </div>
-            <div class="created-4-hrs6">Saved 4 hrs ago</div>
-            <div class="ellipse-parent9">
-              <div class="frame-child48"></div>
-              <div class="you-have-saved">Today</div>
+            <div style="margin-top: 1%;" class="column">
+              <span class="text-sm font-medium"> Dashboard </span>
             </div>
-            <br><br>
-            <div class="ngn-400000000-wrapper5" style="margin-top: 2%;">
-              <b class="you-have-saved">NGN {{ item.property.property_price }}</b>
-            </div>
-            <img
-              class="charmmenu-kebab-icon6"
-              alt=""
-              src="../static/image/charmmenukebab.svg"
-              id="charmmenuKebabIcon"
-            />
           </div>
-          {% endfor %}
-          
-        </div>
-      </div>
-    </div>
-
-    <div id="frameContainer" class="popup-overlay" style="display: none">
-      <div class="frame-top">
-        <div class="frame-parent335">
-          <div class="frame-parent336" id="popupframeContainer">
-            <div class="carbonview-parent">
-              <img
-                class="material-symbols-lightshare-o-icon"
-                alt=""
-                src="../static/image/carbonview.svg"
-              />
-
-              <div class="view-property-wrapper">
-                <div class="view-property">View Property</div>
-              </div>
+        </a>
+      </li>
+      <li>
+        <a href="/bookmark" class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700">
+          <div class="row">
+            <div class="column">
+              <img class="icon-home-simple-door6" alt="" src="../static/image/icon--page.svg"/>
             </div>
-            <div class="frame-child58"></div>
+            <div style="margin-top: 1%;" class="column">
+              <span class="text-sm font-medium"> My property </span>
+            </div>
           </div>
-          <div class="frame-parent337">
-            <div class="fluentdelete-28-regular-parent">
-              <img
-                class="material-symbols-lightshare-o-icon"
-                alt=""
-                src="../static/image/fluentdelete28regular.svg"
-              />
-
-              <div class="view-property">Delete Property</div>
+        </a>
+      </li>
+      <li>
+        <a href="/verification" class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700">
+          <div class="row">
+            <div class="column">
+              <img class="icon-home-simple-door6" alt="" src="../static/image/icon--user-1.svg"/>
             </div>
-            <div class="frame-child58"></div>
+            <div style="margin-top: 1%;" class="column">
+              <span class="text-sm font-medium"> Verification </span>
+            </div>
           </div>
-          <div class="frame-parent337">
-            <div class="fluentdelete-28-regular-parent">
-              <img
-                class="material-symbols-lightshare-o-icon"
-                alt=""
-                src="../static/image/materialsymbolslightshareoutline.svg"
-              />
-
-              <div class="view-property">Share Property</div>
+        </a>
+      </li>
+      <li>
+        <a href="/listinguser" class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700">
+          <div class="row">
+            <div class="column">
+              <img class="icon-home-simple-door6" alt="" src="../static/image/icon--page.svg"/>
             </div>
-            <div class="frame-child58"></div>
+            <div style="margin-top: 1%;" class="column">
+              <span class="text-sm font-medium"> Listing </span>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <hr>
+    <br>
+    <ul>
+      <li>
+        <h3 style="font-family: Inter;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 12px;
+        letter-spacing: 0.4000000059604645px;
+        text-align: left;">SETTINGS</h3>
+      </li>
+      <li>
+        <a href="/settings" class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700">
+          <i class="fa fa-cog"></i>
+          <span class="text-sm font-medium"> Setting </span>
+        </a>
+      </li>
+      <li>
+        <a href="/help" class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700">
+          <i class="fa fa-info-circle"></i>
+          <span class="text-sm font-medium"> help </span>
+        </a>
+      </li>
+    </ul>
+    <br>
+    <br><br>
+    <hr>
+    <ul>
+      <li>
+        <a href="/logout" class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700">
+          <i class="fa fa-sign-out"></i>
+          <span style="font-family: Inter;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 20px;
+          letter-spacing: -0.02em;
+          text-align: left;
+          color: #D55F54;" class="text-sm font-medium"> Logout Account  </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Main content -->
+<div id="mainContent" class="lg:ml-64 mt-20 lg:mt-0 p-8">
+  <div class="you-have-saved-45-properties-parent">
+    <b class="you-have-saved">You have saved  properties</b>
+    <div class="instance-group">
+      {% for item in cart_items %}
+      <div style="height: 8rem;" class="frame-parent320">
+        <img class="instance-child3" src="{{ url_for('static', filename='uploads/' + image_files[0]) }}" alt="Property Image">
+        <div class="frame-wrapper153">
+          <div class="terraced-duplex-for-sale-parent32">
+            <b class="terraced-duplex-for34">{{ item.property.title }}</b>
+            <div class="bedroom-terraced-duplex39">
+              {{ item.property.property_description }}<br>
+              {{ item.property.location }}<br>
+            </div>
           </div>
         </div>
+        <div class="created-4-hrs6">Saved 4 hrs ago</div>
+        <div class="ellipse-parent9">
+          <div class="frame-child48"></div>
+          <div class="you-have-saved">Today</div>
+        </div>
+        <br><br>
+        <div class="ngn-400000000-wrapper5" style="margin-top: 2%;">
+          <b class="you-have-saved">NGN {{ item.property.property_price }}</b>
+        </div>
+        <img class="charmmenu-kebab-icon6" alt="" src="../static/image/charmmenukebab.svg" id="charmmenuKebabIcon">
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- Popup Container -->
+<div id="frameContainer" class="popup-overlay" style="display: none">
+  <div class="frame-top">
+    <div class="frame-parent335">
+      <div class="frame-parent336" id="popupframeContainer">
+        <div class="carbonview-parent">
+          <img class="material-symbols-lightshare-o-icon" alt="" src="../static/image/carbonview.svg">
+          <div class="view-property-wrapper">
+            <div class="view-property">View Property</div>
+          </div>
+        </div>
+        <div class="frame-child58"></div>
+      </div>
+      <div class="frame-parent337">
+        <div class="fluentdelete-28-regular-parent">
+          <img class="material-symbols-lightshare-o-icon" alt="" src="../static/image/fluentdelete28regular.svg">
+          <div class="view-property">Delete Property</div>
+        </div>
+        <div class="frame-child58"></div>
+      </div>
+      <div class="frame-parent337">
+        <div class="fluentdelete-28-regular-parent">
+          <img class="material-symbols-lightshare-o-icon" alt="" src="../static/image/materialsymbolslightshareoutline.svg">
+          <div class="view-property">Share Property</div>
+        </div>
+        <div class="frame-child58"></div>
       </div>
     </div>
+  </div>
+</div>
+
 
     <script>
       var popupframeContainer = document.getElementById("popupframeContainer");
@@ -1567,6 +1487,36 @@
           popup.addEventListener("click", onClick);
         });
       }
+      document.getElementById('sidebarToggle').addEventListener('click', function() {
+    document.getElementById('sidebar').classList.toggle('hidden');
+  });
+  document.getElementById('sidebarToggle').addEventListener('click', function() {
+    var sidebar = document.getElementById('sidebar');
+    var mainContent = document.getElementById('mainContent');
+    
+    sidebar.classList.toggle('hidden');
+    
+    if (sidebar.classList.contains('hidden')) {
+      mainContent.classList.remove('lg:ml-64');
+    } else {
+      mainContent.classList.add('lg:ml-64');
+    }
+  });
+</script>
+
+<script>
+  // Adjust card margin for mobile screens when sidebar is hidden
+  window.addEventListener('resize', function() {
+    var sidebar = document.getElementById('sidebar');
+    var mainContent = document.getElementById('mainContent');
+    var card = document.querySelector('.frame-parent320');
+
+    if (window.innerWidth < 1024 && sidebar.classList.contains('hidden')) {
+      card.style.marginLeft = '0';
+    } else {
+      card.style.marginLeft = '';
+    }
+  });
       </script>
   </body>
 </html>

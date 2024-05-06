@@ -554,16 +554,42 @@
   .sidebar{display: none;
   }
 
-  .chart{
-    justify-content: left;
-    flex-wrap: wrap;
-    #chart-container{
-      width: 100%;
+  Chart CSS */
+    .chart {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
     }
+
+    @media (max-width: 768px) {
+        .chart {
+            flex-direction: column;
+        }
+    }
+
+  
+  
+} /* CSS for aligning content to the left and filling the screen on mobile */
+@media (max-width: 768px) {
+  .group-parent76 {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  
-} 
+
+  .cards-parent {
+    width: 100%;
+  }
+
+  .property-overview {
+    width: 100%;
+  }
+}
+
 
 </style>
   
