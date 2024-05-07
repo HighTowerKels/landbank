@@ -2,8 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
 
     <link rel="stylesheet" href="../static/css/global.css" />
     <link rel="stylesheet" href="../static/css/ListingLandingPage.css" />
@@ -136,13 +135,16 @@
     margin-bottom: 20px; /* Ensure some space below the text for aesthetics */
     text-overflow: ellipsis;
 }
-.ngn-400000000 {
+.logic-branch{
+  margin-top: -6%;
+}
+ .ngn-400000000 {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 150px; /* Adjust the maximum width as needed */
     display: inline-block; /* Ensures the ellipsis works */
-}
+}  
 .icbaseline-favorite-wrapper, .component-8-icon {
     display: inline-block;
 }
@@ -201,43 +203,8 @@
   text-align: left;
 }
 
-/* Style the tab */
-.tabs {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tabs button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-}
-
-/* Change background color of buttons on hover */
-.tabs button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tabs button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-.tabcontent {
-  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+#imag{
+  border-radius: 50px;
 }
 
 /* Go from zero to full opacity */
@@ -250,110 +217,164 @@ img{
   padding: 5%;
   border-radius: 50px;
 }
+</style>
+<style>
+  /* Style the tab */
+.tab { 
+  margin-left: -55%; 
+   margin-top: 10%;
 
-/* Mobile Styles */
-
-/* Adjustments for smaller screens */
-@media only screen and (max-width: 600px) {
-  /* Update container width */
-  .size-container {
-    width: 100%;
-  }
-  
-  /* Update image size */
-  .max-h-auto {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Update font sizes for better readability */
-  .lands {
-    font-size: 20px;
-  }
-
-  /* Adjust margins and paddings */
-  .lands, .shared-apartments-parent {
-    margin-left: 0%;
-  }
-
-  /* Make buttons full width */
-  .bedrooms-wrapper, .toilets-wrapper, .sq-ft-wrapper, .parking-space-wrapper {
-    width: 100%;
-  }
-
-  /* Center text */
-  .bedrooms, .toilets, .sq-ft, .parking-space {
-    text-align: center;
-  }
-
-  /* Adjust alignment of "Click to see more details" links */
-  .click-to-see-more-details-parent {
-    text-align: center;
-    margin-left: 0;
-  }
-
-  /* Adjust width of card elements */
-  .frame-parent416 {
-    width: 100%;
-  }
-
-  /* Adjust margin for "Joint-Venture" section */
-  .lands:last-child {
-    margin-left: 0;
-  }
-
-  /* Adjust width of "Show more" buttons */
-  .show-more1 {
-    margin-left: 0;
-    width: auto;
-  }
-  /* Base Styles */
-/* Add your existing CSS here */
-
-/* Mobile Styles */
-@media only screen and (max-width: 600px) {
-  /* Adjustments for smaller screens */
-
-  /* Make size containers flex and wrap */
-  .size-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start; /* Align items to the left */
-  }
-
-  /* Make individual items within size-container stack vertically */
-  .frame-parent363, .frame-parent416 {
-    width: 100%; /* Full width on smaller screens */
-  }
-
-  /* Adjust margins and paddings */
-  .lands, .shared-apartments-parent {
-    margin-left: 0;
-    width: 100%; /* Full width on smaller screens */
-  }
-
-  /* Make buttons full width */
-  .bedrooms-wrapper, .toilets-wrapper, .sq-ft-wrapper, .parking-space-wrapper {
-    width: 100%;
-  }
-
-  /* Center text */
-  .bedrooms, .toilets, .sq-ft, .parking-space {
-    text-align: center;
-  }
-
-  /* Adjust alignment of "Click to see more details" links */
-  .click-to-see-more-details-parent {
-    text-align: center;
-    margin-left: 0;
-  }
-
-  /* Adjust width of "Show more" buttons */
-  .show-more1 {
-    margin-left: 0;
-    width: auto;
-  }
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #ffff;
 }
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 3px 16px;
+  transition: 0.3s; 
+  font-size: 16px;
+  
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+ background: #FFFFFFE5;
+
+  border-top: none;
+  width: 1002px;
+height: 150px;
+top: 39px;
+gap: 0px;
+opacity: 0px;
+background-color: #ffff;
+
+
+}
+.input-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+          
+        }
+        
+        .input-col {
+            flex: 1;
+            margin-right: 10px;
+            height: 102px;    width: 1302px;
+
+        }
+        
+        .input-col:last-child {
+            margin-right: 0;
+        }
+        
+        label {
+            display: block;
+            text-align: start;
+            margin-bottom: 5px;
+        }
+        
+        select, input[type="number"] {
+
+          width: 200px;
+height: 62px;
+
+left: 36.07px;
+gap: 16px;
+opacity: 0px;
+          padding: 15x;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        .divider {
+          width: 1002px;
+            height: 1px;
+            margin: 1px 0;
+            border-color: #510000;
+        }
+        .button-row {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-left: 7%;
+            padding-bottom: 5%;
+        }
+        
+        .button-col {
+            margin-right: 3px; /* Reduced margin between buttons */
+        }
+
+        .buttons {
+            padding: 8px 12px; /* Adjust button padding */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: var(--Primary-colour, #510000);
+color: #ffff;
+            cursor: pointer;
+        }
+
+        .buttons:hover {
+            background-color: #f0f0f0; /* Change background color on hover */
+        }
+
+        .search-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width:300px;
+        }
+        .search-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            width: 500px;
+          text-align: center;  
+          }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            color: #555;
+            cursor: pointer;
+        }
+        .frame-wrapper167{
+          border-radius: 50px;
+          
+        }
+       .frame-parent3{
+        height: 38rem;
+       }
+       .frame-parent363{
+        height: 40rem;
+       }
+
+       
 @media (max-width: 640px) {
   .filter {
     display: none;
@@ -380,7 +401,28 @@ img{
 #filter {
   display: none;
 }
+@media screen and (max-width: 768px) {
+  .row {
+    display: block;
+  }
 
+  .column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Adjust input width for size fields */
+  input[type="text"] {
+    width: calc(100% - 40px);
+  }
+
+  /* Adjust label width for size fields */
+  label[for="inputField"] {
+    width: 20%;
+  }
+}
+
+       
 </style>
   </head>
   <body>
@@ -737,7 +779,9 @@ Plugins:
               <b class="lands">Lands</b>
               <div class="show-more" id="showMoreText">Show more</div>
             </div>
-            <div class="frame-parent363">
+            <div class="scroll-container">
+              <div class="row-container" id="cardRow">
+            <div class="frame-parent363" style="overflow-y: hidden; overflow-x: hidden;">
               {% for property in approved_properties %}
               <div id="property" class="frame-wrapper167">
                 <div class="frame-parent3">
@@ -747,7 +791,7 @@ Plugins:
                       {% set image_files = property.image_filenames.split(',') %}
                       {% if image_files %}
                           {% set image_file = image_files[0] %}
-                          <img class="max-h-auto w-full aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="Publication Image">
+                          <img id="imag" class="h-54 w-full aspect-square  object-fill" src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="Publication Image">
                       {% else %}
                           <p>No images available</p>
                       {% endif %}
@@ -781,7 +825,7 @@ Plugins:
                       </div>
                       <div class="logic-branch">
                         <div class="value-processor">
-                          <b class="ngn-400000000">&#8358;{{property.property_price}}</b>
+                          <b id="priceDisplay" class="ngn-400000000">NGN {{property.property_price}}</b>
                           <div class="output-divider">
                             <div class="loop-control-wrapper">
                               <div class="loop-control">
@@ -844,7 +888,7 @@ Plugins:
                         <div class="toilets" style="color: black; height: 1.2rem; text-align: center; width: 10%;">{{ property.property_num_toilets }} toilets</div>
                       </button>
                       <button class="sq-ft-wrapper" style="border-radius: 0%;">
-                        <div class="sq-ft" style="color: black; height: 1.2rem; text-align: center; width: 10%;">{{ property.property_size_max  }} max sq. ft.</div>
+                        <div class="sq-ft" style="color: black; height: 1.2rem; text-align: center; width: 15%;">{{ property.property_size_max  }}sq.</div>
                       </button>
                       <button class="parking-space-wrapper" style="border-radius: 0%;">
                         <div class="parking-space" style="color: black; height: 1.2rem; text-align: center; width: 10%;">{{ property.property_num_baths }} bathroom</div>
@@ -869,12 +913,16 @@ Plugins:
               {% endfor %}    
               
             </div>
+            </div>
+            </div>
           </div>
           <div class="size-container">
             <div class="terraces-and-duplex-parent">
               <b class="lands">Terraces and Duplex</b>
               <div class="show-more1">Show more</div>
             </div>
+            <div class="scroll-container">
+              <div class="row-container" id="cardRow">
             <div id="shortlet" class="frame-parent363">
               {% for shortlet in approved_shortlets %}
               <div class="frame-wrapper167">
@@ -913,7 +961,7 @@ Plugins:
                       </div>
                       <div class="logic-branch">
                         <div class="value-processor">
-                          <b class="ngn-400000000">&#8358;{{shortlet.shortlet_price}}</b>
+                          <b class="ngn-400000000">NGN {{shortlet.shortlet_price}}</b>
                           <div class="output-divider">
                             <div class="loop-control-wrapper">
                               <div class="loop-control">
@@ -999,6 +1047,8 @@ Plugins:
               {% endfor %}
              
             </div>
+              </div>
+            </div>
           </div>
           <div class="frame-parent416">
             <div class="shared-apartments-parent">
@@ -1028,7 +1078,7 @@ Plugins:
                         <div class="richard-and-gill-container">
                           <p class="richard-and-gill">{{shared.location}}</p>
                         </div>
-                        <b id="price" class="ngn2500000">Price : &#8358;{{shared.shared_price}} <span>/year</span></b>
+                        <b id="price" class="ngn2500000">Price : NGN {{shared.shared_price}} <span>/year</span></b>
                         <div class="wifi-air-container">
                           <p class="richard-and-gill">
                             <div class="amenities-container">
@@ -1101,7 +1151,7 @@ Plugins:
                       <div class="richard-and-gill-container">
                         <p class="richard-and-gill">{{shortlet.location}}</p>
                       </div>
-                      <b id="price" class="ngn2500000">Price :&#8358;{{shared.shared_price}} <span>/year</span></b>
+                      <b id="price" class="ngn2500000">Price : NGN {{shared.shared_price}} <span>/year</span></b>
   
                       
   
@@ -1196,7 +1246,7 @@ Plugins:
                       <div class="richard-and-gill-container">
                         <p class="richard-and-gill">{{jva.location}}</p>
                       </div>
-                      <b id="price" class="ngn2500000">Price :&#8358;{{jva.jva_price}} <span>/year</span></b>
+                      <b id="price" class="ngn2500000">Price : NGN {{jva.jva_price}} <span>/year</span></b>
   
                       
   
@@ -1263,34 +1313,196 @@ Plugins:
   This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
 -->
 
-<section
-class="relative bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center bg-no-repeat"
->
-<div
-  class="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
-></div>
+<section class="relative bg-[url(../static/image/hero.png)] bg-cover bg-center bg-no-repeat">
+  <div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
 
-<div
-  class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
->
-  <div id="hero" class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
-    <h1 id="heroh1" class="text-white text-8xl font-extrabold sm:text-5xl" style="font-family: Cabinet Grotesk; font-size: 56px; font-weight: 400; line-height: 69.44px; text-align: left;">
-      Easy way to find a
-    </h1>
-    <h1 id="hero" class="text-white text-8xl font-extrabold sm:text-5xl" style="font-family: Cabinet Grotesk; font-size: 56px; font-weight: 400; line-height: 69.44px; text-align: left;">
-      perfect property
-    </h1>
-    <p id="herop" style="padding-left: 1%; line-height: 2rem; font-family: Cabinet Grotesk; font-size: 22px; font-weight: 400; text-align: left; width: 400; color: #510000;">
-      We provide a complete service for the sale, purchase or rental of real estate.
-    </p>
-    
-    <br><br>
-    
+  <div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+      <div id="hero" class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+          <h1 id="heroh1" class="text-white text-8xl font-extrabold sm:text-5xl" style="font-family: Cabinet Grotesk; font-size: 56px; font-weight: 400; line-height: 69.44px; text-align: left;">Easy way to find a</h1>
+          <h1 id="hero" class="text-white text-8xl font-extrabold sm:text-5xl" style="font-family: Cabinet Grotesk; font-size: 56px; font-weight: 400; line-height: 69.44px; text-align: left;">perfect property</h1>
+          <p id="herop" style="padding-left: 1%; line-height: 2rem; font-family: Cabinet Grotesk; font-size: 22px; font-weight: 400; text-align: left; width:200; color: #510000; margin-top: 2%;">We provide a complete service for the sale, purchase or rental of real estate.</p>
 
+         <!-- Tab links -->
+<div class="tab">
+  <button id="defaultOpen" class="tablinks active" onclick="openCity(event, 'London')">London</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+</div>
+
+<!-- Tab content -->
+<div  id="London" class="tabcontent active">
+  
    
+  <form>
+    <div class="input-row">
+        <div class="input-col">
+            <label for="location">Location:</label>
+            <select id="location" name="location">
+                <option value="">Select Location</option>
+                <option value="new-york">New York</option>
+                <option value="los-angeles">Los Angeles</option>
+                <option value="chicago">Chicago</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="input-col">
+            <label for="property-type">Property Type:</label>
+            <select id="property-type" name="property-type">
+                <option value="">Select Property Type</option>
+                <option value="apartment">Apartment</option>
+                <option value="house">House</option>
+                <option value="condo">Condo</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="input-col">
+            <label for="bedrooms">Bedrooms:</label>
+            <select id="bedrooms" name="bedrooms">
+                <option value="">Select Bedrooms</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="input-col">
+            <label for="size">Size (sqft):</label>
+            <input type="number" id="size" name="size" placeholder="Size in sqft">
+        </div>
+    </div>
+</form>
+
+</div>
+
+<div style="display: none;" id="Paris" class="tabcontent">
+  <form>
+    <div class="input-row">
+        <div class="input-col">
+            <label for="location">Location:</label>
+            <select id="location" name="location">
+                <option value="">Select Location</option>
+                <option value="new-york">New York</option>
+                <option value="los-angeles">Los Angeles</option>
+                <option value="chicago">Chicago</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="input-col">
+            <label for="property-type">Property Type:</label>
+            <select id="property-type" name="property-type">
+                <option value="">Select Property Type</option>
+                <option value="apartment">Apartment</option>
+                <option value="house">House</option>
+                <option value="condo">Condo</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="input-col">
+            <label for="bedrooms">Bedrooms:</label>
+            <select id="bedrooms" name="bedrooms">
+                <option value="">Select Bedrooms</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="input-col">
+            <label for="size">Size (sqft):</label>
+            <input type="number" id="size" name="size" placeholder="Size in sqft">
+        </div>
+    </div>
+</form>
+</div>
+
+<div id="Tokyo" class="tabcontent" style="display: none;">
+  <form>
+    <div class="input-row">
+        <div class="input-col">
+            <label for="location">Location:</label>
+            <select id="location" name="location">
+                <option value="">Select Location</option>
+                <option value="new-york">New York</option>
+                <option value="los-angeles">Los Angeles</option>
+                <option value="chicago">Chicago</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="input-col">
+            <label for="property-type">Property Type:</label>
+            <select id="property-type" name="property-type">
+                <option value="">Select Property Type</option>
+                <option value="apartment">Apartment</option>
+                <option value="house">House</option>
+                <option value="condo">Condo</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="input-col">
+            <label for="bedrooms">Bedrooms:</label>
+            <select id="bedrooms" name="bedrooms">
+                <option value="">Select Bedrooms</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="input-col">
+            <label for="size">Size (sqft):</label>
+            <input type="number" id="size" name="size" placeholder="Size in sqft">
+        </div>
+    </div>
+</form>
+</div>
+      </div>
+  </div>
+  <div class="button-row">
+    <div class="button-col">
+        <button class="buttons">Fuel station</button>
+    </div>
+    <div class="button-col">
+        <button class="buttons">Hotels</button>
+    </div>
+    <div class="button-col">
+        <button class="buttons">Event center</button>
+    </div>
+    <div class="button-col" style="position: relative;">
+      <input type="text" class="search-input" placeholder="Didn't find what you are looking for? search for something else">
+      <span class="search-icon">&#128269;</span> <!-- Unicode for search icon -->
   </div>
 </div>
+
 </section>
+<script>
+  function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+<script>
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+  </script>
+
+
+
       
     
     </div>
@@ -1330,15 +1542,60 @@ class="relative bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c2
           window.location.href = "./dashboard.html";
         });
       }
-      function toggleFilter() {
-  var filter = document.getElementById("filter");
+      </script>
+      <script> 
+      function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+      </script>
+   <script>
+    // Function to convert price to shorthand format
+    function convertPriceShorthand() {
+        var priceDisplays = document.querySelectorAll(".ngn-400000000");
+        
+        priceDisplays.forEach(function(priceDisplay) {
+            var priceText = priceDisplay.textContent.trim();
+            var priceValue = parseFloat(priceText.replace(/[^\d.]/g, ''));
+            
+            if (priceValue >= 1000000 && priceValue <= 999999999) {
+                var shorthandPrice = (priceValue / 1000000).toFixed(2) + "M";
+                priceDisplay.textContent = "NGN " + shorthandPrice;
+            } else if (priceValue >= 1000000000 && priceValue <= 999000000000) {
+                var shorthandPrice = (priceValue / 1000000000).toFixed(2) + "B";
+                priceDisplay.textContent = "NGN " + shorthandPrice;
+            }
+        });
+    }
+
+    // Call the function initially to convert displayed prices
+    convertPriceShorthand();
+    var filter = document.getElementById("filter");
   if (filter.style.display === "none") {
     filter.style.display = "block";
   } else {
     filter.style.display = "none";
   }
 }
+</script>
 
-      </script>
+    
   </body>
 </html>

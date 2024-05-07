@@ -411,23 +411,25 @@
         .frame-parent455{
           display: inline-block;
         }
-        .card4{
-          
-          display: inline-flex;
-          display: flex;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	margin: auto;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	max-width: 450px;
-	border: 1px solid;
-        }
+        
       }
+
+      .card4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap */
+  max-width: 450px;
+  margin: auto;
+  border: 1px solid;
+}
+
+@media screen and (max-width: 768px) {
+  .card4 {
+    flex-direction: column; /* Change direction to column on smaller screens */
+  }
+}
+
 
       .sidebar {
         background-color: #f8f9fa;
@@ -477,165 +479,217 @@
           display: none;
         }
       }
+      
+.mobile-menu {
+    position: fixed;
+    top: 50px;
+    right: 360px;
+    z-index: 9999;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+}
+
+.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
     </style>
   </head>
   <body>
     <div class="listings2">
-      <div class="sidebar">
+      <div class="sidebar hidden md:block">
         <ul>
-          <li>
-            <a
-              href="/dashboard"
-              class="flex items-center gap-2 border-s-[3px] border-blue-500 bg-blue-50 px-4 py-3 text-blue-700"
-            >
-              <div class="row">
-                <div class="column">
-                  <img
-                    class="icon-home-simple-door6"
-                    alt=""
-                    src="../static/image/icon--homesimpledoor.svg"
-                  />
-                </div>
-                <div style="margin-top: 1%; padding-left: 10px" class="column">
-                  <span class="text-sm font-medium"> Dashboard </span>
-                </div>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/bookmark"
-              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-            >
-              <div class="row">
-                <div class="column">
-                  <img
-                    class="icon-home-simple-door6"
-                    alt=""
-                    src="../static/image/icon--page.svg"
-                  />
-                </div>
-                <div style="margin-top: 1%; padding-left: 10px" class="column">
-                  <span class="text-sm font-medium"> My property </span>
-                </div>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/verification"
-              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-            >
-              <div class="row">
-                <div class="column">
-                  <img
-                    class="icon-home-simple-door6"
-                    alt=""
-                    src="../static/image/icon--user-1.svg"
-                  />
-                </div>
-                <div style="margin-top: 1%; padding-left: 10px" class="column">
-                  <span class="text-sm font-medium"> Verification </span>
-                </div>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/listinguser"
-              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-            >
-              <div class="row">
-                <div class="column">
-                  <img
-                    class="icon-home-simple-door6"
-                    alt=""
-                    src="../static/image/icon--page.svg"
-                  />
-                </div>
-                <div style="margin-top: 1%; padding-left: 10px" class="column">
-                  <span class="text-sm font-medium"> Listing </span>
-                </div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <hr />
-        <br />
-        <ul>
-          <li>
-            <h3
-              style="
-                font-family: Inter;
-                font-size: 10px;
-                font-weight: 500;
-                line-height: 12px;
-                letter-spacing: 0.4000000059604645px;
-                text-align: left;
-              "
-            >
-              SETTINGS
-            </h3>
-          </li>
-
-          <li>
-            <a
-              href="/settings"
-              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-            >
-              <i class="fa fa-cog"></i>
-
-              <span class="text-sm font-medium"> Setting </span>
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/help"
-              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-            >
-              <i class="fa fa-info-circle"></i>
-
-              <span class="text-sm font-medium"> help </span>
-            </a>
-          </li>
-        </ul>
-
-        <br />
-        <br /><br />
-        <hr />
-
-        <ul>
-          <li>
-            <a
-              href="/logout"
-              class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
-            >
-              <i class="fa fa-sign-out"></i>
-
-              <span
-                style="
-                  font-family: Inter;
-                  font-size: 14px;
-                  font-weight: 500;
-                  line-height: 20px;
-                  letter-spacing: -0.02em;
-                  text-align: left;
-                  color: #d55f54;
-                "
-                class="text-sm font-medium"
+            <li>
+              <a
+                href="/dashboard"
+                class="flex items-center gap-2 border-s-[3px] border-blue-500 bg-blue-50 px-4 py-3 text-blue-700"
               >
-                Logout Account
-              </span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      {% include "dash_nav.html" %}
-
+              <div class="row">
+                  <div class="column">
+                      <img
+                      class="icon-home-simple-door6"
+                      alt=""
+                      src="../static/image/icon--homesimpledoor.svg"
+                    />
+                  </div>
+                  <div style="margin-top: 1%;" class="column">
+                      <span  class="text-sm font-medium"> Dashboard </span>
+  
+                  </div>
+              </div>
+             
+              </a>
+            </li>
+  
+  
+            <li>
+              <a
+                href="/bookmark"
+                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+              >
+              <div class="row">
+                  <div class="column">
+                      <img
+                      class="icon-home-simple-door6"
+                      alt=""
+                      src="../static/image/icon--page.svg"
+                    />
+                  </div>
+                  <div style="margin-top: 1%;" class="column">
+                      <span  class="text-sm font-medium"> My property </span>
+  
+                  </div>
+              </div>
+             
+              </a>
+            </li>
+          
+          
+            <li>
+              <a
+                href="/verification"
+                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+              >
+              <div class="row">
+                  <div class="column">
+                      <img
+                      class="icon-home-simple-door6"
+                      alt=""
+                      src="../static/image/icon--user-1.svg"
+                      />
+                  </div>
+                  <div style="margin-top: 1%;" class="column">
+                      <span  class="text-sm font-medium"> Verification </span>
+  
+                  </div>
+              </div>
+             
+              </a>
+            </li>
+          
+            <li>
+              <a
+                href="/listinguser"
+                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+              >
+              <div class="row">
+                  <div class="column">
+                      <img
+                      class="icon-home-simple-door6"
+                      alt=""
+                      src="../static/image/icon--page.svg"
+                      />
+                  </div>
+                  <div style="margin-top: 1%;" class="column">
+                      <span  class="text-sm font-medium"> Listing </span>
+  
+                  </div>
+              </div>
+             
+              </a>
+            </li>
+          
+           
+          
+           
+          </ul>
+          <hr>
+          <br>
+          <ul>
+            <li>
+              <h3 style="font-family: Inter;
+              font-size: 10px;
+              font-weight: 500;
+              line-height: 12px;
+              letter-spacing: 0.4000000059604645px;
+              text-align: left;
+              ">SETTINGS</h3>
+            </li>
+          
+            <li>
+              <a
+                href="/settings"
+                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+              >
+              <i class="fa fa-cog"></i>
+          
+                <span class="text-sm font-medium"> Setting </span>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                href="/help"
+                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+              >
+              <i class="fa fa-info-circle"></i>
+          
+                <span class="text-sm font-medium"> help </span>
+              </a>
+            </li>
+          
+        
+          </ul>
+    
+          <br>
+          <br><br>
+          <hr>
+    
+          <ul>
+          
+          
+            <li>
+              <a
+                href="/logout"
+                class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
+              >
+              <i class="fa fa-sign-out"></i>
+          
+                <span style="font-family: Inter;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 20px;
+                letter-spacing: -0.02em;
+                text-align: left;
+                color: #D55F54;" class="text-sm font-medium"> Logout Account  </span>
+              </a>
+            </li>
+          
+         
+        
+        
+          </ul>
+    </div>
+   
+    {% include "dash_nav.html" %}
+    <div class="mobile-menu md:hidden">
+      <button id="menu-toggle" class="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+      </button>
+  </div>
       <div class="cards4">
         <div class="card14">
           <div class="circle4">
@@ -1037,6 +1091,16 @@
           popup.addEventListener("click", onClick);
         });
       }
+      document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    menuToggle.addEventListener('click', function () {
+        sidebar.classList.toggle('hidden');
+        menuToggle.classList.toggle('open');
+    });
+});
+
     </script>
   </body>
 </html>

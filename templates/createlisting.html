@@ -433,6 +433,39 @@ body {
 .alert-danger {
     background-color: #dc3545;
 }
+.mobile-menu {
+    position: fixed;
+    top: 50px;
+    right: 360px;
+    z-index: 9999;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+}
+
+.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
 
   </style>
 </head>
@@ -454,7 +487,7 @@ body {
   </div>
 
   <div class="container">
-    <div class="sidebar">
+    <div class="sidebar hidden md:block">
       <ul>
           <li>
             <a
@@ -469,7 +502,7 @@ body {
                     src="../static/image/icon--homesimpledoor.svg"
                   />
                 </div>
-                <div style="margin-top: -2%; padding-left: 5%;" class="column">
+                <div style="margin-top: 1%;" class="column">
                     <span  class="text-sm font-medium"> Dashboard </span>
 
                 </div>
@@ -481,7 +514,7 @@ body {
 
           <li>
             <a
-              href="/verification"
+              href="/bookmark"
               class="flex items-center gap-2 border-s-[3px] border-transparent px-4 py-3 text-gray-500 hover:border-gray-100 hover:bg-gray-50 hover:text-gray-700"
             >
             <div class="row">
@@ -492,7 +525,7 @@ body {
                     src="../static/image/icon--page.svg"
                   />
                 </div>
-                <div style="margin-top: -2%; padding-left: 5%;" class="column">
+                <div style="margin-top: 1%;" class="column">
                     <span  class="text-sm font-medium"> My property </span>
 
                 </div>
@@ -515,7 +548,7 @@ body {
                     src="../static/image/icon--user-1.svg"
                     />
                 </div>
-                <div style="margin-top: -2%; padding-left: 5%;" class="column">
+                <div style="margin-top: 1%;" class="column">
                     <span  class="text-sm font-medium"> Verification </span>
 
                 </div>
@@ -537,8 +570,8 @@ body {
                     src="../static/image/icon--page.svg"
                     />
                 </div>
-                <div style="margin-top: -2%; padding-left: 5%;" class="column">
-                    <span  class="text-sm font-medium"> Listing  </span>
+                <div style="margin-top: 1%;" class="column">
+                    <span  class="text-sm font-medium"> Listing </span>
 
                 </div>
             </div>
@@ -613,11 +646,19 @@ body {
           </li>
         
        
-        
+      
       
         </ul>
   </div>
-
+ 
+  {% include "dash_nav.html" %}
+  <div class="mobile-menu md:hidden">
+    <button id="menu-toggle" class="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+</div>
 
     <div class="content">
         <section class="mx-auto max-w-screen-xl">
@@ -1456,6 +1497,16 @@ function uploadFile(file, overallProgress, fileList) {
 
   // Initially populate LGAs based on the default state selection
   updateLGAs();
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    menuToggle.addEventListener('click', function () {
+        sidebar.classList.toggle('hidden');
+        menuToggle.classList.toggle('open');
+    });
+});
+
 </script>
 
 

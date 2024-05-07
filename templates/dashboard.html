@@ -2,8 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
 
     <link rel="stylesheet" href="../static/css/global.css" />
     <link rel="stylesheet" href="../static/css/dashboard.css" />
@@ -520,78 +519,41 @@
   height: 35rem;
 }
 
-
-/* Styles for hamburger icon */
-.hamburger-menu {
-  display: block; /* For mobile, show the hamburger */
+.mobile-menu {
+    position: fixed;
+    top: 50px;
+    right: 360px;
+    z-index: 9999;
 }
 
-.hamburger-icon {
-  width: 30px;
-  height: 3px;
-  background-color: #333;
-  margin: 6px 0;
+.menu-toggle {
+    cursor: pointer;
+    background: transparent;
+    border: none;
 }
 
-/* Media query for desktop */
-@media (min-width: 768px) {
-  .filter-sections {
-    display: block; /* Show filter sections on desktop */
-  }
-  
-  .hamburger-menu {
-    display: none; /* Hide hamburger on desktop */
-  }
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px auto;
+    transition: all 0.3s ease;
 }
 
-@media (max-width: 640px) {
-  .filter {
-    display: none;
-  }
+.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
 }
 
-@media (max-width: 640px) {
-  .sidebar{display: none;
-  }
-
-  Chart CSS */
-    .chart {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    @media (max-width: 768px) {
-        .chart {
-            flex-direction: column;
-        }
-    }
-
-  
-  
-} /* CSS for aligning content to the left and filling the screen on mobile */
-@media (max-width: 768px) {
-  .group-parent76 {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .cards-parent {
-    width: 100%;
-  }
-
-  .property-overview {
-    width: 100%;
-  }
+.open .bar:nth-child(2) {
+    opacity: 0;
 }
 
+.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
 
-</style>
+    </style>
   
   </head>
   <body>
@@ -607,7 +569,7 @@
         {% endif %}
     {% endwith %}
       </div>
-      <div class="sidebar">
+      <div class="sidebar hidden md:block">
         <ul>
             <li>
               <a
@@ -766,16 +728,19 @@
             </li>
           
          
-          
+        
         
           </ul>
-          <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
     </div>
+   
     {% include "dash_nav.html" %}
+    <div class="mobile-menu md:hidden">
+      <button id="menu-toggle" class="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+      </button>
+  </div>
 
       <!-- <div  class="div55">
         <img
@@ -794,11 +759,6 @@
           </div>
         </div>
       </div> -->
-
-      <div class="hamburger-menu">
-        <div class="hamburger-icon"></div>
-      </div>
-      
       <div class="group-parent76">
         <div class="cards-parent">
           <div class="cards5">
@@ -893,346 +853,247 @@
             </div>
           </div>
         </div>
-       
-    <div class="listing-landing-page">
-      <div class="frame-parent348">
-        <div class="filter">
-          <h3 style="font-family: Cabinet Grotesk;
-          font-size: 18px;
-          font-weight: 500;
-          line-height: 22px;
-          letter-spacing: 0px;
-          text-align: left;
-          ">Filter</h3>
-          <form action="">
-            <div>
-              <label style="font-family: Cabinet Grotesk;
-              font-size: 18px;
-              font-weight: 500;
-              line-height: 22px;
-              letter-spacing: 0px;
-              text-align: left;
-              " for="HeadlineAct" class="block text-sm font-medium text-gray-900 mt-2"> Location </label>
-            
-              <select
-                name="HeadlineAct"
-                id="HeadlineAct"
-                class="mt-1.5 w-full h-12 pl-3 rounded-lg border-gray-300 text-gray-700 sm:text-sm"
-              >
-                <option value="">Abuja</option>
-                <option value="JM">John Mayer</option>
-                <option value="SRV">Stevie Ray Vaughn</option>
-                <option value="JH">Jimi Hendrix</option>
-                <option value="BBK">B.B King</option>
-                <option value="AK">Albert King</option>
-                <option value="BG">Buddy Guy</option>
-                <option value="EC">Eric Clapton</option>
-              </select>
-            </div>
+        <div class="frame-parent462">
+          <div class="layout-organizer">
+            <h2 class="filter">Filter</h2>
+            <div class="image-resizer">
+              <h2 class="location">Location</h2>
+              <div class="rectangle-container">
+                <div class="frame-child27"></div>
+                <div class="vuesaxlinearlocation-parent">
+                  <img
+                    class="vuesaxlinearlocation-icon"
+                    alt=""
+                    src="../static/image/vuesaxlinearlocation.svg"
+                  />
 
-            <label for="">Type of Place</label>
-            <div class="row check">
-              <div class="column">
-
-
-<fieldset>
-<legend class="sr-only">Checkboxes</legend>
-
-<div class="space-y-2">
-<label for="Option1" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900"> All </strong>
-  </div>
-</label>
-
-<label for="Option2" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900"> Building </strong>
-  </div>
-</label>
-
-<label for="Option3" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900">Apartment </strong>
-  </div>
-</label>
-</div>
-</fieldset>
-              </div>
-              <div class="column">
-                <!--
-Heads up! 👋
-
-Plugins:
-- @tailwindcss/forms
--->
-
-<fieldset>
-<legend class="sr-only">Checkboxes</legend>
-
-<div class="space-y-2">
-<label for="Option1" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900"> Office </strong>
-  </div>
-</label>
-
-<label for="Option2" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900"> Shop </strong>
-  </div>
-</label>
-
-<label for="Option3" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900"> House </strong>
-  </div>
-</label>
-</div>
-</fieldset>
+                  <div class="symbol-swapper">
+                    <div class="abuja">Abuja</div>
+                  </div>
+                </div>
+                <div class="color-coder">
+                  <img
+                    class="vuesaxlineararrow-down-icon"
+                    alt=""
+                    src="../static/image/vuesaxlineararrowdown.svg"
+                  />
+                </div>
               </div>
             </div>
-           
-<label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Min-max range</label>
-<input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+            <div class="positioner">
+              <h2 class="type-of-place">Type of Place</h2>
+              <div class="reflector">
+                <div class="collapser">
+                  <div class="expander">
+                    <input
+                      class="vuesaxboldtick-square"
+                      checked="{true}"
+                      type="checkbox"
+                    />
 
-<h3>Size</h3>
-<div class="row check">
-<div class="column">
-<div style="position: relative;">
-  <input style="text-align: right; width: 80%;" placeholder="sq ft" type="text" id="inputField" name="inputField">
-  <label for="inputField" style="position: absolute; padding-left: 6px; top: 15%; left: 0; width: 10%; ">Min</label>
+                    <h2 class="all">All</h2>
+                  </div>
+                  <div class="vuesaxlinearminus-square-parent">
+                    <input
+                      class="vuesaxlinearminus-square"
+                      type="checkbox"
+                    />
 
-</div>
+                    <h2 class="office">Office</h2>
+                  </div>
+                </div>
+                <div class="collapser1">
+                  <div class="vuesaxlinearminus-square-group">
+                    <input
+                      class="vuesaxlinearminus-square1"
+                      type="checkbox"
+                    />
 
-</div>
-<div class="column">
-<div style="position: relative;">
-  <input style="text-align: right; width: 80%; " placeholder="sq ft" type="text" id="inputField" name="inputField">
-  <label for="inputField" style="position: absolute; padding-left: 6px; top: 15%; left: 0; width: 10%;">Max</label>
+                    <h2 class="building">Building</h2>
+                  </div>
+                  <div class="vuesaxlinearminus-square-container">
+                    <input
+                      class="vuesaxlinearminus-square2"
+                      type="checkbox"
+                    />
 
-</div>
+                    <h2 class="shop">Shop</h2>
+                  </div>
+                </div>
+                <div class="collapser2">
+                  <div class="vuesaxlinearminus-square-parent1">
+                    <input
+                      class="vuesaxlinearminus-square3"
+                      type="checkbox"
+                    />
 
-</div>
-</div>
-<label for="">Features</label>
-            <div class="row check">
-              <div class="column">
+                    <h2 class="apartment">Apartment</h2>
+                  </div>
+                  <div class="vuesaxlinearminus-square-parent2">
+                    <input
+                      class="vuesaxlinearminus-square4"
+                      type="checkbox"
+                    />
 
-
-<fieldset>
-<legend class="sr-only">Checkboxes</legend>
-
-<div class="space-y-2">
-<label for="Option1" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900"> Clubhouse </strong>
-  </div>
-</label>
-
-<label for="Option2" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900"> Spa </strong>
-  </div>
-</label>
-
-<label for="Option3" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900"> Pool </strong>
-  </div>
-</label>
-<label for="Option3" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900"> Valet Parking </strong>
-  </div>
-</label>
-</div>
-</fieldset>
-              </div>
-              <div class="column">
-                <!--
-Heads up! 👋
-
-Plugins:
-- @tailwindcss/forms
--->
-
-<fieldset>
-<legend class="sr-only">Checkboxes</legend>
-
-<div class="space-y-2">
-<label for="Option1" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900">Ac & Heating</strong>
-  </div>
-</label>
-
-<label for="Option2" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900"> Dishwasher </strong>
-  </div>
-</label>
-
-<label for="Option3" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900"> Balcony </strong>
-  </div>
-</label>
-<label for="Option3" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900">Fitness </strong>
-  </div>
-</label>
-</div>
-</fieldset>
+                    <h2 class="house">House</h2>
+                  </div>
+                </div>
               </div>
             </div>
-            <label for="">Style</label>
-            <div class="row check">
-              <div class="column">
+            <div class="price-range-parent">
+              <h2 class="price-range">Price Range</h2>
+              <div class="frame-parent94">
+                <img
+                  class="group-icon"
+                  loading="lazy"
+                  alt=""
+                  src="../static/image/group-239481.svg"
+                />
 
-
-<fieldset>
-<legend class="sr-only">Checkboxes</legend>
-
-<div class="space-y-2">
-<label for="Option1" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900"> A-Frame </strong>
-  </div>
-</label>
-
-<label for="Option2" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900"> Cottage </strong>
-  </div>
-</label>
-
-
-</div>
-</fieldset>
-              </div>
-              <div class="column">
-                <!--
-Heads up! 👋
-
-Plugins:
-- @tailwindcss/forms
--->
-
-<fieldset>
-<legend class="sr-only">Checkboxes</legend>
-
-<div class="space-y-2">
-<label for="Option1" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900"> Dome </strong>
-  </div>
-</label>
-
-<label for="Option2" class="flex cursor-pointer items-start gap-4">
-  <div class="flex items-center">
-    &#8203;
-    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
-  </div>
-
-  <div>
-    <strong class="font-medium text-gray-900"> Spanish</strong>
-  </div>
-</label>
-
-
-</div>
-</fieldset>
+                <div class="ngn-100-parent">
+                  <div class="ngn-100">NGN 100</div>
+                  <div class="ngn-10000">NGN 10000</div>
+                </div>
               </div>
             </div>
-          </form>
-        </div>
+            <div class="size-parent">
+              <h2 class="size">Size</h2>
+              <div class="frame-parent95">
+                <div class="frame-wrapper53">
+                  <div class="min-parent">
+                    <h2 class="min">Min</h2>
+                    <h2 class="sq-ft4">sq ft</h2>
+                  </div>
+                </div>
+                <div class="frame-wrapper54">
+                  <div class="max-parent">
+                    <h2 class="max">Max</h2>
+                    <h2 class="sq-ft5">sq ft</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="features-parent">
+              <h2 class="features">Features</h2>
+              <div class="frame-parent96">
+                <div class="frame-parent97">
+                  <div class="vuesaxboldtick-square-parent">
+                    <input
+                      class="vuesaxboldtick-square1"
+                      checked="{true}"
+                      type="checkbox"
+                    />
+
+                    <h2 class="ac-heating">Ac & Heating</h2>
+                  </div>
+                  <div class="shape-container">
+                    <input
+                      class="vuesaxlinearminus-square5"
+                      type="checkbox"
+                    />
+
+                    <h2 class="clubhouse">Clubhouse</h2>
+                  </div>
+                </div>
+                <div class="frame-parent98">
+                  <div class="vuesaxlinearminus-square-parent3">
+                    <input
+                      class="vuesaxlinearminus-square6"
+                      type="checkbox"
+                    />
+
+                    <h2 class="dishwasher">Dishwasher</h2>
+                  </div>
+                  <div class="vuesaxlinearminus-square-parent4">
+                    <input
+                      class="vuesaxlinearminus-square7"
+                      type="checkbox"
+                    />
+
+                    <h2 class="spa">Spa</h2>
+                  </div>
+                </div>
+                <div class="frame-parent99">
+                  <div class="vuesaxlinearminus-square-parent5">
+                    <input
+                      class="vuesaxlinearminus-square8"
+                      type="checkbox"
+                    />
+
+                    <h2 class="balcony">Balcony</h2>
+                  </div>
+                  <div class="vuesaxlinearminus-square-parent6">
+                    <input
+                      class="vuesaxlinearminus-square9"
+                      type="checkbox"
+                    />
+
+                    <h2 class="pool">Pool</h2>
+                  </div>
+                </div>
+                <div class="frame-parent100">
+                  <div class="vuesaxlinearminus-square-parent7">
+                    <input
+                      class="vuesaxlinearminus-square10"
+                      type="checkbox"
+                    />
+
+                    <h2 class="fitness-center">Fitness Center</h2>
+                  </div>
+                  <div class="vuesaxlinearminus-square-parent8">
+                    <input
+                      class="vuesaxlinearminus-square11"
+                      type="checkbox"
+                    />
+
+                    <h2 class="valet-parking">Valet Parking</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="icon-library">
+              <h2 class="style">Style</h2>
+              <div class="frame-parent101">
+                <div class="frame-parent102">
+                  <div class="vuesaxboldtick-square-group">
+                    <input
+                      class="vuesaxboldtick-square2"
+                      checked="{true}"
+                      type="checkbox"
+                    />
+
+                    <h2 class="a-frame">A-Frame</h2>
+                  </div>
+                  <div class="vuesaxlinearminus-square-parent9">
+                    <input
+                      class="vuesaxlinearminus-square12"
+                      type="checkbox"
+                    />
+
+                    <h2 class="dome">Dome</h2>
+                  </div>
+                </div>
+                <div class="frame-parent103">
+                  <div class="vuesaxlinearminus-square-parent10">
+                    <input
+                      class="vuesaxlinearminus-square13"
+                      type="checkbox"
+                    />
+
+                    <h2 class="cottage">Cottage</h2>
+                  </div>
+                  <div class="vuesaxlinearminus-square-parent11">
+                    <input
+                      class="vuesaxlinearminus-square14"
+                      type="checkbox"
+                    />
+
+                    <h2 class="spanish">Spanish</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="results-in-abuja-parent">
             <div class="office">
               <span class="results1">398 Results </span>
@@ -1423,16 +1284,16 @@ Plugins:
           window.location.href = "./view-before-signup.html";
         });
       }
+      </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
 
-// to toggle sidebar visibility
-document.addEventListener("DOMContentLoaded", function() {
-  const hamburgerMenu = document.querySelector('.hamburger-menu');
-  const filterSections = document.querySelector('.filter-sections');
-
-  // Toggle visibility of filter sections when hamburger is clicked
-  hamburgerMenu.addEventListener('click', function() {
-    filterSections.classList.toggle('show');
-  });
+    menuToggle.addEventListener('click', function () {
+        sidebar.classList.toggle('hidden');
+        menuToggle.classList.toggle('open');
+    });
 });
 
       </script>
