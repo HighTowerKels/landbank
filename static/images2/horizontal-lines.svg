@@ -1,0 +1,9 @@
+<svg width="767" height="211" viewBox="0 0 767 211" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line y1="0.5" x2="767" y2="0.5" stroke="black" stroke-opacity="0.1"/>
+<line y1="42.5" x2="767" y2="42.5" stroke="black" stroke-opacity="0.1"/>
+<line y1="84.5" x2="767" y2="84.5" stroke="black" stroke-opacity="0.1"/>
+<line y1="126.5" x2="767" y2="126.5" stroke="black" stroke-opacity="0.1"/>
+<line y1="168.5" x2="767" y2="168.5" stroke="black" stroke-opacity="0.1"/>
+<line y1="210.5" x2="767" y2="210.5" stroke="black" stroke-opacity="0.1"/>
+<path d="M416 52L416 208" stroke="#A59895" stroke-dasharray="4 4"/>
+</svg>

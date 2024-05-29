@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="../static/css/differemt.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<title>Landbook | Registeration</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        height: 100%;
+    }
+    .background {
+        background-image: url('https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+      
+    }
+    .white-background {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card {
+        margin-top: 10%;
+        background-color: white;
+        width: 90%; /* Adjusted width for better mobile responsiveness */
+        max-width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the card */
+    }
+    .form-control {
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #510000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .link {
+        float: right;
+        font-size: 14px;
+        text-decoration: none;
+        color: #510000;
+        margin-bottom: 5%;
+    }
+    .password-wrapper {
+        position: relative;
+    }
+    .password-wrapper input {
+        padding-right: 40px; /* Adjust as needed */
+    }
+    .password-wrapper i {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 2;
+    }
+    .alert-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.alert {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.alert-success {
+    background-color: #28a745;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+}
+
+    @media only screen and (max-width: 600px) {
+        .container {
+            width: 100%;
+        }
+        .card {
+            width: 90%; /* Adjusted width for better mobile responsiveness */
+        }
+    }
+</style>
+</head>
+<body>
+    {% include "nav.html" %}
+
+<div class="container">
+    <div id="alert-container" class="alert-container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div style="color: #510000;" class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+      </div>
+    <div class="background"></div>
+    <div class="white-background">
+        <div class="card">
+            <h2 style="text-align: center; font-size: 20px;">We turn your dream <span style="color: #510000;">properties</span>  into reality</h2>
+            <p style="text-align: center; font-size: 10px; margin-bottom: 4%;">Signup to create an account for free to get the latest on property listings and servives.</p>
+            <form method="post" action="{{ url_for('signup') }}" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="">First name</label>
+                    <input name="firstname" type="text" class="form-control" placeholder="First name" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Last name</label>
+                    <input name="lastname" type="text" class="form-control" placeholder="Last name" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input name="email" type="email" class="form-control" placeholder="Email" required>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="">Profile Picture</label>
+                    <input type="file" name="profile_picture" id="">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="nin">National Identification Number:</label>
+                    <input name="nin" class="form-control" type="text" name="nin" required>
+                </div> -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-wrapper">
+                        <input name="password" type="password" class="form-control" id="password" placeholder="Password" required>
+                        <i class="fas fa-eye" id="togglePassword"></i>
+                    </div>
+                </div>
+                <button style="background-color: #510000;" type="submit" class="btn rounded-full">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    // Toggle mobile menu
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function (e) {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
+<script>
+    // Function to hide alert messages after 5 seconds
+    setTimeout(function() {
+        var alertContainer = document.getElementById('alert-container');
+        if (alertContainer) {
+            alertContainer.innerHTML = ''; // Clear the content of the alert container
+        }
+    }, 5000); // 5000 milliseconds = 5 seconds
+</script>
+</body>
+</html>

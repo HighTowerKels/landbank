@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JVA Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f5f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 28px;
+            color: #333333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #cccccc;
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            color: #555555;
+        }
+        .images {
+            margin-top: 20px;
+        }
+        .images img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .documents {
+            margin-top: 20px;
+        }
+        .documents a {
+            display: block;
+            margin-bottom: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .documents a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JVA Details</h1>
+        <ul>
+            <li><strong>Availability:</strong> {{ jva.jva_available }}</li>
+            <li><strong>Ownership:</strong> {{ jva.jva_ownership }}</li>
+            <li><strong>Location:</strong> {{ jva.location }}</li>
+            <li><strong>Local Government Area:</strong> {{ jva.jva_lga }}</li>
+            <li><strong>Property Type:</strong> {{ jva.jva_type }}</li>
+            <li><strong>Property Subtype:</strong> {{ jva.jva_subtype }}</li>
+            <li><strong>Negotiation:</strong> {{ jva.jva_negotiation }}</li>
+            <li><strong>Price:</strong> {{ jva.jva_price }}</li>
+            <li><strong>Percentage:</strong> {{ jva.jva_percent }}</li>
+            <li><strong>Charges:</strong> {{ jva.jva_charges }}</li>
+            <li><strong>Number of Rooms:</strong> {{ jva.jva_num_rooms }}</li>
+            <li><strong>Number of Baths:</strong> {{ jva.jva_num_baths }}</li>
+            <li><strong>Number of Toilets:</strong> {{ jva.jva_num_toilets }}</li>
+            <li><strong>Number of Parlors:</strong> {{ jva.jva_num_parlour }}</li>
+            <li><strong>Minimum Size:</strong> {{ jva.jva_size_min }}</li>
+            <li><strong>Maximum Size:</strong> {{ jva.jva_size_max }}</li>
+            <li><strong>Completed (Furnished):</strong> {{ "Yes" if jva.completed_furnished else "No" }}</li>
+            <li><strong>Completed (Unfurnished):</strong> {{ "Yes" if jva.completed_unfurnished else "No" }}</li>
+            <li><strong>Carcas:</strong> {{ "Yes" if jva.carcas else "No" }}</li>
+            <li><strong>Newly Built:</strong> {{ "Yes" if jva.newly_built else "No" }}</li>
+            <li><strong>Date Posted:</strong> {{ jva.date_posted }}</li>
+            <li><strong>Description:</strong> {{ jva.jva_description }}</li>
+            <li><strong>Likes:</strong> {{ jva.jva_likes }}</li>
+            <li><strong>Shares:</strong> {{ jva.jva_shares }}</li>
+        </ul>
+        {% if jva.image_filenames %}
+              {% set image_files = jva.image_filenames.split(',') %}
+              {% for image_file in image_files %}
+                  <div class="images">
+                      <img src="{{ url_for('static', filename='uploads/' + image_file.strip()) }}" alt="JVA Image">
+                  </div>
+              {% endfor %}
+          {% endif %}
+        <div class="documents">
+            <h2>Documents</h2>
+            {% if jva.document_filenames %}
+                {% for document_filename in jva.document_filenames.split(',') %}
+                    <a href="{{ url_for('static', filename='documents/' + document_filename.strip()) }}" target="_blank">{{ document_filename }}</a>
+                {% endfor %}
+            {% else %}
+                <p>No documents available</p>
+            {% endif %}
+        </div>
+
+        <a href="{{ url_for('approve_jva', jva_id=jva.id) }}">Approve</a> | <a href="{{ url_for('reject_jva', jva_id=jva.id) }}">Reject</a></li>
+    </div>
+</body>
+</html>

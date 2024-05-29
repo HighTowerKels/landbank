@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f5f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 28px;
+            color: #333333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #cccccc;
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            color: #555555;
+        }
+        .images {
+            margin-top: 20px;
+        }
+        .images img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .documents {
+            margin-top: 20px;
+        }
+        .documents a {
+            display: block;
+            margin-bottom: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .documents a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Shared Details</h1>
+        <ul>
+            <li><strong>Availability:</strong> {{ shared.shared_property_available }}</li>
+            <li><strong>Ownership:</strong> {{ shared.shared_ownership }}</li>
+            <li><strong>Location:</strong> {{ shared.location }}</li>
+            <li><strong>Local Government Area:</strong> {{ shared.shared_lga }}</li>
+            <li><strong>Property Type:</strong> {{ shared.shared_type }}</li>
+            <li><strong>Property Subtype:</strong> {{ shared.shared_subtype }}</li>
+            <li><strong>Negotiation:</strong> {{ shared.shared_negotiation }}</li>
+            <li><strong>Price:</strong> {{ shared.shared_price }}</li>
+            <li><strong>Percentage:</strong> {{ shared.shared_percent }}</li>
+            <li><strong>Charges:</strong> {{ shared.shared_charges }}</li>
+            <li><strong>Number of Rooms:</strong> {{ shared.shared_num_rooms }}</li>
+            <li><strong>Number of Baths:</strong> {{ shared.shared_num_baths }}</li>
+            <li><strong>Number of Toilets:</strong> {{ shared.shared_num_toilets }}</li>
+            <li><strong>Number of Parlors:</strong> {{ shared.shared_num_parlour }}</li>
+            <li><strong>Minimum Size:</strong> {{ shared.shared_size_min }}</li>
+            <li><strong>Maximum Size:</strong> {{ shared.shared_size_max }}</li>
+            <li><strong>Completed (Furnished):</strong> {{ "Yes" if shared.completed_furnished else "No" }}</li>
+            <li><strong>Completed (Unfurnished):</strong> {{ "Yes" if shared.completed_unfurnished else "No" }}</li>
+            <li><strong>Carcas:</strong> {{ "Yes" if shared.carcas else "No" }}</li>
+            <li><strong>Newly Built:</strong> {{ "Yes" if shared.newly_built else "No" }}</li>
+            <li><strong>Date Posted:</strong> {{ shared.date_posted }}</li>
+            <li><strong>Description:</strong> {{ shared.shared_description }}</li>
+            <li><strong>Likes:</strong> {{ shared.shared_likes }}</li>
+            <li><strong>Shares:</strong> {{ shared.shared_shares }}</li>
+        </ul>
+        {% if shared.image_filenames %}
+              {% set image_files = shared.image_filenames.split(',') %}
+              {% for image_file in image_files %}
+                  <div class="images">
+                      <img src="{{ url_for('static', filename='uploads/' + image_file.strip()) }}" alt="Shared Image">
+                  </div>
+              {% endfor %}
+          {% endif %}
+        <div class="documents">
+            <h2>Documents</h2>
+            {% if shared.document_filenames %}
+                {% for document_filename in shared.document_filenames.split(',') %}
+                    <a href="{{ url_for('static', filename='documents/' + document_filename.strip()) }}" target="_blank">{{ document_filename }}</a>
+                {% endfor %}
+            {% else %}
+                <p>No documents available</p>
+            {% endif %}
+        </div>
+
+        <a href="{{ url_for('approve_shared', shared_id=shared.id) }}">Approve</a> | <a href="{{ url_for('reject_shared', shared_id=shared.id) }}">Reject</a></li>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landbook</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="../static/css/ListingLandingPage.css">
+<link rel="stylesheet" href="../static/css/global2.css">
+<link rel="stylesheet" href="../static/css/index.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+<style>
+    .symbol-assigner-z {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px; /* Adjust the gap between items */
+    }
+    .color-scheme-manager-z {
+      width: 500px;
+      height: 300px;
+      padding: 58px 30px 57px 28px;
+      gap: 0px;
+      border-radius: 10px 0px 0px 0px;
+      border: 0px 1px 0px 0px;
+      opacity: 0px;
+      
+    }
+    
+    
+    h3 {
+      font-family: Cabinet Grotesk;
+      font-size: 24px;
+      font-weight: 500;
+    
+     
+  
+      white-space: nowrap; /* Prevent line breaks */
+    }
+    
+    
+    .we-meticulously-verify,
+    .whether-youre-seeking {
+      font-family: Cabinet Grotesk;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.01em;
+      margin-top: -10px; /* Remove margin to reduce space */
+  
+    }
+  
+    .services-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+  }
+  
+  .service {
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      padding: 20px;
+      width: calc(25% - 40px);
+      margin: 10px;
+  }
+  
+  .service h2 {
+      margin-top: 0;
+  }
+  
+  .service p {
+      font-size: 14px;
+      line-height: 1.6;
+  }
+  
+  @media (max-width: 768px) {
+      .service {
+          width: calc(50% - 40px);
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .service {
+          width: 100%;
+      }
+  }
+  </style>
+  <style>
+    html{
+      height: auto;
+    }
+    .row{
+      display: flex;
+      flex-direction: row;
+    }
+    .column{
+      padding: 5%;
+    }
+    .bedroom-terraced-duplex{
+      color: black;
+    }
+    .terraced-duplex-for{
+      color: black;
+      font-size: 30px;
+    }
+    #shared_location{
+      margin-top: 5%;
+    }
+    #price{
+      margin-top: 8%;
+    }
+    .amenities-container {
+      background-color: #f4f4f4; /* Light gray background */
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+  }
+  
+  .amenities-line {
+      margin: 0;
+  }
+  
+  .amenities-line p {
+      display: inline;
+      font-family: Arial, sans-serif; /* Use a professional font */
+      font-size: 14px; /* Adjust font size */
+  }
+  
+  .amenities-line p:not(:last-child)::after {
+      content: "•"; /* Add bullet point after each item except the last one */
+      margin-right: 5px; /* Add space between bullet points and items */
+  }
+  
+  .scroll-container {
+    width: 100%;
+    overflow-x: hidden; /* Hide the horizontal scrollbar */
+  }
+  
+  .row-container {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: slide 40s linear infinite; /* Adjust the duration as needed */
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0); /* Start from initial position */
+    }
+    100% {
+      transform: translateX(-100%); /* Slide to the left */
+    }
+  }
+  
+  .cards1 {
+    width: calc(50% - 10px);
+    margin-right: 20px;
+  }
+  
+  .cards1:last-child {
+    margin-right: 0;
+  }
+  .frame-parent363 .frame-wrapper167{
+    gap: 60px;
+    padding-bottom:2%;
+    height: 40rem;
+  }
+  /* #shortlet .frame-wrapper167{
+    height: 40rem;
+    padding-bottom:2%;
+  
+  } */
+  </style>
+  <style>
+   .bedroom-terraced-duplex {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-height: 1.5em; /* Adjust line height as needed */
+      height: 2.5rem; /* This is line-height multiplied by the number of lines you want to display (4 lines) */
+      margin-bottom: 20px; /* Ensure some space below the text for aesthetics */
+      text-overflow: ellipsis;
+  }
+  .logic-branch{
+    margin-top: -6%;
+  }
+   .ngn-400000000 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 150px; /* Adjust the maximum width as needed */
+      display: inline-block; /* Ensures the ellipsis works */
+  }  
+  .icbaseline-favorite-wrapper, .component-8-icon {
+      display: inline-block;
+  }
+  
+  /* Bottom buttons */
+  .bedrooms-wrapper, .toilets-wrapper, .sq-ft-wrapper, .parking-space-wrapper {
+      display: inline-block;
+      padding: 8px;
+      background-color: #eee;
+      margin-right: 4px;
+      border-radius: 4px;
+      width: auto; /* Adjusts automatically to the content size */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+      .frame-parent3, .frame-parent4 {
+          padding: 10px;
+      }
+  
+      .loop-control, .mingcutetime-line-parent, .solaruser-outline-parent {
+          flex-direction: column;
+          align-items: start;
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .frame-wrapper167 {
+          margin: 10px;
+      }
+    }
+    .frame-parent4{
+      padding-left: 20px;
+    }
+   #property{
+    height: 42rem;
+   }
+   #cards{
+    width: 100%;
+   }
+  
+   #heroh1, #heros {
+    font-family: Cabinet Grotesk;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 69.44px;
+    text-align: left;
+  }
+  
+  #herop{
+    padding-left: 15%;
+    line-height: 2rem;
+    font-family: Cabinet Grotesk;
+    font-size: 22px;
+    font-weight: 400;
+    text-align: left;
+  }
+  
+  #imag{
+    border-radius: 50px;
+  }
+  
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  img{
+    width: 70%;
+    padding: 5%;
+    border-radius: 50px;
+  }
+  </style>
+  <style>
+  .your-trusted-partner{
+    font-family: Cabinet Grotesk;
+                font-size: 80px;
+                font-weight: 700;
+                line-height: 90px;
+                text-align: center;
+                width: 880px;
+                height: 180px;
+                gap: 0px;
+                opacity: 0px;
+                margin-left: 30%
+  }
+  .at-landbankng-we{
+    font-family: Cabinet Grotesk;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 23px;
+                letter-spacing: 0.01em;
+                text-align: center; /* Align description text to center */
+              
+                font-family: sans-serif,cabinet Grotesk;
+  }
+  #homebtn{
+    background-color: #510000; color: whitesmoke; border:#510000 1px solid; width: 50%; margin-left: 30%; margin-bottom: 10%;
+  }
+  .latest-listings{
+    font-family: Cabinet Grotesk;
+                  font-size: 24px;
+                  font-weight: 700;
+                  line-height: 32px;
+                  text-align: left;
+  }
+  .let-us-help{
+    font-family: Cabinet Grotesk;
+                font-size: 48px;
+                font-weight: 700;
+                line-height: 45px;
+                text-align: left;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @media (max-width: 768px) {
+      .your-trusted-partner {
+         font-size: 40px;
+         margin-left: 0%;
+         width: 100%;
+         line-height: 40px;
+      }
+      .at-landbankng-we {
+      font-size: 14px; /* Adjust font size for smaller screens */
+      line-height: 20px; /* Adjust line height for smaller screens */
+    }
+    #homebtn{
+      width: 70%;
+      margin-left: 15%;
+    }
+    .latest-listings{
+      font-size: 25px;
+      margin-bottom: 5%;
+      margin-top: 70%;
+      font-weight: 700;
+    }
+    .let-us-help{
+      font-size: 16px;
+      line-height: 10px;
+      width: 100%;
+      text-align: center;
+   }
+   .as-a-premier{
+    margin-bottom: 25%;
+   }
+   .size-scaler-x{
+    display: none ;
+   }
+   .symbol-assigner-child{
+    display: none ;
+   }
+   .login-icon2 , .login-icon1{
+    display: none;
+   }
+   .at-landbankng-ltd{
+    position:none;
+    height: 4rem;
+    width: 100%;
+    text-align: start;
+    font-size: 16px;
+   }
+  
+   .at-landbankng-ltd1{
+    margin-top: 50%;
+   }
+   
+   
+  }
+  
+  @media (max-width: 480px) {
+      .service {
+          width: 100%;
+      }
+  }
+ /* Remove flex-direction from .cardcontain */
+.cardcontain {
+    display: flex;
+    /* flex-direction: row; */ /* Remove this line */
+    animation: slide 40s linear infinite; 
+}
+
+/* Adjust .container width and margin */
+.container {
+    /* width: 1100px; */ /* Remove fixed width */
+    margin: 20px auto; /* Adjust margin */
+    display: flex;
+    flex-wrap: wrap; /* Add flex-wrap to allow cards to wrap */
+    justify-content: space-between;
+   
+}
+
+/* Adjust .box width */
+.container .box {
+    flex: 0 0 calc(140% - 130px); /* Adjust card width */
+    
+    background-color: white;
+    position: relative;
+    margin-bottom: 20px; /* Add margin between cards */
+   
+}
+.box{
+  max-width: 1100px;
+}
+.top{}
+
+.image-container {
+    width: 100%;
+    height: 200px; /* Set a fixed height for the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure the image is cropped if it exceeds the container height */
+}
+
+.property-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+.negotiable-box {
+    position: absolute;
+    top: 10px; /* Adjust top position */
+    left: 10px; /* Adjust left position */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.negotiable-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: whitesmoke;
+    background-color: #510000;
+    width: 200px;
+    text-align: center;
+    margin-top: 40%;
+    height: 5rem;
+}
+
+
+
+
+.container .box .top {
+  position: relative;
+  background-color: #510000;
+}
+
+/* .container .box .top:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #510000;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+  opacity: 0;
+} */
+
+.container .box .top:hover:before {
+  opacity: 1;
+}
+.more-details-link{
+  font-size: 16px;
+  float: right;
+  text-decoration: underline;
+}
+
+/* .container .box .top:after {
+    content: "View Property";
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+    border: 1px solid white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 0;
+} */
+
+.container .box .top:after:hover {
+    opacity: 1;
+}
+
+.container .box .top a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.container .box .top:hover:after {
+  opacity: 1;
+}
+
+.container .box .top img {
+  width: 100%;
+  margin-bottom: -4px;
+}
+
+.container .box .top span {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+.container .box .top span i {
+  margin-left: 5px;
+}
+
+.container .box .bottom {
+  padding: 20px 15px;
+  position: relative;
+}
+
+.container .box:not(:last-of-type) .bottom:before {
+  content: "Hot";
+  background-color: #510000;
+  color: white;
+  font-size: 11px;
+  padding: 4px 7px;
+  position: absolute;
+  left: 20px;
+  top: -40px;
+  z-index: 1;
+}
+
+.container .box .bottom h3 {
+  font-size: 15px;
+}
+
+.container .box .bottom > p {
+  margin: 15px 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #777;
+}
+
+.container .box .bottom .advants {
+  display: flex;
+}
+
+.container .box .bottom .advants > div {
+  margin-right: 15px;
+}
+
+.container .box .bottom .advants > div > span {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.container .box .bottom .advants > div > div {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.container .box .bottom .advants > div > div i {
+  color: #777;
+  font-size: 22px;
+}
+
+.container .box .bottom .advants > div > div > span {
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.container .box .bottom .advants > div > div > span > span {
+  color: #777;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.container .box .bottom .price {
+  margin-top: 20px;
+}
+
+.container .box .bottom .price span:first-of-type {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.container .box .bottom .price span:last-of-type {
+  color: #3eaba1;
+  font-size: 22px;
+}
+
+@media screen and (max-width: 768px) {
+  html, body{
+    overflow-x: hidden;
+  }
+    .box {
+        width: calc(130% - 100px); /* Adjusted width for mobile screens */
+    }
+    #ladies{
+      display: none;
+    }
+    #wrapper{
+      margin-top: -60%;
+    }
+    #headwork{
+      text-align: center;
+      margin-left: -15%;
+    }
+    #smallwork{
+      margin-left: -15%;
+    }
+    .class{
+      font-size: 20px;
+    }
+    .step-p{
+      width: 300px;
+      margin-left: -5%;
+    }
+    .step-progress{
+      margin-left: -15%;
+    }
+    #sign{
+      width: 250px;
+      margin-left: -30%;
+    }
+    
+}
+ 
+.block:hover {
+    cursor: pointer;
+    transform: scale(1.05); /* Example: Enlarge the block on hover */
+    transition: transform 0.3s ease; /* Smooth transition for the transform effect */
+    /* Add other hover styles as needed */
+}
+  body , html{
+  font-family: "Cabinet Grotesk"
+  }
+  
+  
+  
+  </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="bg-white">
+        <header class="absolute inset-x-0 top-0 z-50">
+            <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+                <div class="flex lg:flex-1">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Your Company</span>
+                                                <h2 style="font-family: Cabinet Grotesk; font-weight: 900; font-size: 20px;">Land<span style="color: #510000;">Book</span></h2>
+
+                    </a>
+                </div>
+                <div class="flex lg:hidden">
+                    <button id="menu-button" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="desktop-menu" class="hidden lg:flex lg:gap-x-12">
+                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
+                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Contact</a>
+                </div>
+                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                    <a href="/login" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+                </div>
+            </nav>
+            <!-- Mobile menu, show/hide based on menu open state. -->
+            <div id="mobile-menu" class="lg:hidden hidden" role="dialog" aria-modal="true">
+                <!-- Background backdrop, show/hide based on slide-over state. -->
+                <div class="fixed inset-0 z-50"></div>
+                <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="-m-1.5 p-1.5">
+                            <span class="sr-only">Your Company</span>
+                                                    <h2 style="font-family: Cabinet Grotesk; font-weight: 900; font-size: 20px;">Land<span style="color: #510000;">Book</span></h2>
+
+                        </a>
+                        <button id="close-menu-button" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                            <span class="sr-only">Close menu</span>
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mt-6 flow-root">
+                        <div class="-my-6 divide-y divide-gray-500/10">
+                            <div class="space-y-2 py-6">
+                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
+                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact Us</a>
+                            </div>
+                            <div class="py-6">
+                                <a href="/login" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <script>
+            // JavaScript code to toggle mobile menu visibility
+            const menuButton = document.getElementById('menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+        
+            menuButton.addEventListener('click', function () {
+                mobileMenu.classList.remove('hidden');
+            });
+        
+            closeMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.add('hidden');
+            });
+        </script>
+        
+      
+        <div class="relative isolate px-6 pt-14 lg:px-8">
+          <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+            <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#fff] to-[#fff] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+          </div>
+          <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+           
+            <div class="text-center">
+              <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl" style="font-family: Cabinet Grotesk;">Your Trusted Partner in Real Estate Acquisition</h1>
+              <p class="mt-8 text-xs sm:text-lg leading-2 text-gray-600 w-full" style="font-family: Cabinet Grotesk;">At Landbankng ltd, we understand that real estate transactions require precision, security, and transparency. That's why we've designed a comprehensive platform tailored to meet the unique needs of buyers, sellers, and agents in the real estate industry.
+            </p>
+              <div class="mt-10 flex items-center justify-center gap-x-6 mb-12">
+                <a href="/signup" style="background-color: #510000;" class="rounded-full  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Create an account </a>
+                
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+            <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#fff] to-[#fff] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+          </div>
+        </div>
+      </div>
+      
+
+      <section class="desktop-12">
+        <div class="frame-div">
+          <div class="frame-wrapper1">
+            <div class="frame-parent1">
+              <div class="latest-listings-wrapper">
+                <h3 class="latest-listings mt-10" style="
+                ">LATEST LISTINGS</h3>
+              </div>
+              <h1 class="let-us-help" style="
+              ">
+                Let us help you find your perfect home
+              </h1>
+            </div>
+          </div>
+         
+         <div class="scroll-container">
+                      <div class="row-container" id="cardRow">
+                        {% for property in approved_properties %}
+                        <a href="{{ url_for('property_details', property_id=property.id)}}" class="block rounded-lg m-12 p-6 shadow-sm shadow-indigo-100">
+                          {% if property.image_filenames %}
+                                {% set image_files = property.image_filenames.split(',') %}
+                                {% if image_files %}
+                                    {% set image_file = image_files[0] %}
+                                    <img style="width:500px"  class="h-56  rounded-md object-cover" src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="Publication Image">
+                                {% else %}
+                                    <p>No images available</p>
+                                {% endif %}
+                            {% else %}
+                                <p>No images available</p>
+                          
+                            
+                                <button class="negotiable-wrapper">
+                                  <div class="negotiable">
+                                    {% if property.property_negotiation == 'Negotiable' %}
+                              Negotiable
+                          {% else %}
+                              Non-Negotiable
+                          {% endif %}
+                                  </div>
+                                </button>
+                                {% endif %}
+ 
+                          
+                         
+                        
+                          <div class="mt-2">
+                            <dl>
+                              <div>
+                                <dt class="sr-only">Price</dt>
+                        
+                                <dd class="text-xl text-black ngn-400000000">NGN {{property.property_price}}</dd>
+                              </div>
+                        
+                              <div>
+                                <dt class="sr-only">Property Type</dt>
+                        
+                                <dd class="font-medium" style="font-family: Cabinet Grotesk;">{{property.property_subtype}}</dd>
+                              </div>
+                              <div>
+                                <dt class="sr-only">Address</dt>
+                        
+                                <dd class="font-medium" style="font-family: Cabinet Grotesk;">{{property.location}}</dd>
+                              </div>
+                              <div>
+                                <dt class="sr-only">Description</dt>
+                        
+                                <dd class="font-medium " style="font-size: 16px; font-family:Cabinet Grotesk ;">{{ property.property_description[:100] }}</dd>
+                              </div>
+                            </dl>
+                        
+                            <div class="mt-6 flex items-center gap-8 text-xs">
+                              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                                <svg
+                                  class="size-4 text-indigo-700"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+                                  />
+                                </svg>
+                        
+                                <div class="mt-1.5 sm:mt-0">
+                                  <p class="text-gray-500">Parking</p>
+                        
+                                  <p class="font-medium">{{ property.property_size_max  }}</p>
+                                </div>
+                              </div>
+                        
+                              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                                <svg
+                                  class="size-4 text-indigo-700"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                                  />
+                                </svg>
+                        
+                                <div class="mt-1.5 sm:mt-0">
+                                  <p class="text-gray-500">Bathroom</p>
+                        
+                                  <p class="font-medium">{{ property.property_num_baths }}</p>
+                                </div>
+                              </div>
+                        
+                              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                                <svg
+                                  class="size-4 text-indigo-700"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                                  />
+                                </svg>
+                        
+                                <div class="mt-1.5 sm:mt-0">
+                                  <p class="text-gray-500">Bedroom</p>
+                        
+                                  <p class="font-medium">{{ property.property_num_rooms }}</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        {% endfor %}  
+
+
+                        </div>
+                        </div>
+           
+        </div>
+        <div class="data-aggregator">
+          <button class="data-aggregator-inner">
+            <div class="zondiconsreload-parent">
+              <img
+                class="zondiconsreload"
+                alt=""
+                src="../static/images2/zondiconsreload.svg"
+              />
+
+              <div class="load-more" style="
+              
+              font-family: Cabinet Grotesk;
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 16px;
+           
+              
+              gap: 10px;
+              border-radius: 40px 0px 0px 0px;
+              border: 1px 0px 0px 0px;
+             
+              ">Load more</div>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+            <div class="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
+              <img
+                alt=""
+                src="../static/images/frame-49@2x.png"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            
+            </div>
+      
+            <div class="lg:py-24">
+              <h2 class="text-3xl font-bold sm:text-4xl" style="font-family: Cabinet Grotesk;">ABOUT US</h2>
+              <h1 class="we-turn-your-container">
+                <span>
+                  <span class="we-turn" style="font-family: Cabinet Grotesk;">We turn your dream </span>
+                  <span class="properties" style="font-family: Cabinet Grotesk;">properties</span>
+                  <span class="into-reality" style="font-family: Cabinet Grotesk;"> into reality</span>
+                </span>
+              </h1>
+      
+              <p class="mt-4 text-gray-600" style="font-family: Cabinet Grotesk;">
+                As a premier real estate firm, we take pride in our commitment to providing exceptional service, unwavering integrity, and unparalleled expertise to our clients.
+              </p>
+
+              <p class="mt-4 text-gray-600" style="font-family: Cabinet Grotesk;">
+                <h2 class="text-2xl font-bold sm:text-xl" style="font-family: Cabinet Grotesk;">Our Mission</h2>
+                At Landbankng ltd, our mission is to empower individuals and businesses to achieve their real estate dreams while building lasting legacies. We are committed to providing unparalleled service, leveraging our expertise to navigate the complexities of purchases within the real estate market.              </p>
+      
+            
+                <p class="mt-4 text-gray-600" style="font-family: Cabinet Grotesk;">
+                    <h2 class="text-2xl font-bold sm:text-xl" style="font-family: Cabinet Grotesk;">Our vissiom</h2>
+
+                    At Landbankng ltd, our vision is simple yet profound: to be the catalyst for turning your property aspirations into reality. Whether you're buying, selling, investing, or seeking property management services, we're dedicated to being your trusted partner at every step of the real estate journey.                  </p>
+               
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:text-center">
+            <h2 class="text-xl text-base font-semibold leading-7 sm:text-2xl"     style="font-family: Cabinet Grotesk;">Why choose us </h2>
+            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"     style="font-family: Cabinet Grotesk;">We are the BEST in property acquisitions</p>
+            <p class="mt-6 text-lg leading-8 text-gray-600"     style="font-family: Cabinet Grotesk;">Trust Landbankng ltd for your real estate transactions. Experience the future of secure and transparent escrow services</p>
+          </div>
+          <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <a
+              class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              href="#"
+            >
+             
+      
+              <h2 class="mt-4 text-xl font-bold text-black" style="font-family: Cabinet Grotesk;">Expertise & Experience</h2>
+      
+              <p class="mt-1 text-sm text-black" style="font-family: Cabinet Grotesk;">
+                We leverage years of experience to navigate the complexities of the market, ensuring your transactions are seamless and successful.
+              </p>
+            </a>
+      
+            <a
+              class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              href="#"
+            >
+             
+      
+              <h2 class="mt-4 text-xl font-bold text-black" style="font-family: Cabinet Grotesk;">Secure Transactions</h2>
+      
+              <p class="mt-1 text-sm text-black" style="font-family: Cabinet Grotesk;">
+                We employ state-of-the-art encryption and security protocols to ensure the safety of your funds and sensitive information throughout the entire escrow process.
+              </p>
+            </a>
+      
+            <a
+              class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              href="#"
+            >
+             
+      
+              <h2 class="mt-4 text-xl font-bold text-black" style="font-family: Cabinet Grotesk;">Transparency & Trust</h2>
+      
+              <p class="mt-1 text-sm text-black" style="font-family: Cabinet Grotesk;">
+                LStay informed at every step. Our platform facilitates clear and direct communication between buyers, sellers, and agents, fostering trust and transparency.
+              </p>
+            </a>
+      
+            <a
+              class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              href="#"
+            >
+              
+      
+              <h2 class="mt-4 text-xl font-bold text-black">Customized Solutions</h2>
+      
+              <p class="mt-1 text-sm text-black">
+                Whether you're involved in residential or commercial real estate, our platform offers flexible escrow solutions tailored to your specific needs.
+              </p>
+            </a>
+      
+           
+          </div>
+      
+        </div>
+      </div>
+      
+
+      <div class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:text-center">
+            <h2 class="text-base font-semibold leading-7 sm:text-2xl"     style="font-family: Cabinet Grotesk;">OUR SERVICES </h2>
+            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"     style="font-family: Cabinet Grotesk;">We Offer Peace, Profit, Prosperity</p>
+            <p class="mt-6 text-lg leading-8 text-gray-600"     style="font-family: Cabinet Grotesk;">Whether it's an acquisition, Verification or a detailed discussion about your property goals, we're here to make your experience seamless</p>
+          </div>
+          <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <a
+              class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              href="#"
+            >
+              
+      
+              <h2 class="mt-4 text-xl font-bold text-black">Property Acquisition</h2>
+      
+              <p class="mt-1 text-sm text-black">
+                The strenuous process of verification and ownership of a real estate can be time-consuming and draining. We help willing individuals manage their real estate investments and assets portfolio, assisting them identify prime opportunities, overseeing purchase, and keeping track of the purchases and investment.
+              </p>
+            </a>
+      
+            <a
+              class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              href="#"
+            >
+             
+      
+              <h2 class="mt-4 text-xl font-bold text-black">Property Listing</h2>
+      
+              <p class="mt-1 text-sm text-black">
+                We offer a listing platform with wide range access to thousands of potential clients seeking properties to buy or rent. This shortens the lengthy time it typically takes to close the sale or renting of a property.              </p>
+            </a>
+      
+            <a
+              class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              href="#"
+            >
+             
+      
+              <h2 class="mt-4 text-xl font-bold text-black">Property Management</h2>
+      
+              <p class="mt-1 text-sm text-black">
+                Managing a property and its cash flow can be challenging. This includes everything from sales or rentals to day-to-day operations. We undertake contracts to manage the portfolio of property owners and developers, relieving them of the tedious process.              </p>
+            </a>
+      
+            <a
+              class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              href="#"
+            >
+           
+      
+              <h2 class="mt-4 text-xl font-bold text-black">Property Advisory</h2>
+      
+              <p class="mt-1 text-sm text-black">
+                Our advisory team, composed of experienced experts in the vast real estate sector, is here to guide you. Whether you are seeking expert advice on property choice or investments, our dedicated team is at your service.              </p>
+            </a>
+      
+           
+          </div>
+      
+        </div>
+      </div>
+
+
+      <div style="background-color: #FEFEFE;" class="hero min-h-screen ">
+        <div class="hero-content text-center">
+            <div class="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+        
+                <div  class="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
+                    <div id="ladies" class="mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right">
+                        <img  style="width: 100%; height: auto" src="../static/image/ladies.png" />
+    
+                    </div>
+              
+                    <div id="wrapper" class="grid grid-cols-2 mt-16 gap-4 sm:grid-cols-3">
+                        <div class="wrapper">
+                            <div id="headwork" class="wrapper-head-text" style="font-family: Cabinet Grotesk;
+                            font-size: 24px;
+                            font-weight: 700;
+
+                           
+                            " style="font-family: Cabinet Grotesk;">HOW IT WORKS</div>
+                            <div id="smallwork" class="wrapper-small-text" style="font-family: Cabinet Grotesk;
+                           
+                          
+                           
+                            " style="font-family: Cabinet Grotesk;">Buying properties should not <p> be difficult</p></div>                   
+                            <br><br>
+                            <ul class="step-progress text-center">
+                              <li id="line" class="step-progress-item is-done"><strong class="class" style="font-family: Cabinet Grotesk;">Create Account </strong>
+                            <p class="step-p" style="font-family: Cabinet Grotesk;">Are you seeking to buy or sell a property? Start the process with a few simple clicks, providing the necessary details to kickstart your secure Landbank account.</p>
+                            </li>
+                              <li id="line" class="step-progress-item is-dones "><strong class="class" style="font-family: Cabinet Grotesk;">Property Listings</strong>
+                            <p class="step-p" style="font-family: Cabinet Grotesk;"> List your properties for sale as an agent, browse through  listings and  Choose from various property listings as a buyer.</p>
+    
+                            </li>
+                              <li id="line" class="step-progress-item current "><strong class="last class" style="font-family: Cabinet Grotesk;">Verification & inspections</strong>
+                                <p class="step-p" style="font-family: Cabinet Grotesk;"> We facilitate document verification and property inspections to ensure compliance with agreed-upon terms by both buyer and sellers.</p>
+    
+                            </li>
+                              <li id="line" class="step-progress-item is-final"><strong class="class" style="font-family: Cabinet Grotesk;">Seamless Closing </strong>
+                                <p class="step-p" style="font-family: Cabinet Grotesk;"> When all conditions are met, we orchestrate a seamless closing process, releasing funds to the appropriate parties.</p>
+    
+                            </li>
+                            <div id="sign" class="sign-btn">
+                                <div style="justify-content: center; align-items: center; gap: 16px; display: inline-flex">
+                                    <div style="width: 16px; height: 16px; position: relative">
+                                      
+                                    </div>
+                                    <div style="color: #FEFEFE; font-size: 16px; font-family: Cabinet Grotesk; font-weight: 400; line-height: 16px; word-wrap: break-word">Signup for free</div>
+                                </div>
+                            </div>                        </ul>
+                          </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+      </div>
+
+
+
+      <div class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:text-center">
+            <h2 class="text-base font-semibold leading-7 text-black"     style="font-family: Cabinet Grotesk;">TESTIMONIALS</h2>
+            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"     style="font-family: Cabinet Grotesk;">Our Clients agree, we bank the future</p>
+            <p class="mt-6 text-xl leading-8 text-gray-600"    style="font-family: Cabinet Grotesk;">Just as our name implies. We provide a secure bank for all your property acquisitions, inspect and verify properties, mediate the transfer of funds, resolve disputes. we guarantee your peace of mind.</p>
+          </div>
+          </div>
+          </div>
+
+
+          <section>
+            <div class="mx-auto max-w-screen-xl px-2 py-8 sm:px-6 sm:py-24 lg:px-4">
+             
+          
+              <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+                <div class="relative h-80 overflow-hidden sm:h-80 lg:h-full">
+                  <img
+                    alt=""
+                    src="../static/images/man.jpeg"
+                    class="absolute inset-0  w-full h-80 object-cover"
+                  />
+                </div>
+          
+                <div class="lg:py-16">
+                  <article class="space-y-4 text-black">
+                    <p>
+                        What stood out to me the most was their dedication to transparency. They kept me informed at every stage of the transaction, ensuring I felt confident in my decisions. The communication channels were clear, and I always felt like a valued client.
+                    </p>
+                    <hr>
+          
+                    <h2>Alex Deo: Cadlands</h2>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <section class="bg-white text-black">
+            <div class="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+              <div class="max-w-xl">
+                <h4 class="text-3xl font-bold sm:text-xl">FREQUENTLY ASKED QUESTIONS</h4>
+                <h2 class="text-3xl font-bold sm:text-5xl">What makes us special</h2>
+          
+                <p class="mt-4 text-black">
+                    Trust Landbankng ltd for your real estate transactions. Experience the future of secure and transparent escrow services
+                </p>
+              </div>
+            
+          
+             
+            </div>
+          </section>
+          <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" checked="checked" /> 
+            <div class="collapse-title text-xl font-medium">
+              Click to open this one and close others
+            </div>
+            <div class="collapse-content"> 
+              <p>hello</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" /> 
+            <div class="collapse-title text-xl font-medium">
+              Click to open this one and close others
+            </div>
+            <div class="collapse-content"> 
+              <p>hello</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" /> 
+            <div class="collapse-title text-xl font-medium">
+              Click to open this one and close others
+            </div>
+            <div class="collapse-content"> 
+              <p>hello</p>
+            </div>
+          </div>
+
+
+          <section id="contact" style="background-color: #510000;" class="overflow-hidden  sm:grid sm:grid-cols-1 sm:items-center md:grid-cols-1 lg:grid-cols-2">
+            <div class="p-8 md:p-12 lg:px-16 lg:py-24  order-2 sm:order-1">
+              <div class="mx-auto max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+                <h2 class="contact-small text-1xl font-bold  md:text-2xl">
+        CONTACT US        
+        </h2>
+        <h2 class="contact-small text-2xl mb-6 font-bold md:text-3xl">
+            Let us handle your property acquisitions and investments 
+            </h2>
+            <div class="text-2xl md:text-2xl mb-2" style="color: #FEFEFE;  font-family: Cabinet Grotesk; font-weight: 700; line-height: 24px; word-wrap: break-word; text-align: start;">Call on</div>
+            <div style="text-align: start; color: #FEFEFE; font-size: 14px; font-family: Cabinet Grotesk; font-weight: 500; line-height: 21px; word-wrap: break-word">Call our team Monday - Sunday, round the clock</div>
+            <div style="text-align: start; color: #FEFEFE; font-size: 14px; font-family: Cabinet Grotesk; font-weight: 500; line-height: 21px; word-wrap: break-word"> <i class="bx bx-phone"></i> +234 912 222 3333,  +234 91-2222-6666, +234 912-666-6666</div>
+            <div class="text-2xl md:text-2xl mb-2 mt-4" style=" text-align: start; color: #FEFEFE; font-family: Cabinet Grotesk; font-weight: 700; line-height: 24px; word-wrap: break-word">Chat with us</div>
+            <div style="width: 100%; height: 100%; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+                <div style="color: #FEFEFE; font-size: 14px; font-family: Cabinet Grotesk; font-weight: 500; line-height: 21px; word-wrap: break-word">Speak to our friendly team</div>
+                <div style="justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
+                    <div style="width: 20px; height: 20px; position: relative">
+                        <div style="width: 15.71px; height: 18.86px; left: 2.14px; top: 1.57px; position: absolute; background: #FEFEFE"><i class='bx bx-envelope' ></i></div>
+                    </div>
+                    <div style="color: #FEFEFE; font-size: 14px; font-family: Cabinet Grotesk; font-weight: 500; line-height: 21px; word-wrap: break-word"> Send us a mail</div>
+                </div>
+                <div style="justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
+                    <div style="width: 20px; height: 20px; position: relative">
+                        <div style="width: 17.98px; height: 18.25px; left: 1.01px; top: 1.88px; position: absolute; background: #FEFEFE"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADZ0lEQVR4nO2ZCYhNYRTHf4YxM5axxxjL2BITyVYjIlmyK00aWcpSEiZSIqQpKWRLZAmRElmSdZItCQ0hg4ihGWMn21jH6KszdXrN/ea+efe+9+j96tV77/7v+c537/ede865ECNGjBj/A9WAk0CZy88fYLjHPkxT9i8CCVU1lAq8D2Iyz4GGHk1iKPBL7N4HGoRqcJIY+wi0dtDEARdEty/UAYF04IPYewO0xyMOiNFL4nRFtAE+iW58CGOlAM/ETgmQgYc0Bl6I8WyLbqZozNVsUYVxagHX1J7LwgdGyQDf5NY7BYgTojsjv91SHTiq9tsCfGSnDHIDiHfQNAfeiW5GELY3qklsx2eSgacy2DKLLks0X1xu1HlqEqeAGoSBvkCphMZeFt1+ceyyLBsnRgC/RXsXqEcYWScD3wOSHDT1gcJK1nsPuWtGUwy0IswkyNUzDqyx6IZI9PkOdAk4lqYi4VegNxGiO/BTltkAi26bOHsTqKn22h353yyrMUSY5eJMAVDXQVMbeCS6HIl2uWpzzyYKiAfyXITMfipAnFaTWEsU0UlSCePYSItudUCCebySaBYR5qvI08hBk6gCRIGkI1FHHHBenDxs0XUDfkgkM2l6VJImqX5ZJcneUtEUelFj+MV0lf22dNCY9OOq6HYRxRwSJ3Mt2W874LPoxhGlNAFeiZOmPnFirmheA02JUvao7Ndc/Yowd+usiwARMaYGPC+uWJ4XurkxmShisORfxrEHQJF8X2g5Z4qLABFWOqvOx1ugAzBIZb9dLecelPPMUgumPPacFFU5mpq+jzq2Wf6/pbLfipobL0U3hwiRpJ4L5upPCDhuUpGHcnyFxc5oVZt0JAKpyRG1sZ32QobUHaWSCTuxW+zkWZobvrBBTWJHJdqVonsM1HHQmHq9fIkuIUxkq0mcs6z/cszx26LfZNENlCVqapee+IzufORLo8EN6RIMjKPDXNzpfEn/favVQ+l8LJJziyyd+0RVu6zCB1JVi6ekip2POGmGGxt7XTY3+uMhyWqNG+NjQ7DVVmW/mRZdjmieWJobQRHY+TCZa6jMUu8/mllql+ui2+rBmGxRk1jvw6u9Yy6bGyNCGXCxj50P3bl38ym2NDesZMp+KH+VYJptXjMxiImUSQUaI0aMGPz7/AX/sjP1YPg5SgAAAABJRU5ErkJggg=="></div>
+                    </div>
+                    <div style="color: #FEFEFE; font-size: 14px; font-family: Cabinet Grotesk; font-weight: 500; line-height: 21px; word-wrap: break-word"> Message us on X</div>
+                </div>
+            </div>    
+            <div style="width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: flex-start; gap: 10px; display: inline-flex">
+                <div style="justify-content: flex-start; align-items: center; gap: 16px; display: inline-flex">
+                    <div class="text-2xl md:text-2xl mb-2 mt-4" style="color: #FEFEFE;  font-family: Cabinet Grotesk; font-weight: 700; line-height: 24px; word-wrap: break-word">Visit us</div>
+                </div>
+                <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex">
+                    <div style="color: #FEFEFE; font-size: 14px; font-family: Cabinet Grotesk; font-weight: 500; line-height: 21px; word-wrap: break-word">Come see us in person at</div>
+                    <div style="justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
+                        <div style="width: 20px; height: 20px; position: relative">
+                            <div style="width: 11.67px; height: 16.67px; left: 4.17px; padding-top: 10%; position: absolute; background: #FEFEFE"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE90lEQVR4nO2dW4iVVRTHf3NGK8Y5ZXTBCrpb8xAUWSQ9BpFjZIRFUKFFF+ul1B6KMu0pqazAxrfqocwuEKRRD5EpQWSaPWjRkzI1jd2VSintsmLTfqgDw7nttb+197d/8IfhDOewLud8+9t7rb0/KBQKeXAysBBYBbwC7AT2AvuBI177/WvufxuAlf49J1VtfC7MAZ4CdgN/A9Kj3Ht3+c+6uGqnUqMJLAc+6yMB7eQ+exkwXLWzljneX45+UkxEq370l7WZVTtviQFgEfBdxES0yn0J7vK21JqzgA8qTIS0aCtwJjXlWn9XJMb0M3ADNcJdFh43EHhpc1f2WB0uYYPAcwYCLh3qRWA6meIc22ggyNKl3gSmkRnup/+CgeBKj1qf2+XL+pghHWg1mXBNn8seYkTOh+tInNMjz7xFWQf83ClJBoxN+iSQtqQ6ntxqIHiipJtJcKHwewOBEyV9AxxLQjxqIGiirIdJhBnADwYCJhGW7pOopyw3ECyJpKUkwC4DgZJIcpVH01xiIEgSWRdimKcjBeEr4FlgHjDix60Z/m/32hgwEcmWJzDMbmXnv/al1k5WXxu+0DSubNOnGO6b0lyz2ug7UrrFvWeTol1/ASdikIWKTq/13/heafjP0LLP5KLjKiVn3/GVxn5pKBbIVmCQDUpjRjOgje6zJpUKWOb4RMHR2xXsvFPBzu0YZFzh1nZQwc5pCrfErsHbHKELUWsVbR0LbKtbuzPH4cBOjiraOj+wrb9jkD8DOzlb0dbzA9v6BwY5GNjJYUVbhwPb+gsGCV0hbCra2gxs67cY5IvATp6naOtIYFtdycEcW2s8qL+HQdYHdnJM0dZ1gW11bbLmeCiwkxMJTQzvxyALAjspwB0Kdi5RsPNKDHK2gqOTge+2XC/VPgU7T8EgA/5+3PLy+yYF+9ySkVm2KTgsxgtUmzHMk0pOi/92N3u8TL2laNcjGGaeouPiVwPu66LJYZHSmPFfXYZhhvzKpyhrws9TRv2se9hrxE/61kVqAzqgdGselC0RAiFG9AYJsMJAoCSS7iYBLjIQKIkg1491GonwuYGAibLeJyFWGgiYKMt1ryTDOZlshZYp5I4TPIHE2G4gcKIk1wGZHEsNBE6UlOTxTTMVGh/EgCZTPiEopaOYJIe1q7rNSQ4Ds0icDw0EUgLpJTLgJgOBlDqs7HbKdN8dLolrMxlxj4GASp+6gow42u+GkkS1jQxZZiCw0qOuJkOGKj5OXPrYh57kgWW5/kpGyZijgD0GgiwdyjWQZ88tBgItHciVD+ZSAxr+kURiXK9RI64yEHBpU4DS3ONokrcNBF6m0BpqyLmRmuqkh/2Cx1FTVhtIgLRoMTVmKMIBY9KFdvTZZZ8FNxpIhPiDD9yZkQXlE9+kQz1TMvH/pyj8WmEyvkzlUOS6tA0tqNp5iwwCH1eQjFerdtwyF0Sem7hyQHmSdBseiJiQ6+N8z9KmEenJPC9X7WhKzAYOKSZjX4rd61WzRLHO4XYLF4ycBbymZKK/Dvq9AZOx05eRC31waaATTw/6wy8LAXgwQELcY/wKAW+F3+0jGa+XTIRnlq/mdZuMPXWuAGpzeZfjyW/AnKqNzp17u0jIbVUbWxee7yAZ7qFhhUgc02Yf/EdlvhGfM6YY5N225VMrsKfAv00Jh1oG8Sz2AabMfF8TH/d/FwoFcuUfFBDGY5na5MEAAAAASUVORK5CYII="></div>
+                        </div>
+                        <div style="color: #FEFEFE; font-size: 14px; font-family: Cabinet Grotesk; font-weight: 500; line-height: 21px; word-wrap: break-word">27A Tunis street, Wuse Zone 6, Abuja</div>
+                    </div>
+                </div>
+            </div> 
+            <div class="text-2xl md:text-2xl mb-2 mt-4" style="text-align:start; color: white;  font-family: Cabinet Grotesk; font-weight: 700; word-wrap: break-word">Send Us a message</div> 
+            <form style="text-align:start;" class=" w-full" action="">
+                <input type="text" placeholder="Email" class="input input-bordered w-full max-w-xs mb-2" />
+                <textarea placeholder="Bio" class="textarea textarea-bordered textarea-lg w-full max-w-xs"  ></textarea>
+                <button  class="btn btn-wide">Send us a mesage</button>
+            </form>
+            
+        </div>
+            </div>
+        
+            
+          
+            <!-- <div class="flex itemsend"> -->
+              <img
+                alt="Violin"
+              src="/static/image/girly.png"      class="violin order-1 sm:order-2"
+            />
+        
+            <!-- </div> -->
+          </section>
+          <footer class="desktop-12-parent">
+            <div class="desktop-121">
+              <div class="desktop-12-child"></div>
+              <div class="desktop-12-inner">
+                <div class="jmsoltech-1-parent">
+                  <img
+                    class="jmsoltech-1-icon1"
+                    loading="lazy"
+                    alt=""
+                    src="../static/images2/jmsoltech-1@2x.png"
+                  />
+    
+                  <div class="landbankng-ltd-wrapper">
+                    <h3 class="landbankng-ltd">Landbookng ltd</h3>
+                  </div>
+                  <div class="at-landbankng-ltd-we-understan-wrapper">
+                    <div class="at-landbankng-ltd2">
+                      At Landbookng ltd we understand that real estate transactions
+                      require precision, security, and transparency.
+                    </div>
+                  </div>
+                  <div class="frame-wrapper25">
+                    <div class="frame-parent46">
+                      <img
+                        class="frame-child3"
+                        loading="lazy"
+                        alt=""
+                        src="../static//images2/frame-26085526.svg"
+                      />
+    
+                      <img
+                        class="frame-child4"
+                        loading="lazy"
+                        alt=""
+                        src="../static/images2/frame-26085527.svg"
+                      />
+    
+                      <img
+                        class="frame-child5"
+                        loading="lazy"
+                        alt=""
+                        src="../static/images2/frame-26085528.svg"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="company-parent">
+                <b class="company">Company</b>
+                <div class="about-us-parent">
+                  <div class="about-us2">About us</div>
+                  <div class="services1">Services</div>
+                  <div class="how-it-works1">How it works</div>
+                  <div class="contact-us2">Contact us</div>
+                  <div class="testimonials1">Testimonials</div>
+                  <div class="privacy-policy">Privacy Policy</div>
+                  <div class="privacy-policy1">Privacy Policy</div>
+                </div>
+              </div>
+            </div>
+            <div class="desktop-81">
+              <div class="desktop-8-item"></div>
+              <div class="desktop-8-child1"></div>
+              <div class="landbnk-inc-all-rights-reserv-wrapper">
+                <div class="landbnk-inc-all">
+                  © 2023 Landbook Inc. All rights reserved.
+                </div>
+              </div>
+            </div>
+          </footer>
+          <script>
+            // Function to convert price to shorthand format
+            function convertPriceShorthand() {
+                var priceDisplays = document.querySelectorAll(".ngn-400000000");
+                
+                priceDisplays.forEach(function(priceDisplay) {
+                    var priceText = priceDisplay.textContent.trim();
+                    var priceValue = parseFloat(priceText.replace(/[^\d.]/g, ''));
+                    
+                    if (priceValue >= 1000000 && priceValue <= 999999999) {
+                        var shorthandPrice = (priceValue / 1000000).toFixed(2) + "M";
+                        priceDisplay.textContent = "NGN " + shorthandPrice;
+                    } else if (priceValue >= 1000000000 && priceValue <= 999000000000) {
+                        var shorthandPrice = (priceValue / 1000000000).toFixed(2) + "B";
+                        priceDisplay.textContent = "NGN " + shorthandPrice;
+                    }
+                });
+            }
+        
+            // Call the function initially to convert displayed prices
+            convertPriceShorthand();
+        </script>  
+</body>
+</html>

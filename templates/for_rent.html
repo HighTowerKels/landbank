@@ -1,0 +1,1465 @@
+
+<link rel="stylesheet" href="../static/css/dashboard.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css
+">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css
+">
+<link rel="stylesheet" href="../static/css/ListingLandingPage.css" />
+<link rel="stylesheet" href="../static/css/index.css" />
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Cabinet Grotesk:wght@400;500;700&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Noto Sans:wght@500;700&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js
+"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.jshttps://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js
+"></script>
+<link rel="stylesheet" href="../static/css/different.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.flash-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #ffcc00;
+            color: #510000;
+            padding: 16px 32px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .flash-message.hide {
+            opacity: 0;
+        }
+        .flash-message a {
+            color: #510000;
+            text-decoration: underline;
+            margin-left: 10px;
+        }
+    .content {
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.col-span-6 {
+  grid-column: span 6 / span 6;
+}
+
+.col-span-4 {
+  grid-column: span 4 / span 4;
+}
+
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.col-span-10 {
+  grid-column: span 10 / span 10;
+}
+
+textarea.textarea {
+  width: 100%;
+}
+
+.file-upload-container,
+.document-upload-container {
+  margin-top: 30px;
+}
+
+.file-upload-container label,
+.document-upload-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.file-upload-container input,
+.document-upload-container input {
+  display: none;
+}
+
+#file-drag,
+#document-drag {
+  border: 2px dashed #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+#file-drag img,
+#document-drag img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+#file-drag div,
+#document-drag div {
+  text-align: center;
+}
+
+#file-list,
+#document-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.btn-wide {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-wide:hover {
+  background-color: #510000;
+}
+
+/* Adjustments for the grid */
+@media (max-width: 768px) {
+  .grid-cols-12,
+  .grid-cols-10,
+  .grid-cols-6,
+  .grid-cols-4 {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .col-span-6,
+  .col-span-4,
+  .col-span-3,
+  .col-span-10 {
+    grid-column: span 12 / span 12;
+  }
+}
+.rows{
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    padding: 5%;
+}
+/*.disabled {*/
+/*      background-color: #f0f0f0;*/
+/*    }*/
+
+</style>
+
+
+
+<aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
+    <i class="uil-bars close-aside d-md-none d-lg-none" data-close="show-side-navigation1"></i>
+    <div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
+      <img
+           class="rounded-pill img-fluid"
+           width="65"
+           src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148907008/medium/1501685726/enhance"
+           alt="">
+      <div class="ms-2">
+        <h5 class="fs-6 mb-0">
+          <a class="text-decoration-none" href="#">{{user.firstname}} {{user.lastname}}</a>
+        </h5>
+      </div>
+    </div>
+  
+   
+  
+    <ul class="categories list-unstyled">
+      <li class="">
+        <i class="uil-estate fa-fw"></i><a href="/dashboard" onclick="navigateTo('/dashboard')"> Dashboard</a>
+       
+      </li>
+      <li class="">
+        <i class="uil-folder"></i><a href="/bookmark" onclick="navigateTo('/bookmark')"> My property</a>
+      </li>
+      <li class="">
+        <i class="uil-bag"></i><a href="#" onclick="navigateTo('/verification')"> Verification</a>
+        
+      </li>
+      <li class="">
+        <i class="uil-envelope-download fa-fw"></i><a href="#" onclick="navigateTo('/listinguser')"> Listing</a>
+        
+      </li>
+     
+      <li class="has-dropdown">
+        <i class="uil-setting"></i><a href="#"> Settings</a>
+        <ul class="sidebar-dropdown list-unstyled">
+          <li><a href="#" onclick="navigateTo('/settings')">Setting</a></li>
+          <li><a href="#">Help</a></li>
+          
+        </ul>
+      </li>
+    
+     
+      <li class="">
+        <i class="uil-signin"></i><a href="#" onclick="navigateTo('/logout')"> Logout</a>
+      </li>
+    </ul>
+  </aside>
+  
+  <script>
+    function navigateTo(url) {
+      window.location.href = url;
+    }
+    </script>
+  
+  <section id="wrapper">
+    <nav class="navbar navbar-expand-md" >
+      <div class="container-fluid mx-2"style="background-color: #510000;">
+        <div class="navbar-header" >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggle-navbar" aria-controls="toggle-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="uil-bars text-white"></i>
+          </button>
+          <a style="color: whitesmoke;" class="navbar-brand" href="#"><span style="color: #f9f9f9;">Land</span><span style="color: #f9f9f9;" class="">Book</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="toggle-navbar">
+          <ul class="navbar-nav ms-auto">
+   
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i data-show="show-side-navigation1" class="uil-bars show-side-btn"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <div class="p-4">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div id="flashMessageContainer">
+                {% for category, message in messages %}
+                    <div class="flash-message alert-{{ category }}" id="flashMessage">
+                        {{ message }}
+                       
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+       
+
+   
+  
+   
+    </div>
+    <div class="content">
+        <section class="mx-auto max-w-screen-xl">
+          <div class="card" style="width: 100%;">
+            <h3 style=" font-family: Cabinet Grotesk;
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 29px;
+            letter-spacing: 0em;
+            text-align: left;
+            ">Create New Shortlet </h3>
+            <form method="post" enctype="multipart/form-data" action="{{ url_for('create_shortlet') }}" >
+              <div class="mt-8 grid grid-cols-12 gap-6">
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="FirstName" class="block text-sm font-medium text-gray-700">
+                      Ownership Type
+                    </label>
+        
+                    <select
+                    name="shortlet_property_ownership"
+                    id="HeadlineAct"
+                    required
+                    class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                  >
+                    <option value="personal">Personal</option>
+                    <option value="developer">Developer</option>
+                    <option value="realtor">Realtor</option>
+                    <option value="agent">Agent</option>
+                    
+                   
+                  </select>
+                  </div>
+                  <div class="col-span-6 sm:col-span-3">
+                    <label for="LastName" class="block text-sm font-medium text-gray-700">
+                        Type
+                    </label>
+                    <select
+    name="shortlet_property_type"
+    id="typeSelect"
+    required
+    class="px-8 mt-1 w-60 h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+  >
+    
+    <option value="house">House</option>
+    <option value="commercial">Commercial / Special Use</option>
+  </select>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="LastName" class="block text-sm font-medium text-gray-700">
+                        SubType
+                    </label>
+                    <select
+                
+                        name="shortlet_subtype" id="subtypeSelect"
+                        class="px-8 mt-1 w-60 h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                    >
+                        <!-- Default option -->
+                        <option value="">Please select a property subtype</option>
+                    </select>
+                </div>
+                
+            </div>
+              
+            <div class="mt-8 grid grid-cols-10 gap-6 pl-14">
+                 
+            
+              <div class="col-span-6 sm:col-span-3" style="margin-left: -15%;">
+                <label for="LastName" class="block text-sm font-medium text-gray-700">
+                  Available For
+                  </label>
+              <select class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+              id="availableFor" name="shortlet_property_available">
+              <option value="shortlet">Shortlet</option>
+              <option value="for Rent">For Rent</option>
+
+              <option value="for Sale">For Sale</option>
+
+              
+              <option value="JV">JV (Joint Venture)</option>
+              
+              </select>
+              </div>
+              <div class="col-span-6 sm:col-span-3">
+                <label for="state" class="block text-sm font-medium text-gray-700">State</label>
+                <select id="state" name="location" class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" required>
+                  <option value="">Select State</option>
+                  <option value="Abia">Abia</option>
+                  <option value="Adamawa">Adamawa</option>
+                  <option value="Akwa Ibom">Akwa Ibom</option>
+                  <option value="Anambra">Anambra</option>
+                  <option value="Bauchi">Bauchi</option>
+                  <option value="Bayelsa">Bayelsa</option>
+                  <option value="Benue">Benue</option>
+                  <option value="Borno">Borno</option>
+                  <option value="Cross River">Cross River</option>
+                  <option value="Delta">Delta</option>
+                  <option value="Ebonyi">Ebonyi</option>
+                  <option value="Edo">Edo</option>
+                  <option value="Ekiti">Ekiti</option>
+                  <option value="Enugu">Enugu</option>
+                  <option value="Gombe">Gombe</option>
+                  <option value="Imo">Imo</option>
+                  <option value="Jigawa">Jigawa</option>
+                  <option value="Kaduna">Kaduna</option>
+                  <option value="Kano">Kano</option>
+                  <option value="Katsina">Katsina</option>
+                  <option value="Kebbi">Kebbi</option>
+                  <option value="Kogi">Kogi</option>
+                  <option value="Kwara">Kwara</option>
+                  <option value="Lagos">Lagos</option>
+                  <option value="Nasarawa">Nasarawa</option>
+                  <option value="Niger">Niger</option>
+                  <option value="Ogun">Ogun</option>
+                  <option value="Ondo">Ondo</option>
+                  <option value="Osun">Osun</option>
+                  <option value="Oyo">Oyo</option>
+                  <option value="Plateau">Plateau</option>
+                  <option value="Rivers">Rivers</option>
+                  <option value="Sokoto">Sokoto</option>
+                  <option value="Taraba">Taraba</option>
+                  <option value="Yobe">Yobe</option>
+                  <option value="Zamfara">Zamfara</option>
+                  <option value="Federal Capital Territory">Federal Capital Territory</option>
+                </select>
+              </div>
+              <div class="col-span-6 sm:col-span-3">
+                <label for="lga" class="block text-sm font-medium text-gray-700">Local Government Area</label>
+                <select id="lga" name="lga" class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" required>
+                  <option value="">Select LGA</option>
+                  <!-- Options will be dynamically populated based on selected state -->
+                </select>
+              </div>
+             
+              </div>
+
+                  <div class="mt-8 grid grid-cols-4 gap-6">
+                    <div>
+                      <label for="negotiationStatus" class="block text-sm font-medium text-gray-700">
+                        Negotiation Status
+                      </label>
+                      <select
+                      required
+                        name="shortlet_negotiation"
+                        id="negotiationStatus"
+                        class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      >
+                        <option value="Negotiable">Negotiable</option>
+                        <option value="Non-Negotiable">Non-Negotiable</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="percentNegotiation" class="block text-sm font-medium text-gray-700">
+                        % Negotiation
+                      </label>
+                      <select
+                      required
+                      id="percentNegotiation"
+                      name="shortlet_percent"
+                      class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                    >
+                      <option value="5%">5%</option>
+                      <option value="10%">10%</option>
+                      <option value="15%">15%</option>
+                      <option value="20%">20%</option>
+                      <option value="25%">25%</option>
+                      <option value="30%">30%</option>
+                      <option value="35%">35%</option>
+                      <option value="40%">40%</option>
+                      <option value="45%">45%</option>
+                      <option value="50%">50%</option>
+                      <option value="55%">55%</option>
+                      <option value="60%">60%</option>
+                      <option value="65%">65%</option>
+                      <option value="70%">70%</option>
+                      <option value="75%">75%</option>
+                      <option value="80%">80%</option>
+                      <option value="85%">85%</option>
+                      <option value="90%">90%</option>
+                      <option value="95%">95%</option>
+                      <option value="100%">100%</option>
+                    </select>
+                    
+                    </div>
+                    <div>
+                      <label for="rentAmount" class="block text-sm font-medium text-gray-700">
+                        Rent Amount
+                      </label>
+                      <input required
+                        type="text"
+                        id="rentAmount"
+                        name="shortlet_price"
+                        placeholder="Enter Amount in Naira"
+                        class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      />
+                    </div>
+                    <div>
+                      <label for="otherCharges" class="block text-sm font-medium text-gray-700">
+                        Other Charges
+                      </label>
+                      <input
+                      required
+                        type="text"
+                        id="otherCharges"
+                        name="shortlet_charges"
+                        placeholder="Enter Amount in Naira"
+                        class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      />
+                    </div>
+                  </div>
+                  
+
+              
+                  
+                  <label for="negotiationStatus" class="block text-sm font-medium text-gray-700 mt-4">
+                    Rental Requirements (Please always specify the number of days available for Long stay)
+                  </label>
+                  <div class="mt-2 mb-4 grid grid-cols-4 gap-6">
+                    <div>
+                      <select
+                        required
+                        id="numberofroom"
+                        name="shortlet_num_rooms"
+                        class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      >
+                        <option>Select Guest</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select
+                        required
+                        id="numberoftoilets"
+                        name="shortlet_num_toilets"
+                        class="px-8 mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      >
+                        <option value="">Number of Rooms</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                    </div>
+                    <div>
+                      <input
+                        required
+                        type="text"
+                        id="rentAmount"
+                        name="shortlet_stay"
+                        placeholder="Long Stay"
+                        class="mt-1 w-full h-12 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      />
+                    </div>
+                  </div>
+          <label for="">Owner Hosting </label>
+<div class="mt-4 grid grid-cols-4 gap-6 mb-6">
+  <label for="completedFurnished" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300"  id="Option1" name="completedFurnished" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Available </strong>
+    </div>
+  </label>
+
+  <label for="completedUnfurnished" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300"  id="Option1" name="completedUnfurnished" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Unavailable  </strong>
+    </div>
+  </label>
+
+  <label for="completedUnfurnished" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300"  id="Option1" name="checkin" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Self Check In  </strong>
+    </div>
+  </label>
+
+  <label for="completedUnfurnished" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300"  id="Option1" name="Cancellation" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Free Cancellation  </strong>
+    </div>
+  </label>
+  </div>
+
+<label for="">Housing Amenities</label>
+<div class="mt-4 grid grid-cols-4 gap-6 mb-6">
+  <label for="fullyFurnished" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300" id="fullyFurnished" name="fullyFurnished" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Fully Furnished </strong>
+    </div>
+  </label>
+
+  <label for="partlyFurnished" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300" id="partlyFurnished" name="partlyFurnished" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Partly Furnished </strong>
+    </div>
+  </label>
+
+  <label for="parkingSpace" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300" id="parkingSpace" name="parkingSpace" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Parking Space </strong>
+    </div>
+  </label>
+
+  <label for="laundryRoom" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300" id="laundryRoom" name="laundryRoom" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Laundry Room </strong>
+    </div>
+  </label>
+
+  <label for="sharedKitchen" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300" id="sharedKitchen" name="sharedKitchen" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Shared Kitchen </strong>
+    </div>
+  </label>
+
+  <label for="sharedBathroom" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300" id="sharedBathroom" name="sharedBathroom" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Shared Bathroom </strong>
+    </div>
+  </label>
+
+  <label for="noiseLevel" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300" id="noiseLevel" name="noiseLevel" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Noise Level </strong>
+    </div>
+  </label>
+
+  <label for="visitors" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300" id="visitors" name="visitors" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Visitors </strong>
+    </div>
+  </label>
+
+  <label for="fitnessCenter" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300" id="fitnessCenter" name="fitnessCenter" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Fitness Center </strong>
+    </div>
+  </label>
+
+  <label for="internet" class="flex cursor-pointer items-start gap-4">
+    <div class="flex items-center">
+      <input type="checkbox" class="size-4 rounded border-gray-300" id="internet" name="internet" />
+    </div>
+    <div>
+      <strong class="font-medium text-gray-900"> Internet Services </strong>
+    </div>
+  </label>
+</div>
+  
+
+
+
+
+
+
+         
+          
+         
+         
+        
+              
+                
+               
+
+                <div>
+                    <label for="OrderNotes" class="block text-sm font-medium text-gray-700 mt-2" style="width: 174px;
+                    height: 20px
+                    "> Add Property Description </label>
+                  
+                    <textarea 
+                    required
+                      id="OrderNotes"
+                      name="shortlet_description"
+                      class="textarea mt-2  rounded-lg border-gray-200 align-top shadow-sm sm:text-sm"
+                      rows="4"
+                      placeholder="Write About Property"
+                    ></textarea>
+                  </div>
+                  
+
+
+<div class="file-upload-container mt-8">
+    <label for=""class="mb-2">Upload property image</label>
+    <label for=""class="mb-2" style="font-size: 10px;">You can upload up to 5 images by selecting them <span style="color: #510000;">*</span></label>
+    
+    <input required class="mt-2" id="file-upload" type="file" name="fileUpload[]" accept="image/*" multiple />
+    
+  <label for="file-upload" id="file-drag">
+    <img id="file-image" src="#" alt="Preview" class="hidden">
+    <div id="start">
+      <i class="fa fa-download" aria-hidden="true"></i>
+      <div>Drop your files here</div>
+      <div id="notimage" class="hidden">Drop your files here</div>
+      <span id="file-upload-btn" class="btns btn-primary">Select a file</span>
+    </div>
+    <!-- <div id="response" class="hidden">
+      <div id="messages"></div>
+      <progress class="progress" id="file-progress" value="0">
+        <span>0</span>%
+      </progress>
+    </div> -->
+  </label>
+ 
+<ul id="file-list">
+<div id="file-progress-container" class="mt-2">
+    <progress class="block rounded-full bg-gray-200" id="file-progress" value="0" max="100"></progress>
+    
+</div>
+</ul>
+
+</div>
+
+          
+<!-- 
+<div class="document-upload-container mt-8">
+    <label for="" class="mb-2">Upload document</label>
+    
+    <input class="mt-2" id="document-upload" type="file" name="documentUpload[]" accept=".pdf, .doc, .docx" multiple />
+    
+    <label for="document-upload" id="document-drag">
+        <img id="document-image" src="#" alt="Document Icon" class="hidden">
+        <div id="start-document">
+            <i class="fa fa-download" aria-hidden="true"></i>
+            <div>Drop your files here</div>
+            <div id="not-document" class="hidden">Drop your files here</div>
+            <span id="document-upload-btn" class="btns btn-primary">Select a file</span>
+        </div>
+    </label>
+  
+    
+  
+</div>
+<ul id="document-list">
+    <div id="document-progress-container" class="mt-2">
+        <progress class="block rounded-full bg-gray-200" id="document-progress" value="0" max="100"></progress>
+    </div>
+</ul> -->
+<br>
+<button style="background-color: #510000;
+color: #fff;" class="btn btn-wide mt-8">Submit</button>
+            </form>
+          </div>
+        </section>
+        
+      </div>
+  </section>
+
+  
+
+
+  
+  <script>
+    document.getElementById('availableFor').addEventListener('change', function() {
+    var selectedOption = this.value;
+  
+    if (selectedOption) {
+      var redirectUrl = '';
+  
+      switch (selectedOption) {
+        
+        case 'for Rent':
+          redirectUrl = '/forsale'; // Replace with the URL of the for rent page
+          break;
+        case 'JV':
+          redirectUrl = '/jv'; // Replace with the URL of the JV page
+          break;
+        case 'shortlet':
+          redirectUrl = '/forrent'; // Replace with the URL of the shortlet page
+          break;
+        case 'for Sale':
+          redirectUrl = '/creatinglisting'
+          break;
+        default:
+          break;
+      }
+  
+      if (redirectUrl) {
+              // Update the value attribute of the select element
+              window.location.href = redirectUrl;
+          }
+    }
+  });
+  
+  </script>
+  <script>
+    document.getElementById('typeSelect').addEventListener('change', function() {
+        const subtypeSelect = document.getElementById('subtypeSelect');
+        subtypeSelect.innerHTML = ''; // Clear existing options
+  
+        // Check the selected value of the "Type" dropdown
+        switch (this.value) {
+            case 'land':
+                // Populate subtype options for land
+                subtypeSelect.add(new Option('Apartment/Condo', 'ApartmentCondo'));
+                subtypeSelect.add(new Option('Duplex', 'Duplex'));
+                subtypeSelect.add(new Option('Semi-detached Duplex', 'SemiDetachedDuplex'));
+                subtypeSelect.add(new Option('Terrace/Townhouse', 'TerraceTownhouse'));
+                subtypeSelect.add(new Option('Bungalow', 'Bungalow'));
+                subtypeSelect.add(new Option('Semi-detached Bungalow', 'SemiDetachedBungalow'));
+                subtypeSelect.add(new Option('Mansionette', 'Mansionette'));
+                subtypeSelect.add(new Option('Boys Quarters', 'BoysQuarters'));
+                subtypeSelect.add(new Option('Mini-Flat', 'MiniFlat'));
+                subtypeSelect.add(new Option('Penthouse', 'Penthouse'));
+                subtypeSelect.add(new Option('Self-contain', 'SelfContain'));
+                subtypeSelect.add(new Option('Shared Apartment', 'SharedApartment'));
+                subtypeSelect.add(new Option('Studio Apartment', 'StudioApartment'));
+                break;
+            case 'house':
+                // Populate subtype options for house
+                subtypeSelect.add(new Option('Apartment/Condo', 'ApartmentCondo'));
+                subtypeSelect.add(new Option('Duplex', 'Duplex'));
+                subtypeSelect.add(new Option('Semi-detached Duplex', 'SemiDetachedDuplex'));
+                subtypeSelect.add(new Option('Terrace/Townhouse', 'TerraceTownhouse'));
+                subtypeSelect.add(new Option('Bungalow', 'Bungalow'));
+                subtypeSelect.add(new Option('Semi-detached Bungalow', 'SemiDetachedBungalow'));
+                subtypeSelect.add(new Option('Mansionette', 'Mansionette'));
+                subtypeSelect.add(new Option('Boys Quarters', 'BoysQuarters'));
+                subtypeSelect.add(new Option('Mini-Flat', 'MiniFlat'));
+                subtypeSelect.add(new Option('Penthouse', 'Penthouse'));
+                subtypeSelect.add(new Option('Self-contain', 'SelfContain'));
+                subtypeSelect.add(new Option('Shared Apartment', 'SharedApartment'));
+                subtypeSelect.add(new Option('Studio Apartment', 'StudioApartment'));
+                break;
+            case 'commercial':
+                // Populate subtype options for commercial
+                const options = [
+                    "Hotel/Guest House", "Fuel Station", "Workspace", "Office Space",
+                    "Conference Room", "Church", "Event Centre", "Factory",
+                    "School", "Shop", "Shop in a mall", "Show room",
+                    "Tank Farm", "Warehouse"
+                ];
+  
+                // Add a default option
+                const defaultOption = document.createElement('option');
+                defaultOption.value = "";
+                defaultOption.text = "Please select a property subtype";
+                subtypeSelect.appendChild(defaultOption);
+  
+                // Populate the subtype select with new options
+                options.forEach(option => {
+                    const newOption = document.createElement('option');
+                    newOption.value = option.replace(/[\W_]+/g,""); // Remove special characters and spaces
+                    newOption.text = option;
+                    subtypeSelect.appendChild(newOption);
+                });
+                break;
+            default:
+                // If neither land, house nor commercial is selected, display a default option
+                subtypeSelect.add(new Option('Please select a property subtype', ''));
+                break;
+        }
+    });
+  </script>
+   <script>
+    document.getElementById('typeSelect').addEventListener('change', function () {
+      const isLand = this.value === 'land';
+      const inputsToToggle = [
+        document.getElementById('numRooms'),
+        document.getElementById('numToilets'),
+        document.getElementById('numBathrooms'),
+        document.getElementById('numParlours'),
+        document.getElementById('fullyFurnished'),
+        document.getElementById('partlyFurnished'),
+        document.getElementById('parkingSpace'),
+        document.getElementById('laundryRoom'),
+        document.getElementById('sharedKitchen'),
+        document.getElementById('sharedBathroom'),
+        document.getElementById('noiseLevel'),
+        document.getElementById('visitors'),
+        document.getElementById('fitnessCenter'),
+        document.getElementById('internet')
+      ];
+
+      inputsToToggle.forEach(input => {
+        if (isLand) {
+          input.disabled = true;
+          input.classList.add('disabled');
+        } else {
+          input.disabled = false;
+          input.classList.remove('disabled');
+        }
+      });
+    });
+  </script>
+//   
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        const content = document.querySelector('.content');
+    
+        sidebarToggle.addEventListener('click', function () {
+          sidebar.classList.toggle('visible');
+          content.classList.toggle('overlay');
+    
+          // Check if sidebar is visible
+          if (sidebar.classList.contains('visible')) {
+            // If sidebar is visible, hide the content
+            content.style.display = 'none';
+            // Add a class to the sidebar for wider width
+            sidebar.classList.add('wider-sidebar');
+          } else {
+            // If sidebar is not visible, show the content
+            content.style.display = 'block';
+            // Remove the class for wider width
+            sidebar.classList.remove('wider-sidebar');
+          }
+        });
+      });
+    </script>
+  <script>
+      document.getElementById('document-upload').addEventListener('change', function(e) {
+      var files = e.target.files;
+      var overallProgress = document.getElementById('document-progress');
+      var fileList = document.getElementById('document-list');
+  
+      // Remove any existing progress bars and file list items
+      overallProgress.value = 0;
+      fileList.innerHTML = '';
+  
+      // Limit to 5 documents
+      var maxFiles = Math.min(files.length, 5);
+  
+      // Upload each document
+      for (var i = 0; i < maxFiles; i++) {
+          var file = files[i];
+  
+          // Upload file and add to file list
+          uploadDocument(file, overallProgress, fileList);
+      }
+  });
+  
+  // Function to upload a document and add to file list
+  function uploadDocument(file, overallProgress, fileList) {
+      var formData = new FormData();
+      formData.append('file', file);
+  
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/upload', true);
+  
+      xhr.upload.onprogress = function(e) {
+          if (e.lengthComputable) {
+              var overallPercentage = Math.round((e.loaded / e.total) * 100);
+              overallProgress.value = overallPercentage;
+          }
+      };
+  
+      xhr.onload = function() {
+          // Create a list item for the uploaded document
+          var listItem = document.createElement('li');
+  
+          // Create a container for document details
+          var documentContainer = document.createElement('div');
+          documentContainer.classList.add('document-item');
+  
+          // Create a span for document name
+          var documentName = document.createElement('span');
+          documentName.textContent = file.name;
+  
+          // Create a progress bar for document upload progress
+          var progressBar = document.createElement('progress');
+          progressBar.value = 100;
+          progressBar.max = 100;
+          progressBar.classList.add('document-progress');
+  
+          // Create a delete icon
+          var deleteIcon = document.createElement('i');
+          deleteIcon.classList.add('fa', 'fa-trash', 'delete-icon');
+          deleteIcon.setAttribute('aria-hidden', 'true');
+          deleteIcon.addEventListener('click', function() {
+              listItem.remove();
+          });
+  
+          // Append document details to container
+          documentContainer.appendChild(documentName);
+          documentContainer.appendChild(progressBar);
+          documentContainer.appendChild(deleteIcon);
+  
+          // Append container to list item
+          listItem.appendChild(documentContainer);
+  
+          // Append list item to file list
+          fileList.appendChild(listItem);
+      };
+  
+      xhr.send(formData);
+  }
+  
+  </script>
+  
+  <script>
+      // Function to handle file uploads
+  document.getElementById('file-upload').addEventListener('change', function(e) {
+      var files = e.target.files;
+      var overallProgress = document.getElementById('file-progress');
+      var fileList = document.getElementById('file-list');
+  
+      // Remove any existing progress bars and file list items
+      overallProgress.value = 0;
+      fileList.innerHTML = '';
+  
+      // Limit to 5 images
+      var maxFiles = Math.min(files.length, 5);
+  
+      // Upload each file
+      for (var i = 0; i < maxFiles; i++) {
+          var file = files[i];
+  
+          // Upload file and add to file list
+          uploadFile(file, overallProgress, fileList);
+      }
+  });
+  
+  // Function to upload a file and add to file list
+  function uploadFile(file, overallProgress, fileList) {
+      var formData = new FormData();
+      formData.append('file', file);
+  
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/upload', true);
+  
+      xhr.upload.onprogress = function(e) {
+          if (e.lengthComputable) {
+              var overallPercentage = Math.round((e.loaded / e.total) * 100);
+              overallProgress.value = overallPercentage;
+          }
+      };
+  
+      xhr.onload = function() {
+          // Create a container for the file item
+          var container = document.createElement('div');
+          container.classList.add('file-item');
+  
+          // Create an image element for the uploaded image
+          var image = document.createElement('img');
+          image.src = URL.createObjectURL(file);
+          image.classList.add('file-image');
+          image.style.width = '80px'; // Set image width to 80px
+          container.appendChild(image);
+  
+          // Create a container for the file details
+          var fileDetails = document.createElement('div');
+          fileDetails.classList.add('file-details');
+  
+          // Create a list item for the uploaded image name
+          var fileName = document.createElement('span');
+          fileName.textContent = file.name;
+          fileDetails.appendChild(fileName);
+  
+          // Create a progress bar for the uploaded image
+          var progressBar = document.createElement('progress');
+          progressBar.value = 100;
+          progressBar.max = 100;
+          progressBar.classList.add('file-progress');
+          fileDetails.appendChild(progressBar);
+  
+          // Create a delete icon
+          var deleteIcon = document.createElement('i');
+          deleteIcon.classList.add('fa', 'fa-trash', 'delete-icon');
+          deleteIcon.setAttribute('aria-hidden', 'true');
+          fileDetails.appendChild(deleteIcon);
+  
+          // Append file details to container
+          container.appendChild(fileDetails);
+  
+          // Append container to file list
+          fileList.appendChild(container);
+      };
+  
+      xhr.send(formData);
+  }
+  
+  </script>
+  
+  
+  <script>
+    // Get references to the select elements
+    const stateSelect = document.getElementById('state');
+    const lgaSelect = document.getElementById('lga');
+  
+    // Local government areas for each state
+    const lgasByState = {
+      'Abia': ['Aba North', 'Aba South', 'Arochukwu', 'Bende', 'Ikwuano', 'Isiala Ngwa North', 'Isiala Ngwa South', 'Isuikwuato', 'Obi Ngwa', 'Ohafia', 'Osisioma Ngwa', 'Ugwunagbo', 'Ukwa East', 'Ukwa West', 'Umuahia North', 'Umuahia South', 'Umu Nneochi'],
+      'Adamawa': ['Demsa', 'Fufore', 'Ganye', 'Girei', 'Gombi', 'Guyuk', 'Hong', 'Jada', 'Lamurde', 'Madagali', 'Maiha', 'Mayo-Belwa', 'Michika', 'Mubi North', 'Mubi South', 'Numan', 'Shelleng', 'Song', 'Toungo', 'Yola North', 'Yola South'],
+      'Akwa Ibom': ['Abak', 'Eastern Obolo', 'Eket', 'Esit Eket', 'Essien Udim', 'Etim Ekpo', 'Etinan', 'Ibeno', 'Ibesikpo Asutan', 'Ibiono-Ibom', 'Ika', 'Ikono', 'Ikot Abasi', 'Ikot Ekpene', 'Ini', 'Itu', 'Mbo', 'Mkpat-Enin', 'Nsit-Atai', 'Nsit-Ibom', 'Nsit-Ubium', 'Obot Akara', 'Okobo', 'Onna', 'Oron', 'Oruk Anam', 'Udung-Uko', 'Ukanafun', 'Uruan', 'Urue-Offong/Oruko', 'Uyo'],
+      'Anambra': ['Aguata', 'Anambra East', 'Anambra West', 'Anaocha', 'Awka North', 'Awka South', 'Ayamelum', 'Dunukofia', 'Ekwusigo', 'Idemili North', 'Idemili South', 'Ihiala', 'Njikoka', 'Nnewi North', 'Nnewi South', 'Ogbaru', 'Onitsha North', 'Onitsha South', 'Orumba North', 'Orumba South', 'Oyi'],
+      'Bauchi': ['Alkaleri', 'Bauchi', 'Bogoro', 'Damban', 'Darazo', 'Dass', 'Gamawa', 'Ganjuwa', 'Giade', 'Itas/Gadau', 'Jama’are', 'Katagum', 'Kirfi', 'Misau', 'Ningi', 'Shira', 'Tafawa Balewa', 'Toro', 'Warji', 'Zaki'],
+      'Bayelsa': ['Brass', 'Ekeremor', 'Kolokuma/Opokuma', 'Nembe', 'Ogbia', 'Sagbama', 'Southern Ijaw', 'Yenagoa'],
+      'Benue': ['Ado', 'Agatu', 'Apa', 'Buruku', 'Gboko', 'Guma', 'Gwer East', 'Gwer West', 'Katsina-Ala', 'Konshisha', 'Kwande', 'Logo', 'Makurdi', 'Obi', 'Ogbadibo', 'Ohimini', 'Oju', 'Okpokwu', 'Otukpo', 'Tarka', 'Ukum', 'Ushongo', 'Vandeikya'],
+      'Borno': ['Abadam', 'Askira/Uba', 'Bama', 'Bayo', 'Biu', 'Chibok', 'Damboa', 'Dikwa', 'Gubio', 'Guzamala', 'Gwoza', 'Hawul', 'Jere', 'Kaga', 'Kala/Balge', 'Konduga', 'Kukawa', 'Kwaya Kusar', 'Mafa', 'Magumeri', 'Maiduguri', 'Marte', 'Mobbar', 'Monguno', 'Ngala', 'Nganzai', 'Shani'],
+      'Cross River': ['Abi', 'Akamkpa', 'Akpabuyo', 'Bakassi', 'Bekwarra', 'Biase', 'Boki', 'Calabar Municipal', 'Calabar South', 'Etung', 'Ikom', 'Obanliku', 'Obubra', 'Obudu', 'Odukpani', 'Ogoja', 'Yakurr', 'Yala'],
+      'Delta': ['Aniocha North', 'Aniocha South', 'Bomadi', 'Burutu', 'Ethiope East', 'Ethiope West', 'Ika North East', 'Ika South', 'Isoko North', 'Isoko South', 'Ndokwa East', 'Ndokwa West', 'Okpe', 'Oshimili North', 'Oshimili South', 'Patani', 'Sapele', 'Udu', 'Ughelli North', 'Ughelli South', 'Ukwuani', 'Uvwie', 'Warri North', 'Warri South', 'Warri South West'],
+      'Ebonyi': ['Abakaliki', 'Afikpo North', 'Afikpo South (Edda)', 'Ebonyi', 'Ezza North', 'Ezza South', 'Ikwo', 'Ishielu', 'Ivo', 'Izzi', 'Ohaozara', 'Ohaukwu', 'Onicha'],
+      'Edo': ['Akoko-Edo', 'Egor', 'Esan Central', 'Esan North-East', 'Esan South-East', 'Esan West', 'Etsako Central', 'Etsako East', 'Etsako West', 'Igueben', 'Ikpoba Okha', 'Oredo', 'Orhionmwon', 'Ovia North-East', 'Ovia South-West', 'Owan East', 'Owan West', 'Uhunmwonde'],
+      'Ekiti': ['Ado Ekiti', 'Efon', 'Ekiti East', 'Ekiti South-West', 'Ekiti West', 'Emure', 'Gbonyin', 'Ido Osi', 'Ijero', 'Ikere', 'Ikole', 'Ilejemeje', 'Irepodun/Ifelodun', 'Ise/Orun', 'Moba', 'Oye'],
+      'Enugu': ['Aninri', 'Awgu', 'Enugu East', 'Enugu North', 'Enugu South', 'Ezeagu', 'Igbo Etiti', 'Igbo Eze North', 'Igbo Eze South', 'Isi Uzo', 'Nkanu East', 'Nkanu West', 'Nsukka', 'Oji River', 'Udenu', 'Udi', 'Uzo-Uwani'],
+      'Gombe': ['Akko', 'Balanga', 'Billiri', 'Dukku', 'Funakaye', 'Gombe', 'Kaltungo', 'Kwami', 'Nafada', 'Shongom', 'Yamaltu/Deba'],
+      'Imo': ['Aboh Mbaise', 'Ahiazu Mbaise', 'Ehime Mbano', 'Ezinihitte', 'Ideato North', 'Ideato South', 'Ihitte/Uboma', 'Ikeduru', 'Isiala Mbano', 'Isu', 'Mbaitoli', 'Ngor Okpala', 'Njaba', 'Nkwerre', 'Nwangele', 'Obowo', 'Oguta', 'Ohaji/Egbema', 'Okigwe', 'Orlu', 'Orsu', 'Oru East', 'Oru West', 'Owerri Municipal', 'Owerri North', 'Owerri West', 'Unuimo'],
+      'Jigawa': ['Auyo', 'Babura', 'Biriniwa', 'Birnin Kudu', 'Buji', 'Dutse', 'Gagarawa', 'Garki', 'Gumel', 'Guri', 'Gwaram', 'Gwiwa', 'Hadejia', 'Jahun', 'Kafin Hausa', 'Kaugama', 'Kazaure', 'Kiri Kasama', 'Kiyawa', 'Maigatari', 'Malam Madori', 'Miga', 'Ringim', 'Roni', 'Sule Tankarkar', 'Taura', 'Yankwashi'],
+      'Kaduna': ['Birnin Gwari', 'Chikun', 'Giwa', 'Igabi', 'Ikara', 'Jaba', 'Jema’a', 'Kachia', 'Kaduna North', 'Kaduna South', 'Kagarko', 'Kajuru', 'Kaura', 'Kauru', 'Kubau', 'Kudan', 'Lere', 'Makarfi', 'Sabon Gari', 'Sanga', 'Soba', 'Zangon Kataf', 'Zaria'],
+      'Kano': ['Ajingi', 'Albasu', 'Bagwai', 'Bebeji', 'Bichi', 'Bunkure', 'Dala', 'Dambatta', 'Dawakin Kudu', 'Dawakin Tofa', 'Doguwa', 'Fagge', 'Gabasawa', 'Garko', 'Garun Mallam', 'Gaya', 'Gezawa', 'Gwale', 'Gwarzo', 'Kabo', 'Kano Municipal', 'Karaye', 'Kibiya', 'Kiru', 'Kumbotso', 'Kunchi', 'Kura', 'Madobi', 'Makoda', 'Minjibir', 'Nasarawa', 'Rano', 'Rimin Gado', 'Rogo', 'Shanono', 'Sumaila', 'Takai', 'Tarauni', 'Tofa', 'Tsanyawa', 'Tudun Wada', 'Ungogo', 'Warawa', 'Wudil'],
+      'Katsina': ['Bakori', 'Batagarawa', 'Batsari', 'Baure', 'Bindawa', 'Charanchi', 'Dan Musa', 'Dandume', 'Danja', 'Daura', 'Dutsi', 'Dutsin Ma', 'Faskari', 'Funtua', 'Ingawa', 'Jibia', 'Kafur', 'Kaita', 'Kankara', 'Kankia', 'Katsina', 'Kurfi', 'Kusada', 'Mai’Adua', 'Malumfashi', 'Mani', 'Mashi', 'Matazu', 'Musawa', 'Rimi', 'Sabuwa', 'Safana', 'Sandamu', 'Zango'],
+      'Kebbi': ['Aleiro', 'Arewa Dandi', 'Argungu', 'Augie', 'Bagudo', 'Birnin Kebbi', 'Bunza', 'Dandi', 'Fakai', 'Gwandu', 'Jega', 'Kalgo', 'Koko/Besse', 'Maiyama', 'Ngaski', 'Sakaba', 'Shanga', 'Suru', 'Wasagu/Danko', 'Yauri', 'Zuru'],
+      'Kogi': ['Adavi', 'Ajaokuta', 'Ankpa', 'Bassa', 'Dekina', 'Ibaji', 'Idah', 'Igalamela Odolu', 'Ijumu', 'Kabba/Bunu', 'Kogi', 'Lokoja', 'Mopa-Muro', 'Ofu', 'Ogori/Magongo', 'Okehi', 'Okene', 'Olamaboro', 'Omala', 'Yagba East', 'Yagba West'],
+      'Kwara': ['Asa', 'Baruten', 'Edu', 'Ekiti', 'Ifelodun', 'Ilorin East', 'Ilorin South', 'Ilorin West', 'Irepodun', 'Isin', 'Kaiama', 'Moro', 'Offa', 'Oke Ero', 'Oyun', 'Pategi'],
+      'Lagos': ['Agege', 'Ajeromi-Ifelodun', 'Alimosho', 'Amuwo-Odofin', 'Apapa', 'Badagry', 'Epe', 'Eti-Osa', 'Ibeju-Lekki', 'Ifako-Ijaiye', 'Ikeja', 'Ikorodu', 'Kosofe', 'Lagos Island', 'Lagos Mainland', 'Mushin', 'Ojo', 'Oshodi-Isolo', 'Shomolu', 'Surulere'],
+      'Nasarawa': ['Akwanga', 'Awe', 'Doma', 'Karu', 'Keana', 'Keffi', 'Kokona', 'Lafia', 'Nasarawa', 'Nasarawa Egon', 'Obi', 'Toto', 'Wamba'],
+      'Niger': ['Agaie', 'Agwara', 'Bida', 'Borgu', 'Bosso', 'Chanchaga', 'Edati', 'Gbako', 'Gurara', 'Katcha', 'Kontagora', 'Lapai', 'Lavun', 'Magama', 'Mariga', 'Mashegu', 'Mokwa', 'Munya', 'Paikoro', 'Rafi', 'Rijau', 'Shiroro', 'Suleja', 'Tafa', 'Wushishi'],
+      'Ogun': ['Abeokuta North', 'Abeokuta South', 'Ado-Odo/Ota', 'Egbado North', 'Egbado South', 'Ewekoro', 'Ifo', 'Ijebu East', 'Ijebu North', 'Ijebu North East', 'Ijebu Ode', 'Ikenne', 'Imeko Afon', 'Ipokia', 'Obafemi Owode', 'Odeda', 'Odogbolu', 'Ogun Waterside', 'Remo North', 'Shagamu'],
+      'Ondo': ['Akoko North-East', 'Akoko North-West', 'Akoko South-West', 'Akoko South-East', 'Akure North', 'Akure South', 'Ese Odo', 'Idanre', 'Ifedore', 'Ilaje', 'Ile Oluji/Okeigbo', 'Irele', 'Odigbo', 'Okitipupa', 'Ondo East', 'Ondo West', 'Ose', 'Owo'],
+      'Osun': ['Atakunmosa East', 'Atakunmosa West', 'Aiyedaade', 'Aiyedire', 'Boluwaduro', 'Boripe', 'Ede North', 'Ede South', 'Ife Central', 'Ife East', 'Ife North', 'Ife South', 'Egbedore', 'Ejigbo', 'Ifedayo', 'Ifelodun', 'Ila', 'Ilesa East', 'Ilesa West', 'Irepodun', 'Irewole', 'Isokan', 'Iwo', 'Obokun', 'Odo Otin', 'Ola Oluwa', 'Olorunda', 'Oriade', 'Orolu', 'Osogbo'],
+      'Oyo': ['Afijio', 'Akinyele', 'Atiba', 'Atisbo', 'Egbeda', 'Ibadan North', 'Ibadan North-East', 'Ibadan North-West', 'Ibadan South-East', 'Ibadan South-West', 'Ibarapa Central', 'Ibarapa East', 'Ibarapa North', 'Ido', 'Irepo', 'Iseyin', 'Itesiwaju', 'Iwajowa', 'Kajola', 'Lagelu', 'Ogbomosho North', 'Ogbomosho South', 'Ogo Oluwa', 'Olorunsogo', 'Oluyole', 'Ona Ara', 'Orelope', 'Ori Ire', 'Oyo East', 'Oyo West', 'Saki East', 'Saki West', 'Surulere'],
+      'Plateau': ['Barkin Ladi', 'Bassa', 'Bokkos', 'Jos East', 'Jos North', 'Jos South', 'Kanam', 'Kanke', 'Langtang North', 'Langtang South', 'Mangu', 'Mikang', 'Pankshin', 'Qua’an Pan', 'Riyom', 'Shendam', 'Wase'],
+      'Rivers': ['Abua/Odual', 'Ahoada East', 'Ahoada West', 'Akuku-Toru', 'Andoni', 'Asari-Toru', 'Bonny', 'Degema', 'Eleme', 'Emuoha', 'Etche', 'Gokana', 'Ikwerre', 'Khana', 'Obio/Akpor', 'Ogba/Egbema/Ndoni', 'Ogu/Bolo', 'Okrika', 'Omuma', 'Opobo/Nkoro', 'Oyigbo', 'Port Harcourt', 'Tai'],
+      'Sokoto': ['Binji', 'Bodinga', 'Dange-Shuni', 'Gada', 'Goronyo', 'Gudu', 'Gwadabawa', 'Illela', 'Isa', 'Kebbe', 'Kware', 'Rabah', 'Sabon Birni', 'Shagari', 'Silame', 'Sokoto North', 'Sokoto South', 'Tambuwal', 'Tangaza', 'Tureta', 'Wamako', 'Wurno', 'Yabo'],
+      'Taraba': ['Ardo Kola', 'Bali', 'Donga', 'Gashaka', 'Gassol', 'Ibi', 'Jalingo', 'Karim Lamido', 'Kumi', 'Lau', 'Sardauna', 'Takum', 'Ussa', 'Wukari', 'Yorro', 'Zing'],
+      'Yobe': ['Bade', 'Bursari', 'Damaturu', 'Fika', 'Fune', 'Geidam', 'Gujba', 'Gulani', 'Jakusko', 'Karasuwa', 'Machina', 'Nangere', 'Nguru', 'Potiskum', 'Tarmuwa', 'Yunusari', 'Yusufari'],
+      'Zamfara': ['Anka', 'Bakura', 'Birnin Magaji/Kiyaw', 'Bukkuyum', 'Bungudu', 'Gummi', 'Gusau', 'Kaura Namoda', 'Maradun', 'Maru', 'Shinkafi', 'Talata Mafara', 'Tsafe', 'Zurmi'],
+      'Federal Capital Territory': ['Abaji', 'Abuja Municipal', 'Bwari', 'Gwagwalada', 'Kuje', 'Kwali']
+    };
+  
+    // Function to update the LGAs based on the selected state
+    function updateLGAs() {
+      const selectedState = stateSelect.value;
+      const lgas = lgasByState[selectedState] || [];
+      
+      // Clear existing options
+      lgaSelect.innerHTML = '';
+  
+      // Add new options
+      lgas.forEach(lga => {
+        const option = document.createElement('option');
+        option.value = lga;
+        option.textContent = lga;
+        lgaSelect.appendChild(option);
+      });
+    }
+  
+    // Event listener to update LGAs when state selection changes
+    stateSelect.addEventListener('change', updateLGAs);
+  
+    // Initially populate LGAs based on the default state selection
+    updateLGAs();
+  </script>
+  
+  <script>
+    // Other important pens.
+// Map: https://codepen.io/themustafaomar/pen/ZEGJeZq
+// Navbar: https://codepen.io/themustafaomar/pen/VKbQyZ
+
+'use strict'
+
+function $(selector) {
+  return document.querySelector(selector)
+}
+
+function find(el, selector) {
+  let finded
+  return (finded = el.querySelector(selector)) ? finded : null
+}
+
+function siblings(el) {
+  const siblings = []
+  for (let sibling of el.parentNode.children) {
+    if (sibling !== el) {
+      siblings.push(sibling)
+    }
+  }
+  return siblings
+}
+
+const showAsideBtn = $('.show-side-btn')
+const sidebar = $('.sidebar')
+const wrapper = $('#wrapper')
+
+showAsideBtn.addEventListener('click', function () {
+  $(`#${this.dataset.show}`).classList.toggle('show-sidebar')
+  wrapper.classList.toggle('fullwidth')
+})
+
+if (window.innerWidth < 767) {
+  sidebar.classList.add('show-sidebar');
+}
+
+window.addEventListener('resize', function () {
+  if (window.innerWidth > 767) {
+    sidebar.classList.remove('show-sidebar')
+  }
+})
+
+// dropdown menu in the side nav
+var slideNavDropdown = $('.sidebar-dropdown');
+
+$('.sidebar .categories').addEventListener('click', function (event) {
+  event.preventDefault()
+
+  const item = event.target.closest('.has-dropdown')
+
+  if (! item) {
+    return
+  }
+
+  item.classList.toggle('opened')
+
+  siblings(item).forEach(sibling => {
+    sibling.classList.remove('opened')
+  })
+
+  if (item.classList.contains('opened')) {
+    const toOpen = find(item, '.sidebar-dropdown')
+
+    if (toOpen) {
+      toOpen.classList.add('active')
+    }
+
+    siblings(item).forEach(sibling => {
+      const toClose = find(sibling, '.sidebar-dropdown')
+
+      if (toClose) {
+        toClose.classList.remove('active')
+      }
+    })
+  } else {
+    find(item, '.sidebar-dropdown').classList.toggle('active')
+  }
+})
+
+$('.sidebar .close-aside').addEventListener('click', function () {
+  $(`#${this.dataset.close}`).classList.add('show-sidebar')
+  wrapper.classList.remove('margin')
+})
+
+
+// Global defaults
+Chart.defaults.global.animation.duration = 2000; // Animation duration
+Chart.defaults.global.title.display = false; // Remove title
+Chart.defaults.global.defaultFontColor = '#71748c'; // Font color
+Chart.defaults.global.defaultFontSize = 13; // Font size for every label
+
+// Tooltip global resets
+Chart.defaults.global.tooltips.backgroundColor = '#111827'
+Chart.defaults.global.tooltips.borderColor = 'blue'
+
+// Gridlines global resets
+Chart.defaults.scale.gridLines.zeroLineColor = '#3b3d56'
+Chart.defaults.scale.gridLines.color = '#3b3d56'
+Chart.defaults.scale.gridLines.drawBorder = false
+
+// Legend global resets
+Chart.defaults.global.legend.labels.padding = 0;
+Chart.defaults.global.legend.display = false;
+
+// Ticks global resets
+Chart.defaults.scale.ticks.fontSize = 12
+Chart.defaults.scale.ticks.fontColor = '#71748c'
+Chart.defaults.scale.ticks.beginAtZero = false
+Chart.defaults.scale.ticks.padding = 10
+
+// Elements globals
+Chart.defaults.global.elements.point.radius = 0
+
+// Responsivess
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = false
+
+// The bar chart
+var myChart = new Chart(document.getElementById('myChart'), {
+  type: 'bar',
+  data: {
+    labels: ["January", "February", "March", "April", 'May', 'June', 'August', 'September'],
+    datasets: [{
+      label: "Lost",
+      data: [45, 25, 40, 20, 60, 20, 35, 25],
+      backgroundColor: "#0d6efd",
+      borderColor: 'transparent',
+      borderWidth: 2.5,
+      barPercentage: 0.4,
+    }, {
+      label: "Succes",
+      startAngle: 2,
+      data: [20, 40, 20, 50, 25, 40, 25, 10],
+      backgroundColor: "#dc3545",
+      borderColor: 'transparent',
+      borderWidth: 2.5,
+      barPercentage: 0.4,
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        gridLines: {},
+        ticks: {
+          stepSize: 15,
+        },
+      }],
+      xAxes: [{
+        gridLines: {
+          display: false,
+        }
+      }]
+    }
+  }
+})
+
+// The line chart
+var chart = new Chart(document.getElementById('myChart2'), {
+  type: 'line',
+  data: {
+    labels: ["January", "February", "March", "April", 'May', 'June', 'August', 'September'],
+    datasets: [{
+      label: "My First dataset",
+      data: [4, 20, 5, 20, 5, 25, 9, 18],
+      backgroundColor: 'transparent',
+      borderColor: '#0d6efd',
+      lineTension: .4,
+      borderWidth: 1.5,
+    }, {
+      label: "Month",
+      data: [11, 25, 10, 25, 10, 30, 14, 23],
+      backgroundColor: 'transparent',
+      borderColor: '#dc3545',
+      lineTension: .4,
+      borderWidth: 1.5,
+    }, {
+      label: "Month",
+      data: [16, 30, 16, 30, 16, 36, 21, 35],
+      backgroundColor: 'transparent',
+      borderColor: '#f0ad4e',
+      lineTension: .4,
+      borderWidth: 1.5,
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        gridLines: {
+          drawBorder: false
+        },
+        ticks: {
+          stepSize: 12,
+        }
+      }],
+      xAxes: [{
+        gridLines: {
+          display: false,
+        },
+      }]
+    }
+  }
+})
+
+var chart = document.getElementById('chart3');
+var myChart = new Chart(chart, {
+  type: 'line',
+  data: {
+    labels: ["One", "Two", "Three", "Four", "Five", 'Six', "Seven", "Eight"],
+    datasets: [{
+      label: "Lost",
+      lineTension: 0.2,
+      borderColor: '#d9534f',
+      borderWidth: 1.5,
+      showLine: true,
+      data: [3, 30, 16, 30, 16, 36, 21, 40, 20, 30],
+      backgroundColor: 'transparent'
+    }, {
+      label: "Lost",
+      lineTension: 0.2,
+      borderColor: '#5cb85c',
+      borderWidth: 1.5,
+      data: [6, 20, 5, 20, 5, 25, 9, 18, 20, 15],
+      backgroundColor: 'transparent'
+    },
+               {
+                 label: "Lost",
+                 lineTension: 0.2,
+                 borderColor: '#f0ad4e',
+                 borderWidth: 1.5,
+                 data: [12, 20, 15, 20, 5, 35, 10, 15, 35, 25],
+                 backgroundColor: 'transparent'
+               },
+               {
+                 label: "Lost",
+                 lineTension: 0.2,
+                 borderColor: '#337ab7',
+                 borderWidth: 1.5,
+                 data: [16, 25, 10, 25, 10, 30, 14, 23, 14, 29],
+                 backgroundColor: 'transparent'
+               }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        gridLines: {
+          drawBorder: false
+        },
+        ticks: {
+          stepSize: 12
+        }
+      }],
+      xAxes: [{
+        gridLines: {
+          display: false,
+        },
+      }],
+    }
+  }
+})
+
+  </script>

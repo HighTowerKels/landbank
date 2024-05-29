@@ -1,0 +1,1790 @@
+
+<link rel="stylesheet" href="../static/css/dashboard.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css
+">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css
+">
+<link rel="stylesheet" href="../static/css/ListingLandingPage.css" />
+<link rel="stylesheet" href="../static/css/index.css" />
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Cabinet Grotesk:wght@400;500;700&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Noto Sans:wght@500;700&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js
+"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.jshttps://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js
+"></script>
+<style>
+    html{
+      height: auto;
+      overflow-x: 'hidden';
+    }
+    .row{
+      display: flex;
+      flex-direction: row;
+    }
+    .column{
+      padding: 5%;
+    }
+    .bedroom-terraced-duplex{
+      color: black;
+    }
+    .terraced-duplex-for{
+      color: black;
+      font-size: 30px;
+    }
+    #shared_location{
+      margin-top: 5%;
+    }
+    #price{
+      margin-top: 8%;
+    }
+    .amenities-container {
+      background-color: #f4f4f4; /* Light gray background */
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+  }
+  
+  .amenities-line {
+      margin: 0;
+  }
+  
+  .amenities-line p {
+      display: inline;
+      font-family: Arial, sans-serif; /* Use a professional font */
+      font-size: 14px; /* Adjust font size */
+  }
+  
+  .amenities-line p:not(:last-child)::after {
+      content: "•"; /* Add bullet point after each item except the last one */
+      margin-right: 5px; /* Add space between bullet points and items */
+  }
+  
+  .scroll-container {
+    width: 100%;
+    overflow-x: hidden; /* Hide the horizontal scrollbar */
+  }
+  
+  .row-container {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: slide 40s linear infinite; /* Adjust the duration as needed */
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0); /* Start from initial position */
+    }
+    100% {
+      transform: translateX(-100%); /* Slide to the left */
+    }
+  }
+  
+  .cards1 {
+    width: calc(50% - 10px);
+    margin-right: 20px;
+  }
+  
+  .cards1:last-child {
+    margin-right: 0;
+  }
+  .frame-parent363 .frame-wrapper167{
+    gap: 60px;
+    padding-bottom:2%;
+    height: 40rem;
+  }
+  /* #shortlet .frame-wrapper167{
+    height: 40rem;
+    padding-bottom:2%;
+  
+  } */
+  </style>
+  <style>
+   .bedroom-terraced-duplex {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-height: 1.5em; /* Adjust line height as needed */
+      height: 2.5rem; /* This is line-height multiplied by the number of lines you want to display (4 lines) */
+      margin-bottom: 20px; /* Ensure some space below the text for aesthetics */
+      text-overflow: ellipsis;
+  }
+  .logic-branch{
+    margin-top: -6%;
+  }
+   .ngn-400000000 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 150px; /* Adjust the maximum width as needed */
+      display: inline-block; /* Ensures the ellipsis works */
+  }  
+  .icbaseline-favorite-wrapper, .component-8-icon {
+      display: inline-block;
+  }
+  
+  /* Bottom buttons */
+  .bedrooms-wrapper, .toilets-wrapper, .sq-ft-wrapper, .parking-space-wrapper {
+      display: inline-block;
+      padding: 8px;
+      background-color: #eee;
+      margin-right: 4px;
+      border-radius: 4px;
+      width: auto; /* Adjusts automatically to the content size */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+      .frame-parent3, .frame-parent4 {
+          padding: 10px;
+      }
+  
+      .loop-control, .mingcutetime-line-parent, .solaruser-outline-parent {
+          flex-direction: column;
+          align-items: start;
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .frame-wrapper167 {
+          margin: 10px;
+      }
+    }
+    .frame-parent4{
+      padding-left: 20px;
+    }
+   #property{
+    height: 42rem;
+   }
+   #cards{
+    width: 100%;
+   }
+  
+   #heroh1, #heros {
+    font-family: Cabinet Grotesk;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 69.44px;
+    text-align: left;
+  }
+  
+  #herop{
+    padding-left: 15%;
+    line-height: 2rem;
+    font-family: Cabinet Grotesk;
+    font-size: 22px;
+    font-weight: 400;
+    text-align: left;
+  }
+  
+  #imag{
+    border-radius: 50px;
+  }
+  
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  img{
+    width: 70%;
+    padding: 5%;
+    border-radius: 50px;
+  }
+  </style>
+  <style>
+    /* Style the tab */
+  .tab { 
+    margin-left: -55%; 
+     margin-top: 10%;
+  
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #ffff;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 3px 16px;
+    transition: 0.3s; 
+    font-size: 16px;
+    
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+   background: #FFFFFFE5;
+  
+    border-top: none;
+    width: 1002px;
+  height: 150px;
+  top: 39px;
+  gap: 0px;
+  opacity: 0px;
+  background-color: #ffff;
+  
+  
+  }
+  .input-row {
+              display: flex;
+              flex-wrap: wrap;
+              margin-bottom: 10px;
+            
+          }
+          
+          .input-col {
+              flex: 1;
+              margin-right: 10px;
+              height: 102px;    width: 1302px;
+  
+          }
+          
+          .input-col:last-child {
+              margin-right: 0;
+          }
+          
+          label {
+              display: block;
+              text-align: start;
+              margin-bottom: 5px;
+          }
+          
+          select, input[type="number"] {
+  
+            width: 200px;
+  height: 62px;
+  
+  left: 36.07px;
+  gap: 16px;
+  opacity: 0px;
+            padding: 15x;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              border-top: none;
+              border-left: none;
+              border-right: none;
+          }
+  
+          .divider {
+            width: 1002px;
+              height: 1px;
+              margin: 1px 0;
+              border-color: #510000;
+          }
+          .button-row {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              margin-bottom: 20px;
+              margin-left: 7%;
+              padding-bottom: 5%;
+          }
+          
+          .button-col {
+              margin-right: 3px; /* Reduced margin between buttons */
+          }
+  
+          .buttons {
+              padding: 8px 12px; /* Adjust button padding */
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              background: var(--Primary-colour, #510000);
+  color: #ffff;
+              cursor: pointer;
+          }
+  
+          .buttons:hover {
+              background-color: #f0f0f0; /* Change background color on hover */
+          }
+  
+          .search-input {
+              padding: 8px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              width:300px;
+          }
+          .search-input {
+              padding: 8px;
+              border: 1px solid #ccc;
+              border-radius: 50px;
+              width: 500px;
+            text-align: center;  
+            }
+  
+          .search-icon {
+              position: absolute;
+              top: 50%;
+              right: 10px;
+              transform: translateY(-50%);
+              color: #555;
+              cursor: pointer;
+          }
+          .frame-wrapper167{
+            border-radius: 50px;
+            
+          }
+         .frame-parent3{
+          height: 38rem;
+         }
+         .frame-parent363{
+          height: 40rem;
+         }
+         .rowe{
+          display: flex;
+          flex-direction: row;
+         }
+         .columnrot{
+          padding: 5%;
+         }
+  </style>
+<style>
+    .arrow-right,
+.arrow-left,
+.long-arrow-right,
+.long-arrow-left{
+  display: block;
+  margin: 30px auto;
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+}
+.arrow-right,
+.long-arrow-right{
+ transform: rotate(135deg);
+}
+
+.arrow-left,
+.long-arrow-left{
+ transform: rotate(-45deg);
+}
+.long-arrow-right::after,
+.long-arrow-left::after{
+  content: "";
+  display: block;
+  width: 2px;
+  height: 45px;
+  background-color: black;
+  transform: rotate(-45deg) translate(15px, 4px);
+  left: 0;
+  top: 0;
+}
+
+.triangle-left,
+.triangle-right,
+.triangle-top,
+.triangle-bottom{
+  width: 0;
+  height: 0;
+  margin: 30px auto;
+}
+.triangle-left,
+.triangle-right{
+  border-top:
+    18px solid transparent;
+  border-bottom:
+    18px solid transparent;
+  
+  
+}
+    .charts{
+        margin-bottom: 5%;
+    }
+    .box{
+        background-color: whitesmoke;
+    }
+    .filter{
+        width: 120%;
+    }
+    .rows{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .column{
+        padding: 5%;
+    }
+    .block:hover {
+    cursor: pointer;
+    transform: scale(1.05); /* Example: Enlarge the block on hover */
+    transition: transform 0.3s ease; /* Smooth transition for the transform effect */
+    /* Add other hover styles as needed */
+}
+ .filter{
+        width: 50%;
+       }
+       html body{
+           overflow-x:hidden ;
+       }
+       .filter-button {
+        font-family: Cabinet Grotesk;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: 0px;
+        text-align: left;
+        background-color: #510000;
+        color: white;
+        border: none;
+        border-radius: 9999px; /* Large value to make it round */
+        padding: 10px 20px;
+        cursor: pointer;
+        width:150px;
+    }
+
+    .filter-button:focus {
+        outline: none; /* Remove focus outline */
+    }
+    .flash-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #ffcc00;
+            color: #510000;
+            padding: 16px 32px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .flash-message.hide {
+            opacity: 0;
+        }
+        .flash-message a {
+            color: #510000;
+            text-decoration: underline;
+            margin-left: 10px;
+        }
+             .filter{
+        width: 100%;
+      
+       }
+       .form-container {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-family: Cabinet Grotesk;
+            font-size: 20px;
+            font-weight: 200;
+        }
+        option{
+          text-align: center;
+          padding: 5%;
+        }
+        .rowe{
+          display: flex;
+          flex-direction: row;
+          padding-left: 5%;
+          padding-top: 3%;
+          gap: 1px
+        }
+</style>
+
+
+
+
+
+<aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left " id="show-side-navigation1">
+    <i class="uil-bars close-aside d-md-none d-lg-none" data-close="show-side-navigation1"></i>
+    <div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
+      <img
+           class="rounded-pill img-fluid"
+           width="65"
+           src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148907008/medium/1501685726/enhance"
+           alt="">
+      <div class="ms-2">
+        <h5 class="fs-6 mb-0">
+          <a class="text-decoration-none" href="#">{{user.firstname}} {{user.lastname}}</a>
+        </h5>
+      </div>
+    </div>
+  
+
+    
+  
+    <ul class="categories list-unstyled">
+      <li class="">
+        <i class="uil-estate fa-fw"></i><a href="/dashboard" onclick="navigateTo('/dashboard')"> Dashboard</a>
+       
+      </li>
+      <li class="">
+        <i class="uil-folder"></i><a href="/bookmark" onclick="navigateTo('/bookmark')"> My property</a>
+      </li>
+      <li class="">
+        <i class="uil-bag"></i><a href="#" onclick="navigateTo('/verification')"> Verification</a>
+        
+      </li>
+      <li class="">
+        <i class="uil-envelope-download fa-fw"></i><a href="#" onclick="navigateTo('/listinguser')"> Listing</a>
+        
+      </li>
+     
+      <li class="has-dropdown">
+        <i class="uil-setting"></i><a href="#"> Settings</a>
+        <ul class="sidebar-dropdown list-unstyled">
+          <li><a href="#" onclick="navigateTo('/settings')">Setting</a></li>
+          <li><a href="#">Help</a></li>
+          
+        </ul>
+      </li>
+    
+     
+      <li class="">
+        <i class="uil-signin"></i><a href="#" onclick="navigateTo('/logout')"> Logout</a>
+      </li>
+    </ul>
+  </aside>
+  
+  <script>
+    function navigateTo(url) {
+      window.location.href = url;
+    }
+    </script>
+
+
+  <section id="wrapper">
+    <nav class="navbar navbar-expand-md">
+      <div class="container-fluid mx-2">
+        <div class="navbar-header">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggle-navbar" aria-controls="toggle-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <i style="color: black; background-color: black;" class="uil-bars text-black"></i>
+          </button>
+          <a class="navbar-brand" href="#">Land<span class="main-color">Book</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="toggle-navbar">
+          <ul class="navbar-nav ms-auto">
+   
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i data-show="show-side-navigation1" class="uil-bars show-side-btn"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <div class="p-4">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div id="flashMessageContainer">
+                {% for category, message in messages %}
+                    <div class="flash-message alert-{{ category }}" id="flashMessage">
+                        {{ message }}
+                       
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+      <div class="welcome">
+        <div class="content rounded-3 p-3">
+          <h1 class="fs-3" style="font-family: Cabinet Grotesk;">Welcome to Landbook</h1>
+          <p class="mb-0" style="font-family: Cabinet Grotesk;">Hello {{user.username}}, welcome to your dashboard!</p>
+        </div>
+      </div>
+  
+
+      <section class="statistics mt-4">
+        <section class="charts mt-4">
+            <div class="chart-container p-3">
+              <h3 class="fs-6 mb-3">Chart title number three</h3>
+              <div style="height: 300px">
+                <canvas id="chart3" width="100%"></canvas>
+              </div>
+            </div>
+          </section>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3">
+              <i class="uil-envelope-shield fs-2 text-center bg-primary rounded-circle"></i>
+              <div class="ms-3">
+                <div class="d-flex align-items-center">
+                  <h3 class="mb-0">Verification</h3>
+                </div>
+                <p class="fs-normal mb-0">NGN1.250.031</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3">
+              <i class="uil-file fs-2 text-center bg-danger rounded-circle"></i>
+              <div class="ms-3">
+                <div class="d-flex align-items-center">
+                  <h3 class="mb-0">Total Listings</h3> 
+                </div>
+                <p class="fs-normal mb-0">543</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4" style="background-color: whitesmoke;">
+            <div class="box d-flex rounded-2 align-items-center p-3">
+              <i class="uil-users-alt fs-2 text-center bg-success rounded-circle"></i>
+              <div class="ms-3">
+                <div class="d-flex align-items-center">
+                  <h3 class="mb-0">Reviwes</h3> 
+                </div>
+                <p class="fs-normal mb-0">38</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+<br><br>
+<div class="rowe">
+  <div class="columns" style="">
+    <div class="filter p-4 border rounded" id="filter">
+      <h3 style="font-family: Cabinet Grotesk;
+                  font-size: 18px;
+                  font-weight: 500;
+                  line-height: 22px;
+                  letter-spacing: 0px;
+                  text-align: left;
+                  ">Filter</h3>
+          <form action=""  >
+            <div>
+              <label style="font-family: Cabinet Grotesk;
+              font-size: 18px;
+              font-weight: 500;
+              line-height: 22px;
+              letter-spacing: 0px;
+              text-align: left;
+              " for="HeadlineAct" class="block text-sm font-medium text-gray-900 mt-2"> Location </label>
+            
+              <select
+                name="HeadlineAct"
+                id="HeadlineAct"
+                class="mt-1.5 w-full h-12 pl-3 rounded-lg border-gray-300 text-gray-700 sm:text-sm"
+              >
+              <option value="Abia">Abia</option>
+              <option value="Adamawa">Adamawa</option>
+              <option value="Akwa Ibom">Akwa Ibom</option>
+              <option value="Anambra">Anambra</option>
+              <option value="Bauchi">Bauchi</option>
+              <option value="Bayelsa">Bayelsa</option>
+              <option value="Benue">Benue</option>
+              <option value="Borno">Borno</option>
+              <option value="Cross River">Cross River</option>
+              <option value="Delta">Delta</option>
+              <option value="Ebonyi">Ebonyi</option>
+              <option value="Edo">Edo</option>
+              <option value="Ekiti">Ekiti</option>
+              <option value="Enugu">Enugu</option>
+              <option value="Gombe">Gombe</option>
+              <option value="Imo">Imo</option>
+              <option value="Jigawa">Jigawa</option>
+              <option value="Kaduna">Kaduna</option>
+              <option value="Kano">Kano</option>
+              <option value="Katsina">Katsina</option>
+              <option value="Kebbi">Kebbi</option>
+              <option value="Kogi">Kogi</option>
+              <option value="Kwara">Kwara</option>
+              <option value="Lagos">Lagos</option>
+              <option value="Nasarawa">Nasarawa</option>
+              <option value="Niger">Niger</option>
+              <option value="Ogun">Ogun</option>
+              <option value="Ondo">Ondo</option>
+              <option value="Osun">Osun</option>
+              <option value="Oyo">Oyo</option>
+              <option value="Plateau">Plateau</option>
+              <option value="Rivers">Rivers</option>
+              <option value="Sokoto">Sokoto</option>
+              <option value="Taraba">Taraba</option>
+              <option value="Yobe">Yobe</option>
+              <option value="Zamfara">Zamfara</option>
+              <option value="Federal Capital Territory">Federal Capital Territory</option>
+              </select>
+            </div>
+  
+            <label for="" style="margin-top: 5%;">Type of Place</label>
+            <div class="rowe check">
+              <div class="column">
+  
+  
+  <fieldset>
+  <legend class="sr-only">Checkboxes</legend>
+  
+  <div class="space-y-2">
+  <label for="Option1" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
+  </div>
+  
+  <div>
+    <strong class="font-medium text-gray-900"> All </strong>
+  </div>
+  </label>
+  
+  <label for="Option2" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
+  </div>
+  
+  <div>
+    <strong class="font-medium text-gray-900"> Building </strong>
+  </div>
+  </label>
+  
+  <label for="Option3" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
+  </div>
+  
+  <div>
+    <strong class="font-medium text-gray-900">Apartment </strong>
+  </div>
+  </label>
+  </div>
+  </fieldset>
+              </div>
+              <div class="column">
+                <!--
+  Heads up! ðŸ‘‹
+  
+  Plugins:
+  - @tailwindcss/forms
+  -->
+  
+  <fieldset>
+  <legend class="sr-only">Checkboxes</legend>
+  
+  <div class="space-y-2">
+  <label for="Option1" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
+  </div>
+  
+  <div>
+    <strong class="font-medium text-gray-900"> Office </strong>
+  </div>
+  </label>
+  
+  <label for="Option2" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
+  </div>
+  
+  <div>
+    <strong class="font-medium text-gray-900"> Shop </strong>
+  </div>
+  </label>
+  
+  <label for="Option3" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
+  </div>
+  
+  <div>
+    <strong class="font-medium text-gray-900"> House </strong>
+  </div>
+  </label>
+  </div>
+  </fieldset>
+              </div>
+            </div>
+           
+  
+  
+  <label style=" padding-bottom: -20%;">Size</label>
+  <div class="rowe check" style="margin-left: -20%; margin-top: -11%;">
+  <div class="column">
+  <div style="position: relative; ">
+  <input   type="text" id="inputField" name="inputField" style="width: 100%; margin-left: 15%;">
+  <label for="inputField" style="position: absolute; padding-left: 6px; top: 15%; left: 0; width: 10%;margin-left: 15%; ">Min</label>
+  
+  </div>
+  
+  </div>
+  <div class="column">
+  <div style="position: relative;">
+  <input   type="text" id="inputField" name="inputField" style="width: 100%;">
+  <label for="inputField" style="position: absolute; padding-left: 6px; top: 15%; left: 0; width: 10%;">Max</label>
+  
+  </div>
+  
+  </div>
+  </div>
+  <label for="" style="">Features</label>
+            <div class="rowe check">
+              <div class="column">
+  
+  
+  <fieldset>
+  <legend class="sr-only">Checkboxes</legend>
+  
+  <div class="space-y-2" style="margin-top: -15%;">
+  <label for="Option1" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
+  </div>
+  
+  <div>
+    <strong class="font-medium text-gray-900"> Clubhouse </strong>
+  </div>
+  </label>
+  
+  <label for="Option2" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
+  </div>
+  
+  <div>
+    <strong class="font-medium text-gray-900"> Spa </strong>
+  </div>
+  </label>
+  
+  <label for="Option3" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
+  </div>
+  
+  <div>
+    <strong class="font-medium text-gray-900"> Pool </strong>
+  </div>
+  </label>
+  <label for="Option3" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
+  </div>
+  
+  <div>
+    <strong class="font-medium text-gray-900"> Valet Parking </strong>
+  </div>
+  </label>
+  </div>
+  </fieldset>
+              </div>
+              <div class="column">
+                <!--
+  Heads up! ðŸ‘‹
+  
+  Plugins:
+  - @tailwindcss/forms
+  -->
+  
+  <fieldset>
+  <legend class="sr-only">Checkboxes</legend>
+  
+  <div class="space-y-2">
+  <label for="Option1" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option1" />
+  </div>
+  
+  <div>
+    <strong class="font-medium text-gray-900">Ac & Heating</strong>
+  </div>
+  </label>
+  
+  <label for="Option2" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option2" />
+  </div>
+  
+  <div>
+    <strong class="font-medium text-gray-900"> Dishwasher </strong>
+  </div>
+  </label>
+  
+  <label for="Option3" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
+  </div>
+  
+  <div>
+    <strong class="font-medium text-gray-900"> Balcony </strong>
+  </div>
+  </label>
+  <label for="Option3" class="flex cursor-pointer items-start gap-4">
+  <div class="flex items-center">
+    &#8203;
+    <input type="checkbox" class="size-4 rounded border-gray-300" id="Option3" />
+  </div>
+  
+  <div>
+    <strong class="font-medium text-gray-900">Fitness </strong>
+  </div>
+  </label>
+  </div>
+  </fieldset>
+              </div>
+            </div>
+           
+          </form>
+        </div>
+  </div>
+  <div class="columns">
+    
+    <div class="frame-parent361" style="padding: 10%; margin-top: -10%;">
+      
+
+
+
+
+
+      
+      
+      <div class="size-container">
+        <div class="lands-parent">
+          <b class="lands text-2xl" style="font-family: Cabinet Grotesk">Lands</b>
+          <b class="lands text-xl" style="font-family: Cabinet Grotesk; float: left; margin-left: -20px;"><a href="/property-listing"><div class="long-arrow-right"></div></a></b>
+
+        </div>
+        <br>
+     
+      </div>
+      <div class="scroll-container dark:bg-white text-black">
+       <div class="row-container" id="cardRow">
+  {% for property in approved_properties %}
+  <a href="{{ url_for('property_details', property_id=property.id)}}" class="block rounded-lg m-12 p-6 shadow-sm shadow-indigo-100">
+      {% if property.image_filenames %}
+      {% set image_files = property.image_filenames.split(',') %}
+      {% if image_files %}
+          {% set image_file = image_files[0] %}
+          <div class="relative">
+              <img style="width:300px" class="h-56 rounded-md object-cover" src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="Publication Image">
+              <div class="absolute top-4 right-4">
+                  <button class="negotiable-wrapper" style="background-color: #510000;color: whitesmoke; width: 150px; height: 2rem; text-align: center; font-size: 16px; padding: 5%;">
+                      <div class="negotiable">
+                          {% if property.property_negotiation == 'Negotiable' %}
+                              Negotiable
+                          {% else %}
+                              Non-Negotiable
+                          {% endif %}
+                      </div>
+                  </button>
+              </div>
+          </div>
+      {% else %}
+          <p>No images available</p>
+      {% endif %}
+      {% else %}
+          <p>No images available</p>
+      {% endif %}
+
+      <div class="mt-2">
+          <dl>
+              <div>
+                  <dt class="sr-only">Price</dt>
+                  <dd class="text-xl text-black ngn-400000000">NGN {{property.property_price}}</dd>
+              </div>
+              <div>
+                  <dt class="sr-only">Property Type</dt>
+                  <dd class="font-medium" style="font-family: Cabinet Grotesk;">{{property.property_subtype}}</dd>
+              </div>
+              <div>
+                  <dt class="sr-only">Address</dt>
+                  <dd class="font-medium" style="font-family: Cabinet Grotesk;">{{property.location}}</dd>
+              </div>
+              <div>
+                  <dt class="sr-only">Description</dt>
+                  <dd class="font-medium description" style="font-size: 16px; font-family: Cabinet Grotesk; width: 320px; text-align: start;">{{ property.property_description[:100] }}</dd>
+              </div>
+          </dl>
+
+          <div class="mt-6 flex items-center gap-8 text-xs">
+              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                  <svg class="size-4 text-indigo-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                  </svg>
+                  <div class="mt-1.5 sm:mt-0">
+                      <p class="text-gray-500">Parking</p>
+                      <p class="font-medium">{{ property.property_size_max }}</p>
+                  </div>
+              </div>
+
+              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                  <svg class="size-4 text-indigo-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                  <div class="mt-1.5 sm:mt-0">
+                      <p class="text-gray-500">Bathroom</p>
+                      <p class="font-medium">{{ property.property_num_baths }}</p>
+                  </div>
+              </div>
+
+              <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                  <svg class="size-4 text-indigo-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                  </svg>
+                  <div class="mt-1.5 sm:mt-0">
+                      <p class="text-gray-500">Bedroom</p>
+                      <p class="font-medium">{{ property.property_num_rooms }}</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </a>
+  {% endfor %}
+</div>
+
+<style>
+.description {
+  padding: 0 10px; /* Adjust the padding as needed */
+}
+</style>
+
+      <br>
+      <div class="size-container">
+        <div class="terraces-and-duplex-parent">
+          <b class="lands text-2xl dark:bg-white text-black" style="font-family: Cabinet Grotesk">Terraces and Duplex</b>
+          <b class="lands text-xl" style="font-family: Cabinet Grotesk; float: left; margin-left: -20px;"><a href="/shortlet-listing"><div class="long-arrow-right"></div></a></b>
+
+        </div>
+        <br><br>
+        <div class="scroll-container">
+          <div class="row-container" id="cardRow">
+
+            {% for shortlet in approved_shortlets %}
+
+
+            <a href="{{ url_for('shortlet_details', shortlet_id=shortlet.id)}}" class="block rounded-lg m-12 p-6 shadow-sm shadow-indigo-100">
+              {% if shortlet.image_filenames %}
+              {% set image_files = shortlet.image_filenames.split(',') %}
+              {% if image_files %}
+                  {% set image_file = image_files[0] %}
+                  <div class="relative">
+                    <img style="width:300px"  class="h-56 rounded-md object-cover" src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="Publication Image">
+                    <div class="absolute top-4 right-4">
+                        <button class="negotiable-wrapper" style="background-color: #510000;color: whitesmoke; width: 150px; height: 2rem;
+                        text-align: center; font-size: 16px; padding: 5%;">
+                            <div class="negotiable">
+                                {% if shortlet.shortlet_negotiation == 'Negotiable' %}
+                                    Negotiable
+                                {% else %}
+                                    Non-Negotiable
+                                {% endif %}
+                            </div>
+                        </button>
+                    </div>
+                </div>                            {% else %}
+                  <p>No images available</p>
+              {% endif %}
+          {% else %}
+              <p>No images available</p>
+        
+          
+              <button class="negotiable-wrapper">
+                <div class="negotiable">
+                  {% if shortlet.shortlet_negotiation == 'Negotiable' %}
+            Negotiable
+        {% else %}
+            Non-Negotiable
+        {% endif %}
+                </div>
+              </button>
+              {% endif %}
+              
+            
+            
+              <div class="mt-2">
+                <dl>
+                  <div>
+                    <dt class="sr-only">Price</dt>
+            
+                    <dd class="text-xl text-black ngn-400000000">NGN {{shortlet.shortlet_price}}</dd>
+                  </div>
+            
+                  <div>
+                    <dt class="sr-only">Address</dt>
+            
+                    <dd class="font-medium">{{shortlet.location}}</dd>
+                  </div>
+
+                  <div>
+                    <dt class="sr-only">Address</dt>
+            
+                    <dd class="font-medium"  style="font-size: 16px; font-family: Cabinet Grotesk; width: 320px">{{shortlet.shortlet_description[:100]}}</dd>
+                  </div>
+                </dl>
+            
+                <div class="mt-6 flex items-center gap-8 text-xs">
+                  <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                    <svg
+                      class="size-4 text-indigo-700"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+                      />
+                    </svg>
+            
+                    <div class="mt-1.5 sm:mt-0">
+                      <p class="text-gray-500">Parking</p>
+            
+                      <p class="font-medium">{{ shortlet.parking_space  }}</p>
+                    </div>
+                  </div>
+            
+                  <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                    <svg
+                      class="size-4 text-indigo-700"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                      />
+                    </svg>
+            
+                    <div class="mt-1.5 sm:mt-0">
+                      <p class="text-gray-500">Bedroom</p>
+            
+                      <p class="font-medium">{{ shortlet.num_roms }}</p>
+                    </div>
+                  </div>
+            
+                  <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                    <svg
+                      class="size-4 text-indigo-700"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                      />
+                    </svg>
+            
+                    <div class="mt-1.5 sm:mt-0">
+                      <p class="text-gray-500">Stay</p>
+            
+                      <p class="font-medium">{{ shortlet.shortlet_stay }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+
+            </div>
+            </div>
+       
+     
+      </div>
+      <br><br>
+
+
+      <div class="frame-parent416">
+        <div class="shared-apartments-parent">
+          <b class="lands text-2xl dark:bg-white text-black" style="color: black; font-family: Cabinet Grotesk; margin-left:100px">Shared Apartments</b>
+          <b class="lands text-xl" style="font-family: Cabinet Grotesk; float: left; margin-left: -180px; padding-top: 50px;text-decoration: underline;"><a href="/shared-listing">See more</a></b>
+
+        </div>
+        <br>
+        <div class="scroll-container">
+          <div class="row-container" id="cardRow">
+            {% for shared in approved_shared %}
+            <div id="cards" class="cards1" style=" margin-right: 20px;">
+              <div id="cards" class="card-1" >
+                <div class="hotels1"></div>
+                <div class="frame-parent417">
+                  <div class="rectangle-parent30">
+                    {% if shared.image_filenames %}
+                    {% set image_files = shared.image_filenames.split(',') %}
+                    <img class="max-h-auto w-52 aspect-square rounded-md object-fill" src="{{ url_for('static', filename='uploads/' + image_files[1]) }}" alt="Publication Image">
+                    {% endif %}
+                    <div class="sekarwangi">
+                      <img class="sekarwangi-child" alt="" src="../static/image/group-1734.svg">
+                      <br>
+                    </div>
+                    <div class="frame-child69"></div>
+                    <div class="roommates1">
+                      <p class="richard-and-gill" style="color: whitesmoke;">{{shared.shared_property_type}}</p>
+                    </div>
+                    <div class="richard-and-gill-container">
+                      <p class="richard-and-gill" style="color: white;">{{shared.location}}</p>
+                    </div>
+                    <b id="price" class="ngn2500000">Price : NGN {{shared.shared_price}} <span></span></b>
+                    <div class="wifi-air-container">
+                      <p class="richard-and-gill">
+                        <div class="amenities-container">
+                          <p class="amenities-line">
+                            {% for amenity in shared_instance.amenities.split(', ') %}
+                            {{ amenity }}{% if not loop.last %} â€¢ {% endif %}
+                            {% endfor %}
+                          </p>
+                        </div>
+                      </p>
+                    </div>
+                    <img class="frame-child72" alt="" src="../static/image/group-2161.svg">
+                    <div class="the-peoples-brownstone-container">
+                      <p class="richard-and-gill">{{shared.shared_subtype}}</p>
+                    </div>
+                    <div class="abuja-lane-jabi-parent">
+                      <img class="frame-child73" alt="" src="../static/image/group-2149.svg">
+                    </div>
+                    <div id="shared_location" class="abuja-lane-jabi">{{shared.location}}</div>
+                    <a style="margin-left: 70%;" href="{{ url_for('shared_details', shared_id=shared.id)}}">Click to see more details</a>
+
+                    <div class="popular"></div>
+                    <div class="popular1"></div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      
+        
+      </div>
+       <br><br>
+      <div class="frame-parent416">
+        <div class="shared-apartments-parent">
+          <b class="lands text-2xl" style="font-family: Cabinet Grotesk; margin-left:100px">Shortlets Apartments</b>
+          <b class="lands text-xl" style="font-family: Cabinet Grotesk; float: left; margin-left: -180px; padding-top: 50px;text-decoration: underline;"><a href="/shortlet-listing">See more</a></b>
+
+        </div>
+        <br>
+         <div class="scroll-container">
+          <div class="row-container " id="cardRow">
+          {% for shortlet in approved_shortlets %}
+        <article class="rounded-xl w-full border-2 border-gray-100 bg-white " style=" margin-right: 30px;">
+          <div class="flex   items-start gap-4 p-4 sm:p-6 lg:p-8">
+            <a href="#" class="block shrink-0 ">
+              {% if shortlet.image_filenames %}
+                  {% set image_files = shortlet.image_filenames.split(',') %}
+                  <img   class="size-52 rounded-lg object-cover" src="{{ url_for('static', filename='uploads/' + image_files[1]) }}" alt="Publication Image" >
+                  {% endif %}
+              
+            
+            </a>
+        
+            <div>
+              <h3 class="font-medium sm:text-lg">
+                <a href="#" class="hover:underline">{{shortlet.shortlet_property_type}} </a>
+                <p>{{shortlet.location}}</p> 
+                <p>{{shortlet.shortlet_subtype}}</p>
+
+              </h3>
+        
+              <p class="line-clamp-2 text-sm text-gray-700">
+                {% for amenity in shared_instance.amenities.split(', ') %}
+                {{ amenity }}{% if not loop.last %} â€¢ {% endif %}
+            {% endfor %}
+              </p>
+        
+              <div class="mt-2 sm:flex sm:items-center sm:gap-2">
+                <div class="flex items-center gap-1 text-gray-500">
+                  
+        
+                  <p class="text-xs"></p>
+                </div>
+        
+                <span class="hidden sm:block" aria-hidden="true">&middot;</span>
+        
+                <p class="hidden sm:block sm:text-xs sm:text-gray-500">
+                  Posted by
+                  <a href="#" class="font-medium underline hover:text-gray-700">{{shortlet.user.firstname}}</a>
+                  <a href="{{ url_for('shortlet_details', shortlet_id=shortlet.id)}}" class="font-medium underline hover:text-gray-700">See more Details</a>
+
+                </p>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flex justify-end">
+            <strong style="background-color: #510000;"
+              class="-mb-[2px] -me-[2px] inline-flex items-center gap-1 rounded-ee-xl rounded-ss-xl  px-3 py-1.5 text-white"
+            >
+              
+        
+              <span class="text-[10px] font-medium sm:text-xs">NGN {{shortlet.shortlet_price}}</span>
+            </strong>
+          </div>
+        </article>
+
+        {% endfor %}
+
+        </div>
+        </div>
+
+</div>
+
+
+       <br><br><br>
+      <div id="frame-jva" class="frame-parent416">
+        <div class="shared-apartments-parent">
+          <b class="lands text-2xl" style="color: black;font-family: Cabinet Grotesk; margin-left:100px">Joint-Venture</b>
+          
+          <b class="lands text-xl" style="font-family: Cabinet Grotesk; float: left; margin-left: -120px; padding-top: 50px;text-decoration: underline;"><a href="/jva-listing">See more</a></b>
+
+        </div>
+        <br>
+        <div class="scroll-container">
+          <div class="row-container" id="cardRow">
+          {% for jva in approved_jva %}
+          <article class="rounded-xl border-2 border-gray-100 bg-white" style=" margin-right: 30px;">
+            <div class="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
+              <a href="#" class="block shrink-0">
+              
+                    {% if jva.image_filenames %}
+                    {% set image_files = jva.image_filenames.split(',') %}
+                    <img   class="size-52 rounded-lg object-cover" src="{{ url_for('static', filename='uploads/' + image_files[1]) }}" alt="Publication Image" >
+                    {% endif %}
+              
+              </a>
+          
+              <div>
+                <h3 class="font-medium sm:text-lg">
+                  <a href="#" class="hover:underline">{{jva.jva_property_type}} </a>
+                  <p>{{jva.location}}</p> 
+                  <p>{{jva.jva_subtype}}</p>
+
+                </h3>
+          
+                <p class="line-clamp-2 text-sm text-gray-700">
+                  {% for amenity in shared_instance.amenities.split(', ') %}
+                  {{ amenity }}{% if not loop.last %} â€¢ {% endif %}
+              {% endfor %}
+                </p>
+          
+                <div class="mt-2 sm:flex sm:items-center sm:gap-2">
+                  <div class="flex items-center gap-1 text-gray-500">
+                    
+          
+                    <p class="text-xs"></p>
+                  </div>
+          
+                  <span class="hidden sm:block" aria-hidden="true">&middot;</span>
+          
+                  <p class="hidden sm:block sm:text-xs sm:text-gray-500">
+                    Posted by
+                    <a href="#" class="font-medium underline hover:text-gray-700">{{jva.user.firstname}}</a>
+                    <a href="{{ url_for('jva_details', jva_id=jva.id)}}" class="font-medium underline hover:text-gray-700">See more Details</a>
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="flex justify-end">
+              <strong style="background-color: #510000;"
+                class="-mb-[2px] -me-[2px] inline-flex items-center gap-1 rounded-ee-xl rounded-ss-xl  px-3 py-1.5 text-white"
+              >
+                
+          
+                <span class="text-[10px] font-medium sm:text-xs">NGN {{jva.jva_price}}</span>
+              </strong>
+            </div>
+          </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+          {% endfor %}
+          </div>
+          </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div>
+  
+   
+    </div>
+  </section>
+
+  <script>
+    // Function to convert price to shorthand format
+    function convertPriceShorthand() {
+        var priceDisplays = document.querySelectorAll(".ngn-400000000");
+        
+        priceDisplays.forEach(function(priceDisplay) {
+            var priceText = priceDisplay.textContent.trim();
+            var priceValue = parseFloat(priceText.replace(/[^\d.]/g, ''));
+            
+            if (priceValue >= 1000000 && priceValue <= 999999999) {
+                var shorthandPrice = (priceValue / 1000000).toFixed(2) + "M";
+                priceDisplay.textContent = "NGN " + shorthandPrice;
+            } else if (priceValue >= 1000000000 && priceValue <= 999000000000) {
+                var shorthandPrice = (priceValue / 1000000000).toFixed(2) + "B";
+                priceDisplay.textContent = "NGN " + shorthandPrice;
+            }
+        });
+    }
+
+    // Call the function initially to convert displayed prices
+    convertPriceShorthand();
+</script>
+
+  <script>
+    // Other important pens.
+// Map: https://codepen.io/themustafaomar/pen/ZEGJeZq
+// Navbar: https://codepen.io/themustafaomar/pen/VKbQyZ
+
+'use strict'
+
+function $(selector) {
+  return document.querySelector(selector)
+}
+
+function find(el, selector) {
+  let finded
+  return (finded = el.querySelector(selector)) ? finded : null
+}
+
+function siblings(el) {
+  const siblings = []
+  for (let sibling of el.parentNode.children) {
+    if (sibling !== el) {
+      siblings.push(sibling)
+    }
+  }
+  return siblings
+}
+
+const showAsideBtn = $('.show-side-btn')
+const sidebar = $('.sidebar')
+const wrapper = $('#wrapper')
+
+showAsideBtn.addEventListener('click', function () {
+  $(`#${this.dataset.show}`).classList.toggle('show-sidebar')
+  wrapper.classList.toggle('fullwidth')
+})
+
+if (window.innerWidth < 767) {
+  sidebar.classList.add('show-sidebar');
+}
+
+window.addEventListener('resize', function () {
+  if (window.innerWidth > 767) {
+    sidebar.classList.remove('show-sidebar')
+  }
+})
+
+// dropdown menu in the side nav
+var slideNavDropdown = $('.sidebar-dropdown');
+
+$('.sidebar .categories').addEventListener('click', function (event) {
+  event.preventDefault()
+
+  const item = event.target.closest('.has-dropdown')
+
+  if (! item) {
+    return
+  }
+
+  item.classList.toggle('opened')
+
+  siblings(item).forEach(sibling => {
+    sibling.classList.remove('opened')
+  })
+
+  if (item.classList.contains('opened')) {
+    const toOpen = find(item, '.sidebar-dropdown')
+
+    if (toOpen) {
+      toOpen.classList.add('active')
+    }
+
+    siblings(item).forEach(sibling => {
+      const toClose = find(sibling, '.sidebar-dropdown')
+
+      if (toClose) {
+        toClose.classList.remove('active')
+      }
+    })
+  } else {
+    find(item, '.sidebar-dropdown').classList.toggle('active')
+  }
+})
+
+$('.sidebar .close-aside').addEventListener('click', function () {
+  $(`#${this.dataset.close}`).classList.add('show-sidebar')
+  wrapper.classList.remove('margin')
+})
+
+
+// Global defaults
+Chart.defaults.global.animation.duration = 2000; // Animation duration
+Chart.defaults.global.title.display = false; // Remove title
+Chart.defaults.global.defaultFontColor = '#71748c'; // Font color
+Chart.defaults.global.defaultFontSize = 13; // Font size for every label
+
+// Tooltip global resets
+Chart.defaults.global.tooltips.backgroundColor = '#111827'
+Chart.defaults.global.tooltips.borderColor = 'blue'
+
+// Gridlines global resets
+Chart.defaults.scale.gridLines.zeroLineColor = '#3b3d56'
+Chart.defaults.scale.gridLines.color = '#3b3d56'
+Chart.defaults.scale.gridLines.drawBorder = false
+
+// Legend global resets
+Chart.defaults.global.legend.labels.padding = 0;
+Chart.defaults.global.legend.display = false;
+
+// Ticks global resets
+Chart.defaults.scale.ticks.fontSize = 12
+Chart.defaults.scale.ticks.fontColor = '#71748c'
+Chart.defaults.scale.ticks.beginAtZero = false
+Chart.defaults.scale.ticks.padding = 10
+
+// Elements globals
+Chart.defaults.global.elements.point.radius = 0
+
+// Responsivess
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = false
+
+// The bar chart
+var myChart = new Chart(document.getElementById('myChart'), {
+  type: 'bar',
+  data: {
+    labels: ["January", "February", "March", "April", 'May', 'June', 'August', 'September'],
+    datasets: [{
+      label: "Lost",
+      data: [45, 25, 40, 20, 60, 20, 35, 25],
+      backgroundColor: "#0d6efd",
+      borderColor: 'transparent',
+      borderWidth: 2.5,
+      barPercentage: 0.4,
+    }, {
+      label: "Succes",
+      startAngle: 2,
+      data: [20, 40, 20, 50, 25, 40, 25, 10],
+      backgroundColor: "#dc3545",
+      borderColor: 'transparent',
+      borderWidth: 2.5,
+      barPercentage: 0.4,
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        gridLines: {},
+        ticks: {
+          stepSize: 15,
+        },
+      }],
+      xAxes: [{
+        gridLines: {
+          display: false,
+        }
+      }]
+    }
+  }
+})
+
+// The line chart
+var chart = new Chart(document.getElementById('myChart2'), {
+  type: 'line',
+  data: {
+    labels: ["January", "February", "March", "April", 'May', 'June', 'August', 'September'],
+    datasets: [{
+      label: "My First dataset",
+      data: [4, 20, 5, 20, 5, 25, 9, 18],
+      backgroundColor: 'transparent',
+      borderColor: '#0d6efd',
+      lineTension: .4,
+      borderWidth: 1.5,
+    }, {
+      label: "Month",
+      data: [11, 25, 10, 25, 10, 30, 14, 23],
+      backgroundColor: 'transparent',
+      borderColor: '#dc3545',
+      lineTension: .4,
+      borderWidth: 1.5,
+    }, {
+      label: "Month",
+      data: [16, 30, 16, 30, 16, 36, 21, 35],
+      backgroundColor: 'transparent',
+      borderColor: '#f0ad4e',
+      lineTension: .4,
+      borderWidth: 1.5,
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        gridLines: {
+          drawBorder: false
+        },
+        ticks: {
+          stepSize: 12,
+        }
+      }],
+      xAxes: [{
+        gridLines: {
+          display: false,
+        },
+      }]
+    }
+  }
+})
+
+var chart = document.getElementById('chart3');
+var myChart = new Chart(chart, {
+  type: 'line',
+  data: {
+    labels: ["One", "Two", "Three", "Four", "Five", 'Six', "Seven", "Eight"],
+    datasets: [{
+      label: "Lost",
+      lineTension: 0.2,
+      borderColor: '#d9534f',
+      borderWidth: 1.5,
+      showLine: true,
+      data: [3, 30, 16, 30, 16, 36, 21, 40, 20, 30],
+      backgroundColor: 'transparent'
+    }, {
+      label: "Lost",
+      lineTension: 0.2,
+      borderColor: '#5cb85c',
+      borderWidth: 1.5,
+      data: [6, 20, 5, 20, 5, 25, 9, 18, 20, 15],
+      backgroundColor: 'transparent'
+    },
+               {
+                 label: "Lost",
+                 lineTension: 0.2,
+                 borderColor: '#f0ad4e',
+                 borderWidth: 1.5,
+                 data: [12, 20, 15, 20, 5, 35, 10, 15, 35, 25],
+                 backgroundColor: 'transparent'
+               },
+               {
+                 label: "Lost",
+                 lineTension: 0.2,
+                 borderColor: '#337ab7',
+                 borderWidth: 1.5,
+                 data: [16, 25, 10, 25, 10, 30, 14, 23, 14, 29],
+                 backgroundColor: 'transparent'
+               }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        gridLines: {
+          drawBorder: false
+        },
+        ticks: {
+          stepSize: 12
+        }
+      }],
+      xAxes: [{
+        gridLines: {
+          display: false,
+        },
+      }],
+    }
+  }
+})
+
+  </script>
+   <script>
+    function toggleFilter() {
+        var filter = document.getElementById("filter");
+        if (filter.style.display === "none") {
+            filter.style.display = "block";
+        } else {
+            filter.style.display = "none";
+        }
+    }
+</script>

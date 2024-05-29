@@ -1,0 +1,846 @@
+
+<link rel="stylesheet" href="../static/css/dashboard.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css
+">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css
+">
+<link rel="stylesheet" href="../static/css/ListingLandingPage.css" />
+<link rel="stylesheet" href="../static/css/index.css" />
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Cabinet Grotesk:wght@400;500;700&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Noto Sans:wght@500;700&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js
+"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.jshttps://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js
+"></script>
+<link rel="stylesheet" href="../static/css/different.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    .content {
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.col-span-6 {
+  grid-column: span 6 / span 6;
+}
+
+.col-span-4 {
+  grid-column: span 4 / span 4;
+}
+
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.col-span-10 {
+  grid-column: span 10 / span 10;
+}
+
+textarea.textarea {
+  width: 100%;
+}
+
+.file-upload-container,
+.document-upload-container {
+  margin-top: 30px;
+}
+
+.file-upload-container label,
+.document-upload-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.file-upload-container input,
+.document-upload-container input {
+  display: none;
+}
+
+#file-drag,
+#document-drag {
+  border: 2px dashed #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+#file-drag img,
+#document-drag img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+#file-drag div,
+#document-drag div {
+  text-align: center;
+}
+
+#file-list,
+#document-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.btn-wide {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-wide:hover {
+  background-color: #510000;
+}
+
+/* Adjustments for the grid */
+@media (max-width: 768px) {
+  .grid-cols-12,
+  .grid-cols-10,
+  .grid-cols-6,
+  .grid-cols-4 {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .col-span-6,
+  .col-span-4,
+  .col-span-3,
+  .col-span-10 {
+    grid-column: span 12 / span 12;
+  }
+}
+.rows{
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    padding: 5%;
+}
+
+input[type='text']{
+  border: grey 1px solid ;
+}
+input[type='file']{
+  border: grey 1px solid ;
+}
+input[type='text']:hover
+{
+    border: grey 1px solid ;
+}
+input[type='file']:hover
+{
+  border: grey 1px solid ;
+}
+legend{
+  font-size: 16px;
+}
+textarea{
+     border: grey 1px solid ;
+}
+</style>
+
+
+
+<aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
+    <i class="uil-bars close-aside d-md-none d-lg-none" data-close="show-side-navigation1"></i>
+    <div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
+      <img
+           class="rounded-pill img-fluid"
+           width="65"
+           src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148907008/medium/1501685726/enhance"
+           alt="">
+      <div class="ms-2">
+        <h5 class="fs-6 mb-0">
+          <a class="text-decoration-none" href="#">{{user.firstname}} {{user.lastname}}</a>
+        </h5>
+      </div>
+    </div>
+  
+   
+  
+    <ul class="categories list-unstyled">
+      <li class="">
+        <i class="uil-estate fa-fw"></i><a href="/dashboard" onclick="navigateTo('/dashboard')"> Dashboard</a>
+       
+      </li>
+      <li class="">
+        <i class="uil-folder"></i><a href="/bookmark" onclick="navigateTo('/bookmark')"> My property</a>
+      </li>
+      <li class="">
+        <i class="uil-bag"></i><a href="#" onclick="navigateTo('/verification')"> Verification</a>
+        
+      </li>
+      <li class="">
+        <i class="uil-envelope-download fa-fw"></i><a href="#" onclick="navigateTo('/listinguser')"> Listing</a>
+        
+      </li>
+     
+      <li class="has-dropdown">
+        <i class="uil-setting"></i><a href="#"> Settings</a>
+        <ul class="sidebar-dropdown list-unstyled">
+          <li><a href="#" onclick="navigateTo('/settings')">Setting</a></li>
+          <li><a href="#">Help</a></li>
+          
+        </ul>
+      </li>
+    
+     
+      <li class="">
+        <i class="uil-signin"></i><a href="#" onclick="navigateTo('/logout')"> Logout</a>
+      </li>
+    </ul>
+  </aside>
+  
+  <script>
+    function navigateTo(url) {
+      window.location.href = url;
+    }
+    </script>
+  
+  <section id="wrapper">
+    <nav class="navbar navbar-expand-md" >
+      <div class="container-fluid mx-2"style="background-color: #510000;">
+        <div class="navbar-header" >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggle-navbar" aria-controls="toggle-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="uil-bars text-white"></i>
+          </button>
+          <a style="color: whitesmoke;" class="navbar-brand" href="#"><span style="color: #f9f9f9;">Land</span><span style="color: #f9f9f9;" class="">Book</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="toggle-navbar">
+          <ul class="navbar-nav ms-auto">
+   
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i data-show="show-side-navigation1" class="uil-bars show-side-btn"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <div class="p-4">
+      
+       
+
+   
+  
+   
+    </div>
+    <div class="content">
+        <div class="px-5 lg:pr-10"><!--seecond grid col-->
+          <div class="flex max-w-full mb-10 ">
+              <button class="tablink w-1/3 text-sm py-4 text-white bg-[#222222]" onclick="openCity('Profile', this, '#510000')" id="defaultOpen">Profile</button>
+             
+              <button class="tablink w-1/3 text-sm py-4 text-white bg-[#222222]" onclick="openCity('Settings', this, '#510000')">Settings</button>
+              <button class="tablink w-1/3 text-sm py-4 text-white bg-[#222222]" onclick="openCity('Logout', this, '#510000')">Log Out</button>
+          </div>
+          
+          <!-- profile tab -->
+          <div id="Profile" class="tabcontent w-full flex flex-col gap-[50px]">
+              <!-- profile image -->
+            <form action="{{url_for('update_profile')}}" method="POST" enctype="multipart/form-data">
+
+                <div class="relative mx-auto">
+              
+                 </div>
+              
+                 <div class="flex flex-col gap-[30px]">
+                  <!-- personal info -->
+                  <div class="grid gap-[30px]">
+                      <h3 class="text-[#510000] font-semibold text-base">Personal Information</h3>
+                      <div class="flex flex-col lg:flex-row gap-[11px] w-full rounded-md">
+                       
+                        
+                        
+                        <fieldset class="py-1 px-4 w-full rounded-md">
+                              <legend style="font-size: 16px;">First Name</legend>
+                              <div class="relative w-full">
+                                  <input name="firstname" type="text" placeholder="{{user.firstname}}" readonly value="{{user.firstname}}" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full ">
+                                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                      <!-- Replace the following line with your icon -->
+                                      <i class="fa-regular fa-user"></i>
+                                  </div>
+                              </div>                            
+                          </fieldset>
+                          <fieldset class="py-1 px-4 w-full rounded-md">
+                              <legend style="font-size: 16px;">Last Name</legend>
+                              <div class="relative w-full">
+                                  <input name="lastname" type="text" placeholder="Eze" value="{{user.lastname}}" readonly class="pl-10 pr-4 py-2  rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                      <!-- Replace the following line with your icon -->
+                                      <i class="fa-regular fa-user"></i>
+                                  </div>
+                              </div>                            
+                          </fieldset>
+                      </div>
+                      <div class="flex flex-col lg:flex-row gap-[11px] w-full rounded-md">
+                          <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                              <legend>Street</legend>
+                              <div class="relative w-full">
+                                  <input name="street" type="text" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                      <!-- Replace the following line with your icon -->
+                                      <i class="fa-regular fa-location-dot"></i>
+                                  </div>
+                              </div>                            
+                          </fieldset>
+                          <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                              <legend>House Number</legend>
+                              <div class="relative w-full">
+                                  <input name="house_number" type="text" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                      <!-- Replace the following line with your icon -->
+                                      <i class="fa-regular fa-location-dot"></i>
+                                  </div>
+                              </div>                            
+                          </fieldset>
+                      </div>
+                      <div class="flex flex-col lg:flex-row gap-[11px] w-full rounded-md">
+                          <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                              <legend>City</legend>
+                              <div class="relative w-full">
+                                  <input name="city" type="text" placeholder="F.C.T." class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                      <!-- Replace the following line with your icon -->
+                                      <i class="fa-solid fa-phone"></i>
+                                  </div>
+                              </div>                            
+                          </fieldset>
+                          <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                              <legend>State</legend>
+                              <div class="relative w-full">
+                                  <input name="state" type="text" placeholder="Abuja" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                      <!-- Replace the following line with your icon -->
+                                      <i class="fa-solid fa-phone"></i>
+                                  </div>
+                              </div>                            
+                          </fieldset>
+                      </div>     
+                      <div class="flex flex-col lg:flex-row gap-[11px] w-full rounded-md">
+                        <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                            <legend>NIN Number</legend>
+                            <div class="relative w-full">
+                                <input name="nin_number" type="text" placeholder="12309876545678" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <!-- Replace the following line with your icon -->
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                            </div>                            
+                        </fieldset>
+                       
+                    </div> 
+                    
+                    <div class="flex flex-col lg:flex-row gap-[11px] w-full rounded-md">
+                      <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                          <legend>NIN Slip</legend>
+                          <div class="relative w-full">
+                              <input name="nin_slip" type="file" placeholder="F.C.T." class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                  <!-- Replace the following line with your icon -->
+                                  <i class="fa-solid fa-phone"></i>
+                              </div>
+                          </div>                            
+                      </fieldset>
+                     
+                  </div>      
+                  <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                    <legend>Bio</legend>
+                    <div class="relative w-full">
+                            <input name="Business_Bios" type="text" placeholder="ABChyhisqudqjowqdudbqiendi" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <!-- Replace the following line with your icon -->
+                                <i class="fa-solid fa-pen"></i>
+                            </div>
+                        </div>                             
+                </fieldset>
+                    
+                  </div>
+      
+                  <!-- contact info -->
+                  <div class="grid gap-[30px]">
+                      <h3 class="text-[#510000] font-semibold text-base">Contact Information</h3>
+                      <div class="flex flex-col lg:flex-row gap-[11px] w-full rounded-md">
+                          <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                              <legend>Email Address</legend>
+                              <div class="relative w-full">
+                                  <input name="emails" type="text"  value="{{user.email}}" readonly class="min-w-full pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent">
+                                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                      <!-- Replace the following line with your icon -->
+                                      <i class="fa-regular fa-envelope"></i>
+                                  </div>
+                              </div>                            
+                          </fieldset>
+                          
+                      </div>
+                      
+                      <div class="flex flex-col lg:flex-row gap-[11px] w-full rounded-md">
+                          <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                              <legend>Phone Number</legend>
+                              <div class="relative w-full">
+                                  <input name="phone_number" type="text" placeholder="09123456789" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                      <!-- Replace the following line with your icon -->
+                                      <i class="fa-solid fa-phone"></i>
+                                  </div>
+                              </div>                            
+                          </fieldset>
+                          <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                              <legend>Alternative <span class="hidden lg:inline ">Phone</span> Number</legend>
+                              <div class="relative w">
+                                  <input name="alitnumber" type="text" placeholder="08034567890" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                      <!-- Replace the following line with your icon -->
+                                      <i class="fa-solid fa-phone"></i>
+                                  </div>
+                              </div>                            
+                          </fieldset>
+                      </div>
+      
+                  </div>
+
+                  <div class="grid gap-[30px]">
+                    <h3 class="text-[#510000] font-semibold text-base">Business Information</h3>
+                    <div class="flex flex-col lg:flex-row gap-[11px] w-full rounded-md">
+                      <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                        <legend>Business Name</legend>
+                        <div class="relative w-full">
+                            <input name="Business_name" type="text" placeholder="ABChyhisqudqjowqdudbqiendi" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <!-- Replace the following line with your icon -->
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                        </div>                            
+                    </fieldset>
+                        
+                    </div>
+                    
+                    <div class="flex flex-col lg:flex-row gap-[11px] w-full rounded-md">
+                      <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                        <legend>Business Bio (please include area of Speciaties)</legend>
+                        <div class="relative w-full">
+                            <input name="Business_Bio" type="text" placeholder="ABChyhisqudqjowqdudbqiendi" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <!-- Replace the following line with your icon -->
+                                <i class="fa-solid fa-pen"></i>
+                            </div>
+                        </div>                            
+                    </fieldset>
+                        
+                    </div>
+                    
+                     <div class="flex flex-col lg:flex-row gap-[11px] w-full rounded-md">
+                          <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                              <legend>Office Address</legend>
+                              <div class="relative w-full">
+                                  <input name="office_address" type="text" placeholder="09123456789" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                      <!-- Replace the following line with your icon -->
+                                      <i class="fa-solid fa-address"></i>
+                                  </div>
+                              </div>                            
+                          </fieldset>
+                          <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                              <legend> <span class="hidden lg:inline ">Phone</span> Number</legend>
+                              <div class="relative w">
+                                  <input name="alitnumber" type="text" placeholder="08034567890" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                      <!-- Replace the following line with your icon -->
+                                      <i class="fa-solid fa-phone"></i>
+                                  </div>
+                              </div>                            
+                          </fieldset>
+                      </div>
+                    <div class="flex flex-col lg:flex-row gap-[11px] w-full rounded-md">
+                      <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                        <legend>CAC_slip</legend>
+                        <div class="relative w-full">
+                            <input name="cac_slip" type="file" placeholder="Abuja" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <!-- Replace the following line with your icon -->
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                        </div>                            
+                    </fieldset>
+                        
+                    </div>
+                    
+                    <div class="flex flex-col lg:flex-row gap-[11px] w-full rounded-md">
+                      <fieldset class="border-2 py-1 px-4 w-full rounded-md">
+                        <legend>CAC Number</legend>
+                        <div class="relative w-full">
+                            <input name="cac_numbers" type="text" placeholder="ABChyhisqudqjowqdudbqiendi" class="pl-10 pr-4 py-2 border-none rounded-lg focus:outline-none focus:border-transparent min-w-full">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <!-- Replace the following line with your icon -->
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                        </div>                            
+                    </fieldset>
+                        
+                    </div>
+    
+                </div>
+             </div>
+             <br>
+             <div class="text-center w-full">
+              <input type="submit" class=" bg-[#510000] w-2/3 text-center text-white font-bold py-2 px-4 rounded-full" value= "Save">
+             </div>
+              
+                </form>
+             
+      
+             <!-- field set -->
+         
+      
+             <!-- button -->
+           
+          </div>
+      
+          <!-- message tab -->
+          <div id="Message" class="tabcontent  mx-auto w-full">
+              <h1>Paris</h1>
+              <p>Paris is the capital of France.</p>
+          </div>
+          
+          <!-- settings tab -->
+          <div id="Settings" class="tabcontent  w-full flex flex-col gap-4">
+              <div class="p-4 border-2 border-[#2222221A] bg-[#2222220D] rounded-md flex flex-col gap-[20px]">
+                  <!-- first line -->
+                  <div class="flex flex-col lg:flex-row justify-between px-4 pb-10 border-b-2 gap10 w-full">
+                      <div class="flex flex-col w-full lg:w-2/3">
+                          <h3 class='font-bold text-[#222222cc] ' >Email Address</h3>
+                          <span>Email address associated with your account</span>
+                      </div>
+      
+                      <div class="flex flex-col gap-2 md:flex-row lg:justify-between w-full lg:w-fit items-center" >
+                          <div class="grid w-full gap-2">
+                              <span>{{user.email}}</span>
+                              <span class="text-[#0C7731] text-sm">Verified</span>
+                          </div>
+                         
+                      </div>
+      
+                  </div>
+      
+                  <!-- second -->
+                  <div class="flex flex-col items-center lg:flex-row lg:justify-between px-4 pb-10 border-b-2 gap-10 w-full">
+                      <div class="flex flex-col gap-[20px] w-full lg:w-2/3">
+                          <h3 class='font-bold text-[#222222cc] ' >Password</h3>
+                          <span>Set up a unique password to protect your account</span>
+                      </div>
+      
+                      <div class="flex flex-col gap-[20px] md:items-end items-center w-full lg:w-2/3" >
+                          <div class="flex rounded-full border gap-[8px] p-[6px] border-[#222222]">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                              <span>Change Password</span>
+                          </div>
+                      </div>
+      
+                  </div>
+      
+                  <!-- third -->
+                  <div class="flex justify-between px-4 pb-10 border-b-2 gap-10 w-full">
+                      <div class="flex flex-col  w-full lg:w-2/3">
+                          <h3 class='font-bold text-[#222222cc]'>Two Factor Authentication</h3>
+                          <span class="text-[#22222299]">Keep your account secured by enabling a 2FA by SMS or using a temporary one-time-password (OTP)</span>
+                      </div>
+      
+                      <div>
+                          <label class="switch ">
+                              <input type="checkbox">
+                              <span class="slider round"></span>
+                          </label>
+                      </div>
+                        
+                  </div>
+      
+                  <!-- fourth -->
+                  <div class="flex flex-col lg:flex-row justify-between items-center px-4 gap-10 w-full">
+                      <div class="flex flex-col  w-full lg:w-2/3">
+                          <h3 class='font-bold text-[#222222cc]'>Deactivate Account</h3>
+                          <span class="text-[#22222299]">Email address associated with your account</span>
+                      </div>
+      
+                      <div>
+                         <span class="text-[#FF0000] font-semibold text-sm ">Deactivate</span>
+                      </div>
+                        
+                  </div>
+              </div>
+              
+              <div class="px-4 py-6 border-2 border-[#2222221A] bg-[#2222220D] rounded-md flex flex-col gap-[20px]">
+                  <div class="flex flex-col gap-4">
+                      <div class="flex flex-col gap-[35px] ">
+                          <!-- first -->
+                          <div class="flex justify-between items-center px-4 gap-10 w-full">
+                              <div class="flex flex-col w-2/3">
+                                  <h3 class='font-bold text-[#222222cc]'>Email Notification</h3>
+                                  <span class="text-[#22222299]">Access, and download all Agent’s Time and Attendance records.</span>
+                              </div>
+      
+                              <div>
+                                  <label class="switch ">
+                                      <input type="checkbox">
+                                      <span class="slider round"></span>
+                                  </label>
+                              </div>
+                              
+                          </div>
+                          <!-- second -->
+                          <div class="flex justify-between items-center px-4 gap-10 w-full">
+                              <div class="flex flex-col w-2/3">
+                                  <h3 class='font-bold text-[#222222cc] ' >Mobile Push Notification</h3>
+                                  <span class="text-[#22222299]">off</span>
+                              </div>
+      
+                              <div>
+                                  <label class="switch ">
+                                      <input type="checkbox">
+                                      <span class="slider round"></span>
+                                  </label>
+                              </div>
+                              
+                          </div>
+                          <!-- third -->
+                          <div class="flex justify-between items-center px-4 gap-10 w-full">
+                              <div class="flex flex-col w-2/3">
+                                  <h3 class='font-bold text-[#222222cc] ' >Desktop Notification</h3>
+                                  <span class="text-[#22222299]">off</span>
+                              </div>
+      
+                              <div>
+                                  <label class="switch ">
+                                      <input type="checkbox">
+                                      <span class="slider round"></span>
+                                  </label>
+                              </div>
+                              
+                          </div>
+                      </div>
+      
+                      <hr class="text-[#CCCCCE80]">
+      
+                      <!-- second -->
+                      <div>
+                          <div class="flex flex-col-reverse gap-2 lg:flex-row lg:justify-between">
+                              <div>
+                                  <span>Notify me when...</span>
+                                  <div class="flex flex-col gap-[5px]">
+                                      <div class="flex items-center gap-[22px]">
+                                          <input type="checkbox" name="" id="">
+                                          <span class="text-[#22222299]">My Listing has been posted</span>
+                                      </div>
+                                      <div class="flex items-center gap-[22px]">
+                                          <input type="checkbox" name="" id="">
+                                          <span class="text-[#22222299]">My post has been added to cart</span>
+                                      </div>
+                                      <div class="flex items-center gap-[22px]">
+                                          <input type="checkbox" name="" id="">
+                                          <span class="text-[#22222299]">Admin sends a message</span>
+                                      </div>
+                                  </div>
+                              </div>
+      
+                              <div>
+                                  <span class="font-bold text-[#510000] ">About notifications?</span>
+                              </div>
+                          </div>
+                      </div>
+      
+                  </div>
+              </div>
+          </div>
+      
+          
+          <!-- logout tab -->
+          <div id="Logout" class="tabcontent flex justify-center mx-auto w-full">
+              <div class="flex flex-col py-[20px] px-[30px] items-center justify-center rounded-md bg-[#2222220D] border-[#2222220D] w-full lg:w-[504px] gap-[30px] ">
+                  <div class="flex justify-end">
+                      <span class="text-2xl text-end cursor-pointer">X</span>
+                  </div>
+                  <div class="text-center">
+                      <span>You are about to Log Out of your account</span>
+                  </div>
+                  <div class=" flex flex-col lg:flex-row justify-center gap-[10px] items-center">
+                      <span class="text-white bg-[#510000] cursor-pointer rounded-2xl uppercase py-2 px-4 ">yes continue</span>
+                      <span class="underline tex-[#510000] cursor-pointer ">No, close this</span>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+      </div>
+  </section>
+
+  
+
+
+<!-- Scripts -->
+<script>
+    function revealContent() {
+      var hiddenContent = document.querySelector('.hidden-content');
+      var hideContent = document.querySelector('.hide');
+      
+      if (hiddenContent.style.display === 'none') {
+        hiddenContent.style.display = 'inline';
+        hideContent.style.display = 'none';
+      } else {
+        hiddenContent.style.display = 'none';
+        hideContent.style.display = 'inline';
+      }
+    }
+  </script>
+<script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+</script>
+<!-- tab -->
+<script>
+  function openCity(cityName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+   document.getElementById(cityName).style.display = "flex";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+
+
+<!--  -->
+  <script>
+  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sidebarToggle = document.getElementById('sidebar-toggle');
+      const sidebar = document.querySelector('.sidebar');
+      const content = document.querySelector('.content');
+  
+      sidebarToggle.addEventListener('click', function () {
+        sidebar.classList.toggle('visible');
+        content.classList.toggle('overlay');
+  
+        // Check if sidebar is visible
+        if (sidebar.classList.contains('visible')) {
+          // If sidebar is visible, hide the content
+          content.style.display = 'none';
+          // Add a class to the sidebar for wider width
+          sidebar.classList.add('wider-sidebar');
+        } else {
+          // If sidebar is not visible, show the content
+          content.style.display = 'block';
+          // Remove the class for wider width
+          sidebar.classList.remove('wider-sidebar');
+        }
+      });
+    });
+  </script>

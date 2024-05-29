@@ -1,0 +1,291 @@
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0%;
+    margin-bottom: 3%;
+   
+}
+/* .column{
+    padding: 15px;
+} */
+
+
+
+.help{
+width: 500%;
+}
+
+.btns{
+    margin-left: 40%;
+   
+}
+.aboutimage{
+    align-self: stretch; justify-content: flex-start; align-items: center; gap: 5px; display: inline-flex
+}
+.second{
+    text-align: center;
+    width: 130%;
+    margin-left: -15%;
+}
+.third{
+    width: 200%;
+    margin-left: -45%;
+}
+.wrapper {
+    margin: 0 auto;
+    width: 400px;
+    font-family: 'Helvetica';
+    font-size: 14px;
+   
+    padding: 20px;
+    padding-bottom: -5%;
+  }
+  .step-progress {
+    position: relative;
+    padding-left: 45px;
+    list-style: none;
+  }
+  .step-progress::before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 24px;
+    width: 10px;
+    height: 100%;
+    border-left: 2px solid #ccc;
+  }
+  .step-progress-item {
+    position: relative;
+    counter-increment: list;
+    padding-top: 10px;
+    padding-right : 75%;
+   
+  }
+  .step-p{
+      color: #0A0A0A;
+      width: 400px;
+      padding-left: 10%;
+      text-align: start;
+      padding: 10%;
+      margin-top: 15%;
+      line-height: 30px;
+  }
+  strong{
+      
+  color: #510000;
+   font-size: 36px;
+   font-family: Cabinet Grotesk;
+   font-weight: 500;
+   line-height: 16px;
+   word-wrap: break-word;
+   width: 500px;
+   text-align: left;
+   padding-left: 10%;
+   
+  }
+  .sign-btn{
+     
+      width: 80%; height: 100%; padding-top: 12px; padding-bottom: 12px; padding-left: 50px; padding-right: 56px; background: #510000; border-radius: 40px; border: 1px white solid; justify-content: center; align-items: left; display: inline-flex
+  }
+  .wrapper-head-text{
+    text-align: start;
+    width: 100%; color: #0A0A0A; font-size: 16px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 32px; word-wrap: break-word
+}
+.wrapper-small-text{
+  text-align: start;
+
+    width: 100%; color: #0A0A0A; font-size: 35px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 40px; letter-spacing: 0.48px; word-wrap: break-word
+}
+.test-text{
+    width: 100%; color: #0A0A0A; font-size: 24px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 32px; word-wrap: break-word;
+    text-align: center;
+    margin-bottom: 1%;
+}
+.test-text-second{
+    text-align: center;
+    margin-bottom: 1%;
+    width: 100%; height: 100%; color: #0A0A0A; font-size: 48px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 60px; letter-spacing: 0.48px; word-wrap: break-word
+}
+.test-text-third{
+    margin-bottom: 8%;
+    text-align: center;
+    width: 70%; text-align: center; color: #0A0A0A; font-size: 16px; font-family: Cabinet Grotesk; font-weight: 400; line-height: 20px; letter-spacing: 0.16px; word-wrap: break-word;
+    margin-left: 15%;
+}
+.faq{
+   margin-left: 10%;
+   width: 80%;
+}
+.faq details{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    
+}
+.faq-one, .faq-p{
+    margin-left: 20%;
+}
+.contact-small{
+    text-align: start;
+    color: whitesmoke;
+}
+.card-column{
+  padding-top: 34px; padding-bottom: 67px; padding-left: 14px; padding-right: 15px; background: white; border-top-left-radius: 100px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; gap: 28px; display: inline-flex
+}
+.faq-answer {
+  display: none;
+}
+
+.faq-question.active + .faq-answer {
+  display: block;
+}
+.btn-xs{
+  width: 248px;
+  height: 40px;
+  top: 718px;
+  left: 596px;
+  padding: 12px, 56px, 12px, 57px;
+  border-radius: 40px;
+  border: 1px;
+  gap: 10px;
+  background: linear-gradient(0deg, #510000, #510000),
+linear-gradient(0deg, #FFFFFF, #FFFFFF);
+color: whitesmoke;
+
+  
+}
+.vilin{
+  width: 720px;
+height: 746px;
+top: 293px;
+left: 720px;
+padding: 13px, 0px, 0px, 14px;
+border-radius: 15px
+
+}
+.rowy{
+  display: flex;
+  flex-direction: row;
+}
+@media only screen and (max-width: 768px) {
+  body, html{
+    overflow-x: hidden;
+  }
+.row{
+  display: flex;
+  flex-direction: column;
+ 
+}
+.rowy{
+  display: flex;
+  flex-direction: row;
+}
+#navbtn {
+  width:40%;
+  text-align: center;
+  padding:  10 5%;
+  padding-left: 15%;
+}
+.third{
+  width: auto;
+  margin: 0;
+  padding: 0%;
+}
+.card-column{
+margin-left: 30%;
+border-radius: 0%;
+}
+.wrapper-small-text{
+  width: 200%;
+  margin: 0;
+  padding: 0%;
+  text-align: center;
+}
+.vilin{
+  width: 400px;
+height: 300px;
+margin-left: 7%;
+border-radius: 15px
+
+}
+.rowty, .rows{
+  display: flex;
+  flex-direction: row;
+}
+}
+
+@media only screen and (max-width: 600px) {
+  body, html{
+    overflow-x: hidden;
+  }
+.row{
+  display: flex;
+  flex-direction: column;
+}
+.btns{
+  margin-left: 10%;
+  align-items: center;
+  justify-content:center ;
+}
+.responsive-image{
+  height: 20rem;
+  width: 200px;
+}
+.third{
+  width: 100%;
+  margin-left: 0%;
+}
+.card-column{
+  padding-left: 30px;
+  margin-left: 20px;
+}
+
+/* .wrapper-small-text{
+  text-align: center;
+  margin-left: -10%;
+  width: 100%; color: #0A0A0A; font-size: 30px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 30px; letter-spacing: 0.48px; word-wrap: break-word
+} */
+
+.step-progress-item strong{
+  font-size: 18px;
+}
+.sign-btn{
+    margin-left: -30%; 
+  width: 60%; height: 100%; padding-top: 12px; padding-bottom: 12px; padding-left: 80px; padding-right: 96px; background: #510000; border-radius: 40px; border: 1px white solid; justify-content: center; align-items: left; display: inline-flex
+}
+.test-text-second{
+  text-align: center;
+  margin-bottom: 4%;
+  width: 100%; height: 100%; color: #0A0A0A; font-size: 30px; font-family: Cabinet Grotesk; font-weight: 700; line-height: 30px; letter-spacing: 0.48px; word-wrap: break-word
+}
+.test-text-third{
+  margin-bottom: 12%;
+  text-align: center;
+  width: 100%; text-align: center; color: #0A0A0A; font-size: 16px; font-family: Cabinet Grotesk; font-weight: 400; line-height: 20px; letter-spacing: 0.16px; word-wrap: break-word;
+ margin-left: 1%;
+}
+
+
+.second{
+  width: auto;
+  padding: 0%;
+  margin: 0%;
+  font-size: 18px;
+}
+.vilin{
+  width: 400px;
+height: 300px;
+margin-left: 3%;
+border-radius: 15px
+
+}
+.rowty ,.rows{
+  display: flex;
+  flex-direction: row;
+}
+
+}
